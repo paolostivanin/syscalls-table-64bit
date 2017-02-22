@@ -80,7 +80,7 @@
          "",
          "",
          "fs/open.c",
-         1090
+         1127
       ],
       [
          4,
@@ -168,7 +168,7 @@
          "",
          "",
          "fs/select.c",
-         963
+         971
       ],
       [
          8,
@@ -225,7 +225,7 @@
          "",
          "",
          "mm/mprotect.c",
-         355
+         494
       ],
       [
          11,
@@ -244,7 +244,7 @@
          "",
          "",
          "mm/mmap.c",
-         2506
+         2681
       ],
       [
          12,
@@ -260,7 +260,7 @@
          "",
          "",
          "mm/mmap.c",
-         173
+         181
       ],
       [
          13,
@@ -291,7 +291,7 @@
          },
          "",
          "kernel/signal.c",
-         3305
+         3321
       ],
       [
          14,
@@ -316,7 +316,7 @@
          },
          "",
          "kernel/signal.c",
-         2535
+         2548
       ],
       [
          16,
@@ -338,7 +338,7 @@
          "",
          "",
          "fs/ioctl.c",
-         680
+         689
       ],
       [
          17,
@@ -410,7 +410,7 @@
          "",
          "",
          "fs/read_write.c",
-         979
+         1008
       ],
       [
          20,
@@ -432,7 +432,7 @@
          "",
          "",
          "fs/read_write.c",
-         985
+         1014
       ],
       [
          21,
@@ -451,7 +451,7 @@
          "",
          "",
          "fs/open.c",
-         413
+         430
       ],
       [
          22,
@@ -467,7 +467,7 @@
          "",
          "",
          "fs/pipe.c",
-         838
+         861
       ],
       [
          23,
@@ -498,7 +498,7 @@
             }
          },
          "fs/select.c",
-         626
+         634
       ],
       [
          24,
@@ -511,7 +511,7 @@
          "",
          "",
          "kernel/sched/core.c",
-         4793
+         4882
       ],
       [
          25,
@@ -539,7 +539,7 @@
             "def": null
          },
          "mm/mremap.c",
-         476
+         491
       ],
       [
          26,
@@ -583,7 +583,7 @@
          "",
          "",
          "mm/mincore.c",
-         221
+         222
       ],
       [
          28,
@@ -605,7 +605,7 @@
          "",
          "",
          "mm/madvise.c",
-         676
+         677
       ],
       [
          29,
@@ -627,7 +627,7 @@
          "",
          "",
          "ipc/shm.c",
-         652
+         657
       ],
       [
          30,
@@ -649,7 +649,7 @@
          "",
          "",
          "ipc/shm.c",
-         1247
+         1255
       ],
       [
          31,
@@ -674,7 +674,7 @@
          "",
          "",
          "ipc/shm.c",
-         981
+         987
       ],
       [
          32,
@@ -722,7 +722,7 @@
          "",
          "",
          "kernel/signal.c",
-         3502
+         3518
       ],
       [
          35,
@@ -778,8 +778,8 @@
          "",
          "",
          "",
-         "kernel/time/timer.c",
-         1440
+         "kernel/time/itimer.c",
+         284
       ],
       [
          38,
@@ -807,7 +807,7 @@
          "",
          "",
          "kernel/time/itimer.c",
-         278
+         291
       ],
       [
          39,
@@ -845,7 +845,7 @@
          },
          "",
          "fs/read_write.c",
-         1401
+         1448
       ],
       [
          41,
@@ -867,7 +867,7 @@
          "",
          "",
          "net/socket.c",
-         1206
+         1249
       ],
       [
          42,
@@ -892,7 +892,7 @@
          "",
          "",
          "net/socket.c",
-         1517
+         1560
       ],
       [
          43,
@@ -917,7 +917,7 @@
          "",
          "",
          "net/socket.c",
-         1499
+         1542
       ],
       [
          44,
@@ -930,7 +930,7 @@
          "",
          "",
          "net/socket.c",
-         1612
+         1655
       ],
       [
          45,
@@ -943,7 +943,7 @@
          "",
          "",
          "net/socket.c",
-         1668
+         1711
       ],
       [
          46,
@@ -968,7 +968,7 @@
          "",
          "",
          "net/socket.c",
-         1983
+         2026
       ],
       [
          47,
@@ -993,7 +993,7 @@
          "",
          "",
          "net/socket.c",
-         2151
+         2196
       ],
       [
          48,
@@ -1012,7 +1012,7 @@
          "",
          "",
          "net/socket.c",
-         1788
+         1831
       ],
       [
          49,
@@ -1037,7 +1037,7 @@
          "",
          "",
          "net/socket.c",
-         1356
+         1399
       ],
       [
          50,
@@ -1056,7 +1056,7 @@
          "",
          "",
          "net/socket.c",
-         1385
+         1428
       ],
       [
          51,
@@ -1081,7 +1081,7 @@
          "",
          "",
          "net/socket.c",
-         1549
+         1592
       ],
       [
          52,
@@ -1106,7 +1106,7 @@
          "",
          "",
          "net/socket.c",
-         1580
+         1623
       ],
       [
          53,
@@ -1131,7 +1131,7 @@
          },
          "",
          "net/socket.c",
-         1247
+         1290
       ],
       [
          54,
@@ -1159,7 +1159,7 @@
             "def": null
          },
          "net/socket.c",
-         1724
+         1767
       ],
       [
          55,
@@ -1187,7 +1187,7 @@
             "def": null
          },
          "net/socket.c",
-         1758
+         1801
       ],
       [
          60,
@@ -1203,7 +1203,7 @@
          "",
          "",
          "kernel/exit.c",
-         845
+         910
       ],
       [
          61,
@@ -1231,7 +1231,7 @@
          },
          "",
          "kernel/exit.c",
-         1599
+         1664
       ],
       [
          62,
@@ -1250,7 +1250,7 @@
          "",
          "",
          "kernel/signal.c",
-         2851
+         2860
       ],
       [
          63,
@@ -1291,7 +1291,7 @@
          "",
          "",
          "ipc/sem.c",
-         589
+         545
       ],
       [
          65,
@@ -1316,7 +1316,7 @@
          "",
          "",
          "ipc/sem.c",
-         2036
+         2012
       ],
       [
          66,
@@ -1341,7 +1341,7 @@
          },
          "",
          "ipc/sem.c",
-         1596
+         1576
       ],
       [
          67,
@@ -1357,7 +1357,7 @@
          "",
          "",
          "ipc/shm.c",
-         1263
+         1271
       ],
       [
          68,
@@ -1376,7 +1376,7 @@
          "",
          "",
          "ipc/msg.c",
-         241
+         265
       ],
       [
          69,
@@ -1401,7 +1401,7 @@
          },
          "",
          "ipc/msg.c",
-         722
+         743
       ],
       [
          70,
@@ -1429,7 +1429,7 @@
             "def": null
          },
          "ipc/msg.c",
-         1014
+         1007
       ],
       [
          71,
@@ -1454,7 +1454,7 @@
          "",
          "",
          "ipc/msg.c",
-         522
+         555
       ],
       [
          72,
@@ -1495,7 +1495,7 @@
          "",
          "",
          "fs/locks.c",
-         1950
+         1988
       ],
       [
          74,
@@ -1546,7 +1546,7 @@
          "",
          "",
          "fs/open.c",
-         142
+         153
       ],
       [
          77,
@@ -1565,7 +1565,7 @@
          "",
          "",
          "fs/open.c",
-         201
+         212
       ],
       [
          78,
@@ -1609,7 +1609,7 @@
          "",
          "",
          "fs/dcache.c",
-         3502
+         3413
       ],
       [
          80,
@@ -1625,7 +1625,7 @@
          "",
          "",
          "fs/open.c",
-         418
+         435
       ],
       [
          81,
@@ -1641,7 +1641,7 @@
          "",
          "",
          "fs/open.c",
-         444
+         461
       ],
       [
          82,
@@ -1660,7 +1660,7 @@
          "",
          "",
          "fs/namei.c",
-         4602
+         4570
       ],
       [
          83,
@@ -1679,7 +1679,7 @@
          "",
          "",
          "fs/namei.c",
-         3796
+         3770
       ],
       [
          84,
@@ -1695,7 +1695,7 @@
          "",
          "",
          "fs/namei.c",
-         3899
+         3873
       ],
       [
          85,
@@ -1714,7 +1714,7 @@
          "",
          "",
          "fs/open.c",
-         1052
+         1089
       ],
       [
          86,
@@ -1733,7 +1733,7 @@
          "",
          "",
          "fs/namei.c",
-         4261
+         4242
       ],
       [
          87,
@@ -1749,7 +1749,7 @@
          "",
          "",
          "fs/namei.c",
-         4052
+         4026
       ],
       [
          88,
@@ -1768,7 +1768,7 @@
          "",
          "",
          "fs/namei.c",
-         4109
+         4083
       ],
       [
          89,
@@ -1790,7 +1790,7 @@
          "",
          "",
          "fs/stat.c",
-         349
+         351
       ],
       [
          90,
@@ -1809,7 +1809,7 @@
          "",
          "",
          "fs/open.c",
-         562
+         579
       ],
       [
          91,
@@ -1828,7 +1828,7 @@
          "",
          "",
          "fs/open.c",
-         531
+         548
       ],
       [
          92,
@@ -1850,7 +1850,7 @@
          "",
          "",
          "fs/open.c",
-         641
+         658
       ],
       [
          93,
@@ -1872,7 +1872,7 @@
          "",
          "",
          "fs/open.c",
-         652
+         669
       ],
       [
          94,
@@ -1894,7 +1894,7 @@
          "",
          "",
          "fs/open.c",
-         646
+         663
       ],
       [
          95,
@@ -1910,7 +1910,7 @@
          "",
          "",
          "kernel/sys.c",
-         1646
+         1647
       ],
       [
          96,
@@ -1973,7 +1973,7 @@
          "",
          "",
          "kernel/sys.c",
-         1624
+         1625
       ],
       [
          99,
@@ -1989,7 +1989,7 @@
          "",
          "",
          "kernel/sys.c",
-         2359
+         2350
       ],
       [
          100,
@@ -2030,7 +2030,7 @@
          },
          "",
          "kernel/ptrace.c",
-         1078
+         1108
       ],
       [
          102,
@@ -2065,7 +2065,7 @@
          "",
          "",
          "kernel/printk/printk.c",
-         1424
+         1503
       ],
       [
          104,
@@ -2251,7 +2251,7 @@
          "",
          "",
          "kernel/groups.c",
-         190
+         165
       ],
       [
          116,
@@ -2270,7 +2270,7 @@
          "",
          "",
          "kernel/groups.c",
-         227
+         202
       ],
       [
          117,
@@ -2479,7 +2479,7 @@
          "",
          "",
          "kernel/signal.c",
-         2625
+         2638
       ],
       [
          128,
@@ -2504,7 +2504,7 @@
          },
          "",
          "kernel/signal.c",
-         2815
+         2824
       ],
       [
          129,
@@ -2526,7 +2526,7 @@
          "",
          "",
          "kernel/signal.c",
-         2963
+         2972
       ],
       [
          130,
@@ -2545,7 +2545,7 @@
          "",
          "",
          "kernel/signal.c",
-         3532
+         3548
       ],
       [
          131,
@@ -2570,7 +2570,7 @@
          "",
          "",
          "kernel/signal.c",
-         3157
+         3173
       ],
       [
          132,
@@ -2614,7 +2614,7 @@
          "",
          "",
          "fs/namei.c",
-         3740
+         3714
       ],
       [
          134,
@@ -2794,7 +2794,7 @@
          "",
          "",
          "kernel/sched/core.c",
-         4403
+         4491
       ],
       [
          143,
@@ -2816,7 +2816,7 @@
          "",
          "",
          "kernel/sched/core.c",
-         4477
+         4565
       ],
       [
          144,
@@ -2841,7 +2841,7 @@
          "",
          "",
          "kernel/sched/core.c",
-         4386
+         4474
       ],
       [
          145,
@@ -2857,7 +2857,7 @@
          "",
          "",
          "kernel/sched/core.c",
-         4448
+         4536
       ],
       [
          146,
@@ -2873,7 +2873,7 @@
          "",
          "",
          "kernel/sched/core.c",
-         5002
+         5093
       ],
       [
          147,
@@ -2889,7 +2889,7 @@
          "",
          "",
          "kernel/sched/core.c",
-         5029
+         5120
       ],
       [
          148,
@@ -2908,7 +2908,7 @@
          "",
          "",
          "kernel/sched/core.c",
-         5058
+         5149
       ],
       [
          149,
@@ -2927,7 +2927,7 @@
          "",
          "",
          "mm/mlock.c",
-         657
+         712
       ],
       [
          150,
@@ -2946,7 +2946,7 @@
          "",
          "",
          "mm/mlock.c",
-         675
+         730
       ],
       [
          151,
@@ -2962,7 +2962,7 @@
          "",
          "",
          "mm/mlock.c",
-         736
+         791
       ],
       [
          152,
@@ -2975,7 +2975,7 @@
          "",
          "",
          "mm/mlock.c",
-         767
+         822
       ],
       [
          153,
@@ -2988,7 +2988,7 @@
          "",
          "",
          "fs/open.c",
-         1109
+         1146
       ],
       [
          154,
@@ -3029,7 +3029,7 @@
          "",
          "",
          "fs/namespace.c",
-         2989
+         3086
       ],
       [
          156,
@@ -3039,7 +3039,7 @@
          {
             "type": "struct __sysctl_args __user *args",
             "def": {
-               "line": 36,
+               "line": 34,
                "file": "include/uapi/linux/sysctl.h"
             }
          },
@@ -3076,7 +3076,7 @@
             "def": null
          },
          "kernel/sys.c",
-         2075
+         2066
       ],
       [
          158,
@@ -3133,7 +3133,7 @@
          "",
          "",
          "kernel/sys.c",
-         1490
+         1491
       ],
       [
          161,
@@ -3149,7 +3149,7 @@
          "",
          "",
          "fs/open.c",
-         469
+         486
       ],
       [
          162,
@@ -3228,7 +3228,7 @@
             "def": null
          },
          "fs/namespace.c",
-         2905
+         3002
       ],
       [
          166,
@@ -3247,7 +3247,7 @@
          "",
          "",
          "fs/namespace.c",
-         1604
+         1666
       ],
       [
          167,
@@ -3266,7 +3266,7 @@
          "",
          "",
          "mm/swapfile.c",
-         2379
+         2387
       ],
       [
          168,
@@ -3282,7 +3282,7 @@
          "",
          "",
          "mm/swapfile.c",
-         1837
+         1856
       ],
       [
          169,
@@ -3402,7 +3402,7 @@
          "",
          "",
          "kernel/module.c",
-         3674
+         3770
       ],
       [
          176,
@@ -3421,7 +3421,7 @@
          "",
          "",
          "kernel/module.c",
-         930
+         934
       ],
       [
          177,
@@ -3472,7 +3472,7 @@
          },
          "",
          "fs/quota/quota.c",
-         826
+         835
       ],
       [
          180,
@@ -3585,7 +3585,7 @@
          "",
          "",
          "mm/readahead.c",
-         551
+         576
       ],
       [
          188,
@@ -3613,7 +3613,7 @@
             "def": null
          },
          "fs/xattr.c",
-         367
+         479
       ],
       [
          189,
@@ -3641,7 +3641,7 @@
             "def": null
          },
          "fs/xattr.c",
-         374
+         486
       ],
       [
          190,
@@ -3669,7 +3669,7 @@
             "def": null
          },
          "fs/xattr.c",
-         381
+         493
       ],
       [
          191,
@@ -3694,7 +3694,7 @@
          },
          "",
          "fs/xattr.c",
-         464
+         576
       ],
       [
          192,
@@ -3719,7 +3719,7 @@
          },
          "",
          "fs/xattr.c",
-         470
+         582
       ],
       [
          193,
@@ -3744,7 +3744,7 @@
          },
          "",
          "fs/xattr.c",
-         476
+         588
       ],
       [
          194,
@@ -3766,7 +3766,7 @@
          "",
          "",
          "fs/xattr.c",
-         543
+         655
       ],
       [
          195,
@@ -3788,7 +3788,7 @@
          "",
          "",
          "fs/xattr.c",
-         549
+         661
       ],
       [
          196,
@@ -3810,7 +3810,7 @@
          "",
          "",
          "fs/xattr.c",
-         555
+         667
       ],
       [
          197,
@@ -3829,7 +3829,7 @@
          "",
          "",
          "fs/xattr.c",
-         608
+         720
       ],
       [
          198,
@@ -3848,7 +3848,7 @@
          "",
          "",
          "fs/xattr.c",
-         614
+         726
       ],
       [
          199,
@@ -3867,7 +3867,7 @@
          "",
          "",
          "fs/xattr.c",
-         620
+         732
       ],
       [
          200,
@@ -3886,7 +3886,7 @@
          "",
          "",
          "kernel/signal.c",
-         2933
+         2942
       ],
       [
          201,
@@ -3915,7 +3915,7 @@
          "",
          "",
          "kernel/futex.c",
-         3213
+         3243
       ],
       [
          203,
@@ -3937,7 +3937,7 @@
          "",
          "",
          "kernel/sched/core.c",
-         4706
+         4794
       ],
       [
          204,
@@ -3959,7 +3959,7 @@
          "",
          "",
          "kernel/sched/core.c",
-         4757
+         4846
       ],
       [
          205,
@@ -3991,7 +3991,7 @@
          "",
          "",
          "fs/aio.c",
-         1321
+         1341
       ],
       [
          207,
@@ -4007,7 +4007,7 @@
          "",
          "",
          "fs/aio.c",
-         1357
+         1410
       ],
       [
          208,
@@ -4038,7 +4038,7 @@
             "def": null
          },
          "fs/aio.c",
-         1729
+         1821
       ],
       [
          209,
@@ -4060,7 +4060,7 @@
          "",
          "",
          "fs/aio.c",
-         1640
+         1694
       ],
       [
          210,
@@ -4085,7 +4085,7 @@
          "",
          "",
          "fs/aio.c",
-         1677
+         1769
       ],
       [
          211,
@@ -4190,7 +4190,7 @@
             "def": null
          },
          "mm/mmap.c",
-         2523
+         2698
       ],
       [
          217,
@@ -4231,7 +4231,7 @@
          "",
          "",
          "kernel/fork.c",
-         1236
+         1411
       ],
       [
          219,
@@ -4244,7 +4244,7 @@
          "",
          "",
          "kernel/signal.c",
-         2448
+         2454
       ],
       [
          220,
@@ -4272,7 +4272,7 @@
          },
          "",
          "ipc/sem.c",
-         1801
+         1755
       ],
       [
          221,
@@ -4297,7 +4297,7 @@
          },
          "",
          "mm/fadvise.c",
-         168
+         181
       ],
       [
          222,
@@ -4425,8 +4425,8 @@
          "",
          "",
          "",
-         "kernel/time/posix-timers.c",
-         1012
+         "kernel/time/posix-stubs.c",
+         49
       ],
       [
          228,
@@ -4444,8 +4444,8 @@
          "",
          "",
          "",
-         "kernel/time/posix-timers.c",
-         1027
+         "kernel/time/posix-stubs.c",
+         61
       ],
       [
          229,
@@ -4463,8 +4463,8 @@
          "",
          "",
          "",
-         "kernel/time/posix-timers.c",
-         1068
+         "kernel/time/posix-stubs.c",
+         77
       ],
       [
          230,
@@ -4488,8 +4488,8 @@
             "def": null
          },
          "",
-         "kernel/time/posix-timers.c",
-         1097
+         "kernel/time/posix-stubs.c",
+         96
       ],
       [
          231,
@@ -4505,7 +4505,7 @@
          "",
          "",
          "kernel/exit.c",
-         887
+         952
       ],
       [
          232,
@@ -4583,7 +4583,7 @@
          "",
          "",
          "kernel/signal.c",
-         2917
+         2926
       ],
       [
          235,
@@ -4605,7 +4605,7 @@
          "",
          "",
          "fs/utimes.c",
-         231
+         217
       ],
       [
          236,
@@ -4631,7 +4631,7 @@
          "",
          "",
          "mm/mempolicy.c",
-         1328
+         1332
       ],
       [
          238,
@@ -4653,7 +4653,7 @@
          "",
          "",
          "mm/mempolicy.c",
-         1350
+         1354
       ],
       [
          239,
@@ -4681,7 +4681,7 @@
             "def": null
          },
          "mm/mempolicy.c",
-         1465
+         1469
       ],
       [
          240,
@@ -4709,7 +4709,7 @@
          },
          "",
          "ipc/mqueue.c",
-         771
+         769
       ],
       [
          241,
@@ -4725,7 +4725,7 @@
          "",
          "",
          "ipc/mqueue.c",
-         852
+         850
       ],
       [
          242,
@@ -4753,7 +4753,7 @@
             "def": null
          },
          "ipc/mqueue.c",
-         958
+         956
       ],
       [
          243,
@@ -4781,7 +4781,7 @@
             "def": null
          },
          "ipc/mqueue.c",
-         1079
+         1077
       ],
       [
          244,
@@ -4803,7 +4803,7 @@
          "",
          "",
          "ipc/mqueue.c",
-         1189
+         1187
       ],
       [
          245,
@@ -4831,7 +4831,7 @@
          "",
          "",
          "ipc/mqueue.c",
-         1321
+         1319
       ],
       [
          246,
@@ -4849,7 +4849,7 @@
          {
             "type": "struct kexec_segment __user *segments",
             "def": {
-               "line": 85,
+               "line": 87,
                "file": "include/linux/kexec.h"
             }
          },
@@ -4859,7 +4859,7 @@
          },
          "",
          "kernel/kexec.c",
-         186
+         187
       ],
       [
          247,
@@ -4893,7 +4893,7 @@
             }
          },
          "kernel/exit.c",
-         1530
+         1595
       ],
       [
          248,
@@ -5094,7 +5094,7 @@
          },
          "",
          "mm/mempolicy.c",
-         1369
+         1373
       ],
       [
          257,
@@ -5119,7 +5119,7 @@
          },
          "",
          "fs/open.c",
-         1037
+         1074
       ],
       [
          258,
@@ -5141,7 +5141,7 @@
          "",
          "",
          "fs/namei.c",
-         3771
+         3745
       ],
       [
          259,
@@ -5166,7 +5166,7 @@
          },
          "",
          "fs/namei.c",
-         3696
+         3670
       ],
       [
          260,
@@ -5194,7 +5194,7 @@
             "def": null
          },
          "fs/open.c",
-         609
+         626
       ],
       [
          261,
@@ -5219,7 +5219,7 @@
          "",
          "",
          "fs/utimes.c",
-         203
+         189
       ],
       [
          262,
@@ -5269,7 +5269,7 @@
          "",
          "",
          "fs/namei.c",
-         4041
+         4015
       ],
       [
          264,
@@ -5294,7 +5294,7 @@
          },
          "",
          "fs/namei.c",
-         4596
+         4564
       ],
       [
          265,
@@ -5322,7 +5322,7 @@
             "def": null
          },
          "fs/namei.c",
-         4196
+         4177
       ],
       [
          266,
@@ -5344,7 +5344,7 @@
          "",
          "",
          "fs/namei.c",
-         4078
+         4052
       ],
       [
          267,
@@ -5391,7 +5391,7 @@
          "",
          "",
          "fs/open.c",
-         544
+         561
       ],
       [
          269,
@@ -5413,7 +5413,7 @@
          "",
          "",
          "fs/open.c",
-         337
+         354
       ],
       [
          270,
@@ -5426,7 +5426,7 @@
          "",
          "",
          "fs/select.c",
-         706
+         714
       ],
       [
          271,
@@ -5454,7 +5454,7 @@
             "def": null
          },
          "fs/select.c",
-         997
+         1005
       ],
       [
          272,
@@ -5470,7 +5470,7 @@
          "",
          "",
          "kernel/fork.c",
-         2000
+         2181
       ],
       [
          273,
@@ -5492,7 +5492,7 @@
          "",
          "",
          "kernel/futex.c",
-         2956
+         2986
       ],
       [
          274,
@@ -5517,7 +5517,7 @@
          "",
          "",
          "kernel/futex.c",
-         2978
+         3008
       ],
       [
          275,
@@ -5530,7 +5530,7 @@
          "",
          "",
          "fs/splice.c",
-         1690
+         1400
       ],
       [
          276,
@@ -5555,7 +5555,7 @@
          },
          "",
          "fs/splice.c",
-         2023
+         1733
       ],
       [
          277,
@@ -5605,7 +5605,7 @@
          },
          "",
          "fs/splice.c",
-         1644
+         1354
       ],
       [
          279,
@@ -5618,7 +5618,7 @@
          "",
          "",
          "mm/migrate.c",
-         1495
+         1663
       ],
       [
          280,
@@ -5643,7 +5643,7 @@
          },
          "",
          "fs/utimes.c",
-         185
+         171
       ],
       [
          281,
@@ -5738,7 +5738,7 @@
          },
          "",
          "fs/open.c",
-         320
+         337
       ],
       [
          286,
@@ -5769,7 +5769,7 @@
          },
          "",
          "fs/timerfd.c",
-         514
+         524
       ],
       [
          287,
@@ -5791,7 +5791,7 @@
          "",
          "",
          "fs/timerfd.c",
-         532
+         542
       ],
       [
          288,
@@ -5819,7 +5819,7 @@
          },
          "",
          "net/socket.c",
-         1418
+         1461
       ],
       [
          289,
@@ -5920,7 +5920,7 @@
          "",
          "",
          "fs/pipe.c",
-         816
+         839
       ],
       [
          294,
@@ -5964,7 +5964,7 @@
             "def": null
          },
          "fs/read_write.c",
-         991
+         1020
       ],
       [
          296,
@@ -5992,7 +5992,7 @@
             "def": null
          },
          "fs/read_write.c",
-         1011
+         1040
       ],
       [
          297,
@@ -6017,7 +6017,7 @@
          },
          "",
          "kernel/signal.c",
-         3004
+         3013
       ],
       [
          298,
@@ -6027,7 +6027,7 @@
          {
             "type": "struct perf_event_attr __user *attr_uptr",
             "def": {
-               "line": 280,
+               "line": 283,
                "file": "include/uapi/linux/perf_event.h"
             }
          },
@@ -6048,7 +6048,7 @@
             "def": null
          },
          "kernel/events/core.c",
-         9181
+         9614
       ],
       [
          299,
@@ -6079,7 +6079,7 @@
             "def": null
          },
          "net/socket.c",
-         2270
+         2315
       ],
       [
          300,
@@ -6098,7 +6098,7 @@
          "",
          "",
          "fs/notify/fanotify/fanotify_user.c",
-         694
+         707
       ],
       [
          301,
@@ -6126,7 +6126,7 @@
             "def": null
          },
          "fs/notify/fanotify/fanotify_user.c",
-         804
+         815
       ],
       [
          302,
@@ -6157,7 +6157,7 @@
          },
          "",
          "kernel/sys.c",
-         1448
+         1449
       ],
       [
          303,
@@ -6273,7 +6273,7 @@
          },
          "",
          "net/socket.c",
-         2056
+         2101
       ],
       [
          308,
@@ -6317,7 +6317,7 @@
          "",
          "",
          "kernel/sys.c",
-         2280
+         2271
       ],
       [
          310,
@@ -6330,7 +6330,7 @@
          "",
          "",
          "mm/process_vm_access.c",
-         292
+         299
       ],
       [
          311,
@@ -6343,7 +6343,7 @@
          "",
          "",
          "mm/process_vm_access.c",
-         299
+         306
       ],
       [
          312,
@@ -6393,7 +6393,7 @@
          "",
          "",
          "kernel/module.c",
-         3694
+         3790
       ],
       [
          314,
@@ -6418,7 +6418,7 @@
          "",
          "",
          "kernel/sched/core.c",
-         4414
+         4502
       ],
       [
          315,
@@ -6446,7 +6446,7 @@
          },
          "",
          "kernel/sched/core.c",
-         4555
+         4643
       ],
       [
          316,
@@ -6474,7 +6474,7 @@
             "def": null
          },
          "fs/namei.c",
-         4453
+         4421
       ],
       [
          317,
@@ -6496,7 +6496,7 @@
          "",
          "",
          "kernel/seccomp.c",
-         825
+         796
       ],
       [
          318,
@@ -6518,7 +6518,7 @@
          "",
          "",
          "drivers/char/random.c",
-         1602
+         1880
       ],
       [
          319,
@@ -6537,7 +6537,7 @@
          "",
          "",
          "mm/shmem.c",
-         2956
+         3499
       ],
       [
          320,
@@ -6565,7 +6565,7 @@
             "def": null
          },
          "kernel/kexec_file.c",
-         256
+         260
       ],
       [
          321,
@@ -6587,7 +6587,7 @@
          "",
          "",
          "kernel/bpf/syscall.c",
-         803
+         1005
       ],
       [
          323,
@@ -6603,7 +6603,7 @@
          "",
          "",
          "fs/userfaultfd.c",
-         1319
+         1354
       ],
       [
          324,
@@ -6644,7 +6644,7 @@
          "",
          "",
          "mm/mlock.c",
-         662
+         717
       ],
       [
          326,
@@ -6657,7 +6657,7 @@
          "",
          "",
          "fs/read_write.c",
-         1521
+         1583
       ],
       [
          327,
@@ -6670,7 +6670,7 @@
          "",
          "",
          "fs/read_write.c",
-         999
+         1028
       ],
       [
          328,
@@ -6683,46 +6683,67 @@
          "",
          "",
          "fs/read_write.c",
-         1019
+         1048
       ],
       [
          329,
-         "not implemented",
-         "",
+         "sys_pkey_mprotect",
+         "(unsigned long start, size_t len, unsigned long prot, int pkey)",
          "0x149",
+         {
+            "type": "unsigned long start",
+            "def": null
+         },
+         {
+            "type": "size_t len",
+            "def": null
+         },
+         {
+            "type": "unsigned long prot",
+            "def": null
+         },
+         {
+            "type": "int pkey",
+            "def": null
+         },
          "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         ""
+         "mm/mprotect.c",
+         502
       ],
       [
          330,
-         "not implemented",
-         "",
+         "sys_pkey_alloc",
+         "(unsigned long flags, unsigned long init_val)",
          "0x14a",
+         {
+            "type": "unsigned long flags",
+            "def": null
+         },
+         {
+            "type": "unsigned long init_val",
+            "def": null
+         },
          "",
          "",
          "",
-         "",
-         "",
-         "",
-         ""
+         "mm/mprotect.c",
+         508
       ],
       [
          331,
-         "not implemented",
-         "",
+         "sys_pkey_free",
+         "(int pkey)",
          "0x14b",
+         {
+            "type": "int pkey",
+            "def": null
+         },
          "",
          "",
          "",
          "",
-         "",
-         "",
-         ""
+         "mm/mprotect.c",
+         538
       ],
       [
          332,
@@ -6752,9 +6773,48 @@
       ],
       [
          334,
+         "not implemented",
+         "",
+         "0x14e",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+      ],
+      [
+         335,
+         "not implemented",
+         "",
+         "0x14f",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+      ],
+      [
+         336,
+         "not implemented",
+         "",
+         "0x150",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+      ],
+      [
+         337,
          "compat_sys_rt_sigaction",
          "(int, const struct compat_sigaction __user *, struct compat_sigaction __user *, compat_size_t)",
-         "0x14e",
+         "0x151",
          {
             "type": "int",
             "def": null
@@ -6782,7 +6842,7 @@
          ""
       ],
       [
-         335,
+         338,
          "",
          "",
          "",
@@ -6795,10 +6855,10 @@
          ""
       ],
       [
-         336,
+         339,
          "compat_sys_ioctl",
          "(unsigned int fd, unsigned int cmd, compat_ulong_t arg)",
-         "0x150",
+         "0x153",
          {
             "type": "unsigned int fd",
             "def": null
@@ -6817,10 +6877,10 @@
          ""
       ],
       [
-         337,
+         340,
          "compat_sys_readv",
          "(compat_ulong_t fd, const struct compat_iovec __user *vec, compat_ulong_t vlen)",
-         "0x151",
+         "0x154",
          {
             "type": "compat_ulong_t fd",
             "def": null
@@ -6842,10 +6902,10 @@
          ""
       ],
       [
-         338,
+         341,
          "compat_sys_writev",
          "(compat_ulong_t fd, const struct compat_iovec __user *vec, compat_ulong_t vlen)",
-         "0x152",
+         "0x155",
          {
             "type": "compat_ulong_t fd",
             "def": null
@@ -6867,10 +6927,10 @@
          ""
       ],
       [
-         339,
+         342,
          "compat_sys_recvfrom",
          "(int fd, void __user *buf, compat_size_t len, unsigned flags, struct sockaddr __user *addr, int __user *addrlen)",
-         "0x153",
+         "0x156",
          "param addr*",
          "",
          "",
@@ -6880,10 +6940,10 @@
          ""
       ],
       [
-         340,
+         343,
          "compat_sys_sendmsg",
          "(int fd, struct compat_msghdr __user *msg, unsigned flags)",
-         "0x154",
+         "0x157",
          {
             "type": "int fd",
             "def": null
@@ -6905,10 +6965,10 @@
          ""
       ],
       [
-         341,
+         344,
          "compat_sys_recvmsg",
          "(int fd, struct compat_msghdr __user *msg, unsigned int flags)",
-         "0x155",
+         "0x158",
          {
             "type": "int fd",
             "def": null
@@ -6930,10 +6990,10 @@
          ""
       ],
       [
-         343,
+         346,
          "compat_sys_ptrace",
          "(compat_long_t request, compat_long_t pid, compat_long_t addr, compat_long_t data)",
-         "0x157",
+         "0x15a",
          {
             "type": "compat_long_t request",
             "def": null
@@ -6955,10 +7015,10 @@
          ""
       ],
       [
-         344,
+         347,
          "compat_sys_rt_sigpending",
          "(compat_sigset_t __user *uset, compat_size_t sigsetsize)",
-         "0x158",
+         "0x15b",
          {
             "type": "compat_sigset_t __user *uset",
             "def": null
@@ -6974,10 +7034,10 @@
          ""
       ],
       [
-         345,
+         348,
          "compat_sys_rt_sigtimedwait",
          "(compat_sigset_t __user *uthese, struct compat_siginfo __user *uinfo, struct compat_timespec __user *uts, compat_size_t sigsetsize)",
-         "0x159",
+         "0x15c",
          {
             "type": "compat_sigset_t __user *uthese",
             "def": null
@@ -7005,10 +7065,10 @@
          ""
       ],
       [
-         346,
+         349,
          "compat_sys_rt_sigqueueinfo",
          "(compat_pid_t pid, int sig, struct compat_siginfo __user *uinfo)",
-         "0x15a",
+         "0x15d",
          {
             "type": "compat_pid_t pid",
             "def": null
@@ -7030,10 +7090,10 @@
          ""
       ],
       [
-         347,
+         350,
          "compat_sys_sigaltstack",
          "(const compat_stack_t __user *uss_ptr, compat_stack_t __user *uoss_ptr)",
-         "0x15b",
+         "0x15e",
          {
             "type": "const compat_stack_t __user *uss_ptr",
             "def": null
@@ -7049,10 +7109,10 @@
          ""
       ],
       [
-         348,
+         351,
          "compat_sys_timer_create",
          "(clockid_t which_clock, struct compat_sigevent __user *timer_event_spec, timer_t __user *created_timer_id)",
-         "0x15c",
+         "0x15f",
          {
             "type": "clockid_t which_clock",
             "def": null
@@ -7074,10 +7134,10 @@
          ""
       ],
       [
-         349,
+         352,
          "compat_sys_mq_notify",
          "(mqd_t mqdes, const struct compat_sigevent __user *u_notification)",
-         "0x15d",
+         "0x160",
          {
             "type": "mqd_t mqdes",
             "def": null
@@ -7096,10 +7156,10 @@
          ""
       ],
       [
-         350,
+         353,
          "compat_sys_kexec_load",
          "(compat_ulong_t entry, compat_ulong_t nr_segments, struct compat_kexec_segment __user *, compat_ulong_t flags)",
-         "0x15e",
+         "0x161",
          {
             "type": "compat_ulong_t entry",
             "def": null
@@ -7111,7 +7171,7 @@
          {
             "type": "struct compat_kexec_segment __user *",
             "def": {
-               "line": 104,
+               "line": 106,
                "file": "include/linux/kexec.h"
             }
          },
@@ -7124,10 +7184,10 @@
          ""
       ],
       [
-         351,
+         354,
          "compat_sys_waitid",
          "(int, compat_pid_t, struct compat_siginfo __user *, int, struct compat_rusage __user *)",
-         "0x15f",
+         "0x162",
          {
             "type": "int",
             "def": null
@@ -7158,10 +7218,10 @@
          ""
       ],
       [
-         352,
+         355,
          "compat_sys_set_robust_list",
          "(struct compat_robust_list_head __user *head, compat_size_t len)",
-         "0x160",
+         "0x163",
          {
             "type": "struct compat_robust_list_head __user *head",
             "def": {
@@ -7180,10 +7240,10 @@
          ""
       ],
       [
-         353,
+         356,
          "compat_sys_get_robust_list",
          "(int pid, compat_uptr_t __user *head_ptr, compat_size_t __user *len_ptr)",
-         "0x161",
+         "0x164",
          {
             "type": "int pid",
             "def": null
@@ -7202,10 +7262,10 @@
          ""
       ],
       [
-         354,
+         357,
          "compat_sys_vmsplice",
          "(int fd, const struct compat_iovec __user *, unsigned int nr_segs, unsigned int flags)",
-         "0x162",
+         "0x165",
          {
             "type": "int fd",
             "def": null
@@ -7230,10 +7290,10 @@
          ""
       ],
       [
-         355,
+         358,
          "compat_sys_move_pages",
          "(pid_t pid, compat_ulong_t nr_pages, __u32 __user *pages, const int __user *nodes, int __user *status, int flags)",
-         "0x163",
+         "0x166",
          "param addr*",
          "",
          "",
@@ -7243,10 +7303,10 @@
          ""
       ],
       [
-         356,
+         359,
          "compat_sys_preadv64",
          "(unsigned long fd, const struct compat_iovec __user *vec, unsigned long vlen, loff_t pos)",
-         "0x164",
+         "0x167",
          {
             "type": "unsigned long fd",
             "def": null
@@ -7271,10 +7331,10 @@
          ""
       ],
       [
-         357,
+         360,
          "compat_sys_pwritev64",
          "(unsigned long fd, const struct compat_iovec __user *vec, unsigned long vlen, loff_t pos)",
-         "0x165",
+         "0x168",
          {
             "type": "unsigned long fd",
             "def": null
@@ -7299,10 +7359,10 @@
          ""
       ],
       [
-         358,
+         361,
          "compat_sys_rt_tgsigqueueinfo",
          "(compat_pid_t tgid, compat_pid_t pid, int sig, struct compat_siginfo __user *uinfo)",
-         "0x166",
+         "0x169",
          {
             "type": "compat_pid_t tgid",
             "def": null
@@ -7327,10 +7387,10 @@
          ""
       ],
       [
-         359,
+         362,
          "compat_sys_recvmmsg",
          "(int fd, struct compat_mmsghdr __user *mmsg, unsigned vlen, unsigned int flags, struct compat_timespec __user *timeout)",
-         "0x167",
+         "0x16a",
          {
             "type": "int fd",
             "def": null
@@ -7361,10 +7421,10 @@
          ""
       ],
       [
-         360,
+         363,
          "compat_sys_sendmmsg",
          "(int fd, struct compat_mmsghdr __user *mmsg, unsigned vlen, unsigned int flags)",
-         "0x168",
+         "0x16b",
          {
             "type": "int fd",
             "def": null
@@ -7389,10 +7449,10 @@
          ""
       ],
       [
-         361,
+         364,
          "compat_sys_process_vm_readv",
          "(compat_pid_t pid, const struct compat_iovec __user *lvec, compat_ulong_t liovcnt, const struct compat_iovec __user *rvec, compat_ulong_t riovcnt, compat_ulong_t flags)",
-         "0x169",
+         "0x16c",
          "param addr*",
          "",
          "",
@@ -7402,10 +7462,10 @@
          ""
       ],
       [
-         362,
+         365,
          "compat_sys_process_vm_writev",
          "(compat_pid_t pid, const struct compat_iovec __user *lvec, compat_ulong_t liovcnt, const struct compat_iovec __user *rvec, compat_ulong_t riovcnt, compat_ulong_t flags)",
-         "0x16a",
+         "0x16d",
          "param addr*",
          "",
          "",
@@ -7415,10 +7475,10 @@
          ""
       ],
       [
-         363,
+         366,
          "compat_sys_setsockopt",
          "(int fd, int level, int optname, char __user *optval, unsigned int optlen)",
-         "0x16b",
+         "0x16e",
          {
             "type": "int fd",
             "def": null
@@ -7443,10 +7503,10 @@
          ""
       ],
       [
-         364,
+         367,
          "compat_sys_getsockopt",
          "(int fd, int level, int optname, char __user *optval, int __user *optlen)",
-         "0x16c",
+         "0x16f",
          {
             "type": "int fd",
             "def": null
@@ -7471,10 +7531,10 @@
          ""
       ],
       [
-         365,
+         368,
          "compat_sys_io_setup",
          "(unsigned nr_reqs, u32 __user *ctx32p)",
-         "0x16d",
+         "0x170",
          {
             "type": "unsigned nr_reqs",
             "def": null
@@ -7490,10 +7550,10 @@
          ""
       ],
       [
-         366,
+         369,
          "compat_sys_io_submit",
          "(compat_aio_context_t ctx_id, int nr, u32 __user *iocb)",
-         "0x16e",
+         "0x171",
          {
             "type": "compat_aio_context_t ctx_id",
             "def": null
@@ -7506,32 +7566,6 @@
             "type": "u32 __user *iocb",
             "def": null
          },
-         "",
-         "",
-         "not found",
-         ""
-      ],
-      [
-         368,
-         "compat_sys_preadv2",
-         "(compat_ulong_t fd, const struct compat_iovec __user *vec, compat_ulong_t vlen, u32 pos_low, u32 pos_high, int flags)",
-         "0x170",
-         "param addr*",
-         "",
-         "",
-         "",
-         "",
-         "not found",
-         ""
-      ],
-      [
-         369,
-         "compat_sys_pwritev2",
-         "(compat_ulong_t fd, const struct compat_iovec __user *vec, compat_ulong_t vlen, u32 pos_low, u32 pos_high, int flags)",
-         "0x171",
-         "param addr*",
-         "",
-         "",
          "",
          "",
          "not found",
