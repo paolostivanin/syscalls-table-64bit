@@ -13,6 +13,8 @@ sys_calls = []
 i = 0
 
 for line in sct_file:
+    if line.startswith("#"):
+        continue
     parts = line.split()
     if(len(parts) > 3 and parts[0] >= '0'):
         name = parts[3]
