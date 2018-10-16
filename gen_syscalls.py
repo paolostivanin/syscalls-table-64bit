@@ -28,7 +28,7 @@ for line in sct_file:
                         sig = [];
                     regs = {};
                     details.append("%0#4x"%(i));
-                    if(len(sig) < 6):
+                    if(len(sig) < 7):
                         for param in sig:
                             par = param.strip()
                             par_def = None
@@ -43,7 +43,7 @@ for line in sct_file:
                             details.append({'type': par, 'def': par_def})
                     else:
                         details.append("param addr*")
-                    remaining = 9 - len(details)
+                    remaining = 10 - len(details)
                     for x in range(0, remaining):
                         details.append("")
 
@@ -68,11 +68,12 @@ for line in sct_file:
                     sys_calls.append(details)
                 else:
                     if(not tags.findNext(entry)):
-                        sys_calls.append([i, "", "", "", "", "", "", "", "", "", ""])
+                        sys_calls.append([i, "", "", "", "", "", "", "", "", "", "", ""])
                         break
         i += 1
     else:
-        sys_calls.append([i, "not implemented", "", "%0#4x"%(i), "", "", "", "", "", "", ""])
+        sys_calls.append([i, "not implemented", "", "%0#4x"%(i), "", "", "", "", "", "", "", ""])
         i += 1
+
 
 print simplejson.dumps({'aaData': sys_calls}, indent="   ")
