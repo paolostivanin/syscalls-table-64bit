@@ -53,17 +53,18 @@
               }
               },
           /* Signature */ { "bVisible": false, "bSearchable": false },
-          /* eax */ { iDataSort: 0, "bSearchable": true },
-          /* ebx */ { "sType": "html", "fnRender": renderReg, "bSearchable": false },
-          /* ecx */ { "sType": "html", "fnRender": renderReg, "bSearchable": false },
-          /* edx */ { "sType": "html", "fnRender": renderReg, "bSearchable": false },
-          /* esi */ { "sType": "html", "fnRender": renderReg, "bSearchable": false },
-          /* edi */ { "sType": "html", "fnRender": renderReg, "bSearchable": false },
+          /* rax */ { iDataSort: 0, "bSearchable": true },
+          /* rdi */ { "sType": "html", "fnRender": renderReg, "bSearchable": false },
+          /* rsi */ { "sType": "html", "fnRender": renderReg, "bSearchable": false },
+          /* rdx */ { "sType": "html", "fnRender": renderReg, "bSearchable": false },
+          /* r10 */ { "sType": "html", "fnRender": renderReg, "bSearchable": false },
+          /* r8  */ { "sType": "html", "fnRender": renderReg, "bSearchable": false },
+          /* r9  */ { "sType": "html", "fnRender": renderReg, "bSearchable": false },
           /* URL */ { "sType": "html", "bSearchable": false, "fnRender": function (oObj) {
                 if(oObj.aData[19] != "")
-                  return "<a target='_blank' href='http://lxr.free-electrons.com/source/"+oObj.aData[9]+"#L"+oObj.aData[10]+"'>"+oObj.aData[9]+":"+oObj.aData[10]+"</a>";
+                  return "<a target='_blank' href='http://lxr.free-electrons.com/source/"+oObj.aData[10]+"#L"+oObj.aData[11]+"'>"+oObj.aData[10]+":"+oObj.aData[11]+"</a>";
                 else
-                  return oObj.aData[9];
+                  return oObj.aData[10];
               }
             },
           /* Line */ { "bVisible": false, "bSearchable": false }
@@ -87,17 +88,18 @@
         <th rowspan="2">#</th>
         <th rowspan="2">Name</th>
         <th rowspan="2">Signature</th>
-        <th class="ui-state-default" colspan="6">Registers</th>
+        <th class="ui-state-default" colspan="7">Registers</th>
         <th rowspan="2">Definition</th>
         <th rowspan="2">URL</th>
       </tr>
       <tr>
-        <th>eax</th>
-        <th>ebx</th>
-        <th>ecx</th>
-        <th>edx</th>
-        <th>esi</th>
-        <th>edi</th>
+        <th>rax</th>
+        <th>rdi</th>
+        <th>rsi</th>
+        <th>rdx</th>
+        <th>r10</th>
+        <th>r8</th>
+        <th>r9</th>
       </tr>
       </thead>
       <tbody>
