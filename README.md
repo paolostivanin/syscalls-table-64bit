@@ -3,9 +3,7 @@ Generate JSON system call table from Linux source. Hosted at https://syscalls64.
 
 ## Generating JSON
 * Install ctags (http://ctags.sourceforge.net)
-* `easy_install python-ctags simplejson`
-* Download and extract the Linux kernel sources (https://www.kernel.org)
-* Move the extraced folder to `/usr/src/linux-$VERSION`
+* Install Python bindings for ctags: `pip3 install python-ctags3 simplejson`
 * `chmod +x prepare-files.sh && ./prepare-files.sh`
 * :coffee: or :beer:
 
@@ -15,7 +13,7 @@ Generate JSON system call table from Linux source. Hosted at https://syscalls64.
 * `www` dir checked into gh-pages branch w/ JSON file using `deploy.sh`
 
 ## Kernel version
-Generated from Linux kernel 4.18.9
+Generated from Linux kernel 5.15.1
 
 ## Contributors
 * Paolo Stivanin (https://github.com/paolostivanin)
