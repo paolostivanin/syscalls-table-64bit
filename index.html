@@ -62,7 +62,7 @@
           /* r9  */ { "sType": "html", "fnRender": renderReg, "bSearchable": false },
           /* URL */ { "sType": "html", "bSearchable": false, "fnRender": function (oObj) {
                 if(oObj.aData[19] != "")
-                  return "<a target='_blank' href='http://lxr.free-electrons.com/source/"+oObj.aData[10]+"#L"+oObj.aData[11]+"'>"+oObj.aData[10]+":"+oObj.aData[11]+"</a>";
+                  return "<a target='_blank' href='https://elixir.bootlin.com/linux/v5.15/source/"+oObj.aData[10]+"#L"+oObj.aData[11]+"'>"+oObj.aData[10]+":"+oObj.aData[11]+"</a>";
                 else
                   return oObj.aData[10];
               }
