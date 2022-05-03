@@ -26,7 +26,7 @@
       var renderReg = function (obj) {
         if(obj.aData[obj.iDataColumn].type != null)
           if(obj.aData[obj.iDataColumn].def != null && obj.aData[obj.iDataColumn].file != "")
-            return "<a target='_blank' href='https://elixir.bootlin.com/linux/v5.15/"+obj.aData[obj.iDataColumn].def.file+"#L"+obj.aData[obj.iDataColumn].def.line+"'>"+obj.aData[obj.iDataColumn].type+"</a>";
+            return "<a target='_blank' href='https://elixir.bootlin.com/linux/v5.15/source/"+obj.aData[obj.iDataColumn].def.file+"#L"+obj.aData[obj.iDataColumn].def.line+"'>"+obj.aData[obj.iDataColumn].type+"</a>";
           else
             return obj.aData[obj.iDataColumn].type;
         else
@@ -109,7 +109,7 @@
     </div>
     <div id="footer" class="site">
       <h4 class="chunk">
-        Generated from Linux kernel 4.14 using <a target="_blank" href="http://ctags.sourceforge.net/">Exuberant Ctags</a>,
+        Generated from Linux kernel 5.15 using <a target="_blank" href="http://ctags.sourceforge.net/">Exuberant Ctags</a>,
         <a target="_blank" href="http://www.python.org/">Python</a>, and
         <a target="_blank" href="http://www.datatables.net/">DataTables</a>.
         <br>
