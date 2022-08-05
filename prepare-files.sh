@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KERNEL_VERSION="5.17.5"
+KERNEL_VERSION="5.19"
 LINK="https://www.kernel.org/pub/linux/kernel/v5.x/linux-${KERNEL_VERSION}.tar.xz"
 
 TBL_64="/tmp/linux-${KERNEL_VERSION}/arch/x86/entry/syscalls/syscall_64.tbl"
