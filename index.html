@@ -26,7 +26,7 @@
       var renderReg = function (obj) {
         if(obj.aData[obj.iDataColumn].type != null)
           if(obj.aData[obj.iDataColumn].def != null && obj.aData[obj.iDataColumn].file != "")
-            return "<a target='_blank' href='https://elixir.bootlin.com/linux/v5.19/source/"+obj.aData[obj.iDataColumn].def.file+"#L"+obj.aData[obj.iDataColumn].def.line+"'>"+obj.aData[obj.iDataColumn].type+"</a>";
+            return "<a target='_blank' href='https://elixir.bootlin.com/linux/v5.17.5/source/"+obj.aData[obj.iDataColumn].def.file+"#L"+obj.aData[obj.iDataColumn].def.line+"'>"+obj.aData[obj.iDataColumn].type+"</a>";
           else
             return obj.aData[obj.iDataColumn].type;
         else
@@ -62,7 +62,7 @@
           /* r9  */ { "sType": "html", "fnRender": renderReg, "bSearchable": false },
           /* URL */ { "sType": "html", "bSearchable": false, "fnRender": function (oObj) {
                 if(oObj.aData[19] != "")
-                  return "<a target='_blank' href='https://elixir.bootlin.com/linux/v5.19/source/"+oObj.aData[10]+"#L"+oObj.aData[11]+"'>"+oObj.aData[10]+":"+oObj.aData[11]+"</a>";
+                  return "<a target='_blank' href='https://elixir.bootlin.com/linux/v5.17.5/source/"+oObj.aData[10]+"#L"+oObj.aData[11]+"'>"+oObj.aData[10]+":"+oObj.aData[11]+"</a>";
                 else
                   return oObj.aData[10];
               }
@@ -109,7 +109,7 @@
     </div>
     <div id="footer" class="site">
       <h4 class="chunk">
-        Generated from Linux kernel 5.19 using <a target="_blank" href="http://ctags.sourceforge.net/">Exuberant Ctags</a>,
+        Generated from Linux kernel 5.17.5 using <a target="_blank" href="http://ctags.sourceforge.net/">Exuberant Ctags</a>,
         <a target="_blank" href="http://www.python.org/">Python</a>, and
         <a target="_blank" href="http://www.datatables.net/">DataTables</a>.
         <br>
