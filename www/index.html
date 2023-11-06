@@ -7,7 +7,7 @@
     <style type="text/css" title="currentStyle">
       @import "css/page.css";
       @import "css/table_jui.css";
-      @import "css/jquery-ui-1.7.2.custom.css";
+      @import "css/jquery-ui-1.13.2.custom.css";
     </style>
 
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
@@ -26,7 +26,7 @@
       var renderReg = function (obj) {
         if(obj.aData[obj.iDataColumn].type != null)
           if(obj.aData[obj.iDataColumn].def != null && obj.aData[obj.iDataColumn].file != "")
-            return "<a target='_blank' href='https://elixir.bootlin.com/linux/v5.17.5/source/"+obj.aData[obj.iDataColumn].def.file+"#L"+obj.aData[obj.iDataColumn].def.line+"'>"+obj.aData[obj.iDataColumn].type+"</a>";
+            return "<a target='_blank' href='https://elixir.bootlin.com/linux/v6.6/source/"+obj.aData[obj.iDataColumn].def.file+"#L"+obj.aData[obj.iDataColumn].def.line+"'>"+obj.aData[obj.iDataColumn].type+"</a>";
           else
             return obj.aData[obj.iDataColumn].type;
         else
@@ -109,7 +109,7 @@
     </div>
     <div id="footer" class="site">
       <h4 class="chunk">
-        Generated from Linux kernel 6.1.3 using <a target="_blank" href="http://ctags.sourceforge.net/">Exuberant Ctags</a>,
+        Generated from Linux kernel 6.6 using <a target="_blank" href="http://ctags.sourceforge.net/">Exuberant Ctags</a>,
         <a target="_blank" href="http://www.python.org/">Python</a>, and
         <a target="_blank" href="http://www.datatables.net/">DataTables</a>.
         <br>
