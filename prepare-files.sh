@@ -17,7 +17,18 @@ if [ ! -f "$TBL_64" ]; then
 fi
 
 echo "[+] Generating tags..."
-ctags --fields=+nKsSt --languages=C --output-format=json -R "$WORKDIR" > "${WORKDIR}/tags.json"
+ctags \
+  --languages=C \
+  --fields=+nKsSt \
+  --fields-c=+{macrodef} \
+  --extras=+{subparser} \
+  --kinds-C=+p \
+  --output-format=json \
+  -R \
+  /tmp/linux-${KERNEL_VERSION}/arch/x86 \
+  /tmp/linux-${KERNEL_VERSION}/include \
+  /tmp/linux-${KERNEL_VERSION}/kernel \
+  > /tmp/linux-${KERNEL_VERSION}/tags.json
 
 cp "$TBL_64" syscall_64.tbl
 sed -i 's/__x64_//g; s/__x32_compat_//g' syscall_64.tbl
