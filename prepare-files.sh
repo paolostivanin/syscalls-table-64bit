@@ -36,5 +36,5 @@ sed -i 's/__x64_//g; s/__x32_compat_//g' syscall_64.tbl
 echo "[+] Running gen_syscalls.py..."
 KERNEL_VERSION=$KERNEL_VERSION ./gen_syscalls.py > www/syscalls-x86_64.js
 
-rm -rf "$WORKDIR" "${WORKDIR}.tar.xz" syscall_64.tbl
+#rm -rf "$WORKDIR" "${WORKDIR}.tar.xz" syscall_64.tbl
 echo "[+] Done!"

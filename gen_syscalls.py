@@ -58,31 +58,72 @@ def find_syscall_define(name):
 
     return None
 
-def extract_signature_from_macro(tag):
-    """Extract parameter signature from SYSCALL_DEFINE macro pattern."""
+def extract_params_from_macro(tag):
+    """Extract parameters from SYSCALL_DEFINE macro pattern."""
     pattern = tag.get("pattern", "")
 
     # Match SYSCALL_DEFINE patterns: SYSCALL_DEFINEn(name, type1, arg1, type2, arg2, ...)
-    match = re.search(r'SYSCALL_DEFINE\d*\([^,)]+,\s*(.+?)\)', pattern)
+    match = re.search(r'SYSCALL_DEFINE\d*\([^,)]+,\s*(.+?)\)(?:\s*{|$)', pattern, re.DOTALL)
     if not match:
-        return "(void)"
+        return []
 
     params_str = match.group(1).strip()
     if not params_str:
-        return "(void)"
+        return []
 
     # Parse type/name pairs
     parts = [p.strip() for p in params_str.split(',')]
     params = []
+
+    # SYSCALL_DEFINE uses: type1, name1, type2, name2, ...
     for i in range(0, len(parts), 2):
         if i + 1 < len(parts):
-            param_type = parts[i]
-            param_name = parts[i + 1]
-            params.append(f"{param_type} {param_name}")
+            param_type = parts[i].strip()
+            param_name = parts[i + 1].strip()
+            params.append({
+                'type': param_type,
+                'name': param_name
+            })
 
-    if params:
-        return f"({', '.join(params)})"
-    return "(void)"
+    return params
+
+def create_signature(params):
+    """Create a function signature string from parameters."""
+    if not params:
+        return "(void)"
+
+    param_strs = [f"{p['type']} {p['name']}" for p in params]
+    return f"({', '.join(param_strs)})"
+
+def map_params_to_registers(params, file_path, line_num):
+    """Map parameters to x86-64 syscall registers.
+
+    x86-64 syscall calling convention:
+    - syscall number: rax
+    - arg1: rdi
+    - arg2: rsi
+    - arg3: rdx
+    - arg4: r10
+    - arg5: r8
+    - arg6: r9
+    """
+    register_names = ['rdi', 'rsi', 'rdx', 'r10', 'r8', 'r9']
+    registers = []
+
+    for i, reg_name in enumerate(register_names):
+        if i < len(params):
+            param = params[i]
+            registers.append({
+                'type': f"{param['type']} {param['name']}",
+                'def': {
+                    'file': file_path,
+                    'line': line_num
+                }
+            })
+        else:
+            registers.append("")
+
+    return registers
 
 sys_calls = []
 
@@ -102,36 +143,32 @@ with open(SCT_PATH, "r", encoding="utf-8", errors="ignore") as sct_file:
             sc_def = find_syscall_define(name)
 
             if sc_def:
-                # Extract signature from macro
-                sig_clean = extract_signature_from_macro(sc_def)
-                file = sc_def.get("path", "not found")
+                # Extract parameters from macro
+                params = extract_params_from_macro(sc_def)
+                sig_clean = create_signature(params)
+                file_path = sc_def.get("path", "not found")
                 line_num = int(sc_def.get("line", 0))
+
+                # Map parameters to registers
+                register_data = map_params_to_registers(params, file_path, line_num)
             else:
                 # Try fallback to function symbol
                 entry = find_symbol(name, kind="function")
                 if entry:
                     e = entry[0]
                     sig_clean = e.get("signature", "(void)").strip()
-                    file = e.get("path", "not found")
+                    file_path = e.get("path", "not found")
                     line_num = int(e.get("line", 0))
+                    # Can't easily parse function signature, leave registers empty
+                    register_data = ["", "", "", "", "", ""]
                 else:
                     sig_clean = "not found"
-                    file = "not found"
+                    file_path = "not found"
                     line_num = ""
+                    register_data = ["", "", "", "", "", ""]
 
-            # Base syscall info
-            details = [nr, name, sig_clean, hex_id]
-
-            # Fill parameter placeholders (rdi..r9)
-            for _ in range(6):
-                details.append("")
-
-            details.append(file)
-            details.append(line_num if line_num else "")
-
-            # Ensure exactly 12 columns
-            while len(details) < 12:
-                details.append("")
+            # Build the row: [nr, name, signature, hex, rdi, rsi, rdx, r10, r8, r9, file, line]
+            details = [nr, name, sig_clean, hex_id] + register_data + [file_path, line_num if line_num else ""]
 
             sys_calls.append(details)
         # else: skip invalid/malformed lines silently

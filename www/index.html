@@ -4,13 +4,6 @@
 <meta charset="utf-8">
 <title>Linux Syscall Reference (64 bit)</title>
 
-<!-- ── Local CSS (your existing ones) ───────────────────────────────── -->
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/typography.css">
-<link rel="stylesheet" href="css/stylesheet.css">
-<link rel="stylesheet" href="css/page.css">
-<link rel="stylesheet" href="css/jquery-ui-1.14.1.custom.css">
-
 <!-- ── DataTables 2.3.4 ─────────────────────────────────────────────── -->
 <link href="https://cdn.datatables.net/v/dt/dt-2.3.4/datatables.min.css"
       rel="stylesheet"
@@ -20,9 +13,6 @@
 <!-- ── Fonts (Cufon legacy) ─────────────────────────────────────────── -->
 <script src="js/cufon-yui.js"></script>
 <script src="js/ChunkFive_400.font.js"></script>
-<script>
-  Cufon('.chunk')('.chunk a', {hover:true});
-</script>
 
 <!-- ── jQuery + DataTables JS ───────────────────────────────────────── -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -34,62 +24,357 @@
 <script src="syscalls-x86_64.js"></script>
 
 <style>
-  body { margin:0; padding:0; }
-  #syscall_table { width:100%; }
-  th, td { white-space: nowrap; }
+/* ──────────────────────────────────────────────────────────────────── */
+/* Reset & Base Styles */
+/* ──────────────────────────────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+  color: #333;
+  background: #fff;
+}
+
+body {
+  line-height: 1.6;
+}
+
+a {
+  color: #660000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ──────────────────────────────────────────────────────────────────── */
+/* Header Section */
+/* ──────────────────────────────────────────────────────────────────── */
+#header {
+  background: #222;
+  padding: 40px 0;
+  width: 100%;
+}
+
+.site {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#headline h2 {
+  font-size: 3em;
+  color: #fff;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+/* ──────────────────────────────────────────────────────────────────── */
+/* Main Content Container */
+/* ──────────────────────────────────────────────────────────────────── */
+#container2 {
+  padding: 40px 0;
+  background: #f5f5f5;
+}
+
+#container2 .site {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ──────────────────────────────────────────────────────────────────── */
+/* DataTables Wrapper Styling */
+/* ──────────────────────────────────────────────────────────────────── */
+.dataTables_wrapper {
+  font-size: 0.9em;
+}
+
+.dataTables_length,
+.dataTables_filter,
+.dataTables_info,
+.dataTables_paginate {
+  margin: 15px 0;
+}
+
+.dataTables_length label,
+.dataTables_filter label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.dataTables_length select,
+.dataTables_filter input {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95em;
+  background: #fff;
+}
+
+.dataTables_filter input {
+  min-width: 250px;
+}
+
+.dataTables_info {
+  color: #666;
+  font-size: 0.9em;
+}
+
+/* ──────────────────────────────────────────────────────────────────── */
+/* Syscall Table */
+/* ──────────────────────────────────────────────────────────────────── */
+#syscall_table {
+  width: 100% !important;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: #fff;
+  font-size: 0.85em;
+}
+
+/* Table Headers */
+#syscall_table thead th {
+  background: linear-gradient(180deg, #34495e 0%, #2c3e50 100%) !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  padding: 14px 10px !important;
+  border: 1px solid #1a252f !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 0.5px;
+}
+
+#syscall_table thead th.register-header {
+  background: linear-gradient(180deg, #5a6c7d 0%, #4a5d6e 100%) !important;
+  font-size: 0.8em !important;
+}
+
+/* Table Body */
+#syscall_table tbody tr {
+  background: #fff;
+  transition: background-color 0.2s ease;
+}
+
+#syscall_table tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+#syscall_table tbody tr:hover {
+  background: #e8f4f8 !important;
+}
+
+#syscall_table tbody td {
+  padding: 10px 12px !important;
+  border: 1px solid #ddd !important;
+  color: #333 !important;
+  vertical-align: middle;
+}
+
+/* Column-specific styling */
+#syscall_table tbody td:first-child {
+  text-align: center;
+  font-weight: 600;
+  color: #2c3e50;
+  font-family: 'Courier New', monospace;
+}
+
+#syscall_table tbody td:nth-child(2) {
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+  color: #c7254e;
+}
+
+#syscall_table tbody td:nth-child(4) {
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  color: #666;
+  font-size: 0.9em;
+}
+
+/* Register columns */
+#syscall_table tbody td:nth-child(5),
+#syscall_table tbody td:nth-child(6),
+#syscall_table tbody td:nth-child(7),
+#syscall_table tbody td:nth-child(8),
+#syscall_table tbody td:nth-child(9),
+#syscall_table tbody td:nth-child(10) {
+  text-align: center;
+  font-size: 0.85em;
+  color: #555;
+}
+
+/* Definition column */
+#syscall_table tbody td:nth-child(11) {
+  font-size: 0.8em;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Links in table */
+#syscall_table a {
+  color: #0066cc !important;
+  font-weight: normal;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+#syscall_table a:hover {
+  color: #004080 !important;
+  text-decoration: underline;
+}
+
+/* "not found" styling */
+#syscall_table td:contains("not found") {
+  color: #999 !important;
+  font-style: italic;
+}
+
+/* ──────────────────────────────────────────────────────────────────── */
+/* Footer */
+/* ──────────────────────────────────────────────────────────────────── */
+#footer {
+  background: #222;
+  padding: 30px 0;
+  margin-top: 40px;
+}
+
+#footer h4 {
+  color: #fff;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: normal;
+  line-height: 1.8em;
+}
+
+#footer a {
+  color: #66b3ff;
+  font-weight: 600;
+}
+
+#footer a:hover {
+  color: #99ccff;
+}
+
+/* ──────────────────────────────────────────────────────────────────── */
+/* Responsive Design */
+/* ──────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  #headline h2 {
+    font-size: 2em;
+  }
+
+  .site {
+    padding: 0 10px;
+  }
+
+  #container2 .site {
+    padding: 15px;
+  }
+
+  .dataTables_filter input {
+    min-width: 150px;
+  }
+}
 </style>
 
 <script>
-/* ---------- Helper for register rendering ---------- */
+/* ──────────────────────────────────────────────────────────────────── */
+/* Helper for register rendering */
+/* ──────────────────────────────────────────────────────────────────── */
 function renderReg(data) {
   if (!data || !data.type) return "-";
   if (data.def && data.def.file)
-    return `<a target="_blank" href="https://elixir.bootlin.com/linux/v6.17.4/source/${data.def.file}#L${data.def.line}">${data.type}</a>`;
+    return `<a target="_blank" href="https://elixir.bootlin.com/linux/v6.17.3/source/${data.def.file}#L${data.def.line}">${data.type}</a>`;
   return data.type;
 }
 
-/* ---------- Table initialization ---------- */
+/* ──────────────────────────────────────────────────────────────────── */
+/* Table initialization */
+/* ──────────────────────────────────────────────────────────────────── */
 $(function() {
+  Cufon('.chunk')('.chunk a', {hover:true});
+
   new DataTable('#syscall_table', {
     data: syscalls_x86_64.aaData,
-    pageLength: 20,
+    pageLength: 25,
     language: {
-      lengthMenu: 'Show _MENU_ entries',
-      search: 'Filter:',
-      info: 'Showing _START_–_END_ of _TOTAL_ syscalls'
+      lengthMenu: 'Show _MENU_ syscalls per page',
+      search: 'Search:',
+      info: 'Showing _START_ to _END_ of _TOTAL_ syscalls',
+      infoEmpty: 'No syscalls found',
+      infoFiltered: '(filtered from _MAX_ total)',
+      paginate: {
+        first: '«',
+        previous: '‹',
+        next: '›',
+        last: '»'
+      }
     },
     columns: [
-      { className: "center" }, // #
       {
+        title: '#',
+        className: "center"
+      },
+      {
+        title: 'Name',
         className: "bold",
         render: (data) => {
+          if (!data || data === 'not implemented') return data;
           const m = data.match(/^sys_(.+)/);
           if (m)
             return `<a target="_blank" href="https://man7.org/linux/man-pages/man2/${m[1]}.2.html">${data}</a>`;
           return data;
         }
       },
-      { visible: false, searchable: false }, // Signature
-      { searchable: true },                  // Hex
-      { render: renderReg, searchable: false }, // rdi
-      { render: renderReg, searchable: false }, // rsi
-      { render: renderReg, searchable: false }, // rdx
-      { render: renderReg, searchable: false }, // r10
-      { render: renderReg, searchable: false }, // r8
-      { render: renderReg, searchable: false }, // r9
       {
+        title: 'Signature',
+        visible: false,
+        searchable: false
+      },
+      {
+        title: 'rax',
+        searchable: true
+      },
+      { title: 'rdi', render: renderReg, searchable: false },
+      { title: 'rsi', render: renderReg, searchable: false },
+      { title: 'rdx', render: renderReg, searchable: false },
+      { title: 'r10', render: renderReg, searchable: false },
+      { title: 'r8', render: renderReg, searchable: false },
+      { title: 'r9', render: renderReg, searchable: false },
+      {
+        title: 'Definition',
         render: (data, type, row) => {
           const file = row[10];
           const line = row[11];
-          if (file && file !== "not found")
-            return `<a target="_blank" href="https://elixir.bootlin.com/linux/v6.17.4/source/${file}#L${line}">${file}:${line}</a>`;
+          if (file && file !== "not found" && line)
+            return `<a target="_blank" href="https://elixir.bootlin.com/linux/v6.17.3/source/${file}#L${line}">${file}:${line}</a>`;
           return file || "-";
         },
         searchable: false
       },
-      { visible: false, searchable: false } // Line (hidden)
+      {
+        title: 'Line',
+        visible: false,
+        searchable: false
+      }
     ],
     scrollX: true,
+    order: [[0, 'asc']],
     layout: {
       topStart: 'info',
       topEnd: 'search',
@@ -97,6 +382,8 @@ $(function() {
       bottomEnd: 'paging'
     }
   });
+
+  Cufon.now();
 });
 </script>
 </head>
@@ -110,36 +397,45 @@ $(function() {
     </div>
   </div>
 
-  <div id="container2" class="site">
-    <table id="syscall_table" class="display cell-border compact stripe hover order-column">
-      <thead>
-        <tr>
-          <th rowspan="2">#</th>
-          <th rowspan="2">Name</th>
-          <th rowspan="2">Signature</th>
-          <th colspan="7" class="ui-state-default">Registers</th>
-          <th rowspan="2">Definition</th>
-          <th rowspan="2">URL</th>
-        </tr>
-        <tr>
-          <th>rax</th><th>rdi</th><th>rsi</th><th>rdx</th><th>r10</th><th>r8</th><th>r9</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+  <div id="container2">
+    <div class="site">
+      <table id="syscall_table" class="display cell-border compact stripe hover order-column">
+        <thead>
+          <tr>
+            <th rowspan="2">#</th>
+            <th rowspan="2">Name</th>
+            <th rowspan="2">Signature</th>
+            <th colspan="7">Registers</th>
+            <th rowspan="2">Definition</th>
+            <th rowspan="2">Line</th>
+          </tr>
+          <tr>
+            <th class="register-header">rax</th>
+            <th class="register-header">rdi</th>
+            <th class="register-header">rsi</th>
+            <th class="register-header">rdx</th>
+            <th class="register-header">r10</th>
+            <th class="register-header">r8</th>
+            <th class="register-header">r9</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
   </div>
 
-  <div id="footer" class="site">
-    <h4 class="chunk">
-      Generated from Linux kernel 6.17.4 using
-      <a target="_blank" href="https://www.python.org/">Python</a> and
-      <a target="_blank" href="https://datatables.net/">DataTables</a>.
-      <br>
-      Project on <a href="https://github.com/paolostivanin/syscalls-table-64bit">GitHub</a> ·
-      Hosted on <a href="https://github.com">GitHub Pages</a>.
-    </h4>
+  <div id="footer">
+    <div class="site">
+      <h4 class="chunk">
+        Generated from Linux kernel 6.17.3 using
+        <a target="_blank" href="https://www.python.org/">Python</a>,
+        <a target="_blank" href="https://ctags.io/">Universal Ctags</a>, and
+        <a target="_blank" href="https://datatables.net/">DataTables</a>
+        <br>
+        Project on <a href="https://github.com/paolostivanin/syscalls-table-64bit">GitHub</a> ·
+        Hosted on <a href="https://pages.github.com/">GitHub Pages</a>
+      </h4>
+    </div>
   </div>
-
-  <script>Cufon.now();</script>
 </body>
 </html>
