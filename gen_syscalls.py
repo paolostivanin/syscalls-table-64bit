@@ -26,11 +26,31 @@ def find_symbol(name, kind=None):
     return entries
 
 def find_syscall_define(name):
-    pattern = re.compile(rf"SYSCALL_DEFINE\d+\({re.escape(name)}")
-    for t in tags:
-        pat = t.get("pattern")
-        if pat and pattern.search(pat):
-            return t
+    base = name.replace("sys_", "")
+    patterns = [
+        rf"SYSCALL_DEFINE\d+\({re.escape(base)}",
+        rf"COMPAT_SYSCALL_DEFINE\d+\({re.escape(base)}",
+        rf"SYSCALL_DEFINE_COMPAT\d+\({re.escape(base)}",
+        rf"COND_SYSCALL\({re.escape(base)}",
+    ]
+    for pat in patterns:
+        pattern = re.compile(pat)
+        found_x86 = None
+        found_generic = None
+
+        for t in tags:
+            path = t.get("path", "")
+            tag_pat = t.get("pattern", "")
+            if not tag_pat or not pattern.search(tag_pat):
+                continue
+            # Only keep x86 or generic matches
+            if "arch/x86/" in path:
+                found_x86 = t
+                break
+            if "/arch/" not in path and "kernel/" in path and found_generic is None:
+                found_generic = t
+        if found_x86 or found_generic:
+            return found_x86 or found_generic
     return None
 
 sys_calls = []
