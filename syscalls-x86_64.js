@@ -521,7 +521,7 @@ var syscalls_x86_64 = {
       [
          37,
          "sys_alarm",
-         "(unsigned int seconds)",
+         "(void)",
          "0x25",
          "",
          "",
@@ -787,7 +787,7 @@ var syscalls_x86_64 = {
       [
          56,
          "sys_clone",
-         "(struct clone_args __user * uargs, size_t size)",
+         "(void)",
          "0x38",
          "",
          "",
@@ -843,7 +843,7 @@ var syscalls_x86_64 = {
       [
          60,
          "sys_exit",
-         "(int error_code)",
+         "(void)",
          "0x3c",
          "",
          "",
@@ -871,7 +871,7 @@ var syscalls_x86_64 = {
       [
          62,
          "sys_kill",
-         "(pid_t pid, int sig)",
+         "(void)",
          "0x3e",
          "",
          "",
@@ -885,7 +885,7 @@ var syscalls_x86_64 = {
       [
          63,
          "sys_newuname",
-         "(struct new_utsname __user * name)",
+         "(void)",
          "0x3f",
          "",
          "",
@@ -1291,7 +1291,7 @@ var syscalls_x86_64 = {
       [
          92,
          "sys_chown",
-         "(const char __user * filename, old_uid_t user, old_gid_t group)",
+         "(void)",
          "0x5c",
          "",
          "",
@@ -1305,7 +1305,7 @@ var syscalls_x86_64 = {
       [
          93,
          "sys_fchown",
-         "(unsigned int fd, old_uid_t user, old_gid_t group)",
+         "(void)",
          "0x5d",
          "",
          "",
@@ -1319,7 +1319,7 @@ var syscalls_x86_64 = {
       [
          94,
          "sys_lchown",
-         "(const char __user * filename, old_uid_t user, old_gid_t group)",
+         "(void)",
          "0x5e",
          "",
          "",
@@ -1333,7 +1333,7 @@ var syscalls_x86_64 = {
       [
          95,
          "sys_umask",
-         "(int mask)",
+         "(void)",
          "0x5f",
          "",
          "",
@@ -1375,7 +1375,7 @@ var syscalls_x86_64 = {
       [
          98,
          "sys_getrusage",
-         "(int who, struct compat_rusage __user * ru)",
+         "(void)",
          "0x62",
          "",
          "",
@@ -1389,7 +1389,7 @@ var syscalls_x86_64 = {
       [
          99,
          "sys_sysinfo",
-         "(struct compat_sysinfo __user * info)",
+         "(void)",
          "0x63",
          "",
          "",
@@ -1403,7 +1403,7 @@ var syscalls_x86_64 = {
       [
          100,
          "sys_times",
-         "(struct compat_tms __user * tbuf)",
+         "(void)",
          "0x64",
          "",
          "",
@@ -1445,7 +1445,7 @@ var syscalls_x86_64 = {
       [
          103,
          "sys_syslog",
-         "(int type, char __user * buf, int len)",
+         "(void)",
          "0x67",
          "",
          "",
@@ -1473,7 +1473,7 @@ var syscalls_x86_64 = {
       [
          105,
          "sys_setuid",
-         "(uid_t uid)",
+         "(void)",
          "0x69",
          "",
          "",
@@ -1487,7 +1487,7 @@ var syscalls_x86_64 = {
       [
          106,
          "sys_setgid",
-         "(gid_t gid)",
+         "(void)",
          "0x6a",
          "",
          "",
@@ -1529,7 +1529,7 @@ var syscalls_x86_64 = {
       [
          109,
          "sys_setpgid",
-         "(pid_t pid, pid_t pgid)",
+         "(void)",
          "0x6d",
          "",
          "",
@@ -1585,7 +1585,7 @@ var syscalls_x86_64 = {
       [
          113,
          "sys_setreuid",
-         "(uid_t ruid, uid_t euid)",
+         "(void)",
          "0x71",
          "",
          "",
@@ -1599,7 +1599,7 @@ var syscalls_x86_64 = {
       [
          114,
          "sys_setregid",
-         "(gid_t rgid, gid_t egid)",
+         "(void)",
          "0x72",
          "",
          "",
@@ -1613,7 +1613,7 @@ var syscalls_x86_64 = {
       [
          115,
          "sys_getgroups",
-         "(int gidsetsize, gid_t __user * grouplist)",
+         "(void)",
          "0x73",
          "",
          "",
@@ -1627,7 +1627,7 @@ var syscalls_x86_64 = {
       [
          116,
          "sys_setgroups",
-         "(int gidsetsize, gid_t __user * grouplist)",
+         "(void)",
          "0x74",
          "",
          "",
@@ -1641,7 +1641,7 @@ var syscalls_x86_64 = {
       [
          117,
          "sys_setresuid",
-         "(uid_t ruid, uid_t euid, uid_t suid)",
+         "(void)",
          "0x75",
          "",
          "",
@@ -1655,7 +1655,7 @@ var syscalls_x86_64 = {
       [
          118,
          "sys_getresuid",
-         "(uid_t __user * ruidp, uid_t __user * euidp, uid_t __user * suidp)",
+         "(void)",
          "0x76",
          "",
          "",
@@ -1669,7 +1669,7 @@ var syscalls_x86_64 = {
       [
          119,
          "sys_setresgid",
-         "(gid_t rgid, gid_t egid, gid_t sgid)",
+         "(void)",
          "0x77",
          "",
          "",
@@ -1683,7 +1683,7 @@ var syscalls_x86_64 = {
       [
          120,
          "sys_getresgid",
-         "(gid_t __user * rgidp, gid_t __user * egidp, gid_t __user * sgidp)",
+         "(void)",
          "0x78",
          "",
          "",
@@ -1697,7 +1697,7 @@ var syscalls_x86_64 = {
       [
          121,
          "sys_getpgid",
-         "(pid_t pid)",
+         "(void)",
          "0x79",
          "",
          "",
@@ -1711,7 +1711,7 @@ var syscalls_x86_64 = {
       [
          122,
          "sys_setfsuid",
-         "(uid_t uid)",
+         "(void)",
          "0x7a",
          "",
          "",
@@ -1725,7 +1725,7 @@ var syscalls_x86_64 = {
       [
          123,
          "sys_setfsgid",
-         "(gid_t gid)",
+         "(void)",
          "0x7b",
          "",
          "",
@@ -1739,7 +1739,7 @@ var syscalls_x86_64 = {
       [
          124,
          "sys_getsid",
-         "(pid_t pid)",
+         "(void)",
          "0x7c",
          "",
          "",
@@ -1753,7 +1753,7 @@ var syscalls_x86_64 = {
       [
          125,
          "sys_capget",
-         "(cap_user_header_t header, cap_user_data_t dataptr)",
+         "(void)",
          "0x7d",
          "",
          "",
@@ -1767,7 +1767,7 @@ var syscalls_x86_64 = {
       [
          126,
          "sys_capset",
-         "(cap_user_header_t header, const cap_user_data_t data)",
+         "(void)",
          "0x7e",
          "",
          "",
@@ -1877,23 +1877,9 @@ var syscalls_x86_64 = {
          ""
       ],
       [
-         "",
-         "not implemented",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         ""
-      ],
-      [
          135,
          "sys_personality",
-         "(unsigned int personality)",
+         "(void)",
          "0x87",
          "",
          "",
@@ -1963,7 +1949,7 @@ var syscalls_x86_64 = {
       [
          140,
          "sys_getpriority",
-         "(int which, int who)",
+         "(void)",
          "0x8c",
          "",
          "",
@@ -1977,7 +1963,7 @@ var syscalls_x86_64 = {
       [
          141,
          "sys_setpriority",
-         "(int which, int who, int niceval)",
+         "(void)",
          "0x8d",
          "",
          "",
@@ -1991,7 +1977,7 @@ var syscalls_x86_64 = {
       [
          142,
          "sys_sched_setparam",
-         "(pid_t pid, struct sched_param __user * param)",
+         "(void)",
          "0x8e",
          "",
          "",
@@ -2005,7 +1991,7 @@ var syscalls_x86_64 = {
       [
          143,
          "sys_sched_getparam",
-         "(pid_t pid, struct sched_param __user * param)",
+         "(void)",
          "0x8f",
          "",
          "",
@@ -2019,7 +2005,7 @@ var syscalls_x86_64 = {
       [
          144,
          "sys_sched_setscheduler",
-         "(pid_t pid, int policy, struct sched_param __user * param)",
+         "(void)",
          "0x90",
          "",
          "",
@@ -2033,7 +2019,7 @@ var syscalls_x86_64 = {
       [
          145,
          "sys_sched_getscheduler",
-         "(pid_t pid)",
+         "(void)",
          "0x91",
          "",
          "",
@@ -2047,7 +2033,7 @@ var syscalls_x86_64 = {
       [
          146,
          "sys_sched_get_priority_max",
-         "(int policy)",
+         "(void)",
          "0x92",
          "",
          "",
@@ -2061,7 +2047,7 @@ var syscalls_x86_64 = {
       [
          147,
          "sys_sched_get_priority_min",
-         "(int policy)",
+         "(void)",
          "0x93",
          "",
          "",
@@ -2215,7 +2201,7 @@ var syscalls_x86_64 = {
       [
          158,
          "sys_arch_prctl",
-         "(int option, unsigned long arg2)",
+         "(void)",
          "0x9e",
          "",
          "",
@@ -2229,7 +2215,7 @@ var syscalls_x86_64 = {
       [
          159,
          "sys_adjtimex",
-         "(struct __kernel_timex __user * txc_p)",
+         "(void)",
          "0x9f",
          "",
          "",
@@ -2285,7 +2271,7 @@ var syscalls_x86_64 = {
       [
          163,
          "sys_acct",
-         "(const char __user * name)",
+         "(void)",
          "0xa3",
          "",
          "",
@@ -2383,7 +2369,7 @@ var syscalls_x86_64 = {
       [
          170,
          "sys_sethostname",
-         "(char __user * name, int len)",
+         "(void)",
          "0xaa",
          "",
          "",
@@ -2397,7 +2383,7 @@ var syscalls_x86_64 = {
       [
          171,
          "sys_setdomainname",
-         "(char __user * name, int len)",
+         "(void)",
          "0xab",
          "",
          "",
@@ -2411,7 +2397,7 @@ var syscalls_x86_64 = {
       [
          172,
          "sys_iopl",
-         "(unsigned int level)",
+         "(void)",
          "0xac",
          "",
          "",
@@ -2425,7 +2411,7 @@ var syscalls_x86_64 = {
       [
          173,
          "sys_ioperm",
-         "(unsigned long from, unsigned long num, int turn_on)",
+         "(void)",
          "0xad",
          "",
          "",
@@ -2435,20 +2421,6 @@ var syscalls_x86_64 = {
          "",
          "/tmp/linux-6.17.3/arch/x86/kernel/ioport.c",
          158
-      ],
-      [
-         "",
-         "not implemented",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         ""
       ],
       [
          175,
@@ -2479,34 +2451,6 @@ var syscalls_x86_64 = {
          776
       ],
       [
-         "",
-         "not implemented",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         ""
-      ],
-      [
-         "",
-         "not implemented",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         ""
-      ],
-      [
          179,
          "sys_quotactl",
          "(void)",
@@ -2519,90 +2463,6 @@ var syscalls_x86_64 = {
          "",
          "/tmp/linux-6.17.3/kernel/sys_ni.c",
          67
-      ],
-      [
-         "",
-         "not implemented",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         ""
-      ],
-      [
-         "",
-         "not implemented",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         ""
-      ],
-      [
-         "",
-         "not implemented",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         ""
-      ],
-      [
-         "",
-         "not implemented",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         ""
-      ],
-      [
-         "",
-         "not implemented",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         ""
-      ],
-      [
-         "",
-         "not implemented",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         ""
       ],
       [
          186,
@@ -2803,7 +2663,7 @@ var syscalls_x86_64 = {
       [
          200,
          "sys_tkill",
-         "(pid_t pid, int sig)",
+         "(void)",
          "0xc8",
          "",
          "",
@@ -2817,7 +2677,7 @@ var syscalls_x86_64 = {
       [
          201,
          "sys_time",
-         "(struct compat_tms __user * tbuf)",
+         "(void)",
          "0xc9",
          "",
          "",
@@ -2869,20 +2729,6 @@ var syscalls_x86_64 = {
          "",
          "/tmp/linux-6.17.3/kernel/compat.c",
          144
-      ],
-      [
-         "",
-         "not implemented",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         ""
       ],
       [
          206,
@@ -2955,34 +2801,6 @@ var syscalls_x86_64 = {
          44
       ],
       [
-         "",
-         "not implemented",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         ""
-      ],
-      [
-         "",
-         "not implemented",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         ""
-      ],
-      [
          213,
          "sys_epoll_create",
          "(void)",
@@ -2995,34 +2813,6 @@ var syscalls_x86_64 = {
          "",
          "/tmp/linux-6.17.3/kernel/sys_ni.c",
          315
-      ],
-      [
-         "",
-         "not implemented",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         ""
-      ],
-      [
-         "",
-         "not implemented",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         ""
       ],
       [
          216,
@@ -3055,7 +2845,7 @@ var syscalls_x86_64 = {
       [
          218,
          "sys_set_tid_address",
-         "(int __user * tidptr)",
+         "(void)",
          "0xda",
          "",
          "",
@@ -3153,7 +2943,7 @@ var syscalls_x86_64 = {
       [
          225,
          "sys_timer_getoverrun",
-         "(timer_t timer_id)",
+         "(void)",
          "0xe1",
          "",
          "",
@@ -3167,7 +2957,7 @@ var syscalls_x86_64 = {
       [
          226,
          "sys_timer_delete",
-         "(timer_t timer_id)",
+         "(void)",
          "0xe2",
          "",
          "",
@@ -3237,7 +3027,7 @@ var syscalls_x86_64 = {
       [
          231,
          "sys_exit_group",
-         "(int error_code)",
+         "(void)",
          "0xe7",
          "",
          "",
@@ -3279,7 +3069,7 @@ var syscalls_x86_64 = {
       [
          234,
          "sys_tgkill",
-         "(pid_t tgid, pid_t pid, int sig)",
+         "(void)",
          "0xea",
          "",
          "",
@@ -3303,20 +3093,6 @@ var syscalls_x86_64 = {
          "",
          "/tmp/linux-6.17.3/kernel/sys_ni.c",
          346
-      ],
-      [
-         "",
-         "not implemented",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         ""
       ],
       [
          237,
@@ -3811,7 +3587,7 @@ var syscalls_x86_64 = {
       [
          272,
          "sys_unshare",
-         "(unsigned long unshare_flags)",
+         "(void)",
          "0x110",
          "",
          "",
@@ -4315,7 +4091,7 @@ var syscalls_x86_64 = {
       [
          308,
          "sys_setns",
-         "(int fd, int flags)",
+         "(void)",
          "0x134",
          "",
          "",
@@ -4385,7 +4161,7 @@ var syscalls_x86_64 = {
       [
          313,
          "sys_finit_module",
-         "(int fd, const char __user * uargs, int flags)",
+         "(void)",
          "0x139",
          "",
          "",
@@ -4497,7 +4273,7 @@ var syscalls_x86_64 = {
       [
          321,
          "sys_bpf",
-         "(int cmd, union bpf_attr __user * uattr, unsigned int size)",
+         "(void)",
          "0x141",
          "",
          "",
@@ -4539,7 +4315,7 @@ var syscalls_x86_64 = {
       [
          324,
          "sys_membarrier",
-         "(int cmd, unsigned int flags, int cpu_id)",
+         "(void)",
          "0x144",
          "",
          "",
@@ -4847,7 +4623,7 @@ var syscalls_x86_64 = {
       [
          434,
          "sys_pidfd_open",
-         "(pid_t pid, unsigned int flags)",
+         "(void)",
          "0x1b2",
          "",
          "",
@@ -4861,7 +4637,7 @@ var syscalls_x86_64 = {
       [
          435,
          "sys_clone3",
-         "(struct clone_args __user * uargs, size_t size)",
+         "(void)",
          "0x1b3",
          "",
          "",
@@ -5113,7 +4889,7 @@ var syscalls_x86_64 = {
       [
          453,
          "sys_map_shadow_stack",
-         "(unsigned long addr, unsigned long size, unsigned int flags)",
+         "(void)",
          "0x1c5",
          "",
          "",
