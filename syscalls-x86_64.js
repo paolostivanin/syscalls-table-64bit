@@ -4,7 +4,15 @@ var syscalls_x86_64 = {
          0,
          "sys_read",
          "(int fd,void * buf,size_t len)",
-         "0x0"
+         "0x0",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          1,
@@ -122,19 +130,43 @@ var syscalls_x86_64 = {
          9,
          "sys_mmap",
          "(unsigned long addr,unsigned long len,unsigned long prot,unsigned long flags,unsigned long fd,unsigned long offset)",
-         "0x9"
+         "0x9",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/arch/x86/kernel/sys_x86_64.c",
+         82
       ],
       [
          10,
          "sys_mprotect",
          "(void * ptr,size_t size,unsigned long prot)",
-         "0xa"
+         "0xa",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          11,
          "sys_munmap",
          "(void * ptr,size_t size)",
-         "0xb"
+         "0xb",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          12,
@@ -182,7 +214,15 @@ var syscalls_x86_64 = {
          15,
          "sys_rt_sigreturn",
          "(struct pt_regs * regs)",
-         "0xf"
+         "0xf",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/arch/x86/kernel/signal_64.c",
+         246
       ],
       [
          16,
@@ -314,7 +354,15 @@ var syscalls_x86_64 = {
          25,
          "sys_mremap",
          "(void * addr,size_t old_len,size_t new_len,unsigned long flags,void * new_addr)",
-         "0x19"
+         "0x19",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          26,
@@ -348,7 +396,15 @@ var syscalls_x86_64 = {
          28,
          "sys_madvise",
          "(void * start,size_t len,int types)",
-         "0x1c"
+         "0x1c",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          29,
@@ -732,7 +788,15 @@ var syscalls_x86_64 = {
          56,
          "sys_clone",
          "(unsigned long clone_flags,unsigned long newsp,int * parent_tidptr,unsigned long tls,int * child_tidptr)",
-         "0x38"
+         "0x38",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/kernel/fork.c",
+         2888
       ],
       [
          57,
@@ -780,7 +844,15 @@ var syscalls_x86_64 = {
          60,
          "sys_exit",
          "(struct syscall_exit_args * args)",
-         "0x3c"
+         "0x3c",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/kernel/exit.c",
+         1067
       ],
       [
          61,
@@ -1276,7 +1348,15 @@ var syscalls_x86_64 = {
          96,
          "sys_gettimeofday",
          "(struct timeval * tv,struct timezone * tz)",
-         "0x60"
+         "0x60",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/kernel/time/time.c",
+         224
       ],
       [
          97,
@@ -1338,7 +1418,15 @@ var syscalls_x86_64 = {
          101,
          "sys_ptrace",
          "(long request,pid_t pid,unsigned long addr,unsigned long data)",
-         "0x65"
+         "0x65",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/kernel/ptrace.c",
+         1526
       ],
       [
          102,
@@ -1722,7 +1810,15 @@ var syscalls_x86_64 = {
          129,
          "sys_rt_sigqueueinfo",
          "(pid_t tgid,int sig,siginfo_t * uinfo)",
-         "0x81"
+         "0x81",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/kernel/signal.c",
+         4222
       ],
       [
          130,
@@ -2092,7 +2188,15 @@ var syscalls_x86_64 = {
          156,
          "sys_ni_syscall",
          "(void)",
-         "0x9c"
+         "0x9c",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/arch/x86/kernel/process.c",
+         1086
       ],
       [
          157,
@@ -2210,7 +2314,15 @@ var syscalls_x86_64 = {
          165,
          "sys_mount",
          "(const char * dev_name,const char * dir_name,const char * type,unsigned long flags,const void * data)",
-         "0xa5"
+         "0xa5",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          166,
@@ -2706,25 +2818,57 @@ var syscalls_x86_64 = {
          201,
          "sys_time",
          "(time_t * t)",
-         "0xc9"
+         "0xc9",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1083
       ],
       [
          202,
          "sys_futex",
          "(void * addr1,int op,int val1,struct timespec * timeout,void * addr2,int val3)",
-         "0xca"
+         "0xca",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/kernel/futex/syscalls.c",
+         414
       ],
       [
          203,
          "sys_sched_setaffinity",
          "(pid_t pid,unsigned int len,unsigned long * m)",
-         "0xcb"
+         "0xcb",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/kernel/compat.c",
+         124
       ],
       [
          204,
          "sys_sched_getaffinity",
          "(pid_t pid,unsigned int len,unsigned long * m)",
-         "0xcc"
+         "0xcc",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/kernel/compat.c",
+         144
       ],
       [
          "",
@@ -3052,7 +3196,15 @@ var syscalls_x86_64 = {
          228,
          "sys_clock_gettime",
          "(clockid_t id,struct timespec * ts)",
-         "0xe4"
+         "0xe4",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/kernel/time/posix-stubs.c",
+         60
       ],
       [
          229,
@@ -3450,7 +3602,15 @@ var syscalls_x86_64 = {
          257,
          "sys_openat",
          "(int dfd,const char * path,struct open_how * how)",
-         "0x101"
+         "0x101",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          258,
@@ -3904,7 +4064,15 @@ var syscalls_x86_64 = {
          290,
          "sys_eventfd2",
          "(unsigned int count,int flags)",
-         "0x122"
+         "0x122",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          291,
@@ -3994,13 +4162,29 @@ var syscalls_x86_64 = {
          297,
          "sys_rt_tgsigqueueinfo",
          "(pid_t tgid,pid_t tid,int sig,siginfo_t * uinfo)",
-         "0x129"
+         "0x129",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/kernel/signal.c",
+         4262
       ],
       [
          298,
          "sys_perf_event_open",
          "(struct perf_event_attr * attr,pid_t pid,struct perf_cpu cpu,int group_fd,unsigned long flags)",
-         "0x12a"
+         "0x12a",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/kernel/events/core.c",
+         13360
       ],
       [
          299,
@@ -4146,7 +4330,15 @@ var syscalls_x86_64 = {
          309,
          "sys_getcpu",
          "(unsigned * cpu,unsigned * node)",
-         "0x135"
+         "0x135",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         2816
       ],
       [
          310,
@@ -4180,7 +4372,15 @@ var syscalls_x86_64 = {
          312,
          "sys_kcmp",
          "(int pid1,int pid2,int type,unsigned long fd1,unsigned long fd2)",
-         "0x138"
+         "0x138",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/kernel/kcmp.c",
+         135
       ],
       [
          313,
@@ -4228,7 +4428,15 @@ var syscalls_x86_64 = {
          316,
          "sys_renameat2",
          "(int olddirfd,const char * oldpath,int newdirfd,const char * newpath,unsigned int flags)",
-         "0x13c"
+         "0x13c",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          317,
@@ -4262,7 +4470,15 @@ var syscalls_x86_64 = {
          319,
          "sys_memfd_create",
          "(const char * name,unsigned int flags)",
-         "0x13f"
+         "0x13f",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          320,
@@ -4282,25 +4498,57 @@ var syscalls_x86_64 = {
          321,
          "sys_bpf",
          "(enum bpf_cmd cmd,union bpf_attr * attr,unsigned int size)",
-         "0x141"
+         "0x141",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/kernel/bpf/syscall.c",
+         6137
       ],
       [
          322,
          "sys_execveat",
          "(int dirfd,const char * pathname,char * const argv[],char * const envp[],int flags)",
-         "0x142"
+         "0x142",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          323,
          "sys_userfaultfd",
          "(int flags)",
-         "0x143"
+         "0x143",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          324,
          "sys_membarrier",
          "(int cmd,int flags,int cpu_id)",
-         "0x144"
+         "0x144",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/kernel/sched/membarrier.c",
+         627
       ],
       [
          325,
@@ -4376,19 +4624,43 @@ var syscalls_x86_64 = {
          330,
          "sys_pkey_alloc",
          "(unsigned long flags,unsigned long init_val)",
-         "0x14a"
+         "0x14a",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          331,
          "sys_pkey_free",
          "(unsigned long pkey)",
-         "0x14b"
+         "0x14b",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          332,
          "sys_statx",
          "(int dirfd,const char * pathname,int flags,unsigned int mask,void * stx)",
-         "0x14c"
+         "0x14c",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          333,
@@ -4408,7 +4680,15 @@ var syscalls_x86_64 = {
          334,
          "sys_rseq",
          "(struct rseq_abi * rseq_abi,uint32_t rseq_len,int flags,uint32_t sig)",
-         "0x14e"
+         "0x14e",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/kernel/rseq.c",
+         474
       ],
       [
          335,
@@ -4428,7 +4708,15 @@ var syscalls_x86_64 = {
          424,
          "sys_pidfd_send_signal",
          "(int pidfd,int sig,siginfo_t * info,unsigned int flags)",
-         "0x1a8"
+         "0x1a8",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "/tmp/linux-6.17.3/kernel/signal.c",
+         4065
       ],
       [
          425,
@@ -4490,31 +4778,71 @@ var syscalls_x86_64 = {
          429,
          "sys_move_mount",
          "(int from_dfd,const char * from_path,int to_dfd,const char * to_path,unsigned int ms_flags)",
-         "0x1ad"
+         "0x1ad",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          430,
          "sys_fsopen",
          "(const char * fsname,unsigned flags)",
-         "0x1ae"
+         "0x1ae",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          431,
          "sys_fsconfig",
          "(int fs_fd,unsigned cmd,const char * key,const void * val,int aux)",
-         "0x1af"
+         "0x1af",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          432,
          "sys_fsmount",
          "(int fs_fd,unsigned flags,unsigned ms_flags)",
-         "0x1b0"
+         "0x1b0",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          433,
          "sys_fspick",
          "(int dfd,const char * path,unsigned flags)",
-         "0x1b1"
+         "0x1b1",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          434,
@@ -4548,13 +4876,29 @@ var syscalls_x86_64 = {
          436,
          "sys_close_range",
          "(unsigned int fd,unsigned int max_fd,unsigned int flags)",
-         "0x1b4"
+         "0x1b4",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          437,
          "sys_openat2",
          "(int dfd,const char * path,struct open_how * how)",
-         "0x1b5"
+         "0x1b5",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          438,
@@ -4588,19 +4932,43 @@ var syscalls_x86_64 = {
          440,
          "sys_process_madvise",
          "(int pidfd,const struct iovec * iovec,size_t n,int advice,unsigned int flags)",
-         "0x1b8"
+         "0x1b8",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          441,
          "sys_epoll_pwait2",
          "(int fd,struct epoll_event * events,int maxevents,const struct __kernel_timespec * timeout,const sigset_t * sigset,size_t sigsetsize)",
-         "0x1b9"
+         "0x1b9",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          442,
          "sys_mount_setattr",
          "(int dfd,const char * path,unsigned int flags,struct mount_attr * attr,size_t size)",
-         "0x1ba"
+         "0x1ba",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          443,
@@ -4732,7 +5100,15 @@ var syscalls_x86_64 = {
          452,
          "sys_fchmodat2",
          "(int dfd,const char * filename,mode_t mode,int flags)",
-         "0x1c4"
+         "0x1c4",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          453,
@@ -4794,13 +5170,29 @@ var syscalls_x86_64 = {
          457,
          "sys_statmount",
          "(__u64 mnt_id,__u64 mnt_ns_id,__u64 mask,unsigned int flags)",
-         "0x1c9"
+         "0x1c9",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          458,
          "sys_listmount",
          "(__u64 mnt_id,__u64 last_mnt_id,__u64 mnt_ns_id,__u64 list[],size_t num,unsigned int flags)",
-         "0x1ca"
+         "0x1ca",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          459,
@@ -4848,7 +5240,15 @@ var syscalls_x86_64 = {
          462,
          "sys_mseal",
          "(void * start,size_t len)",
-         "0x1ce"
+         "0x1ce",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          463,
@@ -4910,7 +5310,15 @@ var syscalls_x86_64 = {
          467,
          "sys_open_tree_attr",
          "(int dfd,const char * path,unsigned int flags,struct mount_attr * attr,size_t size)",
-         "0x1d3"
+         "0x1d3",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          468,
