@@ -1,120 +1,145 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" >
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Linux Syscall Reference (64 bit)</title>
 
-    <title>Linux Syscall Reference</title>
-    <style type="text/css" title="currentStyle">
-      @import "css/page.css";
-      @import "css/table_jui.css";
-      @import "css/jquery-ui-1.14.1.custom.css";
-    </style>
+<!-- ── Local CSS (your existing ones) ───────────────────────────────── -->
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/typography.css">
+<link rel="stylesheet" href="css/stylesheet.css">
+<link rel="stylesheet" href="css/page.css">
+<link rel="stylesheet" href="css/jquery-ui-1.14.1.custom.css">
 
-    <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="css/typography.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="css/stylesheet.css" type="text/css" media="screen" />
+<!-- ── DataTables 2.3.4 ─────────────────────────────────────────────── -->
+<link href="https://cdn.datatables.net/v/dt/dt-2.3.4/datatables.min.css"
+      rel="stylesheet"
+      integrity="sha384-pmGS6IIcXhAVIhcnh9X/mxffzZNHbuxboycGuQQoP3pAbb0SwlSUUHn2v22bOenI"
+      crossorigin="anonymous">
 
-    <script src="js/cufon-yui.js" type="text/javascript"></script>
-    <script src="js/ChunkFive_400.font.js" type="text/javascript"></script>
-    <script type="text/javascript">
-      Cufon('.chunk')('.chunk a', {hover:true});
-    </script>
+<!-- ── Fonts (Cufon legacy) ─────────────────────────────────────────── -->
+<script src="js/cufon-yui.js"></script>
+<script src="js/ChunkFive_400.font.js"></script>
+<script>
+  Cufon('.chunk')('.chunk a', {hover:true});
+</script>
 
-    <script type="text/javascript" language="javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
-    <script type="text/javascript" charset="utf-8">
-      var renderReg = function (obj) {
-        if(obj.aData[obj.iDataColumn].type != null)
-          if(obj.aData[obj.iDataColumn].def != null && obj.aData[obj.iDataColumn].file != "")
-            return "<a target='_blank' href='https://elixir.bootlin.com/linux/v6.17.3/source/"+obj.aData[obj.iDataColumn].def.file+"#L"+obj.aData[obj.iDataColumn].def.line+"'>"+obj.aData[obj.iDataColumn].type+"</a>";
-          else
-            return obj.aData[obj.iDataColumn].type;
-        else
-          return "-";
-      };
-      $(document).ready(function() {
-        $('#syscall_table').dataTable( {
-          "sDom": '<"H"rlf>t<"F"ip>',
-          "iDisplayLength": 20,
-          "oLanguage": {
-            "sLengthMenu": 'Show <select><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="-1">All</option></select> entries'
-          },
-          "bJQueryUI": true,
-          "bProcessing": true,
-          "sPaginationType": "full_numbers",
-          "sAjaxSource": './syscalls-x86_64.js',
-          "aoColumns": [
-          /* Number */ { "sClass": "center"},
-          /* Name */ { "sClass": "bold", "sType": "html", "fnRender": function (obj) {
-              if(obj.aData[1].match("sys_(.+)"))
-                return "<a target='_blank' href='http://www.kernel.org/doc/man-pages/online/pages/man2/"+obj.aData[1].match("sys_(.+)")[1]+".2.html'>"+obj.aData[1]+"</a>";
-              else
-                return obj.aData[1]
-              }
-              },
-          /* Signature */ { "bVisible": false, "bSearchable": false },
-          /* rax */ { iDataSort: 0, "bSearchable": true },
-          /* rdi */ { "sType": "html", "fnRender": renderReg, "bSearchable": false },
-          /* rsi */ { "sType": "html", "fnRender": renderReg, "bSearchable": false },
-          /* rdx */ { "sType": "html", "fnRender": renderReg, "bSearchable": false },
-          /* r10 */ { "sType": "html", "fnRender": renderReg, "bSearchable": false },
-          /* r8  */ { "sType": "html", "fnRender": renderReg, "bSearchable": false },
-          /* r9  */ { "sType": "html", "fnRender": renderReg, "bSearchable": false },
-          /* URL */ { "sType": "html", "bSearchable": false, "fnRender": function (oObj) {
-                if(oObj.aData[19] != "")
-                  return "<a target='_blank' href='https://elixir.bootlin.com/linux/v6.17.3/source/"+oObj.aData[10]+"#L"+oObj.aData[11]+"'>"+oObj.aData[10]+":"+oObj.aData[11]+"</a>";
-                else
-                  return oObj.aData[10];
-              }
-            },
-          /* Line */ { "bVisible": false, "bSearchable": false }
-          ]
-        } );
-      } );
-    </script>
-  </head>
-  <body>
-    <div id="header">
-      <div class="site">
+<!-- ── jQuery + DataTables JS ───────────────────────────────────────── -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/v/dt/dt-2.3.4/datatables.min.js"
+        integrity="sha384-X2pTSfom8FUa+vGQ+DgTCSyBZYkC1RliOduHa0X96D060s7Q//fnOh3LcazRNHyo"
+        crossorigin="anonymous"></script>
+
+<!-- ── Syscall JSON file ────────────────────────────────────────────── -->
+<script src="syscalls-x86_64.js"></script>
+
+<style>
+  body { margin:0; padding:0; }
+  #syscall_table { width:100%; }
+  th, td { white-space: nowrap; }
+</style>
+
+<script>
+/* ---------- Helper for register rendering ---------- */
+function renderReg(data) {
+  if (!data || !data.type) return "-";
+  if (data.def && data.def.file)
+    return `<a target="_blank" href="https://elixir.bootlin.com/linux/v6.17.4/source/${data.def.file}#L${data.def.line}">${data.type}</a>`;
+  return data.type;
+}
+
+/* ---------- Table initialization ---------- */
+$(function() {
+  new DataTable('#syscall_table', {
+    data: syscalls_x86_64.aaData,
+    pageLength: 20,
+    language: {
+      lengthMenu: 'Show _MENU_ entries',
+      search: 'Filter:',
+      info: 'Showing _START_–_END_ of _TOTAL_ syscalls'
+    },
+    columns: [
+      { className: "center" }, // #
+      {
+        className: "bold",
+        render: (data) => {
+          const m = data.match(/^sys_(.+)/);
+          if (m)
+            return `<a target="_blank" href="https://man7.org/linux/man-pages/man2/${m[1]}.2.html">${data}</a>`;
+          return data;
+        }
+      },
+      { visible: false, searchable: false }, // Signature
+      { searchable: true },                  // Hex
+      { render: renderReg, searchable: false }, // rdi
+      { render: renderReg, searchable: false }, // rsi
+      { render: renderReg, searchable: false }, // rdx
+      { render: renderReg, searchable: false }, // r10
+      { render: renderReg, searchable: false }, // r8
+      { render: renderReg, searchable: false }, // r9
+      {
+        render: (data, type, row) => {
+          const file = row[10];
+          const line = row[11];
+          if (file && file !== "not found")
+            return `<a target="_blank" href="https://elixir.bootlin.com/linux/v6.17.4/source/${file}#L${line}">${file}:${line}</a>`;
+          return file || "-";
+        },
+        searchable: false
+      },
+      { visible: false, searchable: false } // Line (hidden)
+    ],
+    scrollX: true,
+    layout: {
+      topStart: 'info',
+      topEnd: 'search',
+      bottomStart: 'pageLength',
+      bottomEnd: 'paging'
+    }
+  });
+});
+</script>
+</head>
+
+<body>
+  <div id="header">
+    <div class="site">
       <div id="headline">
         <h2 class="chunk">Linux Syscall Reference (64 bit)</h2>
       </div>
-      </div>
     </div>
-    <div id="container2" class="site">
-      <table cellpadding="0" cellspacing="0" border="0" class="display" id="syscall_table">
-      <thead>
-      <tr>
-        <th rowspan="2">#</th>
-        <th rowspan="2">Name</th>
-        <th rowspan="2">Signature</th>
-        <th class="ui-state-default" colspan="7">Registers</th>
-        <th rowspan="2">Definition</th>
-        <th rowspan="2">URL</th>
-      </tr>
-      <tr>
-        <th>rax</th>
-        <th>rdi</th>
-        <th>rsi</th>
-        <th>rdx</th>
-        <th>r10</th>
-        <th>r8</th>
-        <th>r9</th>
-      </tr>
-      </thead>
-      <tbody>
+  </div>
 
-      </tbody>
-      </table>
-    </div>
-    <div id="footer" class="site">
-      <h4 class="chunk">
-        Generated from Linux kernel 6.17.3 using <a target="_blank" href="http://www.python.org/">Python</a>, and
-        <a target="_blank" href="http://www.datatables.net/">DataTables</a>.
-        <br>
-        Project on <a href="https://github.com/paolostivanin/syscalls-table-64bit">GitHub</a>. Hosted on <a href="https://github.com">GitHub</a>.
-      </h4>
-    </div>
-    <script type="text/javascript">Cufon.now();</script>
-  </body>
+  <div id="container2" class="site">
+    <table id="syscall_table" class="display cell-border compact stripe hover order-column">
+      <thead>
+        <tr>
+          <th rowspan="2">#</th>
+          <th rowspan="2">Name</th>
+          <th rowspan="2">Signature</th>
+          <th colspan="7" class="ui-state-default">Registers</th>
+          <th rowspan="2">Definition</th>
+          <th rowspan="2">URL</th>
+        </tr>
+        <tr>
+          <th>rax</th><th>rdi</th><th>rsi</th><th>rdx</th><th>r10</th><th>r8</th><th>r9</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div id="footer" class="site">
+    <h4 class="chunk">
+      Generated from Linux kernel 6.17.4 using
+      <a target="_blank" href="https://www.python.org/">Python</a> and
+      <a target="_blank" href="https://datatables.net/">DataTables</a>.
+      <br>
+      Project on <a href="https://github.com/paolostivanin/syscalls-table-64bit">GitHub</a> ·
+      Hosted on <a href="https://github.com">GitHub Pages</a>.
+    </h4>
+  </div>
+
+  <script>Cufon.now();</script>
+</body>
 </html>
