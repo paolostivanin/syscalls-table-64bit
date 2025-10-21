@@ -92,6 +92,7 @@ with open(SCT_PATH, "r", encoding="utf-8", errors="ignore") as sct_file:
             continue
 
         parts = line.split()
+        # Only process lines that are valid 64-bit syscalls
         if len(parts) > 3 and parts[0].isdigit():
             nr = int(parts[0])
             name = parts[3]
@@ -133,10 +134,7 @@ with open(SCT_PATH, "r", encoding="utf-8", errors="ignore") as sct_file:
                 details.append("")
 
             sys_calls.append(details)
-
-        else:
-            # Not implemented / empty entry
-            sys_calls.append(["", "not implemented", "", "", "", "", "", "", "", "", "", ""])
+        # else: skip invalid/malformed lines silently
 
 # Output as valid JavaScript for web consumption
 output = json.dumps({"aaData": sys_calls}, indent=3, ensure_ascii=False)
