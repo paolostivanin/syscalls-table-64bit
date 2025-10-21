@@ -1,350 +1,17 @@
-{
+var syscalls_x86_64 = {
    "aaData": [
       [
          0,
          "sys_read",
-         "(unsigned int fd, char __user *buf, size_t count)",
-         "0x00",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "char __user *buf",
-            "def": null
-         },
-         {
-            "type": "size_t count",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "fs/read_write.c",
-         621
+         "(int fd,void * buf,size_t len)",
+         "0x0"
       ],
       [
          1,
          "sys_write",
-         "(unsigned int fd, const char __user *buf, size_t count)",
-         "0x01",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "const char __user *buf",
-            "def": null
-         },
-         {
-            "type": "size_t count",
-            "def": null
-         },
+         "not found",
+         "0x1",
          "",
-         "",
-         "",
-         "fs/read_write.c",
-         646
-      ],
-      [
-         2,
-         "sys_open",
-         "(const char __user *filename, int flags, umode_t mode)",
-         "0x02",
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
-         {
-            "type": "umode_t mode",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "fs/fhandle.c",
-         262
-      ],
-      [
-         3,
-         "sys_close",
-         "(unsigned int fd)",
-         "0x03",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "",
-         "",
-         "fs/open.c",
-         1557
-      ],
-      [
-         4,
-         "sys_newstat",
-         "(const char __user *filename, struct stat __user *statbuf)",
-         "0x04",
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "struct stat __user *statbuf",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "",
-         "fs/stat.c",
-         428
-      ],
-      [
-         5,
-         "sys_newfstat",
-         "(unsigned int fd, struct stat __user *statbuf)",
-         "0x05",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "struct stat __user *statbuf",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "",
-         "fs/stat.c",
-         466
-      ],
-      [
-         6,
-         "sys_newlstat",
-         "(const char __user *filename, struct stat __user *statbuf)",
-         "0x06",
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "struct stat __user *statbuf",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "",
-         "fs/stat.c",
-         439
-      ],
-      [
-         7,
-         "sys_poll",
-         "(struct pollfd __user *ufds, unsigned int nfds, int timeout)",
-         "0x07",
-         {
-            "type": "struct pollfd __user *ufds",
-            "def": null
-         },
-         {
-            "type": "unsigned int nfds",
-            "def": null
-         },
-         {
-            "type": "int timeout",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "fs/select.c",
-         1068
-      ],
-      [
-         8,
-         "sys_lseek",
-         "(unsigned int fd, off_t offset, unsigned int whence)",
-         "0x08",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "off_t offset",
-            "def": null
-         },
-         {
-            "type": "unsigned int whence",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "fs/read_write.c",
-         311
-      ],
-      [
-         9,
-         "sys_mmap",
-         "( unsigned long addr, unsigned long len, int prot, int flags, int fd, long off)",
-         "0x09",
-         {
-            "type": "unsigned long addr",
-            "def": null
-         },
-         {
-            "type": "unsigned long len",
-            "def": null
-         },
-         {
-            "type": "int prot",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "long off",
-            "def": null
-         },
-         "arch/arm64/kernel/sys.c",
-         21
-      ],
-      [
-         10,
-         "sys_mprotect",
-         "(unsigned long start, size_t len, unsigned long prot)",
-         "0x0a",
-         {
-            "type": "unsigned long start",
-            "def": null
-         },
-         {
-            "type": "size_t len",
-            "def": null
-         },
-         {
-            "type": "unsigned long prot",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "mm/mprotect.c",
-         837
-      ],
-      [
-         11,
-         "sys_munmap",
-         "(unsigned long addr, size_t len)",
-         "0x0b",
-         {
-            "type": "unsigned long addr",
-            "def": null
-         },
-         {
-            "type": "size_t len",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "",
-         "mm/mmap.c",
-         2942
-      ],
-      [
-         12,
-         "sys_brk",
-         "(unsigned long brk)",
-         "0x0c",
-         {
-            "type": "unsigned long brk",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "",
-         "",
-         "mm/mmap.c",
-         178
-      ],
-      [
-         13,
-         "sys_rt_sigaction",
-         "(int, const struct sigaction __user *, struct sigaction __user *, size_t)",
-         "0x0d",
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "const struct sigaction __user *",
-            "def": null
-         },
-         {
-            "type": "struct sigaction __user *",
-            "def": null
-         },
-         {
-            "type": "size_t",
-            "def": null
-         },
-         "",
-         "",
-         "kernel/signal.c",
-         4446
-      ],
-      [
-         14,
-         "sys_rt_sigprocmask",
-         "(int how, sigset_t __user *set, sigset_t __user *oset, size_t sigsetsize)",
-         "0x0e",
-         {
-            "type": "int how",
-            "def": null
-         },
-         {
-            "type": "sigset_t __user *set",
-            "def": null
-         },
-         {
-            "type": "sigset_t __user *oset",
-            "def": null
-         },
-         {
-            "type": "size_t sigsetsize",
-            "def": null
-         },
-         "",
-         "",
-         "kernel/signal.c",
-         3177
-      ],
-      [
-         15,
-         "sys_rt_sigreturn",
-         "(struct pt_regs *regs)",
-         "0x0f",
-         {
-            "type": "struct pt_regs *regs",
-            "def": null
-         },
          "",
          "",
          "",
@@ -354,201 +21,287 @@
          ""
       ],
       [
+         2,
+         "sys_open",
+         "not found",
+         "0x2",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         3,
+         "sys_close",
+         "not found",
+         "0x3",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         4,
+         "sys_newstat",
+         "not found",
+         "0x4",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         5,
+         "sys_newfstat",
+         "not found",
+         "0x5",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         6,
+         "sys_newlstat",
+         "not found",
+         "0x6",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         7,
+         "sys_poll",
+         "not found",
+         "0x7",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         8,
+         "sys_lseek",
+         "not found",
+         "0x8",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         9,
+         "sys_mmap",
+         "(unsigned long addr,unsigned long len,unsigned long prot,unsigned long flags,unsigned long fd,unsigned long offset)",
+         "0x9"
+      ],
+      [
+         10,
+         "sys_mprotect",
+         "(void * ptr,size_t size,unsigned long prot)",
+         "0xa"
+      ],
+      [
+         11,
+         "sys_munmap",
+         "(void * ptr,size_t size)",
+         "0xb"
+      ],
+      [
+         12,
+         "sys_brk",
+         "not found",
+         "0xc",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         13,
+         "sys_rt_sigaction",
+         "not found",
+         "0xd",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         14,
+         "sys_rt_sigprocmask",
+         "not found",
+         "0xe",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         15,
+         "sys_rt_sigreturn",
+         "(struct pt_regs * regs)",
+         "0xf"
+      ],
+      [
          16,
          "sys_ioctl",
-         "(unsigned int fd, unsigned int cmd, unsigned long arg)",
+         "not found",
          "0x10",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "unsigned int cmd",
-            "def": null
-         },
-         {
-            "type": "unsigned long arg",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/ioctl.c",
-         857
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          17,
          "sys_pread64",
-         "(unsigned int fd, char __user *buf, size_t count, loff_t pos)",
+         "not found",
          "0x11",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "char __user *buf",
-            "def": null
-         },
-         {
-            "type": "size_t count",
-            "def": null
-         },
-         {
-            "type": "loff_t pos",
-            "def": null
-         },
          "",
          "",
-         "fs/read_write.c",
-         672
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          18,
          "sys_pwrite64",
-         "(unsigned int fd, const char __user *buf, size_t count, loff_t pos)",
+         "not found",
          "0x12",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "const char __user *buf",
-            "def": null
-         },
-         {
-            "type": "size_t count",
-            "def": null
-         },
-         {
-            "type": "loff_t pos",
-            "def": null
-         },
          "",
          "",
-         "fs/read_write.c",
-         706
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          19,
          "sys_readv",
-         "(unsigned long fd, const struct iovec __user *vec, unsigned long vlen)",
+         "not found",
          "0x13",
-         {
-            "type": "unsigned long fd",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *vec",
-            "def": null
-         },
-         {
-            "type": "unsigned long vlen",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/read_write.c",
-         1040
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          20,
          "sys_writev",
-         "(unsigned long fd, const struct iovec __user *vec, unsigned long vlen)",
+         "not found",
          "0x14",
-         {
-            "type": "unsigned long fd",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *vec",
-            "def": null
-         },
-         {
-            "type": "unsigned long vlen",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/read_write.c",
-         1046
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          21,
          "sys_access",
-         "(const char __user *filename, int mode)",
+         "not found",
          "0x15",
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "int mode",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/open.c",
-         540
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          22,
          "sys_pipe",
-         "(int __user *fildes)",
+         "not found",
          "0x16",
-         {
-            "type": "int __user *fildes",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "fs/pipe.c",
-         1035
+         "",
+         "not found",
+         ""
       ],
       [
          23,
          "sys_select",
-         "(int n, fd_set __user *inp, fd_set __user *outp, fd_set __user *exp, struct __kernel_old_timeval __user *tvp)",
+         "not found",
          "0x17",
-         {
-            "type": "int n",
-            "def": null
-         },
-         {
-            "type": "fd_set __user *inp",
-            "def": null
-         },
-         {
-            "type": "fd_set __user *outp",
-            "def": null
-         },
-         {
-            "type": "fd_set __user *exp",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_old_timeval __user *tvp",
-            "def": null
-         },
          "",
-         "fs/select.c",
-         726
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          24,
          "sys_sched_yield",
-         "(void)",
+         "not found",
          "0x18",
-         {
-            "type": "void",
-            "def": null
-         },
+         "",
          "",
          "",
          "",
@@ -560,216 +313,119 @@
       [
          25,
          "sys_mremap",
-         "(unsigned long addr, unsigned long old_len, unsigned long new_len, unsigned long flags, unsigned long new_addr)",
-         "0x19",
-         {
-            "type": "unsigned long addr",
-            "def": null
-         },
-         {
-            "type": "unsigned long old_len",
-            "def": null
-         },
-         {
-            "type": "unsigned long new_len",
-            "def": null
-         },
-         {
-            "type": "unsigned long flags",
-            "def": null
-         },
-         {
-            "type": "unsigned long new_addr",
-            "def": null
-         },
-         "",
-         "mm/mremap.c",
-         908
+         "(void * addr,size_t old_len,size_t new_len,unsigned long flags,void * new_addr)",
+         "0x19"
       ],
       [
          26,
          "sys_msync",
-         "(unsigned long start, size_t len, int flags)",
+         "not found",
          "0x1a",
-         {
-            "type": "unsigned long start",
-            "def": null
-         },
-         {
-            "type": "size_t len",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
          "",
          "",
          "",
-         "mm/msync.c",
-         32
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          27,
          "sys_mincore",
-         "(unsigned long start, size_t len, unsigned char __user * vec)",
+         "not found",
          "0x1b",
-         {
-            "type": "unsigned long start",
-            "def": null
-         },
-         {
-            "type": "size_t len",
-            "def": null
-         },
-         {
-            "type": "unsigned char __user * vec",
-            "def": null
-         },
          "",
          "",
          "",
-         "mm/mincore.c",
-         232
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          28,
          "sys_madvise",
-         "(unsigned long start, size_t len, int behavior)",
-         "0x1c",
-         {
-            "type": "unsigned long start",
-            "def": null
-         },
-         {
-            "type": "size_t len",
-            "def": null
-         },
-         {
-            "type": "int behavior",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "mm/madvise.c",
-         1461
+         "(void * start,size_t len,int types)",
+         "0x1c"
       ],
       [
          29,
          "sys_shmget",
-         "(key_t key, size_t size, int flag)",
+         "not found",
          "0x1d",
-         {
-            "type": "key_t key",
-            "def": null
-         },
-         {
-            "type": "size_t size",
-            "def": null
-         },
-         {
-            "type": "int flag",
-            "def": null
-         },
          "",
          "",
          "",
-         "ipc/shm.c",
-         850
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          30,
          "sys_shmat",
-         "(int shmid, char __user *shmaddr, int shmflg)",
+         "not found",
          "0x1e",
-         {
-            "type": "int shmid",
-            "def": null
-         },
-         {
-            "type": "char __user *shmaddr",
-            "def": null
-         },
-         {
-            "type": "int shmflg",
-            "def": null
-         },
          "",
          "",
          "",
-         "ipc/shm.c",
-         1696
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          31,
          "sys_shmctl",
-         "(int shmid, int cmd, struct shmid_ds __user *buf)",
+         "not found",
          "0x1f",
-         {
-            "type": "int shmid",
-            "def": null
-         },
-         {
-            "type": "int cmd",
-            "def": null
-         },
-         {
-            "type": "struct shmid_ds __user *buf",
-            "def": null
-         },
          "",
          "",
          "",
-         "ipc/shm.c",
-         1299
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          32,
          "sys_dup",
-         "(unsigned int fildes)",
+         "not found",
          "0x20",
-         {
-            "type": "unsigned int fildes",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "fs/file.c",
-         1286
+         "",
+         "not found",
+         ""
       ],
       [
          33,
          "sys_dup2",
-         "(unsigned int oldfd, unsigned int newfd)",
+         "not found",
          "0x21",
-         {
-            "type": "unsigned int oldfd",
-            "def": null
-         },
-         {
-            "type": "unsigned int newfd",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/file.c",
-         1271
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          34,
          "sys_pause",
-         "(void)",
+         "not found",
          "0x22",
-         {
-            "type": "void",
-            "def": null
-         },
+         "",
          "",
          "",
          "",
@@ -781,92 +437,65 @@
       [
          35,
          "sys_nanosleep",
-         "(struct __kernel_timespec __user *rqtp, struct __kernel_timespec __user *rmtp)",
+         "not found",
          "0x23",
-         {
-            "type": "struct __kernel_timespec __user *rqtp",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_timespec __user *rmtp",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/time/hrtimer.c",
-         2121
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          36,
          "sys_getitimer",
-         "(int which, struct __kernel_old_itimerval __user *value)",
+         "not found",
          "0x24",
-         {
-            "type": "int which",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_old_itimerval __user *value",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/time/itimer.c",
-         113
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          37,
          "sys_alarm",
-         "(unsigned int seconds)",
+         "not found",
          "0x25",
-         {
-            "type": "unsigned int seconds",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/time/itimer.c",
-         306
+         "",
+         "not found",
+         ""
       ],
       [
          38,
          "sys_setitimer",
-         "(int which, struct __kernel_old_itimerval __user *value, struct __kernel_old_itimerval __user *ovalue)",
+         "not found",
          "0x26",
-         {
-            "type": "int which",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_old_itimerval __user *value",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_old_itimerval __user *ovalue",
-            "def": null
-         },
          "",
          "",
          "",
-         "kernel/time/itimer.c",
-         332
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          39,
          "sys_getpid",
-         "(void)",
+         "not found",
          "0x27",
-         {
-            "type": "void",
-            "def": null
-         },
+         "",
          "",
          "",
          "",
@@ -878,439 +507,239 @@
       [
          40,
          "sys_sendfile64",
-         "(int out_fd, int in_fd, loff_t __user *offset, size_t count)",
+         "not found",
          "0x28",
-         {
-            "type": "int out_fd",
-            "def": null
-         },
-         {
-            "type": "int in_fd",
-            "def": null
-         },
-         {
-            "type": "loff_t __user *offset",
-            "def": null
-         },
-         {
-            "type": "size_t count",
-            "def": null
-         },
          "",
          "",
-         "fs/read_write.c",
-         1308
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          41,
          "sys_socket",
-         "(int, int, int)",
+         "not found",
          "0x29",
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "int",
-            "def": null
-         },
          "",
          "",
          "",
-         "net/socket.c",
-         1720
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          42,
          "sys_connect",
-         "(int, struct sockaddr __user *, int)",
+         "not found",
          "0x2a",
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "struct sockaddr __user *",
-            "def": null
-         },
-         {
-            "type": "int",
-            "def": null
-         },
          "",
          "",
          "",
-         "net/socket.c",
-         2074
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          43,
          "sys_accept",
-         "(int, struct sockaddr __user *, int __user *)",
+         "not found",
          "0x2b",
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "struct sockaddr __user *",
-            "def": null
-         },
-         {
-            "type": "int __user *",
-            "def": null
-         },
          "",
          "",
          "",
-         "net/socket.c",
-         2015
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          44,
          "sys_sendto",
-         "(int, void __user *, size_t, unsigned, struct sockaddr __user *, int)",
+         "not found",
          "0x2c",
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "void __user *",
-            "def": null
-         },
-         {
-            "type": "size_t",
-            "def": null
-         },
-         {
-            "type": "unsigned",
-            "def": null
-         },
-         {
-            "type": "struct sockaddr __user *",
-            "def": null
-         },
-         {
-            "type": "int",
-            "def": null
-         },
-         "net/socket.c",
-         2202
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          45,
          "sys_recvfrom",
-         "(int, void __user *, size_t, unsigned, struct sockaddr __user *, int __user *)",
+         "not found",
          "0x2d",
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "void __user *",
-            "def": null
-         },
-         {
-            "type": "size_t",
-            "def": null
-         },
-         {
-            "type": "unsigned",
-            "def": null
-         },
-         {
-            "type": "struct sockaddr __user *",
-            "def": null
-         },
-         {
-            "type": "int __user *",
-            "def": null
-         },
-         "net/socket.c",
-         2260
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          46,
          "sys_sendmsg",
-         "(int fd, struct user_msghdr __user *msg, unsigned flags)",
+         "not found",
          "0x2e",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "struct user_msghdr __user *msg",
-            "def": null
-         },
-         {
-            "type": "unsigned flags",
-            "def": null
-         },
          "",
          "",
          "",
-         "net/socket.c",
-         2648
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          47,
          "sys_recvmsg",
-         "(int fd, struct user_msghdr __user *msg, unsigned flags)",
+         "not found",
          "0x2f",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "struct user_msghdr __user *msg",
-            "def": null
-         },
-         {
-            "type": "unsigned flags",
-            "def": null
-         },
          "",
          "",
          "",
-         "net/socket.c",
-         2856
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          48,
          "sys_shutdown",
-         "(int, int)",
+         "not found",
          "0x30",
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "int",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "net/socket.c",
-         2417
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          49,
          "sys_bind",
-         "(int, struct sockaddr __user *, int)",
+         "not found",
          "0x31",
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "struct sockaddr __user *",
-            "def": null
-         },
-         {
-            "type": "int",
-            "def": null
-         },
          "",
          "",
          "",
-         "net/socket.c",
-         1858
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          50,
          "sys_listen",
-         "(int, int)",
+         "not found",
          "0x32",
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "int",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "net/socket.c",
-         1890
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          51,
          "sys_getsockname",
-         "(int, struct sockaddr __user *, int __user *)",
+         "not found",
          "0x33",
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "struct sockaddr __user *",
-            "def": null
-         },
-         {
-            "type": "int __user *",
-            "def": null
-         },
          "",
          "",
          "",
-         "net/socket.c",
-         2112
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          52,
          "sys_getpeername",
-         "(int, struct sockaddr __user *, int __user *)",
+         "not found",
          "0x34",
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "struct sockaddr __user *",
-            "def": null
-         },
-         {
-            "type": "int __user *",
-            "def": null
-         },
          "",
          "",
          "",
-         "net/socket.c",
-         2150
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          53,
          "sys_socketpair",
-         "(int, int, int, int __user *)",
+         "not found",
          "0x35",
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "int __user *",
-            "def": null
-         },
          "",
          "",
-         "net/socket.c",
-         1821
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          54,
          "sys_setsockopt",
-         "(int fd, int level, int optname, char __user *optval, int optlen)",
+         "not found",
          "0x36",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "int level",
-            "def": null
-         },
-         {
-            "type": "int optname",
-            "def": null
-         },
-         {
-            "type": "char __user *optval",
-            "def": null
-         },
-         {
-            "type": "int optlen",
-            "def": null
-         },
          "",
-         "net/socket.c",
-         2333
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          55,
          "sys_getsockopt",
-         "(int fd, int level, int optname, char __user *optval, int __user *optlen)",
+         "not found",
          "0x37",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "int level",
-            "def": null
-         },
-         {
-            "type": "int optname",
-            "def": null
-         },
-         {
-            "type": "char __user *optval",
-            "def": null
-         },
-         {
-            "type": "int __user *optlen",
-            "def": null
-         },
          "",
-         "net/socket.c",
-         2383
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          56,
          "sys_clone",
-         "(unsigned long, unsigned long, int __user *, unsigned long, int __user *)",
-         "0x38",
-         {
-            "type": "unsigned long",
-            "def": null
-         },
-         {
-            "type": "unsigned long",
-            "def": null
-         },
-         {
-            "type": "int __user *",
-            "def": null
-         },
-         {
-            "type": "unsigned long",
-            "def": null
-         },
-         {
-            "type": "int __user *",
-            "def": null
-         },
-         "",
-         "kernel/fork.c",
-         3020
+         "(unsigned long clone_flags,unsigned long newsp,int * parent_tidptr,unsigned long tls,int * child_tidptr)",
+         "0x38"
       ],
       [
          57,
          "sys_fork",
-         "(void)",
+         "not found",
          "0x39",
-         {
-            "type": "void",
-            "def": null
-         },
+         "",
          "",
          "",
          "",
@@ -1322,12 +751,9 @@
       [
          58,
          "sys_vfork",
-         "(void)",
+         "not found",
          "0x3a",
-         {
-            "type": "void",
-            "def": null
-         },
+         "",
          "",
          "",
          "",
@@ -1339,899 +765,587 @@
       [
          59,
          "sys_execve",
-         "(const char __user *filename, const char __user *const __user *argv, const char __user *const __user *envp)",
+         "not found",
          "0x3b",
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "const char __user *const __user *argv",
-            "def": null
-         },
-         {
-            "type": "const char __user *const __user *envp",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/exec.c",
-         2109
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          60,
          "sys_exit",
-         "(int error_code)",
-         "0x3c",
-         {
-            "type": "int error_code",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "",
-         "",
-         "kernel/exit.c",
-         989
+         "(struct syscall_exit_args * args)",
+         "0x3c"
       ],
       [
          61,
          "sys_wait4",
-         "(pid_t pid, int __user *stat_addr, int options, struct rusage __user *ru)",
+         "not found",
          "0x3d",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "int __user *stat_addr",
-            "def": null
-         },
-         {
-            "type": "int options",
-            "def": null
-         },
-         {
-            "type": "struct rusage __user *ru",
-            "def": null
-         },
          "",
          "",
-         "kernel/exit.c",
-         1804
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          62,
          "sys_kill",
-         "(pid_t pid, int sig)",
+         "not found",
          "0x3e",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "int sig",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/signal.c",
-         3807
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          63,
          "sys_newuname",
-         "(struct new_utsname __user *name)",
+         "not found",
          "0x3f",
-         {
-            "type": "struct new_utsname __user *name",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/sys.c",
-         1306
+         "",
+         "not found",
+         ""
       ],
       [
          64,
          "sys_semget",
-         "(key_t key, int nsems, int semflg)",
+         "not found",
          "0x40",
-         {
-            "type": "key_t key",
-            "def": null
-         },
-         {
-            "type": "int nsems",
-            "def": null
-         },
-         {
-            "type": "int semflg",
-            "def": null
-         },
          "",
          "",
          "",
-         "ipc/sem.c",
-         624
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          65,
          "sys_semop",
-         "(int semid, struct sembuf __user *sops, unsigned nsops)",
+         "not found",
          "0x41",
-         {
-            "type": "int semid",
-            "def": null
-         },
-         {
-            "type": "struct sembuf __user *sops",
-            "def": null
-         },
-         {
-            "type": "unsigned nsops",
-            "def": null
-         },
          "",
          "",
          "",
-         "ipc/sem.c",
-         2296
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          66,
          "sys_semctl",
-         "(int semid, int semnum, int cmd, unsigned long arg)",
+         "not found",
          "0x42",
-         {
-            "type": "int semid",
-            "def": null
-         },
-         {
-            "type": "int semnum",
-            "def": null
-         },
-         {
-            "type": "int cmd",
-            "def": null
-         },
-         {
-            "type": "unsigned long arg",
-            "def": null
-         },
          "",
          "",
-         "ipc/sem.c",
-         1705
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          67,
          "sys_shmdt",
-         "(char __user *shmaddr)",
+         "not found",
          "0x43",
-         {
-            "type": "char __user *shmaddr",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "ipc/shm.c",
-         1837
+         "",
+         "not found",
+         ""
       ],
       [
          68,
          "sys_msgget",
-         "(key_t key, int msgflg)",
+         "not found",
          "0x44",
-         {
-            "type": "key_t key",
-            "def": null
-         },
-         {
-            "type": "int msgflg",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "ipc/msg.c",
-         315
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          69,
          "sys_msgsnd",
-         "(int msqid, struct msgbuf __user *msgp, size_t msgsz, int msgflg)",
+         "not found",
          "0x45",
-         {
-            "type": "int msqid",
-            "def": null
-         },
-         {
-            "type": "struct msgbuf __user *msgp",
-            "def": null
-         },
-         {
-            "type": "size_t msgsz",
-            "def": null
-         },
-         {
-            "type": "int msgflg",
-            "def": null
-         },
          "",
          "",
-         "ipc/msg.c",
-         971
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          70,
          "sys_msgrcv",
-         "(int msqid, struct msgbuf __user *msgp, size_t msgsz, long msgtyp, int msgflg)",
+         "not found",
          "0x46",
-         {
-            "type": "int msqid",
-            "def": null
-         },
-         {
-            "type": "struct msgbuf __user *msgp",
-            "def": null
-         },
-         {
-            "type": "size_t msgsz",
-            "def": null
-         },
-         {
-            "type": "long msgtyp",
-            "def": null
-         },
-         {
-            "type": "int msgflg",
-            "def": null
-         },
          "",
-         "ipc/msg.c",
-         1270
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          71,
          "sys_msgctl",
-         "(int msqid, int cmd, struct msqid_ds __user *buf)",
+         "not found",
          "0x47",
-         {
-            "type": "int msqid",
-            "def": null
-         },
-         {
-            "type": "int cmd",
-            "def": null
-         },
-         {
-            "type": "struct msqid_ds __user *buf",
-            "def": null
-         },
          "",
          "",
          "",
-         "ipc/msg.c",
-         640
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          72,
          "sys_fcntl",
-         "(unsigned int fd, unsigned int cmd, unsigned long arg)",
+         "not found",
          "0x48",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "unsigned int cmd",
-            "def": null
-         },
-         {
-            "type": "unsigned long arg",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/fcntl.c",
-         441
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          73,
          "sys_flock",
-         "(unsigned int fd, unsigned int cmd)",
+         "not found",
          "0x49",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "unsigned int cmd",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/locks.c",
-         2069
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          74,
          "sys_fsync",
-         "(unsigned int fd)",
+         "not found",
          "0x4a",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "fs/sync.c",
-         218
+         "",
+         "not found",
+         ""
       ],
       [
          75,
          "sys_fdatasync",
-         "(unsigned int fd)",
+         "not found",
          "0x4b",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "fs/sync.c",
-         223
+         "",
+         "not found",
+         ""
       ],
       [
          76,
          "sys_truncate",
-         "(const char __user *path, long length)",
+         "not found",
          "0x4c",
-         {
-            "type": "const char __user *path",
-            "def": null
-         },
-         {
-            "type": "long length",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/open.c",
-         145
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          77,
          "sys_ftruncate",
-         "(unsigned int fd, unsigned long length)",
+         "not found",
          "0x4d",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "unsigned long length",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/open.c",
-         203
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          78,
          "sys_getdents",
-         "(unsigned int fd, struct linux_dirent __user *dirent, unsigned int count)",
+         "not found",
          "0x4e",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "struct linux_dirent __user *dirent",
-            "def": null
-         },
-         {
-            "type": "unsigned int count",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/readdir.c",
-         307
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          79,
          "sys_getcwd",
-         "(char __user *buf, unsigned long size)",
+         "not found",
          "0x4f",
-         {
-            "type": "char __user *buf",
-            "def": null
-         },
-         {
-            "type": "unsigned long size",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/d_path.c",
-         412
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          80,
          "sys_chdir",
-         "(const char __user *filename)",
+         "not found",
          "0x50",
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "fs/open.c",
-         545
+         "",
+         "not found",
+         ""
       ],
       [
          81,
          "sys_fchdir",
-         "(unsigned int fd)",
+         "not found",
          "0x51",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "fs/open.c",
-         571
+         "",
+         "not found",
+         ""
       ],
       [
          82,
          "sys_rename",
-         "(const char __user *oldname, const char __user *newname)",
+         "not found",
          "0x52",
-         {
-            "type": "const char __user *oldname",
-            "def": null
-         },
-         {
-            "type": "const char __user *newname",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/namei.c",
-         5057
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          83,
          "sys_mkdir",
-         "(const char __user *pathname, umode_t mode)",
+         "not found",
          "0x53",
-         {
-            "type": "const char __user *pathname",
-            "def": null
-         },
-         {
-            "type": "umode_t mode",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/namei.c",
-         4162
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          84,
          "sys_rmdir",
-         "(const char __user *pathname)",
+         "not found",
          "0x54",
-         {
-            "type": "const char __user *pathname",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "fs/namei.c",
-         4280
+         "",
+         "not found",
+         ""
       ],
       [
          85,
          "sys_creat",
-         "(const char __user *pathname, umode_t mode)",
+         "not found",
          "0x55",
-         {
-            "type": "const char __user *pathname",
-            "def": null
-         },
-         {
-            "type": "umode_t mode",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/open.c",
-         1507
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          86,
          "sys_link",
-         "(const char __user *oldname, const char __user *newname)",
+         "not found",
          "0x56",
-         {
-            "type": "const char __user *oldname",
-            "def": null
-         },
-         {
-            "type": "const char __user *newname",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/namei.c",
-         4708
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          87,
          "sys_unlink",
-         "(const char __user *pathname)",
+         "not found",
          "0x57",
-         {
-            "type": "const char __user *pathname",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "fs/namei.c",
-         4445
+         "",
+         "not found",
+         ""
       ],
       [
          88,
          "sys_symlink",
-         "(const char __user *old, const char __user *new)",
+         "not found",
          "0x58",
-         {
-            "type": "const char __user *old",
-            "def": null
-         },
-         {
-            "type": "const char __user *new",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/namei.c",
-         4526
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          89,
          "sys_readlink",
-         "(const char __user *path, char __user *buf, int bufsiz)",
+         "not found",
          "0x59",
-         {
-            "type": "const char __user *path",
-            "def": null
-         },
-         {
-            "type": "char __user *buf",
-            "def": null
-         },
-         {
-            "type": "int bufsiz",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/stat.c",
-         520
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          90,
          "sys_chmod",
-         "(const char __user *filename, umode_t mode)",
+         "not found",
          "0x5a",
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "umode_t mode",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/open.c",
-         713
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          91,
          "sys_fchmod",
-         "(unsigned int fd, umode_t mode)",
+         "not found",
          "0x5b",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "umode_t mode",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/open.c",
-         662
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          92,
          "sys_chown",
-         "(const char __user *filename, uid_t user, gid_t group)",
+         "not found",
          "0x5c",
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "uid_t user",
-            "def": null
-         },
-         {
-            "type": "gid_t group",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/open.c",
-         832
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          93,
          "sys_fchown",
-         "(unsigned int fd, uid_t user, gid_t group)",
+         "not found",
          "0x5d",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "uid_t user",
-            "def": null
-         },
-         {
-            "type": "gid_t group",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/open.c",
-         868
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          94,
          "sys_lchown",
-         "(const char __user *filename, uid_t user, gid_t group)",
+         "not found",
          "0x5e",
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "uid_t user",
-            "def": null
-         },
-         {
-            "type": "gid_t group",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/open.c",
-         837
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          95,
          "sys_umask",
-         "(int mask)",
+         "not found",
          "0x5f",
-         {
-            "type": "int mask",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/sys.c",
-         1884
+         "",
+         "not found",
+         ""
       ],
       [
          96,
          "sys_gettimeofday",
-         "(struct __kernel_old_timeval __user *tv, struct timezone __user *tz)",
-         "0x60",
-         {
-            "type": "struct __kernel_old_timeval __user *tv",
-            "def": null
-         },
-         {
-            "type": "struct timezone __user *tz",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "",
-         "kernel/time/time.c",
-         140
+         "(struct timeval * tv,struct timezone * tz)",
+         "0x60"
       ],
       [
          97,
          "sys_getrlimit",
-         "(unsigned int resource, struct rlimit __user *rlim)",
+         "not found",
          "0x61",
-         {
-            "type": "unsigned int resource",
-            "def": null
-         },
-         {
-            "type": "struct rlimit __user *rlim",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/sys.c",
-         1518
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          98,
          "sys_getrusage",
-         "(int who, struct rusage __user *ru)",
+         "not found",
          "0x62",
-         {
-            "type": "int who",
-            "def": null
-         },
-         {
-            "type": "struct rusage __user *ru",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/sys.c",
-         1858
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          99,
          "sys_sysinfo",
-         "(struct sysinfo __user *info)",
+         "not found",
          "0x63",
-         {
-            "type": "struct sysinfo __user *info",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/sys.c",
-         2810
+         "",
+         "not found",
+         ""
       ],
       [
          100,
          "sys_times",
-         "(struct tms __user *tbuf)",
+         "not found",
          "0x64",
-         {
-            "type": "struct tms __user *tbuf",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/sys.c",
-         1023
+         "",
+         "not found",
+         ""
       ],
       [
          101,
          "sys_ptrace",
-         "(long request, long pid, unsigned long addr, unsigned long data)",
-         "0x65",
-         {
-            "type": "long request",
-            "def": null
-         },
-         {
-            "type": "long pid",
-            "def": null
-         },
-         {
-            "type": "unsigned long addr",
-            "def": null
-         },
-         {
-            "type": "unsigned long data",
-            "def": null
-         },
-         "",
-         "",
-         "kernel/ptrace.c",
-         1278
+         "(long request,pid_t pid,unsigned long addr,unsigned long data)",
+         "0x65"
       ],
       [
          102,
          "sys_getuid",
-         "(void)",
+         "not found",
          "0x66",
-         {
-            "type": "void",
-            "def": null
-         },
+         "",
          "",
          "",
          "",
@@ -2243,35 +1357,23 @@
       [
          103,
          "sys_syslog",
-         "(int type, char __user *buf, int len)",
+         "not found",
          "0x67",
-         {
-            "type": "int type",
-            "def": null
-         },
-         {
-            "type": "char __user *buf",
-            "def": null
-         },
-         {
-            "type": "int len",
-            "def": null
-         },
          "",
          "",
          "",
-         "kernel/printk/printk.c",
-         1822
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          104,
          "sys_getgid",
-         "(void)",
+         "not found",
          "0x68",
-         {
-            "type": "void",
-            "def": null
-         },
+         "",
          "",
          "",
          "",
@@ -2283,46 +1385,37 @@
       [
          105,
          "sys_setuid",
-         "(uid_t uid)",
+         "not found",
          "0x69",
-         {
-            "type": "uid_t uid",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/sys.c",
-         657
+         "",
+         "not found",
+         ""
       ],
       [
          106,
          "sys_setgid",
-         "(gid_t gid)",
+         "not found",
          "0x6a",
-         {
-            "type": "gid_t gid",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/sys.c",
-         474
+         "",
+         "not found",
+         ""
       ],
       [
          107,
          "sys_geteuid",
-         "(void)",
+         "not found",
          "0x6b",
-         {
-            "type": "void",
-            "def": null
-         },
+         "",
          "",
          "",
          "",
@@ -2334,12 +1427,9 @@
       [
          108,
          "sys_getegid",
-         "(void)",
+         "not found",
          "0x6c",
-         {
-            "type": "void",
-            "def": null
-         },
+         "",
          "",
          "",
          "",
@@ -2351,32 +1441,23 @@
       [
          109,
          "sys_setpgid",
-         "(pid_t pid, pid_t pgid)",
+         "not found",
          "0x6d",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "pid_t pgid",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/sys.c",
-         1073
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          110,
          "sys_getppid",
-         "(void)",
+         "not found",
          "0x6e",
-         {
-            "type": "void",
-            "def": null
-         },
+         "",
          "",
          "",
          "",
@@ -2388,12 +1469,9 @@
       [
          111,
          "sys_getpgrp",
-         "(void)",
+         "not found",
          "0x6f",
-         {
-            "type": "void",
-            "def": null
-         },
+         "",
          "",
          "",
          "",
@@ -2405,12 +1483,9 @@
       [
          112,
          "sys_setsid",
-         "(void)",
+         "not found",
          "0x70",
-         {
-            "type": "void",
-            "def": null
-         },
+         "",
          "",
          "",
          "",
@@ -2422,440 +1497,294 @@
       [
          113,
          "sys_setreuid",
-         "(uid_t ruid, uid_t euid)",
+         "not found",
          "0x71",
-         {
-            "type": "uid_t ruid",
-            "def": null
-         },
-         {
-            "type": "uid_t euid",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/sys.c",
-         594
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          114,
          "sys_setregid",
-         "(gid_t rgid, gid_t egid)",
+         "not found",
          "0x72",
-         {
-            "type": "gid_t rgid",
-            "def": null
-         },
-         {
-            "type": "gid_t egid",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/sys.c",
-         428
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          115,
          "sys_getgroups",
-         "(int gidsetsize, gid_t __user *grouplist)",
+         "not found",
          "0x73",
-         {
-            "type": "int gidsetsize",
-            "def": null
-         },
-         {
-            "type": "gid_t __user *grouplist",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/groups.c",
-         161
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          116,
          "sys_setgroups",
-         "(int gidsetsize, gid_t __user *grouplist)",
+         "not found",
          "0x74",
-         {
-            "type": "int gidsetsize",
-            "def": null
-         },
-         {
-            "type": "gid_t __user *grouplist",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/groups.c",
-         198
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          117,
          "sys_setresuid",
-         "(uid_t ruid, uid_t euid, uid_t suid)",
+         "not found",
          "0x75",
-         {
-            "type": "uid_t ruid",
-            "def": null
-         },
-         {
-            "type": "uid_t euid",
-            "def": null
-         },
-         {
-            "type": "uid_t suid",
-            "def": null
-         },
          "",
          "",
          "",
-         "kernel/sys.c",
-         742
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          118,
          "sys_getresuid",
-         "(uid_t __user *ruid, uid_t __user *euid, uid_t __user *suid)",
+         "not found",
          "0x76",
-         {
-            "type": "uid_t __user *ruid",
-            "def": null
-         },
-         {
-            "type": "uid_t __user *euid",
-            "def": null
-         },
-         {
-            "type": "uid_t __user *suid",
-            "def": null
-         },
          "",
          "",
          "",
-         "kernel/sys.c",
-         747
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          119,
          "sys_setresgid",
-         "(gid_t rgid, gid_t egid, gid_t sgid)",
+         "not found",
          "0x77",
-         {
-            "type": "gid_t rgid",
-            "def": null
-         },
-         {
-            "type": "gid_t egid",
-            "def": null
-         },
-         {
-            "type": "gid_t sgid",
-            "def": null
-         },
          "",
          "",
          "",
-         "kernel/sys.c",
-         831
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          120,
          "sys_getresgid",
-         "(gid_t __user *rgid, gid_t __user *egid, gid_t __user *sgid)",
+         "not found",
          "0x78",
-         {
-            "type": "gid_t __user *rgid",
-            "def": null
-         },
-         {
-            "type": "gid_t __user *egid",
-            "def": null
-         },
-         {
-            "type": "gid_t __user *sgid",
-            "def": null
-         },
          "",
          "",
          "",
-         "kernel/sys.c",
-         836
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          121,
          "sys_getpgid",
-         "(pid_t pid)",
+         "not found",
          "0x79",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/sys.c",
-         1172
+         "",
+         "not found",
+         ""
       ],
       [
          122,
          "sys_setfsuid",
-         "(uid_t uid)",
+         "not found",
          "0x7a",
-         {
-            "type": "uid_t uid",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/sys.c",
-         899
+         "",
+         "not found",
+         ""
       ],
       [
          123,
          "sys_setfsgid",
-         "(gid_t gid)",
+         "not found",
          "0x7b",
-         {
-            "type": "gid_t gid",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/sys.c",
-         943
+         "",
+         "not found",
+         ""
       ],
       [
          124,
          "sys_getsid",
-         "(pid_t pid)",
+         "not found",
          "0x7c",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/sys.c",
-         1186
+         "",
+         "not found",
+         ""
       ],
       [
          125,
          "sys_capget",
-         "(cap_user_header_t header, cap_user_data_t dataptr)",
+         "not found",
          "0x7d",
-         {
-            "type": "cap_user_header_t header",
-            "def": null
-         },
-         {
-            "type": "cap_user_data_t dataptr",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/capability.c",
-         141
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          126,
          "sys_capset",
-         "(cap_user_header_t header, const cap_user_data_t data)",
+         "not found",
          "0x7e",
-         {
-            "type": "cap_user_header_t header",
-            "def": null
-         },
-         {
-            "type": "const cap_user_data_t data",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/capability.c",
-         220
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          127,
          "sys_rt_sigpending",
-         "(sigset_t __user *set, size_t sigsetsize)",
+         "not found",
          "0x7f",
-         {
-            "type": "sigset_t __user *set",
-            "def": null
-         },
-         {
-            "type": "size_t sigsetsize",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/signal.c",
-         3249
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          128,
          "sys_rt_sigtimedwait",
-         "(const sigset_t __user *uthese, siginfo_t __user *uinfo, const struct __kernel_timespec __user *uts, size_t sigsetsize)",
+         "not found",
          "0x80",
-         {
-            "type": "const sigset_t __user *uthese",
-            "def": null
-         },
-         {
-            "type": "siginfo_t __user *uinfo",
-            "def": null
-         },
-         {
-            "type": "const struct __kernel_timespec __user *uts",
-            "def": null
-         },
-         {
-            "type": "size_t sigsetsize",
-            "def": null
-         },
          "",
          "",
-         "kernel/signal.c",
-         3663
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          129,
          "sys_rt_sigqueueinfo",
-         "(pid_t pid, int sig, siginfo_t __user *uinfo)",
-         "0x81",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "int sig",
-            "def": null
-         },
-         {
-            "type": "siginfo_t __user *uinfo",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "kernel/signal.c",
-         4032
+         "(pid_t tgid,int sig,siginfo_t * uinfo)",
+         "0x81"
       ],
       [
          130,
          "sys_rt_sigsuspend",
-         "(sigset_t __user *unewset, size_t sigsetsize)",
+         "not found",
          "0x82",
-         {
-            "type": "sigset_t __user *unewset",
-            "def": null
-         },
-         {
-            "type": "size_t sigsetsize",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/signal.c",
-         4669
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          131,
          "sys_sigaltstack",
-         "(const struct sigaltstack __user *uss, struct sigaltstack __user *uoss)",
+         "not found",
          "0x83",
-         {
-            "type": "const struct sigaltstack __user *uss",
-            "def": null
-         },
-         {
-            "type": "struct sigaltstack __user *uoss",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/signal.c",
-         4263
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          132,
          "sys_utime",
-         "(char __user *filename, struct utimbuf __user *times)",
+         "not found",
          "0x84",
-         {
-            "type": "char __user *filename",
-            "def": null
-         },
-         {
-            "type": "struct utimbuf __user *times",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/utimes.c",
-         215
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          133,
          "sys_mknod",
-         "(const char __user *filename, umode_t mode, unsigned dev)",
+         "not found",
          "0x85",
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "umode_t mode",
-            "def": null
-         },
-         {
-            "type": "unsigned dev",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/namei.c",
-         4080
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         134,
+         "",
          "not implemented",
          "",
-         "0x86",
+         "",
          "",
          "",
          "",
@@ -2868,346 +1797,247 @@
       [
          135,
          "sys_personality",
-         "(unsigned int personality)",
+         "not found",
          "0x87",
-         {
-            "type": "unsigned int personality",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/exec_domain.c",
-         38
+         "",
+         "not found",
+         ""
       ],
       [
          136,
          "sys_ustat",
-         "(unsigned dev, struct ustat __user *ubuf)",
+         "not found",
          "0x88",
-         {
-            "type": "unsigned dev",
-            "def": null
-         },
-         {
-            "type": "struct ustat __user *ubuf",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/statfs.c",
-         248
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          137,
          "sys_statfs",
-         "(const char __user * path, struct statfs __user *buf)",
+         "not found",
          "0x89",
-         {
-            "type": "const char __user * path",
-            "def": null
-         },
-         {
-            "type": "struct statfs __user *buf",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/statfs.c",
-         192
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          138,
          "sys_fstatfs",
-         "(unsigned int fd, struct statfs __user *buf)",
+         "not found",
          "0x8a",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "struct statfs __user *buf",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/statfs.c",
-         213
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          139,
          "sys_sysfs",
-         "(int option, unsigned long arg1, unsigned long arg2)",
+         "not found",
          "0x8b",
-         {
-            "type": "int option",
-            "def": null
-         },
-         {
-            "type": "unsigned long arg1",
-            "def": null
-         },
-         {
-            "type": "unsigned long arg2",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/filesystems.c",
-         191
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          140,
          "sys_getpriority",
-         "(int which, int who)",
+         "not found",
          "0x8c",
-         {
-            "type": "int which",
-            "def": null
-         },
-         {
-            "type": "int who",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/sys.c",
-         288
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          141,
          "sys_setpriority",
-         "(int which, int who, int niceval)",
+         "not found",
          "0x8d",
-         {
-            "type": "int which",
-            "def": null
-         },
-         {
-            "type": "int who",
-            "def": null
-         },
-         {
-            "type": "int niceval",
-            "def": null
-         },
          "",
          "",
          "",
-         "kernel/sys.c",
-         218
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          142,
          "sys_sched_setparam",
-         "(pid_t pid, struct sched_param __user *param)",
+         "not found",
          "0x8e",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "struct sched_param __user *param",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/sched/core.c",
-         8067
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          143,
          "sys_sched_getparam",
-         "(pid_t pid, struct sched_param __user *param)",
+         "not found",
          "0x8f",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "struct sched_param __user *param",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/sched/core.c",
-         8150
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          144,
          "sys_sched_setscheduler",
-         "(pid_t pid, int policy, struct sched_param __user *param)",
+         "not found",
          "0x90",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "int policy",
-            "def": null
-         },
-         {
-            "type": "struct sched_param __user *param",
-            "def": null
-         },
          "",
          "",
          "",
-         "kernel/sched/core.c",
-         8052
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          145,
          "sys_sched_getscheduler",
-         "(pid_t pid)",
+         "not found",
          "0x91",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/sched/core.c",
-         8121
+         "",
+         "not found",
+         ""
       ],
       [
          146,
          "sys_sched_get_priority_max",
-         "(int policy)",
+         "not found",
          "0x92",
-         {
-            "type": "int policy",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/sched/core.c",
-         9039
+         "",
+         "not found",
+         ""
       ],
       [
          147,
          "sys_sched_get_priority_min",
-         "(int policy)",
+         "not found",
          "0x93",
-         {
-            "type": "int policy",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/sched/core.c",
-         9066
+         "",
+         "not found",
+         ""
       ],
       [
          148,
          "sys_sched_rr_get_interval",
-         "(pid_t pid, struct __kernel_timespec __user *interval)",
+         "not found",
          "0x94",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_timespec __user *interval",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/sched/core.c",
-         9131
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          149,
          "sys_mlock",
-         "(unsigned long start, size_t len)",
+         "not found",
          "0x95",
-         {
-            "type": "unsigned long start",
-            "def": null
-         },
-         {
-            "type": "size_t len",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "mm/mlock.c",
-         622
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          150,
          "sys_munlock",
-         "(unsigned long start, size_t len)",
+         "not found",
          "0x96",
-         {
-            "type": "unsigned long start",
-            "def": null
-         },
-         {
-            "type": "size_t len",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "mm/mlock.c",
-         640
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          151,
          "sys_mlockall",
-         "(int flags)",
+         "not found",
          "0x97",
-         {
-            "type": "int flags",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "mm/mlock.c",
-         705
+         "",
+         "not found",
+         ""
       ],
       [
          152,
          "sys_munlockall",
-         "(void)",
+         "not found",
          "0x98",
-         {
-            "type": "void",
-            "def": null
-         },
+         "",
          "",
          "",
          "",
@@ -3219,12 +2049,23 @@
       [
          153,
          "sys_vhangup",
-         "(void)",
+         "not found",
          "0x99",
-         {
-            "type": "void",
-            "def": null
-         },
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         154,
+         "sys_modify_ldt",
+         "not found",
+         "0x9a",
+         "",
          "",
          "",
          "",
@@ -3236,32 +2077,9 @@
       [
          155,
          "sys_pivot_root",
-         "(const char __user *new_root, const char __user *put_old)",
+         "not found",
          "0x9b",
-         {
-            "type": "const char __user *new_root",
-            "def": null
-         },
-         {
-            "type": "const char __user *put_old",
-            "def": null
-         },
          "",
-         "",
-         "",
-         "",
-         "fs/namespace.c",
-         4166
-      ],
-      [
-         156,
-         "sys_ni_syscall",
-         "(void)",
-         "0x9c",
-         {
-            "type": "void",
-            "def": null
-         },
          "",
          "",
          "",
@@ -3271,336 +2089,246 @@
          ""
       ],
       [
+         156,
+         "sys_ni_syscall",
+         "(void)",
+         "0x9c"
+      ],
+      [
          157,
          "sys_prctl",
-         "(int option, unsigned long arg2, unsigned long arg3, unsigned long arg4, unsigned long arg5)",
+         "not found",
          "0x9d",
-         {
-            "type": "int option",
-            "def": null
-         },
-         {
-            "type": "unsigned long arg2",
-            "def": null
-         },
-         {
-            "type": "unsigned long arg3",
-            "def": null
-         },
-         {
-            "type": "unsigned long arg4",
-            "def": null
-         },
-         {
-            "type": "unsigned long arg5",
-            "def": null
-         },
          "",
-         "kernel/sys.c",
-         2408
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         158,
+         "sys_arch_prctl",
+         "not found",
+         "0x9e",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          159,
          "sys_adjtimex",
-         "(struct __kernel_timex __user *txc_p)",
+         "not found",
          "0x9f",
-         {
-            "type": "struct __kernel_timex __user *txc_p",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/time/time.c",
-         269
+         "",
+         "not found",
+         ""
       ],
       [
          160,
          "sys_setrlimit",
-         "(unsigned int resource, struct rlimit __user *rlim)",
+         "not found",
          "0xa0",
-         {
-            "type": "unsigned int resource",
-            "def": null
-         },
-         {
-            "type": "struct rlimit __user *rlim",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/sys.c",
-         1731
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          161,
          "sys_chroot",
-         "(const char __user *filename)",
+         "not found",
          "0xa1",
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "fs/open.c",
-         593
+         "",
+         "not found",
+         ""
       ],
       [
          162,
          "sys_sync",
-         "(void)",
+         "not found",
          "0xa2",
-         {
-            "type": "void",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "fs/sync.c",
-         149
+         "",
+         "not found",
+         ""
       ],
       [
          163,
          "sys_acct",
-         "(const char __user *name)",
+         "not found",
          "0xa3",
-         {
-            "type": "const char __user *name",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/acct.c",
-         292
+         "",
+         "not found",
+         ""
       ],
       [
          164,
          "sys_settimeofday",
-         "(struct __kernel_old_timeval __user *tv, struct timezone __user *tz)",
+         "not found",
          "0xa4",
-         {
-            "type": "struct __kernel_old_timeval __user *tv",
-            "def": null
-         },
-         {
-            "type": "struct timezone __user *tz",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/time/time.c",
-         199
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          165,
          "sys_mount",
-         "(char __user *dev_name, char __user *dir_name, char __user *type, unsigned long flags, void __user *data)",
-         "0xa5",
-         {
-            "type": "char __user *dev_name",
-            "def": null
-         },
-         {
-            "type": "char __user *dir_name",
-            "def": null
-         },
-         {
-            "type": "char __user *type",
-            "def": null
-         },
-         {
-            "type": "unsigned long flags",
-            "def": null
-         },
-         {
-            "type": "void __user *data",
-            "def": null
-         },
-         "",
-         "fs/namespace.c",
-         3861
+         "(const char * dev_name,const char * dir_name,const char * type,unsigned long flags,const void * data)",
+         "0xa5"
       ],
       [
          166,
          "sys_umount",
-         "(char __user *name, int flags)",
+         "not found",
          "0xa6",
-         {
-            "type": "char __user *name",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/namespace.c",
-         1920
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          167,
          "sys_swapon",
-         "(const char __user *specialfile, int swap_flags)",
+         "not found",
          "0xa7",
-         {
-            "type": "const char __user *specialfile",
-            "def": null
-         },
-         {
-            "type": "int swap_flags",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "mm/swapfile.c",
-         2978
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          168,
          "sys_swapoff",
-         "(const char __user *specialfile)",
+         "not found",
          "0xa8",
-         {
-            "type": "const char __user *specialfile",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "mm/swapfile.c",
-         2388
+         "",
+         "not found",
+         ""
       ],
       [
          169,
          "sys_reboot",
-         "(int magic1, int magic2, unsigned int cmd, void __user *arg)",
+         "not found",
          "0xa9",
-         {
-            "type": "int magic1",
-            "def": null
-         },
-         {
-            "type": "int magic2",
-            "def": null
-         },
-         {
-            "type": "unsigned int cmd",
-            "def": null
-         },
-         {
-            "type": "void __user *arg",
-            "def": null
-         },
          "",
          "",
-         "kernel/reboot.c",
-         700
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          170,
          "sys_sethostname",
-         "(char __user *name, int len)",
+         "not found",
          "0xaa",
-         {
-            "type": "char __user *name",
-            "def": null
-         },
-         {
-            "type": "int len",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/sys.c",
-         1374
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          171,
          "sys_setdomainname",
-         "(char __user *name, int len)",
+         "not found",
          "0xab",
-         {
-            "type": "char __user *name",
-            "def": null
-         },
-         {
-            "type": "int len",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/sys.c",
-         1428
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          172,
+         "sys_iopl",
+         "not found",
+         "0xac",
          "",
          "",
          "",
          "",
          "",
          "",
-         "",
-         "",
-         "",
-         "",
+         "not found",
          ""
       ],
       [
          173,
          "sys_ioperm",
-         "(unsigned long from, unsigned long num, int on)",
+         "not found",
          "0xad",
-         {
-            "type": "unsigned long from",
-            "def": null
-         },
-         {
-            "type": "unsigned long num",
-            "def": null
-         },
-         {
-            "type": "int on",
-            "def": null
-         },
          "",
          "",
          "",
-         "arch/x86/kernel/ioport.c",
-         152
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         174,
+         "",
          "not implemented",
          "",
-         "0xae",
+         "",
          "",
          "",
          "",
@@ -3613,51 +2341,36 @@
       [
          175,
          "sys_init_module",
-         "(void __user *umod, unsigned long len, const char __user *uargs)",
+         "not found",
          "0xaf",
-         {
-            "type": "void __user *umod",
-            "def": null
-         },
-         {
-            "type": "unsigned long len",
-            "def": null
-         },
-         {
-            "type": "const char __user *uargs",
-            "def": null
-         },
          "",
          "",
          "",
-         "kernel/module/main.c",
-         3038
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          176,
          "sys_delete_module",
-         "(const char __user *name_user, unsigned int flags)",
+         "not found",
          "0xb0",
-         {
-            "type": "const char __user *name_user",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/module/main.c",
-         698
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         177,
+         "",
          "not implemented",
          "",
-         "0xb1",
+         "",
          "",
          "",
          "",
@@ -3668,10 +2381,10 @@
          ""
       ],
       [
-         178,
+         "",
          "not implemented",
          "",
-         "0xb2",
+         "",
          "",
          "",
          "",
@@ -3684,34 +2397,22 @@
       [
          179,
          "sys_quotactl",
-         "(unsigned int cmd, const char __user *special, qid_t id, void __user *addr)",
+         "not found",
          "0xb3",
-         {
-            "type": "unsigned int cmd",
-            "def": null
-         },
-         {
-            "type": "const char __user *special",
-            "def": null
-         },
-         {
-            "type": "qid_t id",
-            "def": null
-         },
-         {
-            "type": "void __user *addr",
-            "def": null
-         },
          "",
          "",
-         "fs/quota/quota.c",
-         917
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         180,
+         "",
          "not implemented",
          "",
-         "0xb4",
+         "",
          "",
          "",
          "",
@@ -3722,10 +2423,10 @@
          ""
       ],
       [
-         181,
+         "",
          "not implemented",
          "",
-         "0xb5",
+         "",
          "",
          "",
          "",
@@ -3736,10 +2437,10 @@
          ""
       ],
       [
-         182,
+         "",
          "not implemented",
          "",
-         "0xb6",
+         "",
          "",
          "",
          "",
@@ -3750,10 +2451,10 @@
          ""
       ],
       [
-         183,
+         "",
          "not implemented",
          "",
-         "0xb7",
+         "",
          "",
          "",
          "",
@@ -3764,10 +2465,10 @@
          ""
       ],
       [
-         184,
+         "",
          "not implemented",
          "",
-         "0xb8",
+         "",
          "",
          "",
          "",
@@ -3778,10 +2479,10 @@
          ""
       ],
       [
-         185,
+         "",
          "not implemented",
          "",
-         "0xb9",
+         "",
          "",
          "",
          "",
@@ -3794,12 +2495,9 @@
       [
          186,
          "sys_gettid",
-         "(void)",
+         "not found",
          "0xba",
-         {
-            "type": "void",
-            "def": null
-         },
+         "",
          "",
          "",
          "",
@@ -3811,440 +2509,228 @@
       [
          187,
          "sys_readahead",
-         "(int fd, loff_t offset, size_t count)",
+         "not found",
          "0xbb",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "loff_t offset",
-            "def": null
-         },
-         {
-            "type": "size_t count",
-            "def": null
-         },
          "",
          "",
          "",
-         "mm/readahead.c",
-         747
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          188,
          "sys_setxattr",
-         "(const char __user *path, const char __user *name, const void __user *value, size_t size, int flags)",
+         "not found",
          "0xbc",
-         {
-            "type": "const char __user *path",
-            "def": null
-         },
-         {
-            "type": "const char __user *name",
-            "def": null
-         },
-         {
-            "type": "const void __user *value",
-            "def": null
-         },
-         {
-            "type": "size_t size",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
          "",
-         "fs/xattr.c",
-         684
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          189,
          "sys_lsetxattr",
-         "(const char __user *path, const char __user *name, const void __user *value, size_t size, int flags)",
+         "not found",
          "0xbd",
-         {
-            "type": "const char __user *path",
-            "def": null
-         },
-         {
-            "type": "const char __user *name",
-            "def": null
-         },
-         {
-            "type": "const void __user *value",
-            "def": null
-         },
-         {
-            "type": "size_t size",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
          "",
-         "fs/xattr.c",
-         691
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          190,
          "sys_fsetxattr",
-         "(int fd, const char __user *name, const void __user *value, size_t size, int flags)",
+         "not found",
          "0xbe",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "const char __user *name",
-            "def": null
-         },
-         {
-            "type": "const void __user *value",
-            "def": null
-         },
-         {
-            "type": "size_t size",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
          "",
-         "fs/xattr.c",
-         698
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          191,
          "sys_getxattr",
-         "(const char __user *path, const char __user *name, void __user *value, size_t size)",
+         "not found",
          "0xbf",
-         {
-            "type": "const char __user *path",
-            "def": null
-         },
-         {
-            "type": "const char __user *name",
-            "def": null
-         },
-         {
-            "type": "void __user *value",
-            "def": null
-         },
-         {
-            "type": "size_t size",
-            "def": null
-         },
          "",
          "",
-         "fs/xattr.c",
-         797
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          192,
          "sys_lgetxattr",
-         "(const char __user *path, const char __user *name, void __user *value, size_t size)",
+         "not found",
          "0xc0",
-         {
-            "type": "const char __user *path",
-            "def": null
-         },
-         {
-            "type": "const char __user *name",
-            "def": null
-         },
-         {
-            "type": "void __user *value",
-            "def": null
-         },
-         {
-            "type": "size_t size",
-            "def": null
-         },
          "",
          "",
-         "fs/xattr.c",
-         803
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          193,
          "sys_fgetxattr",
-         "(int fd, const char __user *name, void __user *value, size_t size)",
+         "not found",
          "0xc1",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "const char __user *name",
-            "def": null
-         },
-         {
-            "type": "void __user *value",
-            "def": null
-         },
-         {
-            "type": "size_t size",
-            "def": null
-         },
          "",
          "",
-         "fs/xattr.c",
-         809
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          194,
          "sys_listxattr",
-         "(const char __user *path, char __user *list, size_t size)",
+         "not found",
          "0xc2",
-         {
-            "type": "const char __user *path",
-            "def": null
-         },
-         {
-            "type": "char __user *list",
-            "def": null
-         },
-         {
-            "type": "size_t size",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/xattr.c",
-         874
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          195,
          "sys_llistxattr",
-         "(const char __user *path, char __user *list, size_t size)",
+         "not found",
          "0xc3",
-         {
-            "type": "const char __user *path",
-            "def": null
-         },
-         {
-            "type": "char __user *list",
-            "def": null
-         },
-         {
-            "type": "size_t size",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/xattr.c",
-         880
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          196,
          "sys_flistxattr",
-         "(int fd, char __user *list, size_t size)",
+         "not found",
          "0xc4",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "char __user *list",
-            "def": null
-         },
-         {
-            "type": "size_t size",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/xattr.c",
-         886
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          197,
          "sys_removexattr",
-         "(const char __user *path, const char __user *name)",
+         "not found",
          "0xc5",
-         {
-            "type": "const char __user *path",
-            "def": null
-         },
-         {
-            "type": "const char __user *name",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/xattr.c",
-         943
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          198,
          "sys_lremovexattr",
-         "(const char __user *path, const char __user *name)",
+         "not found",
          "0xc6",
-         {
-            "type": "const char __user *path",
-            "def": null
-         },
-         {
-            "type": "const char __user *name",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/xattr.c",
-         949
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          199,
          "sys_fremovexattr",
-         "(int fd, const char __user *name)",
+         "not found",
          "0xc7",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "const char __user *name",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/xattr.c",
-         955
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          200,
          "sys_tkill",
-         "(pid_t pid, int sig)",
+         "not found",
          "0xc8",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "int sig",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/signal.c",
-         4004
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          201,
          "sys_time",
-         "(__kernel_old_time_t __user *tloc)",
-         "0xc9",
-         {
-            "type": "__kernel_old_time_t __user *tloc",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "",
-         "",
-         "kernel/sys.c",
-         1023
+         "(time_t * t)",
+         "0xc9"
       ],
       [
          202,
          "sys_futex",
-         "(u32 __user *uaddr, int op, u32 val, const struct __kernel_timespec __user *utime, u32 __user *uaddr2, u32 val3)",
-         "0xca",
-         {
-            "type": "u32 __user *uaddr",
-            "def": null
-         },
-         {
-            "type": "int op",
-            "def": null
-         },
-         {
-            "type": "u32 val",
-            "def": null
-         },
-         {
-            "type": "const struct __kernel_timespec __user *utime",
-            "def": null
-         },
-         {
-            "type": "u32 __user *uaddr2",
-            "def": null
-         },
-         {
-            "type": "u32 val3",
-            "def": null
-         },
-         "kernel/futex/syscalls.c",
-         164
+         "(void * addr1,int op,int val1,struct timespec * timeout,void * addr2,int val3)",
+         "0xca"
       ],
       [
          203,
          "sys_sched_setaffinity",
-         "(pid_t pid, unsigned int len, unsigned long __user *user_mask_ptr)",
-         "0xcb",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "unsigned int len",
-            "def": null
-         },
-         {
-            "type": "unsigned long __user *user_mask_ptr",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "kernel/sched/core.c",
-         8448
+         "(pid_t pid,unsigned int len,unsigned long * m)",
+         "0xcb"
       ],
       [
          204,
          "sys_sched_getaffinity",
-         "(pid_t pid, unsigned int len, unsigned long __user *user_mask_ptr)",
-         "0xcc",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "unsigned int len",
-            "def": null
-         },
-         {
-            "type": "unsigned long __user *user_mask_ptr",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "kernel/sched/core.c",
-         8500
+         "(pid_t pid,unsigned int len,unsigned long * m)",
+         "0xcc"
       ],
       [
-         205,
+         "",
          "not implemented",
          "",
-         "0xcd",
+         "",
          "",
          "",
          "",
@@ -4257,146 +2743,11 @@
       [
          206,
          "sys_io_setup",
-         "(unsigned nr_reqs, aio_context_t __user *ctx)",
+         "not found",
          "0xce",
-         {
-            "type": "unsigned nr_reqs",
-            "def": null
-         },
-         {
-            "type": "aio_context_t __user *ctx",
-            "def": null
-         },
          "",
          "",
          "",
-         "",
-         "fs/aio.c",
-         1331
-      ],
-      [
-         207,
-         "sys_io_destroy",
-         "(aio_context_t ctx)",
-         "0xcf",
-         {
-            "type": "aio_context_t ctx",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "",
-         "",
-         "fs/aio.c",
-         1400
-      ],
-      [
-         208,
-         "sys_io_getevents",
-         "(aio_context_t ctx_id, long min_nr, long nr, struct io_event __user *events, struct __kernel_timespec __user *timeout)",
-         "0xd0",
-         {
-            "type": "aio_context_t ctx_id",
-            "def": null
-         },
-         {
-            "type": "long min_nr",
-            "def": null
-         },
-         {
-            "type": "long nr",
-            "def": null
-         },
-         {
-            "type": "struct io_event __user *events",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_timespec __user *timeout",
-            "def": null
-         },
-         "",
-         "fs/aio.c",
-         2200
-      ],
-      [
-         209,
-         "sys_io_submit",
-         "(aio_context_t, long, struct iocb __user * __user *)",
-         "0xd1",
-         {
-            "type": "aio_context_t",
-            "def": null
-         },
-         {
-            "type": "long",
-            "def": null
-         },
-         {
-            "type": "struct iocb __user * __user *",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "fs/aio.c",
-         2030
-      ],
-      [
-         210,
-         "sys_io_cancel",
-         "(aio_context_t ctx_id, struct iocb __user *iocb, struct io_event __user *result)",
-         "0xd2",
-         {
-            "type": "aio_context_t ctx_id",
-            "def": null
-         },
-         {
-            "type": "struct iocb __user *iocb",
-            "def": null
-         },
-         {
-            "type": "struct io_event __user *result",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "fs/aio.c",
-         2124
-      ],
-      [
-         211,
-         "not implemented",
-         "",
-         "0xd3",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         "",
-         ""
-      ],
-      [
-         212,
-         "sys_lookup_dcookie",
-         "(u64 cookie64, char __user *buf, size_t len)",
-         "0xd4",
-         {
-            "type": "u64 cookie64",
-            "def": null
-         },
-         {
-            "type": "char __user *buf",
-            "def": null
-         },
-         {
-            "type": "size_t len",
-            "def": null
-         },
          "",
          "",
          "",
@@ -4404,27 +2755,66 @@
          ""
       ],
       [
-         213,
-         "sys_epoll_create",
-         "(int size)",
-         "0xd5",
-         {
-            "type": "int size",
-            "def": null
-         },
+         207,
+         "sys_io_destroy",
+         "not found",
+         "0xcf",
          "",
          "",
          "",
          "",
          "",
-         "fs/eventpoll.c",
-         2078
+         "",
+         "not found",
+         ""
       ],
       [
-         214,
+         208,
+         "sys_io_getevents",
+         "not found",
+         "0xd0",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         209,
+         "sys_io_submit",
+         "not found",
+         "0xd1",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         210,
+         "sys_io_cancel",
+         "not found",
+         "0xd2",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         "",
          "not implemented",
          "",
-         "0xd6",
+         "",
          "",
          "",
          "",
@@ -4435,10 +2825,52 @@
          ""
       ],
       [
-         215,
+         "",
          "not implemented",
          "",
-         "0xd7",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+      ],
+      [
+         213,
+         "sys_epoll_create",
+         "not found",
+         "0xd5",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         "",
+         "not implemented",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+      ],
+      [
+         "",
+         "not implemented",
+         "",
+         "",
          "",
          "",
          "",
@@ -4451,81 +2883,51 @@
       [
          216,
          "sys_remap_file_pages",
-         "(unsigned long start, unsigned long size, unsigned long prot, unsigned long pgoff, unsigned long flags)",
+         "not found",
          "0xd8",
-         {
-            "type": "unsigned long start",
-            "def": null
-         },
-         {
-            "type": "unsigned long size",
-            "def": null
-         },
-         {
-            "type": "unsigned long prot",
-            "def": null
-         },
-         {
-            "type": "unsigned long pgoff",
-            "def": null
-         },
-         {
-            "type": "unsigned long flags",
-            "def": null
-         },
          "",
-         "mm/mmap.c",
-         2952
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          217,
          "sys_getdents64",
-         "(unsigned int fd, struct linux_dirent64 __user *dirent, unsigned int count)",
+         "not found",
          "0xd9",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "struct linux_dirent64 __user *dirent",
-            "def": null
-         },
-         {
-            "type": "unsigned int count",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/readdir.c",
-         390
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          218,
          "sys_set_tid_address",
-         "(int __user *tidptr)",
+         "not found",
          "0xda",
-         {
-            "type": "int __user *tidptr",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/fork.c",
-         1933
+         "",
+         "not found",
+         ""
       ],
       [
          219,
          "sys_restart_syscall",
-         "(void)",
+         "not found",
          "0xdb",
-         {
-            "type": "void",
-            "def": null
-         },
+         "",
          "",
          "",
          "",
@@ -4537,361 +2939,224 @@
       [
          220,
          "sys_semtimedop",
-         "(int semid, struct sembuf __user *sops, unsigned nsops, const struct __kernel_timespec __user *timeout)",
+         "not found",
          "0xdc",
-         {
-            "type": "int semid",
-            "def": null
-         },
-         {
-            "type": "struct sembuf __user *sops",
-            "def": null
-         },
-         {
-            "type": "unsigned nsops",
-            "def": null
-         },
-         {
-            "type": "const struct __kernel_timespec __user *timeout",
-            "def": null
-         },
          "",
          "",
-         "ipc/sem.c",
-         2268
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          221,
          "sys_fadvise64",
-         "(int fd, loff_t offset, size_t len, int advice)",
+         "not found",
          "0xdd",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "loff_t offset",
-            "def": null
-         },
-         {
-            "type": "size_t len",
-            "def": null
-         },
-         {
-            "type": "int advice",
-            "def": null
-         },
          "",
          "",
-         "mm/fadvise.c",
-         212
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          222,
          "sys_timer_create",
-         "(clockid_t which_clock, struct sigevent __user *timer_event_spec, timer_t __user * created_timer_id)",
+         "not found",
          "0xde",
-         {
-            "type": "clockid_t which_clock",
-            "def": null
-         },
-         {
-            "type": "struct sigevent __user *timer_event_spec",
-            "def": null
-         },
-         {
-            "type": "timer_t __user * created_timer_id",
-            "def": null
-         },
          "",
          "",
          "",
-         "kernel/time/posix-timers.c",
-         530
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          223,
          "sys_timer_settime",
-         "(timer_t timer_id, int flags, const struct __kernel_itimerspec __user *new_setting, struct __kernel_itimerspec __user *old_setting)",
+         "not found",
          "0xdf",
-         {
-            "type": "timer_t timer_id",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
-         {
-            "type": "const struct __kernel_itimerspec __user *new_setting",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_itimerspec __user *old_setting",
-            "def": null
-         },
          "",
          "",
-         "kernel/time/posix-timers.c",
-         940
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          224,
          "sys_timer_gettime",
-         "(timer_t timer_id, struct __kernel_itimerspec __user *setting)",
+         "not found",
          "0xe0",
-         {
-            "type": "timer_t timer_id",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_itimerspec __user *setting",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/time/posix-timers.c",
-         719
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          225,
          "sys_timer_getoverrun",
-         "(timer_t timer_id)",
+         "not found",
          "0xe1",
-         {
-            "type": "timer_t timer_id",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/time/posix-timers.c",
-         767
+         "",
+         "not found",
+         ""
       ],
       [
          226,
          "sys_timer_delete",
-         "(timer_t timer_id)",
+         "not found",
          "0xe2",
-         {
-            "type": "timer_t timer_id",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/time/posix-timers.c",
-         1006
+         "",
+         "not found",
+         ""
       ],
       [
          227,
          "sys_clock_settime",
-         "(clockid_t which_clock, const struct __kernel_timespec __user *tp)",
+         "not found",
          "0xe3",
-         {
-            "type": "clockid_t which_clock",
-            "def": null
-         },
-         {
-            "type": "const struct __kernel_timespec __user *tp",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/time/posix-stubs.c",
-         60
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          228,
          "sys_clock_gettime",
-         "(clockid_t which_clock, struct __kernel_timespec __user *tp)",
-         "0xe4",
-         {
-            "type": "clockid_t which_clock",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_timespec __user *tp",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "",
-         "kernel/time/posix-stubs.c",
-         94
+         "(clockid_t id,struct timespec * ts)",
+         "0xe4"
       ],
       [
          229,
          "sys_clock_getres",
-         "(clockid_t which_clock, struct __kernel_timespec __user *tp)",
+         "not found",
          "0xe5",
-         {
-            "type": "clockid_t which_clock",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_timespec __user *tp",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/time/posix-stubs.c",
-         109
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          230,
          "sys_clock_nanosleep",
-         "(clockid_t which_clock, int flags, const struct __kernel_timespec __user *rqtp, struct __kernel_timespec __user *rmtp)",
+         "not found",
          "0xe6",
-         {
-            "type": "clockid_t which_clock",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
-         {
-            "type": "const struct __kernel_timespec __user *rqtp",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_timespec __user *rmtp",
-            "def": null
-         },
          "",
          "",
-         "kernel/time/posix-stubs.c",
-         128
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          231,
          "sys_exit_group",
-         "(int error_code)",
+         "not found",
          "0xe7",
-         {
-            "type": "int error_code",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/exit.c",
-         1033
+         "",
+         "not found",
+         ""
       ],
       [
          232,
          "sys_epoll_wait",
-         "(int epfd, struct epoll_event __user *events, int maxevents, int timeout)",
+         "not found",
          "0xe8",
-         {
-            "type": "int epfd",
-            "def": null
-         },
-         {
-            "type": "struct epoll_event __user *events",
-            "def": null
-         },
-         {
-            "type": "int maxevents",
-            "def": null
-         },
-         {
-            "type": "int timeout",
-            "def": null
-         },
          "",
          "",
-         "fs/eventpoll.c",
-         2325
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          233,
          "sys_epoll_ctl",
-         "(int epfd, int op, int fd, struct epoll_event __user *event)",
+         "not found",
          "0xe9",
-         {
-            "type": "int epfd",
-            "def": null
-         },
-         {
-            "type": "int op",
-            "def": null
-         },
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "struct epoll_event __user *event",
-            "def": null
-         },
          "",
          "",
-         "fs/eventpoll.c",
-         2267
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          234,
          "sys_tgkill",
-         "(pid_t tgid, pid_t pid, int sig)",
+         "not found",
          "0xea",
-         {
-            "type": "pid_t tgid",
-            "def": null
-         },
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "int sig",
-            "def": null
-         },
          "",
          "",
          "",
-         "kernel/signal.c",
-         3988
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          235,
          "sys_utimes",
-         "(char __user *filename, struct __kernel_old_timeval __user *utimes)",
+         "not found",
          "0xeb",
-         {
-            "type": "char __user *filename",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_old_timeval __user *utimes",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/utimes.c",
-         209
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         236,
+         "",
          "not implemented",
          "",
-         "0xec",
+         "",
          "",
          "",
          "",
@@ -4904,3250 +3169,1813 @@
       [
          237,
          "sys_mbind",
-         "(unsigned long start, unsigned long len, unsigned long mode, const unsigned long __user *nmask, unsigned long maxnode, unsigned flags)",
+         "not found",
          "0xed",
-         {
-            "type": "unsigned long start",
-            "def": null
-         },
-         {
-            "type": "unsigned long len",
-            "def": null
-         },
-         {
-            "type": "unsigned long mode",
-            "def": null
-         },
-         {
-            "type": "const unsigned long __user *nmask",
-            "def": null
-         },
-         {
-            "type": "unsigned long maxnode",
-            "def": null
-         },
-         {
-            "type": "unsigned flags",
-            "def": null
-         },
-         "mm/mempolicy.c",
-         1571
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          238,
          "sys_set_mempolicy",
-         "(int mode, const unsigned long __user *nmask, unsigned long maxnode)",
+         "not found",
          "0xee",
-         {
-            "type": "int mode",
-            "def": null
-         },
-         {
-            "type": "const unsigned long __user *nmask",
-            "def": null
-         },
-         {
-            "type": "unsigned long maxnode",
-            "def": null
-         },
          "",
          "",
          "",
-         "mm/mempolicy.c",
-         1598
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          239,
          "sys_get_mempolicy",
-         "(int __user *policy, unsigned long __user *nmask, unsigned long maxnode, unsigned long addr, unsigned long flags)",
+         "not found",
          "0xef",
-         {
-            "type": "int __user *policy",
-            "def": null
-         },
-         {
-            "type": "unsigned long __user *nmask",
-            "def": null
-         },
-         {
-            "type": "unsigned long maxnode",
-            "def": null
-         },
-         {
-            "type": "unsigned long addr",
-            "def": null
-         },
-         {
-            "type": "unsigned long flags",
-            "def": null
-         },
          "",
-         "mm/mempolicy.c",
-         1730
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          240,
          "sys_mq_open",
-         "(const char __user *name, int oflag, umode_t mode, struct mq_attr __user *attr)",
+         "not found",
          "0xf0",
-         {
-            "type": "const char __user *name",
-            "def": null
-         },
-         {
-            "type": "int oflag",
-            "def": null
-         },
-         {
-            "type": "umode_t mode",
-            "def": null
-         },
-         {
-            "type": "struct mq_attr __user *attr",
-            "def": null
-         },
          "",
          "",
-         "ipc/mqueue.c",
-         943
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          241,
          "sys_mq_unlink",
-         "(const char __user *name)",
+         "not found",
          "0xf1",
-         {
-            "type": "const char __user *name",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "ipc/mqueue.c",
-         953
+         "",
+         "not found",
+         ""
       ],
       [
          242,
          "sys_mq_timedsend",
-         "(mqd_t mqdes, const char __user *msg_ptr, size_t msg_len, unsigned int msg_prio, const struct __kernel_timespec __user *abs_timeout)",
+         "not found",
          "0xf2",
-         {
-            "type": "mqd_t mqdes",
-            "def": null
-         },
-         {
-            "type": "const char __user *msg_ptr",
-            "def": null
-         },
-         {
-            "type": "size_t msg_len",
-            "def": null
-         },
-         {
-            "type": "unsigned int msg_prio",
-            "def": null
-         },
-         {
-            "type": "const struct __kernel_timespec __user *abs_timeout",
-            "def": null
-         },
          "",
-         "ipc/mqueue.c",
-         1283
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          243,
          "sys_mq_timedreceive",
-         "(mqd_t mqdes, char __user *msg_ptr, size_t msg_len, unsigned int __user *msg_prio, const struct __kernel_timespec __user *abs_timeout)",
+         "not found",
          "0xf3",
-         {
-            "type": "mqd_t mqdes",
-            "def": null
-         },
-         {
-            "type": "char __user *msg_ptr",
-            "def": null
-         },
-         {
-            "type": "size_t msg_len",
-            "def": null
-         },
-         {
-            "type": "unsigned int __user *msg_prio",
-            "def": null
-         },
-         {
-            "type": "const struct __kernel_timespec __user *abs_timeout",
-            "def": null
-         },
          "",
-         "ipc/mqueue.c",
-         1297
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          244,
          "sys_mq_notify",
-         "(mqd_t mqdes, const struct sigevent __user *notification)",
+         "not found",
          "0xf4",
-         {
-            "type": "mqd_t mqdes",
-            "def": null
-         },
-         {
-            "type": "const struct sigevent __user *notification",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "ipc/mqueue.c",
-         1439
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          245,
          "sys_mq_getsetattr",
-         "(mqd_t mqdes, const struct mq_attr __user *mqstat, struct mq_attr __user *omqstat)",
+         "not found",
          "0xf5",
-         {
-            "type": "mqd_t mqdes",
-            "def": null
-         },
-         {
-            "type": "const struct mq_attr __user *mqstat",
-            "def": null
-         },
-         {
-            "type": "struct mq_attr __user *omqstat",
-            "def": null
-         },
          "",
          "",
          "",
-         "ipc/mqueue.c",
-         1495
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          246,
          "sys_kexec_load",
-         "(unsigned long entry, unsigned long nr_segments, struct kexec_segment __user *segments, unsigned long flags)",
+         "not found",
          "0xf6",
-         {
-            "type": "unsigned long entry",
-            "def": null
-         },
-         {
-            "type": "unsigned long nr_segments",
-            "def": null
-         },
-         {
-            "type": "struct kexec_segment __user *segments",
-            "def": null
-         },
-         {
-            "type": "unsigned long flags",
-            "def": null
-         },
          "",
          "",
-         "kernel/kexec.c",
-         235
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          247,
          "sys_waitid",
-         "(int which, pid_t pid, struct siginfo __user *infop, int options, struct rusage __user *ru)",
+         "not found",
          "0xf7",
-         {
-            "type": "int which",
-            "def": null
-         },
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "struct siginfo __user *infop",
-            "def": null
-         },
-         {
-            "type": "int options",
-            "def": null
-         },
-         {
-            "type": "struct rusage __user *ru",
-            "def": null
-         },
          "",
-         "kernel/exit.c",
-         1712
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          248,
          "sys_add_key",
-         "(const char __user *_type, const char __user *_description, const void __user *_payload, size_t plen, key_serial_t destringid)",
+         "not found",
          "0xf8",
-         {
-            "type": "const char __user *_type",
-            "def": null
-         },
-         {
-            "type": "const char __user *_description",
-            "def": null
-         },
-         {
-            "type": "const void __user *_payload",
-            "def": null
-         },
-         {
-            "type": "size_t plen",
-            "def": null
-         },
-         {
-            "type": "key_serial_t destringid",
-            "def": null
-         },
          "",
-         "security/keys/keyctl.c",
-         74
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          249,
          "sys_request_key",
-         "(const char __user *_type, const char __user *_description, const char __user *_callout_info, key_serial_t destringid)",
+         "not found",
          "0xf9",
-         {
-            "type": "const char __user *_type",
-            "def": null
-         },
-         {
-            "type": "const char __user *_description",
-            "def": null
-         },
-         {
-            "type": "const char __user *_callout_info",
-            "def": null
-         },
-         {
-            "type": "key_serial_t destringid",
-            "def": null
-         },
          "",
          "",
-         "security/keys/keyctl.c",
-         167
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          250,
          "sys_keyctl",
-         "(int cmd, unsigned long arg2, unsigned long arg3, unsigned long arg4, unsigned long arg5)",
+         "not found",
          "0xfa",
-         {
-            "type": "int cmd",
-            "def": null
-         },
-         {
-            "type": "unsigned long arg2",
-            "def": null
-         },
-         {
-            "type": "unsigned long arg3",
-            "def": null
-         },
-         {
-            "type": "unsigned long arg4",
-            "def": null
-         },
-         {
-            "type": "unsigned long arg5",
-            "def": null
-         },
          "",
-         "security/keys/keyctl.c",
-         1874
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          251,
          "sys_ioprio_set",
-         "(int which, int who, int ioprio)",
+         "not found",
          "0xfb",
-         {
-            "type": "int which",
-            "def": null
-         },
-         {
-            "type": "int who",
-            "def": null
-         },
-         {
-            "type": "int ioprio",
-            "def": null
-         },
          "",
          "",
          "",
-         "block/ioprio.c",
-         69
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          252,
          "sys_ioprio_get",
-         "(int which, int who)",
+         "not found",
          "0xfc",
-         {
-            "type": "int which",
-            "def": null
-         },
-         {
-            "type": "int who",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "block/ioprio.c",
-         210
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          253,
          "sys_inotify_init",
-         "(void)",
+         "not found",
          "0xfd",
-         {
-            "type": "void",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "fs/notify/inotify/inotify_user.c",
-         720
+         "",
+         "not found",
+         ""
       ],
       [
          254,
          "sys_inotify_add_watch",
-         "(int fd, const char __user *path, u32 mask)",
+         "not found",
          "0xfe",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "const char __user *path",
-            "def": null
-         },
-         {
-            "type": "u32 mask",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/notify/inotify/inotify_user.c",
-         730
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          255,
          "sys_inotify_rm_watch",
-         "(int fd, __s32 wd)",
+         "not found",
          "0xff",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "__s32 wd",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/notify/inotify/inotify_user.c",
-         794
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          256,
          "sys_migrate_pages",
-         "(pid_t pid, unsigned long maxnode, const unsigned long __user *from, const unsigned long __user *to)",
+         "not found",
          "0x100",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "unsigned long maxnode",
-            "def": null
-         },
-         {
-            "type": "const unsigned long __user *from",
-            "def": null
-         },
-         {
-            "type": "const unsigned long __user *to",
-            "def": null
-         },
          "",
          "",
-         "mm/mempolicy.c",
-         1692
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          257,
          "sys_openat",
-         "(int dfd, const char __user *filename, int flags, umode_t mode)",
-         "0x101",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
-         {
-            "type": "umode_t mode",
-            "def": null
-         },
-         "",
-         "",
-         "fs/open.c",
-         1448
+         "(int dfd,const char * path,struct open_how * how)",
+         "0x101"
       ],
       [
          258,
          "sys_mkdirat",
-         "(int dfd, const char __user * pathname, umode_t mode)",
+         "not found",
          "0x102",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user * pathname",
-            "def": null
-         },
-         {
-            "type": "umode_t mode",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/namei.c",
-         4157
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          259,
          "sys_mknodat",
-         "(int dfd, const char __user * filename, umode_t mode, unsigned dev)",
+         "not found",
          "0x103",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user * filename",
-            "def": null
-         },
-         {
-            "type": "umode_t mode",
-            "def": null
-         },
-         {
-            "type": "unsigned dev",
-            "def": null
-         },
          "",
          "",
-         "fs/namei.c",
-         4074
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          260,
          "sys_fchownat",
-         "(int dfd, const char __user *filename, uid_t user, gid_t group, int flag)",
+         "not found",
          "0x104",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "uid_t user",
-            "def": null
-         },
-         {
-            "type": "gid_t group",
-            "def": null
-         },
-         {
-            "type": "int flag",
-            "def": null
-         },
          "",
-         "fs/open.c",
-         826
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          261,
          "sys_futimesat",
-         "(int dfd, const char __user *filename, struct __kernel_old_timeval __user *utimes)",
+         "not found",
          "0x105",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_old_timeval __user *utimes",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/utimes.c",
-         203
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          262,
          "sys_newfstatat",
-         "(int dfd, const char __user *filename, struct stat __user *statbuf, int flag)",
+         "not found",
          "0x106",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "struct stat __user *statbuf",
-            "def": null
-         },
-         {
-            "type": "int flag",
-            "def": null
-         },
          "",
          "",
-         "fs/stat.c",
-         453
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          263,
          "sys_unlinkat",
-         "(int dfd, const char __user * pathname, int flag)",
+         "not found",
          "0x107",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user * pathname",
-            "def": null
-         },
-         {
-            "type": "int flag",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/namei.c",
-         4435
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          264,
          "sys_renameat",
-         "(int olddfd, const char __user * oldname, int newdfd, const char __user * newname)",
+         "not found",
          "0x108",
-         {
-            "type": "int olddfd",
-            "def": null
-         },
-         {
-            "type": "const char __user * oldname",
-            "def": null
-         },
-         {
-            "type": "int newdfd",
-            "def": null
-         },
-         {
-            "type": "const char __user * newname",
-            "def": null
-         },
          "",
          "",
-         "fs/namei.c",
-         5050
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          265,
          "sys_linkat",
-         "(int olddfd, const char __user *oldname, int newdfd, const char __user *newname, int flags)",
+         "not found",
          "0x109",
-         {
-            "type": "int olddfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *oldname",
-            "def": null
-         },
-         {
-            "type": "int newdfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *newname",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
          "",
-         "fs/namei.c",
-         4701
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          266,
          "sys_symlinkat",
-         "(const char __user * oldname, int newdfd, const char __user * newname)",
+         "not found",
          "0x10a",
-         {
-            "type": "const char __user * oldname",
-            "def": null
-         },
-         {
-            "type": "int newdfd",
-            "def": null
-         },
-         {
-            "type": "const char __user * newname",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/namei.c",
-         4520
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          267,
          "sys_readlinkat",
-         "(int dfd, const char __user *path, char __user *buf, int bufsiz)",
+         "not found",
          "0x10b",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *path",
-            "def": null
-         },
-         {
-            "type": "char __user *buf",
-            "def": null
-         },
-         {
-            "type": "int bufsiz",
-            "def": null
-         },
          "",
          "",
-         "fs/stat.c",
-         514
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          268,
          "sys_fchmodat",
-         "(int dfd, const char __user *filename, umode_t mode)",
+         "not found",
          "0x10c",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "umode_t mode",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/open.c",
-         707
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          269,
          "sys_faccessat",
-         "(int dfd, const char __user *filename, int mode)",
+         "not found",
          "0x10d",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "int mode",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/open.c",
-         529
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          270,
          "sys_pselect6",
-         "(int, fd_set __user *, fd_set __user *, fd_set __user *, struct __kernel_timespec __user *, void __user *)",
+         "not found",
          "0x10e",
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "fd_set __user *",
-            "def": null
-         },
-         {
-            "type": "fd_set __user *",
-            "def": null
-         },
-         {
-            "type": "fd_set __user *",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_timespec __user *",
-            "def": null
-         },
-         {
-            "type": "void __user *",
-            "def": null
-         },
-         "fs/select.c",
-         795
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          271,
          "sys_ppoll",
-         "(struct pollfd __user *, unsigned int, struct __kernel_timespec __user *, const sigset_t __user *, size_t)",
+         "not found",
          "0x10f",
-         {
-            "type": "struct pollfd __user *",
-            "def": null
-         },
-         {
-            "type": "unsigned int",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_timespec __user *",
-            "def": null
-         },
-         {
-            "type": "const sigset_t __user *",
-            "def": null
-         },
-         {
-            "type": "size_t",
-            "def": null
-         },
          "",
-         "fs/select.c",
-         1101
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          272,
          "sys_unshare",
-         "(unsigned long unshare_flags)",
+         "not found",
          "0x110",
-         {
-            "type": "unsigned long unshare_flags",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "kernel/fork.c",
-         3504
+         "",
+         "not found",
+         ""
       ],
       [
          273,
          "sys_set_robust_list",
-         "(struct robust_list_head __user *head, size_t len)",
+         "not found",
          "0x111",
-         {
-            "type": "struct robust_list_head __user *head",
-            "def": null
-         },
-         {
-            "type": "size_t len",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/futex/syscalls.c",
-         29
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          274,
          "sys_get_robust_list",
-         "(int pid, struct robust_list_head __user * __user *head_ptr, size_t __user *len_ptr)",
+         "not found",
          "0x112",
-         {
-            "type": "int pid",
-            "def": null
-         },
-         {
-            "type": "struct robust_list_head __user * __user *head_ptr",
-            "def": null
-         },
-         {
-            "type": "size_t __user *len_ptr",
-            "def": null
-         },
          "",
          "",
          "",
-         "kernel/futex/syscalls.c",
-         49
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          275,
          "sys_splice",
-         "(int fd_in, loff_t __user *off_in, int fd_out, loff_t __user *off_out, size_t len, unsigned int flags)",
+         "not found",
          "0x113",
-         {
-            "type": "int fd_in",
-            "def": null
-         },
-         {
-            "type": "loff_t __user *off_in",
-            "def": null
-         },
-         {
-            "type": "int fd_out",
-            "def": null
-         },
-         {
-            "type": "loff_t __user *off_out",
-            "def": null
-         },
-         {
-            "type": "size_t len",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
-         "fs/splice.c",
-         1568
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          276,
          "sys_tee",
-         "(int fdin, int fdout, size_t len, unsigned int flags)",
+         "not found",
          "0x114",
-         {
-            "type": "int fdin",
-            "def": null
-         },
-         {
-            "type": "int fdout",
-            "def": null
-         },
-         {
-            "type": "size_t len",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
          "",
          "",
-         "fs/splice.c",
-         1939
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          277,
          "sys_sync_file_range",
-         "(int fd, loff_t offset, loff_t nbytes, unsigned int flags)",
+         "not found",
          "0x115",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "loff_t offset",
-            "def": null
-         },
-         {
-            "type": "loff_t nbytes",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
          "",
          "",
-         "fs/sync.c",
-         370
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          278,
          "sys_vmsplice",
-         "(int fd, const struct iovec __user *iov, unsigned long nr_segs, unsigned int flags)",
+         "not found",
          "0x116",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *iov",
-            "def": null
-         },
-         {
-            "type": "unsigned long nr_segs",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
          "",
          "",
-         "fs/splice.c",
-         1532
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          279,
          "sys_move_pages",
-         "(pid_t pid, unsigned long nr_pages, const void __user * __user *pages, const int __user *nodes, int __user *status, int flags)",
+         "not found",
          "0x117",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "unsigned long nr_pages",
-            "def": null
-         },
-         {
-            "type": "const void __user * __user *pages",
-            "def": null
-         },
-         {
-            "type": "const int __user *nodes",
-            "def": null
-         },
-         {
-            "type": "int __user *status",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
-         "mm/migrate.c",
-         2442
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          280,
          "sys_utimensat",
-         "(int dfd, const char __user *filename, struct __kernel_timespec __user *utimes, int flags)",
+         "not found",
          "0x118",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_timespec __user *utimes",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
          "",
          "",
-         "fs/utimes.c",
-         148
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          281,
          "sys_epoll_pwait",
-         "(int epfd, struct epoll_event __user *events, int maxevents, int timeout, const sigset_t __user *sigmask, size_t sigsetsize)",
+         "not found",
          "0x119",
-         {
-            "type": "int epfd",
-            "def": null
-         },
-         {
-            "type": "struct epoll_event __user *events",
-            "def": null
-         },
-         {
-            "type": "int maxevents",
-            "def": null
-         },
-         {
-            "type": "int timeout",
-            "def": null
-         },
-         {
-            "type": "const sigset_t __user *sigmask",
-            "def": null
-         },
-         {
-            "type": "size_t sigsetsize",
-            "def": null
-         },
-         "fs/eventpoll.c",
-         2359
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          282,
          "sys_signalfd",
-         "(int ufd, sigset_t __user *user_mask, size_t sizemask)",
+         "not found",
          "0x11a",
-         {
-            "type": "int ufd",
-            "def": null
-         },
-         {
-            "type": "sigset_t __user *user_mask",
-            "def": null
-         },
-         {
-            "type": "size_t sizemask",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/signalfd.c",
-         314
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          283,
          "sys_timerfd_create",
-         "(int clockid, int flags)",
+         "not found",
          "0x11b",
-         {
-            "type": "int clockid",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/timerfd.c",
-         406
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          284,
          "sys_eventfd",
-         "(unsigned int count)",
+         "not found",
          "0x11c",
-         {
-            "type": "unsigned int count",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "fs/eventfd.c",
-         438
+         "",
+         "not found",
+         ""
       ],
       [
          285,
          "sys_fallocate",
-         "(int fd, int mode, loff_t offset, loff_t len)",
+         "not found",
          "0x11d",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "int mode",
-            "def": null
-         },
-         {
-            "type": "loff_t offset",
-            "def": null
-         },
-         {
-            "type": "loff_t len",
-            "def": null
-         },
          "",
          "",
-         "fs/open.c",
-         353
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          286,
          "sys_timerfd_settime",
-         "(int ufd, int flags, const struct __kernel_itimerspec __user *utmr, struct __kernel_itimerspec __user *otmr)",
+         "not found",
          "0x11e",
-         {
-            "type": "int ufd",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
-         {
-            "type": "const struct __kernel_itimerspec __user *utmr",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_itimerspec __user *otmr",
-            "def": null
-         },
          "",
          "",
-         "fs/timerfd.c",
-         558
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          287,
          "sys_timerfd_gettime",
-         "(int ufd, struct __kernel_itimerspec __user *otmr)",
+         "not found",
          "0x11f",
-         {
-            "type": "int ufd",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_itimerspec __user *otmr",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/timerfd.c",
-         576
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          288,
          "sys_accept4",
-         "(int, struct sockaddr __user *, int __user *, int)",
+         "not found",
          "0x120",
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "struct sockaddr __user *",
-            "def": null
-         },
-         {
-            "type": "int __user *",
-            "def": null
-         },
-         {
-            "type": "int",
-            "def": null
-         },
          "",
          "",
-         "net/socket.c",
-         2009
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          289,
          "sys_signalfd4",
-         "(int ufd, sigset_t __user *user_mask, size_t sizemask, int flags)",
+         "not found",
          "0x121",
-         {
-            "type": "int ufd",
-            "def": null
-         },
-         {
-            "type": "sigset_t __user *user_mask",
-            "def": null
-         },
-         {
-            "type": "size_t sizemask",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
          "",
          "",
-         "fs/signalfd.c",
-         302
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          290,
          "sys_eventfd2",
-         "(unsigned int count, int flags)",
-         "0x122",
-         {
-            "type": "unsigned int count",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "",
-         "fs/eventfd.c",
-         433
+         "(unsigned int count,int flags)",
+         "0x122"
       ],
       [
          291,
          "sys_epoll_create1",
-         "(int flags)",
+         "not found",
          "0x123",
-         {
-            "type": "int flags",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "fs/eventpoll.c",
-         2073
+         "",
+         "not found",
+         ""
       ],
       [
          292,
          "sys_dup3",
-         "(unsigned int oldfd, unsigned int newfd, int flags)",
+         "not found",
          "0x124",
-         {
-            "type": "unsigned int oldfd",
-            "def": null
-         },
-         {
-            "type": "unsigned int newfd",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/file.c",
-         1266
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          293,
          "sys_pipe2",
-         "(int __user *fildes, int flags)",
+         "not found",
          "0x125",
-         {
-            "type": "int __user *fildes",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/pipe.c",
-         1030
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          294,
          "sys_inotify_init1",
-         "(int flags)",
+         "not found",
          "0x126",
-         {
-            "type": "int flags",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "fs/notify/inotify/inotify_user.c",
-         720
+         "",
+         "not found",
+         ""
       ],
       [
          295,
          "sys_preadv",
-         "(unsigned long fd, const struct iovec __user *vec, unsigned long vlen, unsigned long pos_l, unsigned long pos_h)",
+         "not found",
          "0x127",
-         {
-            "type": "unsigned long fd",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *vec",
-            "def": null
-         },
-         {
-            "type": "unsigned long vlen",
-            "def": null
-         },
-         {
-            "type": "unsigned long pos_l",
-            "def": null
-         },
-         {
-            "type": "unsigned long pos_h",
-            "def": null
-         },
          "",
-         "fs/read_write.c",
-         1052
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          296,
          "sys_pwritev",
-         "(unsigned long fd, const struct iovec __user *vec, unsigned long vlen, unsigned long pos_l, unsigned long pos_h)",
+         "not found",
          "0x128",
-         {
-            "type": "unsigned long fd",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *vec",
-            "def": null
-         },
-         {
-            "type": "unsigned long vlen",
-            "def": null
-         },
-         {
-            "type": "unsigned long pos_l",
-            "def": null
-         },
-         {
-            "type": "unsigned long pos_h",
-            "def": null
-         },
          "",
-         "fs/read_write.c",
-         1072
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          297,
          "sys_rt_tgsigqueueinfo",
-         "(pid_t tgid, pid_t pid, int sig, siginfo_t __user *uinfo)",
-         "0x129",
-         {
-            "type": "pid_t tgid",
-            "def": null
-         },
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "int sig",
-            "def": null
-         },
-         {
-            "type": "siginfo_t __user *uinfo",
-            "def": null
-         },
-         "",
-         "",
-         "kernel/signal.c",
-         4072
+         "(pid_t tgid,pid_t tid,int sig,siginfo_t * uinfo)",
+         "0x129"
       ],
       [
          298,
          "sys_perf_event_open",
-         "( struct perf_event_attr __user *attr_uptr, pid_t pid, int cpu, int group_fd, unsigned long flags)",
-         "0x12a",
-         {
-            "type": "struct perf_event_attr __user *attr_uptr",
-            "def": null
-         },
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "int cpu",
-            "def": null
-         },
-         {
-            "type": "int group_fd",
-            "def": null
-         },
-         {
-            "type": "unsigned long flags",
-            "def": null
-         },
-         "",
-         "kernel/events/core.c",
-         12351
+         "(struct perf_event_attr * attr,pid_t pid,struct perf_cpu cpu,int group_fd,unsigned long flags)",
+         "0x12a"
       ],
       [
          299,
          "sys_recvmmsg",
-         "(int fd, struct mmsghdr __user *msg, unsigned int vlen, unsigned flags, struct __kernel_timespec __user *timeout)",
+         "not found",
          "0x12b",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "struct mmsghdr __user *msg",
-            "def": null
-         },
-         {
-            "type": "unsigned int vlen",
-            "def": null
-         },
-         {
-            "type": "unsigned flags",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_timespec __user *timeout",
-            "def": null
-         },
          "",
-         "net/socket.c",
-         3008
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          300,
          "sys_fanotify_init",
-         "(unsigned int flags, unsigned int event_f_flags)",
+         "not found",
          "0x12c",
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
-         {
-            "type": "unsigned int event_f_flags",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "fs/notify/fanotify/fanotify_user.c",
-         1393
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          301,
          "sys_fanotify_mark",
-         "(int fanotify_fd, unsigned int flags, u64 mask, int fd, const char __user *pathname)",
+         "not found",
          "0x12d",
-         {
-            "type": "int fanotify_fd",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
-         {
-            "type": "u64 mask",
-            "def": null
-         },
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "const char __user *pathname",
-            "def": null
-         },
          "",
-         "fs/notify/fanotify/fanotify_user.c",
-         1893
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          302,
          "sys_prlimit64",
-         "(pid_t pid, unsigned int resource, const struct rlimit64 __user *new_rlim, struct rlimit64 __user *old_rlim)",
+         "not found",
          "0x12e",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "unsigned int resource",
-            "def": null
-         },
-         {
-            "type": "const struct rlimit64 __user *new_rlim",
-            "def": null
-         },
-         {
-            "type": "struct rlimit64 __user *old_rlim",
-            "def": null
-         },
          "",
          "",
-         "kernel/sys.c",
-         1684
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          303,
          "sys_name_to_handle_at",
-         "(int dfd, const char __user *name, struct file_handle __user *handle, int __user *mnt_id, int flag)",
+         "not found",
          "0x12f",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *name",
-            "def": null
-         },
-         {
-            "type": "struct file_handle __user *handle",
-            "def": null
-         },
-         {
-            "type": "int __user *mnt_id",
-            "def": null
-         },
-         {
-            "type": "int flag",
-            "def": null
-         },
          "",
-         "fs/fhandle.c",
-         98
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          304,
          "sys_open_by_handle_at",
-         "(int mountdirfd, struct file_handle __user *handle, int flags)",
+         "not found",
          "0x130",
-         {
-            "type": "int mountdirfd",
-            "def": null
-         },
-         {
-            "type": "struct file_handle __user *handle",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
          "",
          "",
          "",
-         "fs/fhandle.c",
-         262
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          305,
          "sys_clock_adjtime",
-         "(clockid_t which_clock, struct __kernel_timex __user *tx)",
+         "not found",
          "0x131",
-         {
-            "type": "clockid_t which_clock",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_timex __user *tx",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/time/posix-timers.c",
-         1162
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          306,
          "sys_syncfs",
-         "(int fd)",
+         "not found",
          "0x132",
-         {
-            "type": "int fd",
-            "def": null
-         },
          "",
          "",
          "",
          "",
          "",
-         "fs/sync.c",
-         149
+         "",
+         "not found",
+         ""
       ],
       [
          307,
          "sys_sendmmsg",
-         "(int fd, struct mmsghdr __user *msg, unsigned int vlen, unsigned flags)",
+         "not found",
          "0x133",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "struct mmsghdr __user *msg",
-            "def": null
-         },
-         {
-            "type": "unsigned int vlen",
-            "def": null
-         },
-         {
-            "type": "unsigned flags",
-            "def": null
-         },
          "",
          "",
-         "net/socket.c",
-         2724
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          308,
          "sys_setns",
-         "(int fd, int nstype)",
+         "not found",
          "0x134",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "int nstype",
-            "def": null
-         },
          "",
          "",
          "",
          "",
-         "kernel/nsproxy.c",
-         546
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          309,
          "sys_getcpu",
-         "(unsigned __user *cpu, unsigned __user *node, struct getcpu_cache __user *cache)",
-         "0x135",
-         {
-            "type": "unsigned __user *cpu",
-            "def": null
-         },
-         {
-            "type": "unsigned __user *node",
-            "def": null
-         },
-         {
-            "type": "struct getcpu_cache __user *cache",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "kernel/sys.c",
-         2730
+         "(unsigned * cpu,unsigned * node)",
+         "0x135"
       ],
       [
          310,
          "sys_process_vm_readv",
-         "(pid_t pid, const struct iovec __user *lvec, unsigned long liovcnt, const struct iovec __user *rvec, unsigned long riovcnt, unsigned long flags)",
+         "not found",
          "0x136",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *lvec",
-            "def": null
-         },
-         {
-            "type": "unsigned long liovcnt",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *rvec",
-            "def": null
-         },
-         {
-            "type": "unsigned long riovcnt",
-            "def": null
-         },
-         {
-            "type": "unsigned long flags",
-            "def": null
-         },
-         "mm/process_vm_access.c",
-         291
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          311,
          "sys_process_vm_writev",
-         "(pid_t pid, const struct iovec __user *lvec, unsigned long liovcnt, const struct iovec __user *rvec, unsigned long riovcnt, unsigned long flags)",
+         "not found",
          "0x137",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *lvec",
-            "def": null
-         },
-         {
-            "type": "unsigned long liovcnt",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *rvec",
-            "def": null
-         },
-         {
-            "type": "unsigned long riovcnt",
-            "def": null
-         },
-         {
-            "type": "unsigned long flags",
-            "def": null
-         },
-         "mm/process_vm_access.c",
-         298
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          312,
          "sys_kcmp",
-         "(pid_t pid1, pid_t pid2, int type, unsigned long idx1, unsigned long idx2)",
-         "0x138",
-         {
-            "type": "pid_t pid1",
-            "def": null
-         },
-         {
-            "type": "pid_t pid2",
-            "def": null
-         },
-         {
-            "type": "int type",
-            "def": null
-         },
-         {
-            "type": "unsigned long idx1",
-            "def": null
-         },
-         {
-            "type": "unsigned long idx2",
-            "def": null
-         },
-         "",
-         "kernel/kcmp.c",
-         135
+         "(int pid1,int pid2,int type,unsigned long fd1,unsigned long fd2)",
+         "0x138"
       ],
       [
          313,
          "sys_finit_module",
-         "(int fd, const char __user *uargs, int flags)",
+         "not found",
          "0x139",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "const char __user *uargs",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
          "",
          "",
          "",
-         "kernel/module/main.c",
-         3169
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          314,
          "sys_sched_setattr",
-         "(pid_t pid, struct sched_attr __user *attr, unsigned int flags)",
+         "not found",
          "0x13a",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "struct sched_attr __user *attr",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
          "",
          "",
          "",
-         "kernel/sched/core.c",
-         8078
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          315,
          "sys_sched_getattr",
-         "(pid_t pid, struct sched_attr __user *attr, unsigned int size, unsigned int flags)",
+         "not found",
          "0x13b",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "struct sched_attr __user *attr",
-            "def": null
-         },
-         {
-            "type": "unsigned int size",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
          "",
          "",
-         "kernel/sched/core.c",
-         8231
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          316,
          "sys_renameat2",
-         "(int olddfd, const char __user *oldname, int newdfd, const char __user *newname, unsigned int flags)",
-         "0x13c",
-         {
-            "type": "int olddfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *oldname",
-            "def": null
-         },
-         {
-            "type": "int newdfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *newname",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
-         "",
-         "fs/namei.c",
-         5043
+         "(int olddirfd,const char * oldpath,int newdirfd,const char * newpath,unsigned int flags)",
+         "0x13c"
       ],
       [
          317,
          "sys_seccomp",
-         "(unsigned int op, unsigned int flags, void __user *uargs)",
+         "not found",
          "0x13d",
-         {
-            "type": "unsigned int op",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
-         {
-            "type": "void __user *uargs",
-            "def": null
-         },
          "",
          "",
          "",
-         "kernel/seccomp.c",
-         2071
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          318,
          "sys_getrandom",
-         "(char __user *buf, size_t count, unsigned int flags)",
+         "not found",
          "0x13e",
-         {
-            "type": "char __user *buf",
-            "def": null
-         },
-         {
-            "type": "size_t count",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
          "",
          "",
          "",
-         "drivers/char/random.c",
-         1364
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          319,
          "sys_memfd_create",
-         "(const char __user *uname_ptr, unsigned int flags)",
-         "0x13f",
-         {
-            "type": "const char __user *uname_ptr",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "",
-         "mm/memfd.c",
-         294
+         "(const char * name,unsigned int flags)",
+         "0x13f"
       ],
       [
          320,
          "sys_kexec_file_load",
-         "(int kernel_fd, int initrd_fd, unsigned long cmdline_len, const char __user *cmdline_ptr, unsigned long flags)",
+         "not found",
          "0x140",
-         {
-            "type": "int kernel_fd",
-            "def": null
-         },
-         {
-            "type": "int initrd_fd",
-            "def": null
-         },
-         {
-            "type": "unsigned long cmdline_len",
-            "def": null
-         },
-         {
-            "type": "const char __user *cmdline_ptr",
-            "def": null
-         },
-         {
-            "type": "unsigned long flags",
-            "def": null
-         },
          "",
-         "kernel/kexec_file.c",
-         325
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          321,
          "sys_bpf",
-         "(int cmd, union bpf_attr *attr, unsigned int size)",
-         "0x141",
-         {
-            "type": "int cmd",
-            "def": null
-         },
-         {
-            "type": "union bpf_attr *attr",
-            "def": null
-         },
-         {
-            "type": "unsigned int size",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "kernel/bpf/syscall.c",
-         5446
+         "(enum bpf_cmd cmd,union bpf_attr * attr,unsigned int size)",
+         "0x141"
       ],
       [
          322,
          "sys_execveat",
-         "(int dfd, const char __user *filename, const char __user *const __user *argv, const char __user *const __user *envp, int flags)",
-         "0x142",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "const char __user *const __user *argv",
-            "def": null
-         },
-         {
-            "type": "const char __user *const __user *envp",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
-         "",
-         "fs/exec.c",
-         2117
+         "(int dirfd,const char * pathname,char * const argv[],char * const envp[],int flags)",
+         "0x142"
       ],
       [
          323,
          "sys_userfaultfd",
          "(int flags)",
-         "0x143",
-         {
-            "type": "int flags",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "",
-         "",
-         "fs/userfaultfd.c",
-         2234
+         "0x143"
       ],
       [
          324,
          "sys_membarrier",
-         "(int cmd, unsigned int flags, int cpu_id)",
-         "0x144",
-         {
-            "type": "int cmd",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
-         {
-            "type": "int cpu_id",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "kernel/sched/membarrier.c",
-         614
+         "(int cmd,int flags,int cpu_id)",
+         "0x144"
       ],
       [
          325,
          "sys_mlock2",
-         "(unsigned long start, size_t len, int flags)",
+         "not found",
          "0x145",
-         {
-            "type": "unsigned long start",
-            "def": null
-         },
-         {
-            "type": "size_t len",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
          "",
          "",
          "",
-         "mm/mlock.c",
-         627
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          326,
          "sys_copy_file_range",
-         "(int fd_in, loff_t __user *off_in, int fd_out, loff_t __user *off_out, size_t len, unsigned int flags)",
+         "not found",
          "0x146",
-         {
-            "type": "int fd_in",
-            "def": null
-         },
-         {
-            "type": "loff_t __user *off_in",
-            "def": null
-         },
-         {
-            "type": "int fd_out",
-            "def": null
-         },
-         {
-            "type": "loff_t __user *off_out",
-            "def": null
-         },
-         {
-            "type": "size_t len",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
-         "fs/read_write.c",
-         1558
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          327,
          "sys_preadv2",
-         "(unsigned long fd, const struct iovec __user *vec, unsigned long vlen, unsigned long pos_l, unsigned long pos_h, rwf_t flags)",
+         "not found",
          "0x147",
-         {
-            "type": "unsigned long fd",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *vec",
-            "def": null
-         },
-         {
-            "type": "unsigned long vlen",
-            "def": null
-         },
-         {
-            "type": "unsigned long pos_l",
-            "def": null
-         },
-         {
-            "type": "unsigned long pos_h",
-            "def": null
-         },
-         {
-            "type": "rwf_t flags",
-            "def": null
-         },
-         "fs/read_write.c",
-         1060
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          328,
          "sys_pwritev2",
-         "(unsigned long fd, const struct iovec __user *vec, unsigned long vlen, unsigned long pos_l, unsigned long pos_h, rwf_t flags)",
+         "not found",
          "0x148",
-         {
-            "type": "unsigned long fd",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *vec",
-            "def": null
-         },
-         {
-            "type": "unsigned long vlen",
-            "def": null
-         },
-         {
-            "type": "unsigned long pos_l",
-            "def": null
-         },
-         {
-            "type": "unsigned long pos_h",
-            "def": null
-         },
-         {
-            "type": "rwf_t flags",
-            "def": null
-         },
-         "fs/read_write.c",
-         1080
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          329,
          "sys_pkey_mprotect",
-         "(unsigned long start, size_t len, unsigned long prot, int pkey)",
+         "not found",
          "0x149",
-         {
-            "type": "unsigned long start",
-            "def": null
-         },
-         {
-            "type": "size_t len",
-            "def": null
-         },
-         {
-            "type": "unsigned long prot",
-            "def": null
-         },
-         {
-            "type": "int pkey",
-            "def": null
-         },
          "",
          "",
-         "mm/mprotect.c",
-         845
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          330,
          "sys_pkey_alloc",
-         "(unsigned long flags, unsigned long init_val)",
-         "0x14a",
-         {
-            "type": "unsigned long flags",
-            "def": null
-         },
-         {
-            "type": "unsigned long init_val",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "",
-         "mm/mprotect.c",
-         851
+         "(unsigned long flags,unsigned long init_val)",
+         "0x14a"
       ],
       [
          331,
          "sys_pkey_free",
-         "(int pkey)",
-         "0x14b",
-         {
-            "type": "int pkey",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "",
-         "",
-         "mm/mprotect.c",
-         881
+         "(unsigned long pkey)",
+         "0x14b"
       ],
       [
          332,
          "sys_statx",
-         "(int dfd, const char __user *path, unsigned flags, unsigned mask, struct statx __user *buffer)",
-         "0x14c",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *path",
-            "def": null
-         },
-         {
-            "type": "unsigned flags",
-            "def": null
-         },
-         {
-            "type": "unsigned mask",
-            "def": null
-         },
-         {
-            "type": "struct statx __user *buffer",
-            "def": null
-         },
-         "",
-         "fs/stat.c",
-         690
+         "(int dirfd,const char * pathname,int flags,unsigned int mask,void * stx)",
+         "0x14c"
       ],
       [
          333,
          "sys_io_pgetevents",
-         "(aio_context_t ctx_id, long min_nr, long nr, struct io_event __user *events, struct __kernel_timespec __user *timeout, const struct __aio_sigset *sig)",
+         "not found",
          "0x14d",
-         {
-            "type": "aio_context_t ctx_id",
-            "def": null
-         },
-         {
-            "type": "long min_nr",
-            "def": null
-         },
-         {
-            "type": "long nr",
-            "def": null
-         },
-         {
-            "type": "struct io_event __user *events",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_timespec __user *timeout",
-            "def": null
-         },
-         {
-            "type": "const struct __aio_sigset *sig",
-            "def": null
-         },
-         "fs/aio.c",
-         2225
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
          334,
          "sys_rseq",
-         "(struct rseq __user *rseq, uint32_t rseq_len, int flags, uint32_t sig)",
-         "0x14e",
-         {
-            "type": "struct rseq __user *rseq",
-            "def": null
-         },
-         {
-            "type": "uint32_t rseq_len",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
-         {
-            "type": "uint32_t sig",
-            "def": null
-         },
-         "",
-         "",
-         "kernel/rseq.c",
-         365
+         "(struct rseq_abi * rseq_abi,uint32_t rseq_len,int flags,uint32_t sig)",
+         "0x14e"
       ],
       [
          335,
-         "sys_pidfd_send_signal",
-         "(int pidfd, int sig, siginfo_t __user *info, unsigned int flags)",
+         "sys_uretprobe",
+         "not found",
          "0x14f",
-         {
-            "type": "int pidfd",
-            "def": null
-         },
-         {
-            "type": "int sig",
-            "def": null
-         },
-         {
-            "type": "siginfo_t __user *info",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
          "",
          "",
-         "kernel/signal.c",
-         3882
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         336,
+         424,
+         "sys_pidfd_send_signal",
+         "(int pidfd,int sig,siginfo_t * info,unsigned int flags)",
+         "0x1a8"
+      ],
+      [
+         425,
          "sys_io_uring_setup",
-         "(u32 entries, struct io_uring_params __user *p)",
-         "0x150",
-         {
-            "type": "u32 entries",
-            "def": null
-         },
-         {
-            "type": "struct io_uring_params __user *p",
-            "def": null
-         },
+         "not found",
+         "0x1a9",
          "",
          "",
          "",
          "",
-         "io_uring/io_uring.c",
-         4106
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         337,
+         426,
          "sys_io_uring_enter",
-         "(unsigned int fd, u32 to_submit, u32 min_complete, u32 flags, const void __user *argp, size_t argsz)",
-         "0x151",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "u32 to_submit",
-            "def": null
-         },
-         {
-            "type": "u32 min_complete",
-            "def": null
-         },
-         {
-            "type": "u32 flags",
-            "def": null
-         },
-         {
-            "type": "const void __user *argp",
-            "def": null
-         },
-         {
-            "type": "size_t argsz",
-            "def": null
-         },
-         "io_uring/io_uring.c",
-         3601
+         "not found",
+         "0x1aa",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         338,
+         427,
          "sys_io_uring_register",
-         "(unsigned int fd, unsigned int op, void __user *arg, unsigned int nr_args)",
-         "0x152",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "unsigned int op",
-            "def": null
-         },
-         {
-            "type": "void __user *arg",
-            "def": null
-         },
-         {
-            "type": "unsigned int nr_args",
-            "def": null
-         },
+         "not found",
+         "0x1ab",
          "",
          "",
-         "io_uring/io_uring.c",
-         4567
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         339,
+         428,
          "sys_open_tree",
-         "(int dfd, const char __user *path, unsigned flags)",
-         "0x153",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *path",
-            "def": null
-         },
-         {
-            "type": "unsigned flags",
-            "def": null
-         },
+         "not found",
+         "0x1ac",
          "",
          "",
          "",
-         "fs/namespace.c",
-         2687
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         340,
+         429,
          "sys_move_mount",
-         "(int from_dfd, const char __user *from_path, int to_dfd, const char __user *to_path, unsigned int ms_flags)",
-         "0x154",
-         {
-            "type": "int from_dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *from_path",
-            "def": null
-         },
-         {
-            "type": "int to_dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *to_path",
-            "def": null
-         },
-         {
-            "type": "unsigned int ms_flags",
-            "def": null
-         },
-         "",
-         "fs/namespace.c",
-         4058
+         "(int from_dfd,const char * from_path,int to_dfd,const char * to_path,unsigned int ms_flags)",
+         "0x1ad"
       ],
       [
-         341,
+         430,
          "sys_fsopen",
-         "(const char __user *fs_name, unsigned int flags)",
-         "0x155",
-         {
-            "type": "const char __user *fs_name",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "",
-         "fs/fsopen.c",
-         115
+         "(const char * fsname,unsigned flags)",
+         "0x1ae"
       ],
       [
-         342,
+         431,
          "sys_fsconfig",
-         "(int fs_fd, unsigned int cmd, const char __user *key, const void __user *value, int aux)",
-         "0x156",
-         {
-            "type": "int fs_fd",
-            "def": null
-         },
-         {
-            "type": "unsigned int cmd",
-            "def": null
-         },
-         {
-            "type": "const char __user *key",
-            "def": null
-         },
-         {
-            "type": "const void __user *value",
-            "def": null
-         },
-         {
-            "type": "int aux",
-            "def": null
-         },
-         "",
-         "fs/fsopen.c",
-         349
+         "(int fs_fd,unsigned cmd,const char * key,const void * val,int aux)",
+         "0x1af"
       ],
       [
-         343,
+         432,
          "sys_fsmount",
-         "(int fs_fd, unsigned int flags, unsigned int ms_flags)",
-         "0x157",
-         {
-            "type": "int fs_fd",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
-         {
-            "type": "unsigned int ms_flags",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "fs/namespace.c",
-         3929
+         "(int fs_fd,unsigned flags,unsigned ms_flags)",
+         "0x1b0"
       ],
       [
-         344,
+         433,
          "sys_fspick",
-         "(int dfd, const char __user *path, unsigned int flags)",
-         "0x158",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *path",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "fs/fsopen.c",
-         158
+         "(int dfd,const char * path,unsigned flags)",
+         "0x1b1"
       ],
       [
-         345,
+         434,
          "sys_pidfd_open",
-         "(pid_t pid, unsigned int flags)",
-         "0x159",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
+         "not found",
+         "0x1b2",
          "",
          "",
          "",
          "",
-         "kernel/pid.c",
-         627
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         346,
+         435,
          "sys_clone3",
-         "(struct clone_args __user *uargs, size_t size)",
-         "0x15a",
-         {
-            "type": "struct clone_args __user *uargs",
-            "def": null
-         },
-         {
-            "type": "size_t size",
-            "def": null
-         },
+         "not found",
+         "0x1b3",
          "",
          "",
          "",
          "",
-         "kernel/fork.c",
-         3194
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         347,
+         436,
          "sys_close_range",
-         "(unsigned int fd, unsigned int max_fd, unsigned int flags)",
-         "0x15b",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "unsigned int max_fd",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "fs/open.c",
-         1595
+         "(unsigned int fd,unsigned int max_fd,unsigned int flags)",
+         "0x1b4"
       ],
       [
-         348,
+         437,
          "sys_openat2",
-         "(int dfd, const char __user *filename, struct open_how *how, size_t size)",
-         "0x15c",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "struct open_how *how",
-            "def": null
-         },
-         {
-            "type": "size_t size",
-            "def": null
-         },
-         "",
-         "",
-         "fs/open.c",
-         1456
+         "(int dfd,const char * path,struct open_how * how)",
+         "0x1b5"
       ],
       [
-         349,
+         438,
          "sys_pidfd_getfd",
-         "(int pidfd, int fd, unsigned int flags)",
-         "0x15d",
-         {
-            "type": "int pidfd",
-            "def": null
-         },
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
+         "not found",
+         "0x1b6",
          "",
          "",
          "",
-         "kernel/pid.c",
-         725
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         350,
+         439,
          "sys_faccessat2",
-         "(int dfd, const char __user *filename, int mode, int flags)",
-         "0x15e",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "int mode",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
+         "not found",
+         "0x1b7",
          "",
          "",
-         "fs/open.c",
-         534
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         351,
+         440,
          "sys_process_madvise",
-         "(int pidfd, const struct iovec __user *vec, size_t vlen, int behavior, unsigned int flags)",
-         "0x15f",
-         {
-            "type": "int pidfd",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *vec",
-            "def": null
-         },
-         {
-            "type": "size_t vlen",
-            "def": null
-         },
-         {
-            "type": "int behavior",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
-         "",
-         "mm/madvise.c",
-         1466
+         "(int pidfd,const struct iovec * iovec,size_t n,int advice,unsigned int flags)",
+         "0x1b8"
       ],
       [
-         352,
+         441,
          "sys_epoll_pwait2",
-         "(int epfd, struct epoll_event __user *events, int maxevents, const struct __kernel_timespec __user *timeout, const sigset_t __user *sigmask, size_t sigsetsize)",
-         "0x160",
-         {
-            "type": "int epfd",
-            "def": null
-         },
-         {
-            "type": "struct epoll_event __user *events",
-            "def": null
-         },
-         {
-            "type": "int maxevents",
-            "def": null
-         },
-         {
-            "type": "const struct __kernel_timespec __user *timeout",
-            "def": null
-         },
-         {
-            "type": "const sigset_t __user *sigmask",
-            "def": null
-         },
-         {
-            "type": "size_t sigsetsize",
-            "def": null
-         },
-         "fs/eventpoll.c",
-         2370
+         "(int fd,struct epoll_event * events,int maxevents,const struct __kernel_timespec * timeout,const sigset_t * sigset,size_t sigsetsize)",
+         "0x1b9"
       ],
       [
-         353,
+         442,
          "sys_mount_setattr",
-         "(int dfd, const char __user *path, unsigned int flags, struct mount_attr __user *uattr, size_t usize)",
-         "0x161",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *path",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
-         {
-            "type": "struct mount_attr __user *uattr",
-            "def": null
-         },
-         {
-            "type": "size_t usize",
-            "def": null
-         },
-         "",
-         "fs/namespace.c",
-         4629
+         "(int dfd,const char * path,unsigned int flags,struct mount_attr * attr,size_t size)",
+         "0x1ba"
       ],
       [
-         354,
+         443,
          "sys_quotactl_fd",
-         "(unsigned int fd, unsigned int cmd, qid_t id, void __user *addr)",
-         "0x162",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "unsigned int cmd",
-            "def": null
-         },
-         {
-            "type": "qid_t id",
-            "def": null
-         },
-         {
-            "type": "void __user *addr",
-            "def": null
-         },
+         "not found",
+         "0x1bb",
          "",
          "",
-         "fs/quota/quota.c",
-         973
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         355,
+         444,
          "sys_landlock_create_ruleset",
-         "(const struct landlock_ruleset_attr __user *attr, size_t size, __u32 flags)",
-         "0x163",
-         {
-            "type": "const struct landlock_ruleset_attr __user *attr",
-            "def": null
-         },
-         {
-            "type": "size_t size",
-            "def": null
-         },
-         {
-            "type": "__u32 flags",
-            "def": null
-         },
+         "not found",
+         "0x1bc",
          "",
          "",
          "",
-         "security/landlock/syscalls.c",
-         157
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         356,
+         445,
          "sys_landlock_add_rule",
-         "(int ruleset_fd, enum landlock_rule_type rule_type, const void __user *rule_attr, __u32 flags)",
-         "0x164",
-         {
-            "type": "int ruleset_fd",
-            "def": null
-         },
-         {
-            "type": "enum landlock_rule_type rule_type",
-            "def": null
-         },
-         {
-            "type": "const void __user *rule_attr",
-            "def": null
-         },
-         {
-            "type": "__u32 flags",
-            "def": null
-         },
+         "not found",
+         "0x1bd",
          "",
          "",
-         "security/landlock/syscalls.c",
-         305
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         357,
+         446,
          "sys_landlock_restrict_self",
-         "(int ruleset_fd, __u32 flags)",
-         "0x165",
-         {
-            "type": "int ruleset_fd",
-            "def": null
-         },
-         {
-            "type": "__u32 flags",
-            "def": null
-         },
+         "not found",
+         "0x1be",
          "",
          "",
          "",
          "",
-         "security/landlock/syscalls.c",
-         397
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         358,
+         447,
          "sys_memfd_secret",
-         "(unsigned int flags)",
-         "0x166",
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
+         "not found",
+         "0x1bf",
          "",
          "",
          "",
          "",
          "",
-         "mm/secretmem.c",
-         233
+         "",
+         "not found",
+         ""
       ],
       [
-         359,
+         448,
          "sys_process_mrelease",
-         "(int pidfd, unsigned int flags)",
-         "0x167",
-         {
-            "type": "int pidfd",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
+         "not found",
+         "0x1c0",
          "",
          "",
          "",
          "",
-         "mm/oom_kill.c",
-         1195
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         360,
+         449,
          "sys_futex_waitv",
-         "(struct futex_waitv *waiters, unsigned int nr_futexes, unsigned int flags, struct __kernel_timespec __user *timeout, clockid_t clockid)",
-         "0x168",
-         {
-            "type": "struct futex_waitv *waiters",
-            "def": null
-         },
-         {
-            "type": "unsigned int nr_futexes",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_timespec __user *timeout",
-            "def": null
-         },
-         {
-            "type": "clockid_t clockid",
-            "def": null
-         },
+         "not found",
+         "0x1c1",
          "",
-         "kernel/futex/syscalls.c",
-         246
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         361,
+         450,
          "sys_set_mempolicy_home_node",
-         "(unsigned long start, unsigned long len, unsigned long home_node, unsigned long flags)",
-         "0x169",
-         {
-            "type": "unsigned long start",
-            "def": null
-         },
-         {
-            "type": "unsigned long len",
-            "def": null
-         },
-         {
-            "type": "unsigned long home_node",
-            "def": null
-         },
-         {
-            "type": "unsigned long flags",
-            "def": null
-         },
+         "not found",
+         "0x1c2",
          "",
          "",
-         "mm/mempolicy.c",
-         1504
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         362,
+         451,
          "sys_cachestat",
-         "(unsigned int fd, struct cachestat_range __user *cstat_range, struct cachestat __user *cstat, unsigned int flags)",
-         "0x16a",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "struct cachestat_range __user *cstat_range",
-            "def": null
-         },
-         {
-            "type": "struct cachestat __user *cstat",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
+         "not found",
+         "0x1c3",
          "",
          "",
-         "mm/filemap.c",
-         4255
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         363,
+         452,
          "sys_fchmodat2",
-         "(int dfd, const char __user *filename, umode_t mode, unsigned int flags)",
-         "0x16b",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "umode_t mode",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
-         "",
-         "",
-         "fs/open.c",
-         701
+         "(int dfd,const char * filename,mode_t mode,int flags)",
+         "0x1c4"
       ],
       [
-         364,
+         453,
          "sys_map_shadow_stack",
-         "(unsigned long addr, unsigned long size, unsigned int flags)",
-         "0x16c",
-         {
-            "type": "unsigned long addr",
-            "def": null
-         },
-         {
-            "type": "unsigned long size",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
-         "",
-         "",
-         "",
-         "arch/x86/kernel/shstk.c",
-         505
-      ],
-      [
-         365,
-         "not implemented",
-         "",
-         "0x16d",
+         "not found",
+         "0x1c5",
          "",
          "",
          "",
          "",
          "",
          "",
-         "",
+         "not found",
          ""
       ],
       [
-         366,
+         454,
+         "sys_futex_wake",
+         "not found",
+         "0x1c6",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         455,
+         "sys_futex_wait",
+         "not found",
+         "0x1c7",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         456,
+         "sys_futex_requeue",
+         "not found",
+         "0x1c8",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         457,
+         "sys_statmount",
+         "(__u64 mnt_id,__u64 mnt_ns_id,__u64 mask,unsigned int flags)",
+         "0x1c9"
+      ],
+      [
+         458,
+         "sys_listmount",
+         "(__u64 mnt_id,__u64 last_mnt_id,__u64 mnt_ns_id,__u64 list[],size_t num,unsigned int flags)",
+         "0x1ca"
+      ],
+      [
+         459,
+         "sys_lsm_get_self_attr",
+         "not found",
+         "0x1cb",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         460,
+         "sys_lsm_set_self_attr",
+         "not found",
+         "0x1cc",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         461,
+         "sys_lsm_list_modules",
+         "not found",
+         "0x1cd",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         462,
+         "sys_mseal",
+         "(void * start,size_t len)",
+         "0x1ce"
+      ],
+      [
+         463,
+         "sys_setxattrat",
+         "not found",
+         "0x1cf",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         464,
+         "sys_getxattrat",
+         "not found",
+         "0x1d0",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         465,
+         "sys_listxattrat",
+         "not found",
+         "0x1d1",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         466,
+         "sys_removexattrat",
+         "not found",
+         "0x1d2",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         467,
+         "sys_open_tree_attr",
+         "(int dfd,const char * path,unsigned int flags,struct mount_attr * attr,size_t size)",
+         "0x1d3"
+      ],
+      [
+         468,
+         "sys_file_getattr",
+         "not found",
+         "0x1d4",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         469,
+         "sys_file_setattr",
+         "not found",
+         "0x1d5",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         512,
          "compat_sys_rt_sigaction",
-         "(int, const struct compat_sigaction __user *, struct compat_sigaction __user *, compat_size_t)",
-         "0x16e",
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "const struct compat_sigaction __user *",
-            "def": null
-         },
-         {
-            "type": "struct compat_sigaction __user *",
-            "def": null
-         },
-         {
-            "type": "compat_size_t",
-            "def": null
-         },
+         "not found",
+         "0x200",
+         "",
+         "",
+         "",
+         "",
          "",
          "",
          "not found",
          ""
       ],
       [
-         368,
+         513,
+         "compat_sys_x32_rt_sigreturn",
+         "not found",
+         "0x201",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
+      ],
+      [
+         514,
          "compat_sys_ioctl",
-         "(unsigned int fd, unsigned int cmd, compat_ulong_t arg)",
-         "0x170",
-         {
-            "type": "unsigned int fd",
-            "def": null
-         },
-         {
-            "type": "unsigned int cmd",
-            "def": null
-         },
-         {
-            "type": "compat_ulong_t arg",
-            "def": null
-         },
+         "not found",
+         "0x202",
+         "",
+         "",
+         "",
          "",
          "",
          "",
@@ -8155,100 +4983,55 @@
          ""
       ],
       [
-         369,
+         515,
          "sys_readv",
-         "(unsigned long fd, const struct iovec __user *vec, unsigned long vlen)",
-         "0x171",
-         {
-            "type": "unsigned long fd",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *vec",
-            "def": null
-         },
-         {
-            "type": "unsigned long vlen",
-            "def": null
-         },
+         "not found",
+         "0x203",
          "",
          "",
          "",
-         "fs/read_write.c",
-         1040
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         370,
+         516,
          "sys_writev",
-         "(unsigned long fd, const struct iovec __user *vec, unsigned long vlen)",
-         "0x172",
-         {
-            "type": "unsigned long fd",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *vec",
-            "def": null
-         },
-         {
-            "type": "unsigned long vlen",
-            "def": null
-         },
+         "not found",
+         "0x204",
          "",
          "",
          "",
-         "fs/read_write.c",
-         1046
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         371,
+         517,
          "compat_sys_recvfrom",
-         "(int fd, void __user *buf, compat_size_t len, unsigned flags, struct sockaddr __user *addr, int __user *addrlen)",
-         "0x173",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "void __user *buf",
-            "def": null
-         },
-         {
-            "type": "compat_size_t len",
-            "def": null
-         },
-         {
-            "type": "unsigned flags",
-            "def": null
-         },
-         {
-            "type": "struct sockaddr __user *addr",
-            "def": null
-         },
-         {
-            "type": "int __user *addrlen",
-            "def": null
-         },
+         "not found",
+         "0x205",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
          "not found",
          ""
       ],
       [
-         372,
+         518,
          "compat_sys_sendmsg",
-         "(int fd, struct compat_msghdr __user *msg, unsigned flags)",
-         "0x174",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "struct compat_msghdr __user *msg",
-            "def": null
-         },
-         {
-            "type": "unsigned flags",
-            "def": null
-         },
+         "not found",
+         "0x206",
+         "",
+         "",
+         "",
          "",
          "",
          "",
@@ -8256,22 +5039,13 @@
          ""
       ],
       [
-         373,
+         519,
          "compat_sys_recvmsg",
-         "(int fd, struct compat_msghdr __user *msg, unsigned int flags)",
-         "0x175",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "struct compat_msghdr __user *msg",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
+         "not found",
+         "0x207",
+         "",
+         "",
+         "",
          "",
          "",
          "",
@@ -8279,22 +5053,13 @@
          ""
       ],
       [
-         374,
+         520,
          "compat_sys_execve",
-         "(const char __user *filename, const compat_uptr_t __user *argv, const compat_uptr_t __user *envp)",
-         "0x176",
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "const compat_uptr_t __user *argv",
-            "def": null
-         },
-         {
-            "type": "const compat_uptr_t __user *envp",
-            "def": null
-         },
+         "not found",
+         "0x208",
+         "",
+         "",
+         "",
          "",
          "",
          "",
@@ -8302,44 +5067,26 @@
          ""
       ],
       [
-         375,
+         521,
          "compat_sys_ptrace",
-         "(compat_long_t request, compat_long_t pid, compat_long_t addr, compat_long_t data)",
-         "0x177",
-         {
-            "type": "compat_long_t request",
-            "def": null
-         },
-         {
-            "type": "compat_long_t pid",
-            "def": null
-         },
-         {
-            "type": "compat_long_t addr",
-            "def": null
-         },
-         {
-            "type": "compat_long_t data",
-            "def": null
-         },
+         "not found",
+         "0x209",
+         "",
+         "",
+         "",
+         "",
          "",
          "",
          "not found",
          ""
       ],
       [
-         376,
+         522,
          "compat_sys_rt_sigpending",
-         "(compat_sigset_t __user *uset, compat_size_t sigsetsize)",
-         "0x178",
-         {
-            "type": "compat_sigset_t __user *uset",
-            "def": null
-         },
-         {
-            "type": "compat_size_t sigsetsize",
-            "def": null
-         },
+         "not found",
+         "0x20a",
+         "",
+         "",
          "",
          "",
          "",
@@ -8348,48 +5095,27 @@
          ""
       ],
       [
-         377,
+         523,
          "compat_sys_rt_sigtimedwait_time64",
-         "(compat_sigset_t __user *uthese, struct compat_siginfo __user *uinfo, struct __kernel_timespec __user *uts, compat_size_t sigsetsize)",
-         "0x179",
-         {
-            "type": "compat_sigset_t __user *uthese",
-            "def": null
-         },
-         {
-            "type": "struct compat_siginfo __user *uinfo",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_timespec __user *uts",
-            "def": null
-         },
-         {
-            "type": "compat_size_t sigsetsize",
-            "def": null
-         },
+         "not found",
+         "0x20b",
+         "",
+         "",
+         "",
+         "",
          "",
          "",
          "not found",
          ""
       ],
       [
-         378,
+         524,
          "compat_sys_rt_sigqueueinfo",
-         "(compat_pid_t pid, int sig, struct compat_siginfo __user *uinfo)",
-         "0x17a",
-         {
-            "type": "compat_pid_t pid",
-            "def": null
-         },
-         {
-            "type": "int sig",
-            "def": null
-         },
-         {
-            "type": "struct compat_siginfo __user *uinfo",
-            "def": null
-         },
+         "not found",
+         "0x20c",
+         "",
+         "",
+         "",
          "",
          "",
          "",
@@ -8397,18 +5123,12 @@
          ""
       ],
       [
-         379,
+         525,
          "compat_sys_sigaltstack",
-         "(const compat_stack_t __user *uss_ptr, compat_stack_t __user *uoss_ptr)",
-         "0x17b",
-         {
-            "type": "const compat_stack_t __user *uss_ptr",
-            "def": null
-         },
-         {
-            "type": "compat_stack_t __user *uoss_ptr",
-            "def": null
-         },
+         "not found",
+         "0x20d",
+         "",
+         "",
          "",
          "",
          "",
@@ -8417,22 +5137,13 @@
          ""
       ],
       [
-         380,
+         526,
          "compat_sys_timer_create",
-         "(clockid_t which_clock, struct compat_sigevent __user *timer_event_spec, timer_t __user *created_timer_id)",
-         "0x17c",
-         {
-            "type": "clockid_t which_clock",
-            "def": null
-         },
-         {
-            "type": "struct compat_sigevent __user *timer_event_spec",
-            "def": null
-         },
-         {
-            "type": "timer_t __user *created_timer_id",
-            "def": null
-         },
+         "not found",
+         "0x20e",
+         "",
+         "",
+         "",
          "",
          "",
          "",
@@ -8440,18 +5151,12 @@
          ""
       ],
       [
-         381,
+         527,
          "compat_sys_mq_notify",
-         "(mqd_t mqdes, const struct compat_sigevent __user *u_notification)",
-         "0x17d",
-         {
-            "type": "mqd_t mqdes",
-            "def": null
-         },
-         {
-            "type": "const struct compat_sigevent __user *u_notification",
-            "def": null
-         },
+         "not found",
+         "0x20f",
+         "",
+         "",
          "",
          "",
          "",
@@ -8460,73 +5165,40 @@
          ""
       ],
       [
-         382,
+         528,
          "compat_sys_kexec_load",
-         "(compat_ulong_t entry, compat_ulong_t nr_segments, struct compat_kexec_segment __user *, compat_ulong_t flags)",
-         "0x17e",
-         {
-            "type": "compat_ulong_t entry",
-            "def": null
-         },
-         {
-            "type": "compat_ulong_t nr_segments",
-            "def": null
-         },
-         {
-            "type": "struct compat_kexec_segment __user *",
-            "def": null
-         },
-         {
-            "type": "compat_ulong_t flags",
-            "def": null
-         },
+         "not found",
+         "0x210",
+         "",
+         "",
+         "",
+         "",
          "",
          "",
          "not found",
          ""
       ],
       [
-         383,
+         529,
          "compat_sys_waitid",
-         "(int, compat_pid_t, struct compat_siginfo __user *, int, struct compat_rusage __user *)",
-         "0x17f",
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "compat_pid_t",
-            "def": null
-         },
-         {
-            "type": "struct compat_siginfo __user *",
-            "def": null
-         },
-         {
-            "type": "int",
-            "def": null
-         },
-         {
-            "type": "struct compat_rusage __user *",
-            "def": null
-         },
+         "not found",
+         "0x211",
+         "",
+         "",
+         "",
+         "",
+         "",
          "",
          "not found",
          ""
       ],
       [
-         384,
+         530,
          "compat_sys_set_robust_list",
-         "(struct compat_robust_list_head __user *head, compat_size_t len)",
-         "0x180",
-         {
-            "type": "struct compat_robust_list_head __user *head",
-            "def": null
-         },
-         {
-            "type": "compat_size_t len",
-            "def": null
-         },
+         "not found",
+         "0x212",
+         "",
+         "",
          "",
          "",
          "",
@@ -8535,22 +5207,13 @@
          ""
       ],
       [
-         385,
+         531,
          "compat_sys_get_robust_list",
-         "(int pid, compat_uptr_t __user *head_ptr, compat_size_t __user *len_ptr)",
-         "0x181",
-         {
-            "type": "int pid",
-            "def": null
-         },
-         {
-            "type": "compat_uptr_t __user *head_ptr",
-            "def": null
-         },
-         {
-            "type": "compat_size_t __user *len_ptr",
-            "def": null
-         },
+         "not found",
+         "0x213",
+         "",
+         "",
+         "",
          "",
          "",
          "",
@@ -8558,331 +5221,166 @@
          ""
       ],
       [
-         386,
+         532,
          "sys_vmsplice",
-         "(int fd, const struct iovec __user *iov, unsigned long nr_segs, unsigned int flags)",
-         "0x182",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *iov",
-            "def": null
-         },
-         {
-            "type": "unsigned long nr_segs",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
+         "not found",
+         "0x214",
          "",
          "",
-         "fs/splice.c",
-         1532
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         387,
+         533,
          "sys_move_pages",
-         "(pid_t pid, unsigned long nr_pages, const void __user * __user *pages, const int __user *nodes, int __user *status, int flags)",
-         "0x183",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "unsigned long nr_pages",
-            "def": null
-         },
-         {
-            "type": "const void __user * __user *pages",
-            "def": null
-         },
-         {
-            "type": "const int __user *nodes",
-            "def": null
-         },
-         {
-            "type": "int __user *status",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
-         "mm/migrate.c",
-         2442
+         "not found",
+         "0x215",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         388,
+         534,
          "compat_sys_preadv64",
-         "(unsigned long fd, const struct iovec __user *vec, unsigned long vlen, loff_t pos)",
-         "0x184",
-         {
-            "type": "unsigned long fd",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *vec",
-            "def": null
-         },
-         {
-            "type": "unsigned long vlen",
-            "def": null
-         },
-         {
-            "type": "loff_t pos",
-            "def": null
-         },
+         "not found",
+         "0x216",
+         "",
+         "",
+         "",
+         "",
          "",
          "",
          "not found",
          ""
       ],
       [
-         389,
+         535,
          "compat_sys_pwritev64",
-         "(unsigned long fd, const struct iovec __user *vec, unsigned long vlen, loff_t pos)",
-         "0x185",
-         {
-            "type": "unsigned long fd",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *vec",
-            "def": null
-         },
-         {
-            "type": "unsigned long vlen",
-            "def": null
-         },
-         {
-            "type": "loff_t pos",
-            "def": null
-         },
+         "not found",
+         "0x217",
+         "",
+         "",
+         "",
+         "",
          "",
          "",
          "not found",
          ""
       ],
       [
-         390,
+         536,
          "compat_sys_rt_tgsigqueueinfo",
-         "(compat_pid_t tgid, compat_pid_t pid, int sig, struct compat_siginfo __user *uinfo)",
-         "0x186",
-         {
-            "type": "compat_pid_t tgid",
-            "def": null
-         },
-         {
-            "type": "compat_pid_t pid",
-            "def": null
-         },
-         {
-            "type": "int sig",
-            "def": null
-         },
-         {
-            "type": "struct compat_siginfo __user *uinfo",
-            "def": null
-         },
+         "not found",
+         "0x218",
+         "",
+         "",
+         "",
+         "",
          "",
          "",
          "not found",
          ""
       ],
       [
-         391,
+         537,
          "compat_sys_recvmmsg_time64",
-         "(int fd, struct compat_mmsghdr __user *mmsg, unsigned vlen, unsigned int flags, struct __kernel_timespec __user *timeout)",
-         "0x187",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "struct compat_mmsghdr __user *mmsg",
-            "def": null
-         },
-         {
-            "type": "unsigned vlen",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
-         {
-            "type": "struct __kernel_timespec __user *timeout",
-            "def": null
-         },
+         "not found",
+         "0x219",
+         "",
+         "",
+         "",
+         "",
+         "",
          "",
          "not found",
          ""
       ],
       [
-         392,
+         538,
          "compat_sys_sendmmsg",
-         "(int fd, struct compat_mmsghdr __user *mmsg, unsigned vlen, unsigned int flags)",
-         "0x188",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "struct compat_mmsghdr __user *mmsg",
-            "def": null
-         },
-         {
-            "type": "unsigned vlen",
-            "def": null
-         },
-         {
-            "type": "unsigned int flags",
-            "def": null
-         },
+         "not found",
+         "0x21a",
+         "",
+         "",
+         "",
+         "",
          "",
          "",
          "not found",
          ""
       ],
       [
-         393,
+         539,
          "sys_process_vm_readv",
-         "(pid_t pid, const struct iovec __user *lvec, unsigned long liovcnt, const struct iovec __user *rvec, unsigned long riovcnt, unsigned long flags)",
-         "0x189",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *lvec",
-            "def": null
-         },
-         {
-            "type": "unsigned long liovcnt",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *rvec",
-            "def": null
-         },
-         {
-            "type": "unsigned long riovcnt",
-            "def": null
-         },
-         {
-            "type": "unsigned long flags",
-            "def": null
-         },
-         "mm/process_vm_access.c",
-         291
+         "not found",
+         "0x21b",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         394,
+         540,
          "sys_process_vm_writev",
-         "(pid_t pid, const struct iovec __user *lvec, unsigned long liovcnt, const struct iovec __user *rvec, unsigned long riovcnt, unsigned long flags)",
-         "0x18a",
-         {
-            "type": "pid_t pid",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *lvec",
-            "def": null
-         },
-         {
-            "type": "unsigned long liovcnt",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *rvec",
-            "def": null
-         },
-         {
-            "type": "unsigned long riovcnt",
-            "def": null
-         },
-         {
-            "type": "unsigned long flags",
-            "def": null
-         },
-         "mm/process_vm_access.c",
-         298
+         "not found",
+         "0x21c",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         395,
+         541,
          "sys_setsockopt",
-         "(int fd, int level, int optname, char __user *optval, int optlen)",
-         "0x18b",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "int level",
-            "def": null
-         },
-         {
-            "type": "int optname",
-            "def": null
-         },
-         {
-            "type": "char __user *optval",
-            "def": null
-         },
-         {
-            "type": "int optlen",
-            "def": null
-         },
+         "not found",
+         "0x21d",
          "",
-         "net/socket.c",
-         2333
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         396,
+         542,
          "sys_getsockopt",
-         "(int fd, int level, int optname, char __user *optval, int __user *optlen)",
-         "0x18c",
-         {
-            "type": "int fd",
-            "def": null
-         },
-         {
-            "type": "int level",
-            "def": null
-         },
-         {
-            "type": "int optname",
-            "def": null
-         },
-         {
-            "type": "char __user *optval",
-            "def": null
-         },
-         {
-            "type": "int __user *optlen",
-            "def": null
-         },
+         "not found",
+         "0x21e",
          "",
-         "net/socket.c",
-         2383
+         "",
+         "",
+         "",
+         "",
+         "",
+         "not found",
+         ""
       ],
       [
-         397,
+         543,
          "compat_sys_io_setup",
-         "(unsigned nr_reqs, u32 __user *ctx32p)",
-         "0x18d",
-         {
-            "type": "unsigned nr_reqs",
-            "def": null
-         },
-         {
-            "type": "u32 __user *ctx32p",
-            "def": null
-         },
+         "not found",
+         "0x21f",
+         "",
+         "",
          "",
          "",
          "",
@@ -8891,22 +5389,13 @@
          ""
       ],
       [
-         398,
+         544,
          "compat_sys_io_submit",
-         "(compat_aio_context_t ctx_id, int nr, u32 __user *iocb)",
-         "0x18e",
-         {
-            "type": "compat_aio_context_t ctx_id",
-            "def": null
-         },
-         {
-            "type": "int nr",
-            "def": null
-         },
-         {
-            "type": "u32 __user *iocb",
-            "def": null
-         },
+         "not found",
+         "0x220",
+         "",
+         "",
+         "",
          "",
          "",
          "",
@@ -8914,91 +5403,46 @@
          ""
       ],
       [
-         399,
+         545,
          "compat_sys_execveat",
-         "(int dfd, const char __user *filename, const compat_uptr_t __user *argv, const compat_uptr_t __user *envp, int flags)",
-         "0x18f",
-         {
-            "type": "int dfd",
-            "def": null
-         },
-         {
-            "type": "const char __user *filename",
-            "def": null
-         },
-         {
-            "type": "const compat_uptr_t __user *argv",
-            "def": null
-         },
-         {
-            "type": "const compat_uptr_t __user *envp",
-            "def": null
-         },
-         {
-            "type": "int flags",
-            "def": null
-         },
+         "not found",
+         "0x221",
+         "",
+         "",
+         "",
+         "",
+         "",
          "",
          "not found",
          ""
       ],
       [
-         400,
+         546,
          "compat_sys_preadv64v2",
-         "(unsigned long fd, const struct iovec __user *vec, unsigned long vlen, loff_t pos, rwf_t flags)",
-         "0x190",
-         {
-            "type": "unsigned long fd",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *vec",
-            "def": null
-         },
-         {
-            "type": "unsigned long vlen",
-            "def": null
-         },
-         {
-            "type": "loff_t pos",
-            "def": null
-         },
-         {
-            "type": "rwf_t flags",
-            "def": null
-         },
+         "not found",
+         "0x222",
+         "",
+         "",
+         "",
+         "",
+         "",
          "",
          "not found",
          ""
       ],
       [
-         401,
+         547,
          "compat_sys_pwritev64v2",
-         "(unsigned long fd, const struct iovec __user *vec, unsigned long vlen, loff_t pos, rwf_t flags)",
-         "0x191",
-         {
-            "type": "unsigned long fd",
-            "def": null
-         },
-         {
-            "type": "const struct iovec __user *vec",
-            "def": null
-         },
-         {
-            "type": "unsigned long vlen",
-            "def": null
-         },
-         {
-            "type": "loff_t pos",
-            "def": null
-         },
-         {
-            "type": "rwf_t flags",
-            "def": null
-         },
+         "not found",
+         "0x223",
+         "",
+         "",
+         "",
+         "",
+         "",
          "",
          "not found",
          ""
       ]
    ]
-}
+};
