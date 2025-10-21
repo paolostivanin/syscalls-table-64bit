@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-KERNEL_VERSION="6.17.4"
+KERNEL_VERSION="6.17.3"
 LINK="https://www.kernel.org/pub/linux/kernel/v6.x/linux-${KERNEL_VERSION}.tar.xz"
 WORKDIR="/tmp/linux-${KERNEL_VERSION}"
 

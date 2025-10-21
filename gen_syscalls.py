@@ -64,6 +64,9 @@ with open(SCT_PATH, "r", encoding="utf-8", errors="ignore") as sct_file:
         else:
             sys_calls.append(["", "not implemented", "", "", "", "", "", "", "", "", "", ""])
 
-# Match old behavior: print as JavaScript file content
-output = json.dumps({"aaData": sys_calls}, indent=3)
-print(f"var syscalls_x86_64 = {output};")
+output = json.dumps({"aaData": sys_calls}, indent=3, ensure_ascii=False)
+
+# Print as valid JS variable declaration (no trailing newline issues)
+sys.stdout.write("var syscalls_x86_64 = ")
+sys.stdout.write(output)
+sys.stdout.write(";\n")
