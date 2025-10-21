@@ -44,7 +44,7 @@
 function renderReg(data) {
   if (!data || !data.type) return "-";
   if (data.def && data.def.file)
-    return `<a target="_blank" href="https://elixir.bootlin.com/linux/v6.17.4/source/${data.def.file}#L${data.def.line}">${data.type}</a>`;
+    return `<a target="_blank" href="https://elixir.bootlin.com/linux/v6.17.3/source/${data.def.file}#L${data.def.line}">${data.type}</a>`;
   return data.type;
 }
 
@@ -82,7 +82,7 @@ $(function() {
           const file = row[10];
           const line = row[11];
           if (file && file !== "not found")
-            return `<a target="_blank" href="https://elixir.bootlin.com/linux/v6.17.4/source/${file}#L${line}">${file}:${line}</a>`;
+            return `<a target="_blank" href="https://elixir.bootlin.com/linux/v6.17.3/source/${file}#L${line}">${file}:${line}</a>`;
           return file || "-";
         },
         searchable: false
@@ -131,7 +131,7 @@ $(function() {
 
   <div id="footer" class="site">
     <h4 class="chunk">
-      Generated from Linux kernel 6.17.4 using
+      Generated from Linux kernel 6.17.3 using
       <a target="_blank" href="https://www.python.org/">Python</a> and
       <a target="_blank" href="https://datatables.net/">DataTables</a>.
       <br>
