@@ -3,7 +3,7 @@ var syscalls_x86_64 = {
       [
          0,
          "sys_read",
-         "(int fd,void * buf,size_t len)",
+         "not found",
          "0x0",
          "",
          "",
@@ -31,7 +31,7 @@ var syscalls_x86_64 = {
       [
          2,
          "sys_open",
-         "not found",
+         "(void)",
          "0x2",
          "",
          "",
@@ -39,8 +39,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         230
       ],
       [
          3,
@@ -129,7 +129,7 @@ var syscalls_x86_64 = {
       [
          9,
          "sys_mmap",
-         "(unsigned long addr,unsigned long len,unsigned long prot,unsigned long flags,unsigned long fd,unsigned long offset)",
+         "(void)",
          "0x9",
          "",
          "",
@@ -143,7 +143,7 @@ var syscalls_x86_64 = {
       [
          10,
          "sys_mprotect",
-         "(void * ptr,size_t size,unsigned long prot)",
+         "(void)",
          "0xa",
          "",
          "",
@@ -151,13 +151,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         179
       ],
       [
          11,
          "sys_munmap",
-         "(void * ptr,size_t size)",
+         "not found",
          "0xb",
          "",
          "",
@@ -185,7 +185,7 @@ var syscalls_x86_64 = {
       [
          13,
          "sys_rt_sigaction",
-         "not found",
+         "(void)",
          "0xd",
          "",
          "",
@@ -193,13 +193,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/signal.c",
+         4654
       ],
       [
          14,
          "sys_rt_sigprocmask",
-         "not found",
+         "(void)",
          "0xe",
          "",
          "",
@@ -207,13 +207,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/signal.c",
+         3349
       ],
       [
          15,
          "sys_rt_sigreturn",
-         "(struct pt_regs * regs)",
+         "(void)",
          "0xf",
          "",
          "",
@@ -339,7 +339,7 @@ var syscalls_x86_64 = {
       [
          24,
          "sys_sched_yield",
-         "not found",
+         "(void)",
          "0x18",
          "",
          "",
@@ -347,13 +347,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sched/syscalls.c",
+         1371
       ],
       [
          25,
          "sys_mremap",
-         "(void * addr,size_t old_len,size_t new_len,unsigned long flags,void * new_addr)",
+         "(void)",
          "0x19",
          "",
          "",
@@ -361,13 +361,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         162
       ],
       [
          26,
          "sys_msync",
-         "not found",
+         "(void)",
          "0x1a",
          "",
          "",
@@ -375,13 +375,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         180
       ],
       [
          27,
          "sys_mincore",
-         "not found",
+         "(void)",
          "0x1b",
          "",
          "",
@@ -389,13 +389,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         185
       ],
       [
          28,
          "sys_madvise",
-         "(void * start,size_t len,int types)",
+         "(void)",
          "0x1c",
          "",
          "",
@@ -403,13 +403,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         186
       ],
       [
          29,
          "sys_shmget",
-         "not found",
+         "(void)",
          "0x1d",
          "",
          "",
@@ -417,13 +417,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         134
       ],
       [
          30,
          "sys_shmat",
-         "not found",
+         "(void)",
          "0x1e",
          "",
          "",
@@ -431,13 +431,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         139
       ],
       [
          31,
          "sys_shmctl",
-         "not found",
+         "(void)",
          "0x1f",
          "",
          "",
@@ -445,8 +445,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         136
       ],
       [
          32,
@@ -479,7 +479,7 @@ var syscalls_x86_64 = {
       [
          34,
          "sys_pause",
-         "not found",
+         "(void)",
          "0x22",
          "",
          "",
@@ -487,13 +487,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/signal.c",
+         4822
       ],
       [
          35,
          "sys_nanosleep",
-         "not found",
+         "(void)",
          "0x23",
          "",
          "",
@@ -501,13 +501,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/time/hrtimer.c",
+         2168
       ],
       [
          36,
          "sys_getitimer",
-         "not found",
+         "(void)",
          "0x24",
          "",
          "",
@@ -515,13 +515,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/time/itimer.c",
+         141
       ],
       [
          37,
          "sys_alarm",
-         "not found",
+         "(unsigned int seconds)",
          "0x25",
          "",
          "",
@@ -529,13 +529,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/time/itimer.c",
+         326
       ],
       [
          38,
          "sys_setitimer",
-         "not found",
+         "(void)",
          "0x26",
          "",
          "",
@@ -543,13 +543,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/time/itimer.c",
+         398
       ],
       [
          39,
          "sys_getpid",
-         "not found",
+         "(void)",
          "0x27",
          "",
          "",
@@ -557,8 +557,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         999
       ],
       [
          40,
@@ -577,7 +577,7 @@ var syscalls_x86_64 = {
       [
          41,
          "sys_socket",
-         "not found",
+         "(void)",
          "0x29",
          "",
          "",
@@ -585,13 +585,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         142
       ],
       [
          42,
          "sys_connect",
-         "not found",
+         "(void)",
          "0x2a",
          "",
          "",
@@ -599,13 +599,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         147
       ],
       [
          43,
          "sys_accept",
-         "not found",
+         "(void)",
          "0x2b",
          "",
          "",
@@ -613,13 +613,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         146
       ],
       [
          44,
          "sys_sendto",
-         "not found",
+         "(void)",
          "0x2c",
          "",
          "",
@@ -627,13 +627,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         154
       ],
       [
          45,
          "sys_recvfrom",
-         "not found",
+         "(void)",
          "0x2d",
          "",
          "",
@@ -641,13 +641,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         156
       ],
       [
          46,
          "sys_sendmsg",
-         "not found",
+         "(void)",
          "0x2e",
          "",
          "",
@@ -655,13 +655,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         158
       ],
       [
          47,
          "sys_recvmsg",
-         "not found",
+         "(void)",
          "0x2f",
          "",
          "",
@@ -669,13 +669,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         160
       ],
       [
          48,
          "sys_shutdown",
-         "not found",
+         "(void)",
          "0x30",
          "",
          "",
@@ -683,13 +683,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         155
       ],
       [
          49,
          "sys_bind",
-         "not found",
+         "(void)",
          "0x31",
          "",
          "",
@@ -697,13 +697,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         144
       ],
       [
          50,
          "sys_listen",
-         "not found",
+         "(void)",
          "0x32",
          "",
          "",
@@ -711,13 +711,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         145
       ],
       [
          51,
          "sys_getsockname",
-         "not found",
+         "(void)",
          "0x33",
          "",
          "",
@@ -725,13 +725,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         148
       ],
       [
          52,
          "sys_getpeername",
-         "not found",
+         "(void)",
          "0x34",
          "",
          "",
@@ -739,13 +739,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         149
       ],
       [
          53,
          "sys_socketpair",
-         "not found",
+         "(void)",
          "0x35",
          "",
          "",
@@ -753,13 +753,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         143
       ],
       [
          54,
          "sys_setsockopt",
-         "not found",
+         "(void)",
          "0x36",
          "",
          "",
@@ -767,13 +767,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         150
       ],
       [
          55,
          "sys_getsockopt",
-         "not found",
+         "(void)",
          "0x37",
          "",
          "",
@@ -781,13 +781,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         152
       ],
       [
          56,
          "sys_clone",
-         "(unsigned long clone_flags,unsigned long newsp,int * parent_tidptr,unsigned long tls,int * child_tidptr)",
+         "(struct clone_args __user * uargs, size_t size)",
          "0x38",
          "",
          "",
@@ -801,7 +801,7 @@ var syscalls_x86_64 = {
       [
          57,
          "sys_fork",
-         "not found",
+         "(void)",
          "0x39",
          "",
          "",
@@ -809,13 +809,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/fork.c",
+         2687
       ],
       [
          58,
          "sys_vfork",
-         "not found",
+         "(void)",
          "0x3a",
          "",
          "",
@@ -823,13 +823,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/fork.c",
+         2703
       ],
       [
          59,
          "sys_execve",
-         "not found",
+         "(void)",
          "0x3b",
          "",
          "",
@@ -837,13 +837,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         254
       ],
       [
          60,
          "sys_exit",
-         "(struct syscall_exit_args * args)",
+         "(int error_code)",
          "0x3c",
          "",
          "",
@@ -857,7 +857,7 @@ var syscalls_x86_64 = {
       [
          61,
          "sys_wait4",
-         "not found",
+         "(void)",
          "0x3d",
          "",
          "",
@@ -865,13 +865,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/exit.c",
+         1916
       ],
       [
          62,
          "sys_kill",
-         "not found",
+         "(pid_t pid, int sig)",
          "0x3e",
          "",
          "",
@@ -879,13 +879,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/signal.c",
+         3949
       ],
       [
          63,
          "sys_newuname",
-         "not found",
+         "(struct new_utsname __user * name)",
          "0x3f",
          "",
          "",
@@ -893,13 +893,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1351
       ],
       [
          64,
          "sys_semget",
-         "not found",
+         "(void)",
          "0x40",
          "",
          "",
@@ -907,13 +907,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         126
       ],
       [
          65,
          "sys_semop",
-         "not found",
+         "(void)",
          "0x41",
          "",
          "",
@@ -921,13 +921,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         133
       ],
       [
          66,
          "sys_semctl",
-         "not found",
+         "(void)",
          "0x42",
          "",
          "",
@@ -935,13 +935,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         128
       ],
       [
          67,
          "sys_shmdt",
-         "not found",
+         "(void)",
          "0x43",
          "",
          "",
@@ -949,13 +949,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         141
       ],
       [
          68,
          "sys_msgget",
-         "not found",
+         "(void)",
          "0x44",
          "",
          "",
@@ -963,13 +963,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         117
       ],
       [
          69,
          "sys_msgsnd",
-         "not found",
+         "(void)",
          "0x45",
          "",
          "",
@@ -977,13 +977,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         124
       ],
       [
          70,
          "sys_msgrcv",
-         "not found",
+         "(void)",
          "0x46",
          "",
          "",
@@ -991,13 +991,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         122
       ],
       [
          71,
          "sys_msgctl",
-         "not found",
+         "(void)",
          "0x47",
          "",
          "",
@@ -1005,8 +1005,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         119
       ],
       [
          72,
@@ -1025,7 +1025,7 @@ var syscalls_x86_64 = {
       [
          73,
          "sys_flock",
-         "not found",
+         "(void)",
          "0x49",
          "",
          "",
@@ -1033,8 +1033,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         66
       ],
       [
          74,
@@ -1291,7 +1291,7 @@ var syscalls_x86_64 = {
       [
          92,
          "sys_chown",
-         "not found",
+         "(const char __user * filename, old_uid_t user, old_gid_t group)",
          "0x5c",
          "",
          "",
@@ -1299,13 +1299,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/uid16.c",
+         23
       ],
       [
          93,
          "sys_fchown",
-         "not found",
+         "(unsigned int fd, old_uid_t user, old_gid_t group)",
          "0x5d",
          "",
          "",
@@ -1313,13 +1313,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/uid16.c",
+         33
       ],
       [
          94,
          "sys_lchown",
-         "not found",
+         "(const char __user * filename, old_uid_t user, old_gid_t group)",
          "0x5e",
          "",
          "",
@@ -1327,13 +1327,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/uid16.c",
+         28
       ],
       [
          95,
          "sys_umask",
-         "not found",
+         "(int mask)",
          "0x5f",
          "",
          "",
@@ -1341,13 +1341,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1942
       ],
       [
          96,
          "sys_gettimeofday",
-         "(struct timeval * tv,struct timezone * tz)",
+         "(void)",
          "0x60",
          "",
          "",
@@ -1361,7 +1361,7 @@ var syscalls_x86_64 = {
       [
          97,
          "sys_getrlimit",
-         "not found",
+         "(void)",
          "0x61",
          "",
          "",
@@ -1369,13 +1369,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1597
       ],
       [
          98,
          "sys_getrusage",
-         "not found",
+         "(int who, struct compat_rusage __user * ru)",
          "0x62",
          "",
          "",
@@ -1383,13 +1383,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1929
       ],
       [
          99,
          "sys_sysinfo",
-         "not found",
+         "(struct compat_sysinfo __user * info)",
          "0x63",
          "",
          "",
@@ -1397,13 +1397,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         2926
       ],
       [
          100,
          "sys_times",
-         "not found",
+         "(struct compat_tms __user * tbuf)",
          "0x64",
          "",
          "",
@@ -1411,13 +1411,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1083
       ],
       [
          101,
          "sys_ptrace",
-         "(long request,pid_t pid,unsigned long addr,unsigned long data)",
+         "(void)",
          "0x65",
          "",
          "",
@@ -1431,7 +1431,7 @@ var syscalls_x86_64 = {
       [
          102,
          "sys_getuid",
-         "not found",
+         "(void)",
          "0x66",
          "",
          "",
@@ -1439,13 +1439,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1027
       ],
       [
          103,
          "sys_syslog",
-         "not found",
+         "(int type, char __user * buf, int len)",
          "0x67",
          "",
          "",
@@ -1453,13 +1453,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/printk/printk.c",
+         1875
       ],
       [
          104,
          "sys_getgid",
-         "not found",
+         "(void)",
          "0x68",
          "",
          "",
@@ -1467,13 +1467,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1039
       ],
       [
          105,
          "sys_setuid",
-         "not found",
+         "(uid_t uid)",
          "0x69",
          "",
          "",
@@ -1481,13 +1481,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         698
       ],
       [
          106,
          "sys_setgid",
-         "not found",
+         "(gid_t gid)",
          "0x6a",
          "",
          "",
@@ -1495,13 +1495,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         515
       ],
       [
          107,
          "sys_geteuid",
-         "not found",
+         "(void)",
          "0x6b",
          "",
          "",
@@ -1509,13 +1509,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1033
       ],
       [
          108,
          "sys_getegid",
-         "not found",
+         "(void)",
          "0x6c",
          "",
          "",
@@ -1523,13 +1523,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1045
       ],
       [
          109,
          "sys_setpgid",
-         "not found",
+         "(pid_t pid, pid_t pgid)",
          "0x6d",
          "",
          "",
@@ -1537,13 +1537,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1114
       ],
       [
          110,
          "sys_getppid",
-         "not found",
+         "(void)",
          "0x6e",
          "",
          "",
@@ -1551,13 +1551,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1016
       ],
       [
          111,
          "sys_getpgrp",
-         "not found",
+         "(void)",
          "0x6f",
          "",
          "",
@@ -1565,13 +1565,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1222
       ],
       [
          112,
          "sys_setsid",
-         "not found",
+         "(void)",
          "0x70",
          "",
          "",
@@ -1579,13 +1579,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1303
       ],
       [
          113,
          "sys_setreuid",
-         "not found",
+         "(uid_t ruid, uid_t euid)",
          "0x71",
          "",
          "",
@@ -1593,13 +1593,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         635
       ],
       [
          114,
          "sys_setregid",
-         "not found",
+         "(gid_t rgid, gid_t egid)",
          "0x72",
          "",
          "",
@@ -1607,13 +1607,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         469
       ],
       [
          115,
          "sys_getgroups",
-         "not found",
+         "(int gidsetsize, gid_t __user * grouplist)",
          "0x73",
          "",
          "",
@@ -1621,13 +1621,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/groups.c",
+         161
       ],
       [
          116,
          "sys_setgroups",
-         "not found",
+         "(int gidsetsize, gid_t __user * grouplist)",
          "0x74",
          "",
          "",
@@ -1635,13 +1635,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/groups.c",
+         198
       ],
       [
          117,
          "sys_setresuid",
-         "not found",
+         "(uid_t ruid, uid_t euid, uid_t suid)",
          "0x75",
          "",
          "",
@@ -1649,13 +1649,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         783
       ],
       [
          118,
          "sys_getresuid",
-         "not found",
+         "(uid_t __user * ruidp, uid_t __user * euidp, uid_t __user * suidp)",
          "0x76",
          "",
          "",
@@ -1663,13 +1663,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         788
       ],
       [
          119,
          "sys_setresgid",
-         "not found",
+         "(gid_t rgid, gid_t egid, gid_t sgid)",
          "0x77",
          "",
          "",
@@ -1677,13 +1677,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         872
       ],
       [
          120,
          "sys_getresgid",
-         "not found",
+         "(gid_t __user * rgidp, gid_t __user * egidp, gid_t __user * sgidp)",
          "0x78",
          "",
          "",
@@ -1691,13 +1691,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         877
       ],
       [
          121,
          "sys_getpgid",
-         "not found",
+         "(pid_t pid)",
          "0x79",
          "",
          "",
@@ -1705,13 +1705,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1215
       ],
       [
          122,
          "sys_setfsuid",
-         "not found",
+         "(uid_t uid)",
          "0x7a",
          "",
          "",
@@ -1719,13 +1719,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         940
       ],
       [
          123,
          "sys_setfsgid",
-         "not found",
+         "(gid_t gid)",
          "0x7b",
          "",
          "",
@@ -1733,13 +1733,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         984
       ],
       [
          124,
          "sys_getsid",
-         "not found",
+         "(pid_t pid)",
          "0x7c",
          "",
          "",
@@ -1747,13 +1747,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1229
       ],
       [
          125,
          "sys_capget",
-         "not found",
+         "(cap_user_header_t header, cap_user_data_t dataptr)",
          "0x7d",
          "",
          "",
@@ -1761,13 +1761,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/capability.c",
+         137
       ],
       [
          126,
          "sys_capset",
-         "not found",
+         "(cap_user_header_t header, const cap_user_data_t data)",
          "0x7e",
          "",
          "",
@@ -1775,13 +1775,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/capability.c",
+         216
       ],
       [
          127,
          "sys_rt_sigpending",
-         "not found",
+         "(void)",
          "0x7f",
          "",
          "",
@@ -1789,13 +1789,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/signal.c",
+         3406
       ],
       [
          128,
          "sys_rt_sigtimedwait",
-         "not found",
+         "(void)",
          "0x80",
          "",
          "",
@@ -1803,13 +1803,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/signal.c",
+         3901
       ],
       [
          129,
          "sys_rt_sigqueueinfo",
-         "(pid_t tgid,int sig,siginfo_t * uinfo)",
+         "(void)",
          "0x81",
          "",
          "",
@@ -1823,7 +1823,7 @@ var syscalls_x86_64 = {
       [
          130,
          "sys_rt_sigsuspend",
-         "not found",
+         "(void)",
          "0x82",
          "",
          "",
@@ -1831,13 +1831,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/signal.c",
+         4866
       ],
       [
          131,
          "sys_sigaltstack",
-         "not found",
+         "(void)",
          "0x83",
          "",
          "",
@@ -1845,13 +1845,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/signal.c",
+         4510
       ],
       [
          132,
          "sys_utime",
-         "not found",
+         "(void)",
          "0x84",
          "",
          "",
@@ -1859,8 +1859,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         334
       ],
       [
          133,
@@ -1893,7 +1893,7 @@ var syscalls_x86_64 = {
       [
          135,
          "sys_personality",
-         "not found",
+         "(unsigned int personality)",
          "0x87",
          "",
          "",
@@ -1901,8 +1901,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/exec_domain.c",
+         38
       ],
       [
          136,
@@ -1949,7 +1949,7 @@ var syscalls_x86_64 = {
       [
          139,
          "sys_sysfs",
-         "not found",
+         "(void)",
          "0x8b",
          "",
          "",
@@ -1957,13 +1957,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         364
       ],
       [
          140,
          "sys_getpriority",
-         "not found",
+         "(int which, int who)",
          "0x8c",
          "",
          "",
@@ -1971,13 +1971,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         329
       ],
       [
          141,
          "sys_setpriority",
-         "not found",
+         "(int which, int who, int niceval)",
          "0x8d",
          "",
          "",
@@ -1985,13 +1985,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         259
       ],
       [
          142,
          "sys_sched_setparam",
-         "not found",
+         "(pid_t pid, struct sched_param __user * param)",
          "0x8e",
          "",
          "",
@@ -1999,13 +1999,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sched/syscalls.c",
+         966
       ],
       [
          143,
          "sys_sched_getparam",
-         "not found",
+         "(pid_t pid, struct sched_param __user * param)",
          "0x8f",
          "",
          "",
@@ -2013,13 +2013,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sched/syscalls.c",
+         1042
       ],
       [
          144,
          "sys_sched_setscheduler",
-         "not found",
+         "(pid_t pid, int policy, struct sched_param __user * param)",
          "0x90",
          "",
          "",
@@ -2027,13 +2027,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sched/syscalls.c",
+         951
       ],
       [
          145,
          "sys_sched_getscheduler",
-         "not found",
+         "(pid_t pid)",
          "0x91",
          "",
          "",
@@ -2041,13 +2041,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sched/syscalls.c",
+         1012
       ],
       [
          146,
          "sys_sched_get_priority_max",
-         "not found",
+         "(int policy)",
          "0x92",
          "",
          "",
@@ -2055,13 +2055,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sched/syscalls.c",
+         1479
       ],
       [
          147,
          "sys_sched_get_priority_min",
-         "not found",
+         "(int policy)",
          "0x93",
          "",
          "",
@@ -2069,13 +2069,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sched/syscalls.c",
+         1507
       ],
       [
          148,
          "sys_sched_rr_get_interval",
-         "not found",
+         "(void)",
          "0x94",
          "",
          "",
@@ -2083,13 +2083,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sched/syscalls.c",
+         1565
       ],
       [
          149,
          "sys_mlock",
-         "not found",
+         "(void)",
          "0x95",
          "",
          "",
@@ -2097,13 +2097,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         181
       ],
       [
          150,
          "sys_munlock",
-         "not found",
+         "(void)",
          "0x96",
          "",
          "",
@@ -2111,13 +2111,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         182
       ],
       [
          151,
          "sys_mlockall",
-         "not found",
+         "(void)",
          "0x97",
          "",
          "",
@@ -2125,13 +2125,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         183
       ],
       [
          152,
          "sys_munlockall",
-         "not found",
+         "(void)",
          "0x98",
          "",
          "",
@@ -2139,8 +2139,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         184
       ],
       [
          153,
@@ -2159,7 +2159,7 @@ var syscalls_x86_64 = {
       [
          154,
          "sys_modify_ldt",
-         "not found",
+         "(void)",
          "0x9a",
          "",
          "",
@@ -2167,8 +2167,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/arch/x86/kernel/ldt.c",
+         667
       ],
       [
          155,
@@ -2201,7 +2201,7 @@ var syscalls_x86_64 = {
       [
          157,
          "sys_prctl",
-         "not found",
+         "(void)",
          "0x9d",
          "",
          "",
@@ -2209,13 +2209,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         2455
       ],
       [
          158,
          "sys_arch_prctl",
-         "not found",
+         "(int option, unsigned long arg2)",
          "0x9e",
          "",
          "",
@@ -2223,13 +2223,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/arch/x86/kernel/process.c",
+         1065
       ],
       [
          159,
          "sys_adjtimex",
-         "not found",
+         "(struct __kernel_timex __user * txc_p)",
          "0x9f",
          "",
          "",
@@ -2237,13 +2237,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/time/time.c",
+         269
       ],
       [
          160,
          "sys_setrlimit",
-         "not found",
+         "(void)",
          "0xa0",
          "",
          "",
@@ -2251,8 +2251,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1577
       ],
       [
          161,
@@ -2285,7 +2285,7 @@ var syscalls_x86_64 = {
       [
          163,
          "sys_acct",
-         "not found",
+         "(const char __user * name)",
          "0xa3",
          "",
          "",
@@ -2293,13 +2293,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/acct.c",
+         314
       ],
       [
          164,
          "sys_settimeofday",
-         "not found",
+         "(void)",
          "0xa4",
          "",
          "",
@@ -2307,13 +2307,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/time/time.c",
+         243
       ],
       [
          165,
          "sys_mount",
-         "(const char * dev_name,const char * dir_name,const char * type,unsigned long flags,const void * data)",
+         "not found",
          "0xa5",
          "",
          "",
@@ -2341,7 +2341,7 @@ var syscalls_x86_64 = {
       [
          167,
          "sys_swapon",
-         "not found",
+         "(void)",
          "0xa7",
          "",
          "",
@@ -2349,13 +2349,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         177
       ],
       [
          168,
          "sys_swapoff",
-         "not found",
+         "(void)",
          "0xa8",
          "",
          "",
@@ -2363,13 +2363,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         178
       ],
       [
          169,
          "sys_reboot",
-         "not found",
+         "(void)",
          "0xa9",
          "",
          "",
@@ -2377,13 +2377,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/reboot.c",
+         728
       ],
       [
          170,
          "sys_sethostname",
-         "not found",
+         "(char __user * name, int len)",
          "0xaa",
          "",
          "",
@@ -2391,13 +2391,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1419
       ],
       [
          171,
          "sys_setdomainname",
-         "not found",
+         "(char __user * name, int len)",
          "0xab",
          "",
          "",
@@ -2405,13 +2405,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1473
       ],
       [
          172,
          "sys_iopl",
-         "not found",
+         "(unsigned int level)",
          "0xac",
          "",
          "",
@@ -2419,13 +2419,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/arch/x86/kernel/ioport.c",
+         179
       ],
       [
          173,
          "sys_ioperm",
-         "not found",
+         "(unsigned long from, unsigned long num, int turn_on)",
          "0xad",
          "",
          "",
@@ -2433,8 +2433,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/arch/x86/kernel/ioport.c",
+         158
       ],
       [
          "",
@@ -2453,7 +2453,7 @@ var syscalls_x86_64 = {
       [
          175,
          "sys_init_module",
-         "not found",
+         "(void)",
          "0xaf",
          "",
          "",
@@ -2461,13 +2461,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/module/main.c",
+         3569
       ],
       [
          176,
          "sys_delete_module",
-         "not found",
+         "(void)",
          "0xb0",
          "",
          "",
@@ -2475,8 +2475,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/module/main.c",
+         776
       ],
       [
          "",
@@ -2509,7 +2509,7 @@ var syscalls_x86_64 = {
       [
          179,
          "sys_quotactl",
-         "not found",
+         "(void)",
          "0xb3",
          "",
          "",
@@ -2517,8 +2517,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         67
       ],
       [
          "",
@@ -2607,7 +2607,7 @@ var syscalls_x86_64 = {
       [
          186,
          "sys_gettid",
-         "not found",
+         "(void)",
          "0xba",
          "",
          "",
@@ -2615,8 +2615,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1005
       ],
       [
          187,
@@ -2803,7 +2803,7 @@ var syscalls_x86_64 = {
       [
          200,
          "sys_tkill",
-         "not found",
+         "(pid_t pid, int sig)",
          "0xc8",
          "",
          "",
@@ -2811,13 +2811,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/signal.c",
+         4183
       ],
       [
          201,
          "sys_time",
-         "(time_t * t)",
+         "(struct compat_tms __user * tbuf)",
          "0xc9",
          "",
          "",
@@ -2831,7 +2831,7 @@ var syscalls_x86_64 = {
       [
          202,
          "sys_futex",
-         "(void * addr1,int op,int val1,struct timespec * timeout,void * addr2,int val3)",
+         "(void)",
          "0xca",
          "",
          "",
@@ -2845,7 +2845,7 @@ var syscalls_x86_64 = {
       [
          203,
          "sys_sched_setaffinity",
-         "(pid_t pid,unsigned int len,unsigned long * m)",
+         "(void)",
          "0xcb",
          "",
          "",
@@ -2859,7 +2859,7 @@ var syscalls_x86_64 = {
       [
          204,
          "sys_sched_getaffinity",
-         "(pid_t pid,unsigned int len,unsigned long * m)",
+         "(void)",
          "0xcc",
          "",
          "",
@@ -2887,7 +2887,7 @@ var syscalls_x86_64 = {
       [
          206,
          "sys_io_setup",
-         "not found",
+         "(void)",
          "0xce",
          "",
          "",
@@ -2895,13 +2895,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         39
       ],
       [
          207,
          "sys_io_destroy",
-         "not found",
+         "(void)",
          "0xcf",
          "",
          "",
@@ -2909,13 +2909,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         41
       ],
       [
          208,
          "sys_io_getevents",
-         "not found",
+         "(void)",
          "0xd0",
          "",
          "",
@@ -2923,13 +2923,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         46
       ],
       [
          209,
          "sys_io_submit",
-         "not found",
+         "(void)",
          "0xd1",
          "",
          "",
@@ -2937,13 +2937,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         42
       ],
       [
          210,
          "sys_io_cancel",
-         "not found",
+         "(void)",
          "0xd2",
          "",
          "",
@@ -2951,8 +2951,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         44
       ],
       [
          "",
@@ -2985,7 +2985,7 @@ var syscalls_x86_64 = {
       [
          213,
          "sys_epoll_create",
-         "not found",
+         "(void)",
          "0xd5",
          "",
          "",
@@ -2993,8 +2993,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         315
       ],
       [
          "",
@@ -3027,7 +3027,7 @@ var syscalls_x86_64 = {
       [
          216,
          "sys_remap_file_pages",
-         "not found",
+         "(void)",
          "0xd8",
          "",
          "",
@@ -3035,8 +3035,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         189
       ],
       [
          217,
@@ -3055,7 +3055,7 @@ var syscalls_x86_64 = {
       [
          218,
          "sys_set_tid_address",
-         "not found",
+         "(int __user * tidptr)",
          "0xda",
          "",
          "",
@@ -3063,13 +3063,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/fork.c",
+         1733
       ],
       [
          219,
          "sys_restart_syscall",
-         "not found",
+         "(void)",
          "0xdb",
          "",
          "",
@@ -3077,13 +3077,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/signal.c",
+         3175
       ],
       [
          220,
          "sys_semtimedop",
-         "not found",
+         "(void)",
          "0xdc",
          "",
          "",
@@ -3091,13 +3091,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         131
       ],
       [
          221,
          "sys_fadvise64",
-         "not found",
+         "(void)",
          "0xdd",
          "",
          "",
@@ -3105,13 +3105,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         322
       ],
       [
          222,
          "sys_timer_create",
-         "not found",
+         "(void)",
          "0xde",
          "",
          "",
@@ -3119,13 +3119,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/time/posix-timers.c",
+         589
       ],
       [
          223,
          "sys_timer_settime",
-         "not found",
+         "(void)",
          "0xdf",
          "",
          "",
@@ -3133,13 +3133,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/time/posix-timers.c",
+         955
       ],
       [
          224,
          "sys_timer_gettime",
-         "not found",
+         "(void)",
          "0xe0",
          "",
          "",
@@ -3147,13 +3147,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/time/posix-timers.c",
+         752
       ],
       [
          225,
          "sys_timer_getoverrun",
-         "not found",
+         "(timer_t timer_id)",
          "0xe1",
          "",
          "",
@@ -3161,13 +3161,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/time/posix-timers.c",
+         800
       ],
       [
          226,
          "sys_timer_delete",
-         "not found",
+         "(timer_t timer_id)",
          "0xe2",
          "",
          "",
@@ -3175,13 +3175,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/time/posix-timers.c",
+         1060
       ],
       [
          227,
          "sys_clock_settime",
-         "not found",
+         "(void)",
          "0xe3",
          "",
          "",
@@ -3189,13 +3189,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/time/posix-stubs.c",
+         26
       ],
       [
          228,
          "sys_clock_gettime",
-         "(clockid_t id,struct timespec * ts)",
+         "(void)",
          "0xe4",
          "",
          "",
@@ -3209,7 +3209,7 @@ var syscalls_x86_64 = {
       [
          229,
          "sys_clock_getres",
-         "not found",
+         "(void)",
          "0xe5",
          "",
          "",
@@ -3217,13 +3217,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/time/posix-stubs.c",
+         75
       ],
       [
          230,
          "sys_clock_nanosleep",
-         "not found",
+         "(void)",
          "0xe6",
          "",
          "",
@@ -3231,13 +3231,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/time/posix-stubs.c",
+         94
       ],
       [
          231,
          "sys_exit_group",
-         "not found",
+         "(int error_code)",
          "0xe7",
          "",
          "",
@@ -3245,13 +3245,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/exit.c",
+         1111
       ],
       [
          232,
          "sys_epoll_wait",
-         "not found",
+         "(void)",
          "0xe8",
          "",
          "",
@@ -3259,13 +3259,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         325
       ],
       [
          233,
          "sys_epoll_ctl",
-         "not found",
+         "(void)",
          "0xe9",
          "",
          "",
@@ -3273,13 +3273,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         56
       ],
       [
          234,
          "sys_tgkill",
-         "not found",
+         "(pid_t tgid, pid_t pid, int sig)",
          "0xea",
          "",
          "",
@@ -3287,13 +3287,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/signal.c",
+         4167
       ],
       [
          235,
          "sys_utimes",
-         "not found",
+         "(void)",
          "0xeb",
          "",
          "",
@@ -3301,8 +3301,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         346
       ],
       [
          "",
@@ -3321,7 +3321,7 @@ var syscalls_x86_64 = {
       [
          237,
          "sys_mbind",
-         "not found",
+         "(void)",
          "0xed",
          "",
          "",
@@ -3329,13 +3329,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         190
       ],
       [
          238,
          "sys_set_mempolicy",
-         "not found",
+         "(void)",
          "0xee",
          "",
          "",
@@ -3343,13 +3343,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         192
       ],
       [
          239,
          "sys_get_mempolicy",
-         "not found",
+         "(void)",
          "0xef",
          "",
          "",
@@ -3357,13 +3357,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         191
       ],
       [
          240,
          "sys_mq_open",
-         "not found",
+         "(void)",
          "0xf0",
          "",
          "",
@@ -3371,13 +3371,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         106
       ],
       [
          241,
          "sys_mq_unlink",
-         "not found",
+         "(void)",
          "0xf1",
          "",
          "",
@@ -3385,13 +3385,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         108
       ],
       [
          242,
          "sys_mq_timedsend",
-         "not found",
+         "(void)",
          "0xf2",
          "",
          "",
@@ -3399,13 +3399,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         109
       ],
       [
          243,
          "sys_mq_timedreceive",
-         "not found",
+         "(void)",
          "0xf3",
          "",
          "",
@@ -3413,13 +3413,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         111
       ],
       [
          244,
          "sys_mq_notify",
-         "not found",
+         "(void)",
          "0xf4",
          "",
          "",
@@ -3427,13 +3427,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         113
       ],
       [
          245,
          "sys_mq_getsetattr",
-         "not found",
+         "(void)",
          "0xf5",
          "",
          "",
@@ -3441,13 +3441,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         115
       ],
       [
          246,
          "sys_kexec_load",
-         "not found",
+         "(void)",
          "0xf6",
          "",
          "",
@@ -3455,13 +3455,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/kexec.c",
+         268
       ],
       [
          247,
          "sys_waitid",
-         "not found",
+         "(void)",
          "0xf7",
          "",
          "",
@@ -3469,13 +3469,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/exit.c",
+         1931
       ],
       [
          248,
          "sys_add_key",
-         "not found",
+         "(void)",
          "0xf8",
          "",
          "",
@@ -3483,13 +3483,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         163
       ],
       [
          249,
          "sys_request_key",
-         "not found",
+         "(void)",
          "0xf9",
          "",
          "",
@@ -3497,13 +3497,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         164
       ],
       [
          250,
          "sys_keyctl",
-         "not found",
+         "(void)",
          "0xfa",
          "",
          "",
@@ -3511,13 +3511,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         165
       ],
       [
          251,
          "sys_ioprio_set",
-         "not found",
+         "(void)",
          "0xfb",
          "",
          "",
@@ -3525,13 +3525,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         64
       ],
       [
          252,
          "sys_ioprio_get",
-         "not found",
+         "(void)",
          "0xfc",
          "",
          "",
@@ -3539,13 +3539,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         65
       ],
       [
          253,
          "sys_inotify_init",
-         "not found",
+         "(void)",
          "0xfd",
          "",
          "",
@@ -3553,13 +3553,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         316
       ],
       [
          254,
          "sys_inotify_add_watch",
-         "not found",
+         "(void)",
          "0xfe",
          "",
          "",
@@ -3567,13 +3567,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         62
       ],
       [
          255,
          "sys_inotify_rm_watch",
-         "not found",
+         "(void)",
          "0xff",
          "",
          "",
@@ -3581,13 +3581,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         63
       ],
       [
          256,
          "sys_migrate_pages",
-         "not found",
+         "(void)",
          "0x100",
          "",
          "",
@@ -3595,13 +3595,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         193
       ],
       [
          257,
          "sys_openat",
-         "(int dfd,const char * path,struct open_how * how)",
+         "not found",
          "0x101",
          "",
          "",
@@ -3657,7 +3657,7 @@ var syscalls_x86_64 = {
       [
          261,
          "sys_futimesat",
-         "not found",
+         "(void)",
          "0x105",
          "",
          "",
@@ -3665,8 +3665,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         347
       ],
       [
          262,
@@ -3783,7 +3783,7 @@ var syscalls_x86_64 = {
       [
          270,
          "sys_pselect6",
-         "not found",
+         "(void)",
          "0x10e",
          "",
          "",
@@ -3791,13 +3791,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         348
       ],
       [
          271,
          "sys_ppoll",
-         "not found",
+         "(void)",
          "0x10f",
          "",
          "",
@@ -3805,13 +3805,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         350
       ],
       [
          272,
          "sys_unshare",
-         "not found",
+         "(unsigned long unshare_flags)",
          "0x110",
          "",
          "",
@@ -3819,13 +3819,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/fork.c",
+         3196
       ],
       [
          273,
          "sys_set_robust_list",
-         "not found",
+         "(void)",
          "0x111",
          "",
          "",
@@ -3833,13 +3833,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/futex/syscalls.c",
+         442
       ],
       [
          274,
          "sys_get_robust_list",
-         "not found",
+         "(void)",
          "0x112",
          "",
          "",
@@ -3847,8 +3847,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/futex/syscalls.c",
+         454
       ],
       [
          275,
@@ -3909,7 +3909,7 @@ var syscalls_x86_64 = {
       [
          279,
          "sys_move_pages",
-         "not found",
+         "(void)",
          "0x117",
          "",
          "",
@@ -3917,13 +3917,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         194
       ],
       [
          280,
          "sys_utimensat",
-         "not found",
+         "(void)",
          "0x118",
          "",
          "",
@@ -3931,13 +3931,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         352
       ],
       [
          281,
          "sys_epoll_pwait",
-         "not found",
+         "(void)",
          "0x119",
          "",
          "",
@@ -3945,13 +3945,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         57
       ],
       [
          282,
          "sys_signalfd",
-         "not found",
+         "(void)",
          "0x11a",
          "",
          "",
@@ -3959,13 +3959,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         318
       ],
       [
          283,
          "sys_timerfd_create",
-         "not found",
+         "(void)",
          "0x11b",
          "",
          "",
@@ -3973,13 +3973,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         71
       ],
       [
          284,
          "sys_eventfd",
-         "not found",
+         "(void)",
          "0x11c",
          "",
          "",
@@ -3987,8 +3987,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         317
       ],
       [
          285,
@@ -4007,7 +4007,7 @@ var syscalls_x86_64 = {
       [
          286,
          "sys_timerfd_settime",
-         "not found",
+         "(void)",
          "0x11e",
          "",
          "",
@@ -4015,13 +4015,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         72
       ],
       [
          287,
          "sys_timerfd_gettime",
-         "not found",
+         "(void)",
          "0x11f",
          "",
          "",
@@ -4029,13 +4029,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         74
       ],
       [
          288,
          "sys_accept4",
-         "not found",
+         "(void)",
          "0x120",
          "",
          "",
@@ -4043,13 +4043,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         200
       ],
       [
          289,
          "sys_signalfd4",
-         "not found",
+         "(void)",
          "0x121",
          "",
          "",
@@ -4057,13 +4057,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         69
       ],
       [
          290,
          "sys_eventfd2",
-         "(unsigned int count,int flags)",
+         "(void)",
          "0x122",
          "",
          "",
@@ -4071,13 +4071,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         54
       ],
       [
          291,
          "sys_epoll_create1",
-         "not found",
+         "(void)",
          "0x123",
          "",
          "",
@@ -4085,8 +4085,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         55
       ],
       [
          292,
@@ -4119,7 +4119,7 @@ var syscalls_x86_64 = {
       [
          294,
          "sys_inotify_init1",
-         "not found",
+         "(void)",
          "0x126",
          "",
          "",
@@ -4127,8 +4127,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         61
       ],
       [
          295,
@@ -4161,7 +4161,7 @@ var syscalls_x86_64 = {
       [
          297,
          "sys_rt_tgsigqueueinfo",
-         "(pid_t tgid,pid_t tid,int sig,siginfo_t * uinfo)",
+         "(void)",
          "0x129",
          "",
          "",
@@ -4175,7 +4175,7 @@ var syscalls_x86_64 = {
       [
          298,
          "sys_perf_event_open",
-         "(struct perf_event_attr * attr,pid_t pid,struct perf_cpu cpu,int group_fd,unsigned long flags)",
+         "(void)",
          "0x12a",
          "",
          "",
@@ -4189,7 +4189,7 @@ var syscalls_x86_64 = {
       [
          299,
          "sys_recvmmsg",
-         "not found",
+         "(void)",
          "0x12b",
          "",
          "",
@@ -4197,13 +4197,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         201
       ],
       [
          300,
          "sys_fanotify_init",
-         "not found",
+         "(void)",
          "0x12c",
          "",
          "",
@@ -4211,13 +4211,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         225
       ],
       [
          301,
          "sys_fanotify_mark",
-         "not found",
+         "(void)",
          "0x12d",
          "",
          "",
@@ -4225,13 +4225,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         226
       ],
       [
          302,
          "sys_prlimit64",
-         "not found",
+         "(void)",
          "0x12e",
          "",
          "",
@@ -4239,13 +4239,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys.c",
+         1729
       ],
       [
          303,
          "sys_name_to_handle_at",
-         "not found",
+         "(void)",
          "0x12f",
          "",
          "",
@@ -4253,13 +4253,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         229
       ],
       [
          304,
          "sys_open_by_handle_at",
-         "not found",
+         "(void)",
          "0x130",
          "",
          "",
@@ -4267,13 +4267,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         230
       ],
       [
          305,
          "sys_clock_adjtime",
-         "not found",
+         "(void)",
          "0x131",
          "",
          "",
@@ -4281,8 +4281,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/time/posix-timers.c",
+         1165
       ],
       [
          306,
@@ -4301,7 +4301,7 @@ var syscalls_x86_64 = {
       [
          307,
          "sys_sendmmsg",
-         "not found",
+         "(void)",
          "0x133",
          "",
          "",
@@ -4309,13 +4309,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         233
       ],
       [
          308,
          "sys_setns",
-         "not found",
+         "(int fd, int flags)",
          "0x134",
          "",
          "",
@@ -4323,13 +4323,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/nsproxy.c",
+         536
       ],
       [
          309,
          "sys_getcpu",
-         "(unsigned * cpu,unsigned * node)",
+         "(void)",
          "0x135",
          "",
          "",
@@ -4343,7 +4343,7 @@ var syscalls_x86_64 = {
       [
          310,
          "sys_process_vm_readv",
-         "not found",
+         "(void)",
          "0x136",
          "",
          "",
@@ -4351,13 +4351,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         235
       ],
       [
          311,
          "sys_process_vm_writev",
-         "not found",
+         "(void)",
          "0x137",
          "",
          "",
@@ -4365,13 +4365,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         237
       ],
       [
          312,
          "sys_kcmp",
-         "(int pid1,int pid2,int type,unsigned long fd1,unsigned long fd2)",
+         "(void)",
          "0x138",
          "",
          "",
@@ -4385,7 +4385,7 @@ var syscalls_x86_64 = {
       [
          313,
          "sys_finit_module",
-         "not found",
+         "(int fd, const char __user * uargs, int flags)",
          "0x139",
          "",
          "",
@@ -4393,13 +4393,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/module/main.c",
+         3723
       ],
       [
          314,
          "sys_sched_setattr",
-         "not found",
+         "(void)",
          "0x13a",
          "",
          "",
@@ -4407,13 +4407,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sched/syscalls.c",
+         977
       ],
       [
          315,
          "sys_sched_getattr",
-         "not found",
+         "(void)",
          "0x13b",
          "",
          "",
@@ -4421,13 +4421,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sched/syscalls.c",
+         1077
       ],
       [
          316,
          "sys_renameat2",
-         "(int olddirfd,const char * oldpath,int newdirfd,const char * newpath,unsigned int flags)",
+         "not found",
          "0x13c",
          "",
          "",
@@ -4441,7 +4441,7 @@ var syscalls_x86_64 = {
       [
          317,
          "sys_seccomp",
-         "not found",
+         "(void)",
          "0x13d",
          "",
          "",
@@ -4449,8 +4449,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/seccomp.c",
+         2108
       ],
       [
          318,
@@ -4469,7 +4469,7 @@ var syscalls_x86_64 = {
       [
          319,
          "sys_memfd_create",
-         "(const char * name,unsigned int flags)",
+         "(void)",
          "0x13f",
          "",
          "",
@@ -4477,13 +4477,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         248
       ],
       [
          320,
          "sys_kexec_file_load",
-         "not found",
+         "(void)",
          "0x140",
          "",
          "",
@@ -4491,13 +4491,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/kexec_file.c",
+         363
       ],
       [
          321,
          "sys_bpf",
-         "(enum bpf_cmd cmd,union bpf_attr * attr,unsigned int size)",
+         "(int cmd, union bpf_attr __user * uattr, unsigned int size)",
          "0x141",
          "",
          "",
@@ -4511,7 +4511,7 @@ var syscalls_x86_64 = {
       [
          322,
          "sys_execveat",
-         "(int dirfd,const char * pathname,char * const argv[],char * const envp[],int flags)",
+         "(void)",
          "0x142",
          "",
          "",
@@ -4519,13 +4519,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         254
       ],
       [
          323,
          "sys_userfaultfd",
-         "(int flags)",
+         "(void)",
          "0x143",
          "",
          "",
@@ -4533,13 +4533,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         256
       ],
       [
          324,
          "sys_membarrier",
-         "(int cmd,int flags,int cpu_id)",
+         "(int cmd, unsigned int flags, int cpu_id)",
          "0x144",
          "",
          "",
@@ -4553,7 +4553,7 @@ var syscalls_x86_64 = {
       [
          325,
          "sys_mlock2",
-         "not found",
+         "(void)",
          "0x145",
          "",
          "",
@@ -4561,13 +4561,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         261
       ],
       [
          326,
          "sys_copy_file_range",
-         "not found",
+         "(void)",
          "0x146",
          "",
          "",
@@ -4575,8 +4575,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         263
       ],
       [
          327,
@@ -4609,7 +4609,7 @@ var syscalls_x86_64 = {
       [
          329,
          "sys_pkey_mprotect",
-         "not found",
+         "(void)",
          "0x149",
          "",
          "",
@@ -4617,13 +4617,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         266
       ],
       [
          330,
          "sys_pkey_alloc",
-         "(unsigned long flags,unsigned long init_val)",
+         "(void)",
          "0x14a",
          "",
          "",
@@ -4631,13 +4631,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         267
       ],
       [
          331,
          "sys_pkey_free",
-         "(unsigned long pkey)",
+         "(void)",
          "0x14b",
          "",
          "",
@@ -4645,13 +4645,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         268
       ],
       [
          332,
          "sys_statx",
-         "(int dirfd,const char * pathname,int flags,unsigned int mask,void * stx)",
+         "not found",
          "0x14c",
          "",
          "",
@@ -4665,7 +4665,7 @@ var syscalls_x86_64 = {
       [
          333,
          "sys_io_pgetevents",
-         "not found",
+         "(void)",
          "0x14d",
          "",
          "",
@@ -4673,13 +4673,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         48
       ],
       [
          334,
          "sys_rseq",
-         "(struct rseq_abi * rseq_abi,uint32_t rseq_len,int flags,uint32_t sig)",
+         "(void)",
          "0x14e",
          "",
          "",
@@ -4693,7 +4693,7 @@ var syscalls_x86_64 = {
       [
          335,
          "sys_uretprobe",
-         "not found",
+         "(void)",
          "0x14f",
          "",
          "",
@@ -4701,13 +4701,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/arch/x86/kernel/uprobes.c",
+         365
       ],
       [
          424,
          "sys_pidfd_send_signal",
-         "(int pidfd,int sig,siginfo_t * info,unsigned int flags)",
+         "(void)",
          "0x1a8",
          "",
          "",
@@ -4721,7 +4721,7 @@ var syscalls_x86_64 = {
       [
          425,
          "sys_io_uring_setup",
-         "not found",
+         "(void)",
          "0x1a9",
          "",
          "",
@@ -4729,13 +4729,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         51
       ],
       [
          426,
          "sys_io_uring_enter",
-         "not found",
+         "(void)",
          "0x1aa",
          "",
          "",
@@ -4743,13 +4743,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         52
       ],
       [
          427,
          "sys_io_uring_register",
-         "not found",
+         "(void)",
          "0x1ab",
          "",
          "",
@@ -4757,8 +4757,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         53
       ],
       [
          428,
@@ -4777,7 +4777,7 @@ var syscalls_x86_64 = {
       [
          429,
          "sys_move_mount",
-         "(int from_dfd,const char * from_path,int to_dfd,const char * to_path,unsigned int ms_flags)",
+         "not found",
          "0x1ad",
          "",
          "",
@@ -4791,7 +4791,7 @@ var syscalls_x86_64 = {
       [
          430,
          "sys_fsopen",
-         "(const char * fsname,unsigned flags)",
+         "not found",
          "0x1ae",
          "",
          "",
@@ -4805,7 +4805,7 @@ var syscalls_x86_64 = {
       [
          431,
          "sys_fsconfig",
-         "(int fs_fd,unsigned cmd,const char * key,const void * val,int aux)",
+         "not found",
          "0x1af",
          "",
          "",
@@ -4819,7 +4819,7 @@ var syscalls_x86_64 = {
       [
          432,
          "sys_fsmount",
-         "(int fs_fd,unsigned flags,unsigned ms_flags)",
+         "not found",
          "0x1b0",
          "",
          "",
@@ -4833,7 +4833,7 @@ var syscalls_x86_64 = {
       [
          433,
          "sys_fspick",
-         "(int dfd,const char * path,unsigned flags)",
+         "not found",
          "0x1b1",
          "",
          "",
@@ -4847,7 +4847,7 @@ var syscalls_x86_64 = {
       [
          434,
          "sys_pidfd_open",
-         "not found",
+         "(pid_t pid, unsigned int flags)",
          "0x1b2",
          "",
          "",
@@ -4855,13 +4855,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/pid.c",
+         644
       ],
       [
          435,
          "sys_clone3",
-         "not found",
+         "(struct clone_args __user * uargs, size_t size)",
          "0x1b3",
          "",
          "",
@@ -4869,13 +4869,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/fork.c",
+         2888
       ],
       [
          436,
          "sys_close_range",
-         "(unsigned int fd,unsigned int max_fd,unsigned int flags)",
+         "not found",
          "0x1b4",
          "",
          "",
@@ -4889,7 +4889,7 @@ var syscalls_x86_64 = {
       [
          437,
          "sys_openat2",
-         "(int dfd,const char * path,struct open_how * how)",
+         "not found",
          "0x1b5",
          "",
          "",
@@ -4903,7 +4903,7 @@ var syscalls_x86_64 = {
       [
          438,
          "sys_pidfd_getfd",
-         "not found",
+         "(void)",
          "0x1b6",
          "",
          "",
@@ -4911,8 +4911,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/pid.c",
+         903
       ],
       [
          439,
@@ -4931,7 +4931,7 @@ var syscalls_x86_64 = {
       [
          440,
          "sys_process_madvise",
-         "(int pidfd,const struct iovec * iovec,size_t n,int advice,unsigned int flags)",
+         "(void)",
          "0x1b8",
          "",
          "",
@@ -4939,13 +4939,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         187
       ],
       [
          441,
          "sys_epoll_pwait2",
-         "(int fd,struct epoll_event * events,int maxevents,const struct __kernel_timespec * timeout,const sigset_t * sigset,size_t sigsetsize)",
+         "(void)",
          "0x1b9",
          "",
          "",
@@ -4953,13 +4953,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         59
       ],
       [
          442,
          "sys_mount_setattr",
-         "(int dfd,const char * path,unsigned int flags,struct mount_attr * attr,size_t size)",
+         "not found",
          "0x1ba",
          "",
          "",
@@ -4973,7 +4973,7 @@ var syscalls_x86_64 = {
       [
          443,
          "sys_quotactl_fd",
-         "not found",
+         "(void)",
          "0x1bb",
          "",
          "",
@@ -4981,13 +4981,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         68
       ],
       [
          444,
          "sys_landlock_create_ruleset",
-         "not found",
+         "(void)",
          "0x1bc",
          "",
          "",
@@ -4995,13 +4995,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         167
       ],
       [
          445,
          "sys_landlock_add_rule",
-         "not found",
+         "(void)",
          "0x1bd",
          "",
          "",
@@ -5009,13 +5009,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         168
       ],
       [
          446,
          "sys_landlock_restrict_self",
-         "not found",
+         "(void)",
          "0x1be",
          "",
          "",
@@ -5023,13 +5023,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         169
       ],
       [
          447,
          "sys_memfd_secret",
-         "not found",
+         "(void)",
          "0x1bf",
          "",
          "",
@@ -5037,13 +5037,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         271
       ],
       [
          448,
          "sys_process_mrelease",
-         "not found",
+         "(void)",
          "0x1c0",
          "",
          "",
@@ -5051,13 +5051,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         188
       ],
       [
          449,
          "sys_futex_waitv",
-         "not found",
+         "(void)",
          "0x1c1",
          "",
          "",
@@ -5065,13 +5065,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/futex/syscalls.c",
+         290
       ],
       [
          450,
          "sys_set_mempolicy_home_node",
-         "not found",
+         "(void)",
          "0x1c2",
          "",
          "",
@@ -5079,13 +5079,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         195
       ],
       [
          451,
          "sys_cachestat",
-         "not found",
+         "(void)",
          "0x1c3",
          "",
          "",
@@ -5093,13 +5093,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         196
       ],
       [
          452,
          "sys_fchmodat2",
-         "(int dfd,const char * filename,mode_t mode,int flags)",
+         "not found",
          "0x1c4",
          "",
          "",
@@ -5113,7 +5113,7 @@ var syscalls_x86_64 = {
       [
          453,
          "sys_map_shadow_stack",
-         "not found",
+         "(unsigned long addr, unsigned long size, unsigned int flags)",
          "0x1c5",
          "",
          "",
@@ -5121,13 +5121,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/arch/x86/kernel/shstk.c",
+         505
       ],
       [
          454,
          "sys_futex_wake",
-         "not found",
+         "(void)",
          "0x1c6",
          "",
          "",
@@ -5135,13 +5135,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/futex/syscalls.c",
+         338
       ],
       [
          455,
          "sys_futex_wait",
-         "not found",
+         "(void)",
          "0x1c7",
          "",
          "",
@@ -5149,13 +5149,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/futex/syscalls.c",
+         290
       ],
       [
          456,
          "sys_futex_requeue",
-         "not found",
+         "(void)",
          "0x1c8",
          "",
          "",
@@ -5163,13 +5163,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/futex/syscalls.c",
+         414
       ],
       [
          457,
          "sys_statmount",
-         "(__u64 mnt_id,__u64 mnt_ns_id,__u64 mask,unsigned int flags)",
+         "not found",
          "0x1c9",
          "",
          "",
@@ -5183,7 +5183,7 @@ var syscalls_x86_64 = {
       [
          458,
          "sys_listmount",
-         "(__u64 mnt_id,__u64 last_mnt_id,__u64 mnt_ns_id,__u64 list[],size_t num,unsigned int flags)",
+         "not found",
          "0x1ca",
          "",
          "",
@@ -5197,7 +5197,7 @@ var syscalls_x86_64 = {
       [
          459,
          "sys_lsm_get_self_attr",
-         "not found",
+         "(void)",
          "0x1cb",
          "",
          "",
@@ -5205,13 +5205,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         172
       ],
       [
          460,
          "sys_lsm_set_self_attr",
-         "not found",
+         "(void)",
          "0x1cc",
          "",
          "",
@@ -5219,13 +5219,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         173
       ],
       [
          461,
          "sys_lsm_list_modules",
-         "not found",
+         "(void)",
          "0x1cd",
          "",
          "",
@@ -5233,13 +5233,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         174
       ],
       [
          462,
          "sys_mseal",
-         "(void * start,size_t len)",
+         "(void)",
          "0x1ce",
          "",
          "",
@@ -5247,8 +5247,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         197
       ],
       [
          463,
@@ -5309,7 +5309,7 @@ var syscalls_x86_64 = {
       [
          467,
          "sys_open_tree_attr",
-         "(int dfd,const char * path,unsigned int flags,struct mount_attr * attr,size_t size)",
+         "not found",
          "0x1d3",
          "",
          "",
@@ -5645,7 +5645,7 @@ var syscalls_x86_64 = {
       [
          533,
          "sys_move_pages",
-         "not found",
+         "(void)",
          "0x215",
          "",
          "",
@@ -5653,8 +5653,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         194
       ],
       [
          534,
@@ -5729,7 +5729,7 @@ var syscalls_x86_64 = {
       [
          539,
          "sys_process_vm_readv",
-         "not found",
+         "(void)",
          "0x21b",
          "",
          "",
@@ -5737,13 +5737,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         235
       ],
       [
          540,
          "sys_process_vm_writev",
-         "not found",
+         "(void)",
          "0x21c",
          "",
          "",
@@ -5751,13 +5751,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         237
       ],
       [
          541,
          "sys_setsockopt",
-         "not found",
+         "(void)",
          "0x21d",
          "",
          "",
@@ -5765,13 +5765,13 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         150
       ],
       [
          542,
          "sys_getsockopt",
-         "not found",
+         "(void)",
          "0x21e",
          "",
          "",
@@ -5779,8 +5779,8 @@ var syscalls_x86_64 = {
          "",
          "",
          "",
-         "not found",
-         ""
+         "/tmp/linux-6.17.3/kernel/sys_ni.c",
+         152
       ],
       [
          543,
