@@ -17,18 +17,22 @@ if [ ! -f "$TBL_64" ]; then
 fi
 
 echo "[+] Generating tags..."
-ctags \
+ctags -R \
   --languages=C \
   --fields=+nKsSt \
   --fields-c=+{macrodef} \
-  --extras=+{subparser} \
   --kinds-C=+p \
   --output-format=json \
-  -R \
-  /tmp/linux-${KERNEL_VERSION}/arch/x86 \
-  /tmp/linux-${KERNEL_VERSION}/include \
-  /tmp/linux-${KERNEL_VERSION}/kernel \
-  > /tmp/linux-${KERNEL_VERSION}/tags.json
+  --regex-C='/^[[:space:]]*SYSCALL_DEFINE[0-9]*[[:space:]]*\(([a-zA-Z0-9_]+).*/sys_\1/f,function/' \
+  --regex-C='/^[[:space:]]*COMPAT_SYSCALL_DEFINE[0-9]*[[:space:]]*\(([a-zA-Z0-9_]+).*/sys_\1/f,function/' \
+  --regex-C='/^[[:space:]]*SYSCALL_DEFINE_COMPAT[0-9]*[[:space:]]*\(([a-zA-Z0-9_]+).*/sys_\1/f,function/' \
+  --regex-C='/^[[:space:]]*COND_SYSCALL[[:space:]]*\(([a-zA-Z0-9_]+).*/sys_\1/f,function/' \
+  --regex-C='/^[[:space:]]*SYSCALL_ALIAS[[:space:]]*\(([a-zA-Z0-9_]+).*/sys_\1/f,function/' \
+  ${WORKDIR}/arch/x86 \
+  ${WORKDIR}/include \
+  ${WORKDIR}/kernel \
+  ${WORKDIR}/fs \
+  > ${WORKDIR}/tags.json
 
 cp "$TBL_64" syscall_64.tbl
 sed -i 's/__x64_//g; s/__x32_compat_//g' syscall_64.tbl
