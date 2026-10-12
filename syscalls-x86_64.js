@@ -1,29 +1,23 @@
+var kernel_version = "7.2.10";
 var syscalls_x86_64 = {
    "aaData": [
       [
          0,
          "sys_read",
-         "(unsigned int fd, char __user * buf, size_t count)",
+         "(int fd, compat_arg_u64_dual (offset) size_t)",
          "0x0",
          {
-            "type": "unsigned int fd",
+            "type": "int fd",
             "def": {
-               "file": "fs/read_write.c",
-               "line": 722
+               "file": "mm/readahead.c",
+               "line": 762
             }
          },
          {
-            "type": "char __user * buf",
+            "type": "compat_arg_u64_dual (offset) size_t",
             "def": {
-               "file": "fs/read_write.c",
-               "line": 722
-            }
-         },
-         {
-            "type": "size_t count",
-            "def": {
-               "file": "fs/read_write.c",
-               "line": 722
+               "file": "mm/readahead.c",
+               "line": 762
             }
          },
          {
@@ -38,8 +32,12 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         "fs/read_write.c",
-         722
+         {
+            "type": "",
+            "def": {}
+         },
+         "mm/readahead.c",
+         762
       ],
       [
          1,
@@ -50,21 +48,21 @@ var syscalls_x86_64 = {
             "type": "unsigned int fd",
             "def": {
                "file": "fs/read_write.c",
-               "line": 746
+               "line": 747
             }
          },
          {
             "type": "const char __user * buf",
             "def": {
                "file": "fs/read_write.c",
-               "line": 746
+               "line": 747
             }
          },
          {
             "type": "size_t count",
             "def": {
                "file": "fs/read_write.c",
-               "line": 746
+               "line": 747
             }
          },
          {
@@ -80,7 +78,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/read_write.c",
-         746
+         747
       ],
       [
          2,
@@ -91,21 +89,21 @@ var syscalls_x86_64 = {
             "type": "int mountdirfd",
             "def": {
                "file": "fs/fhandle.c",
-               "line": 458
+               "line": 469
             }
          },
          {
             "type": "struct file_handle __user * handle",
             "def": {
                "file": "fs/fhandle.c",
-               "line": 458
+               "line": 469
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "fs/fhandle.c",
-               "line": 458
+               "line": 469
             }
          },
          {
@@ -121,7 +119,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/fhandle.c",
-         458
+         469
       ],
       [
          3,
@@ -132,7 +130,7 @@ var syscalls_x86_64 = {
             "type": "unsigned int fd",
             "def": {
                "file": "fs/open.c",
-               "line": 1572
+               "line": 1496
             }
          },
          {
@@ -156,13 +154,89 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         1572
+         1496
       ],
       [
          4,
          "sys_newstat",
          "(const char __user * filename, struct compat_stat __user * statbuf)",
          "0x4",
+         {
+            "type": "const char __user * filename",
+            "def": {
+               "file": "fs/stat.c",
+               "line": 853
+            }
+         },
+         {
+            "type": "struct compat_stat __user * statbuf",
+            "def": {
+               "file": "fs/stat.c",
+               "line": 853
+            }
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         "fs/stat.c",
+         853
+      ],
+      [
+         5,
+         "sys_newfstat",
+         "(unsigned int fd, struct compat_stat __user * statbuf)",
+         "0x5",
+         {
+            "type": "unsigned int fd",
+            "def": {
+               "file": "fs/stat.c",
+               "line": 892
+            }
+         },
+         {
+            "type": "struct compat_stat __user * statbuf",
+            "def": {
+               "file": "fs/stat.c",
+               "line": 892
+            }
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         "fs/stat.c",
+         892
+      ],
+      [
+         6,
+         "sys_newlstat",
+         "(const char __user * filename, struct compat_stat __user * statbuf)",
+         "0x6",
          {
             "type": "const char __user * filename",
             "def": {
@@ -197,82 +271,6 @@ var syscalls_x86_64 = {
          865
       ],
       [
-         5,
-         "sys_newfstat",
-         "(unsigned int fd, struct compat_stat __user * statbuf)",
-         "0x5",
-         {
-            "type": "unsigned int fd",
-            "def": {
-               "file": "fs/stat.c",
-               "line": 904
-            }
-         },
-         {
-            "type": "struct compat_stat __user * statbuf",
-            "def": {
-               "file": "fs/stat.c",
-               "line": 904
-            }
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "fs/stat.c",
-         904
-      ],
-      [
-         6,
-         "sys_newlstat",
-         "(const char __user * filename, struct compat_stat __user * statbuf)",
-         "0x6",
-         {
-            "type": "const char __user * filename",
-            "def": {
-               "file": "fs/stat.c",
-               "line": 877
-            }
-         },
-         {
-            "type": "struct compat_stat __user * statbuf",
-            "def": {
-               "file": "fs/stat.c",
-               "line": 877
-            }
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "fs/stat.c",
-         877
-      ],
-      [
          7,
          "sys_poll",
          "(struct pollfd __user * ufds, unsigned int nfds, int timeout_msecs)",
@@ -281,21 +279,21 @@ var syscalls_x86_64 = {
             "type": "struct pollfd __user * ufds",
             "def": {
                "file": "fs/select.c",
-               "line": 1062
+               "line": 1060
             }
          },
          {
             "type": "unsigned int nfds",
             "def": {
                "file": "fs/select.c",
-               "line": 1062
+               "line": 1060
             }
          },
          {
             "type": "int timeout_msecs",
             "def": {
                "file": "fs/select.c",
-               "line": 1062
+               "line": 1060
             }
          },
          {
@@ -311,7 +309,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/select.c",
-         1062
+         1060
       ],
       [
          8,
@@ -322,21 +320,21 @@ var syscalls_x86_64 = {
             "type": "unsigned int fd",
             "def": {
                "file": "fs/read_write.c",
-               "line": 416
+               "line": 418
             }
          },
          {
             "type": "compat_off_t offset",
             "def": {
                "file": "fs/read_write.c",
-               "line": 416
+               "line": 418
             }
          },
          {
             "type": "unsigned int whence",
             "def": {
                "file": "fs/read_write.c",
-               "line": 416
+               "line": 418
             }
          },
          {
@@ -352,7 +350,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/read_write.c",
-         416
+         418
       ],
       [
          9,
@@ -363,55 +361,72 @@ var syscalls_x86_64 = {
             "type": "unsigned long addr",
             "def": {
                "file": "arch/x86/kernel/sys_x86_64.c",
-               "line": 82
+               "line": 89
             }
          },
          {
             "type": "unsigned long len",
             "def": {
                "file": "arch/x86/kernel/sys_x86_64.c",
-               "line": 82
+               "line": 89
             }
          },
          {
             "type": "unsigned long prot",
             "def": {
                "file": "arch/x86/kernel/sys_x86_64.c",
-               "line": 82
+               "line": 89
             }
          },
          {
             "type": "unsigned long flags",
             "def": {
                "file": "arch/x86/kernel/sys_x86_64.c",
-               "line": 82
+               "line": 89
             }
          },
          {
             "type": "unsigned long fd",
             "def": {
                "file": "arch/x86/kernel/sys_x86_64.c",
-               "line": 82
+               "line": 89
             }
          },
          {
             "type": "unsigned long off",
             "def": {
                "file": "arch/x86/kernel/sys_x86_64.c",
-               "line": 82
+               "line": 89
             }
          },
          "arch/x86/kernel/sys_x86_64.c",
-         82
+         89
       ],
       [
          10,
          "sys_mprotect",
-         "(void)",
+         "(unsigned long start, size_t len, unsigned long prot)",
          "0xa",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long start",
+            "def": {
+               "file": "mm/mprotect.c",
+               "line": 985
+            }
+         },
+         {
+            "type": "size_t len",
+            "def": {
+               "file": "mm/mprotect.c",
+               "line": 985
+            }
+         },
+         {
+            "type": "unsigned long prot",
+            "def": {
+               "file": "mm/mprotect.c",
+               "line": 985
+            }
          },
          {
             "type": "",
@@ -425,25 +440,27 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         179
+         "mm/mprotect.c",
+         985
       ],
       [
          11,
          "sys_munmap",
-         "not found",
+         "(unsigned long addr, size_t len)",
          "0xb",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long addr",
+            "def": {
+               "file": "mm/mmap.c",
+               "line": 1076
+            }
+         },
+         {
+            "type": "size_t len",
+            "def": {
+               "file": "mm/mmap.c",
+               "line": 1076
+            }
          },
          {
             "type": "",
@@ -461,21 +478,20 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "mm/mmap.c",
+         1076
       ],
       [
          12,
          "sys_brk",
-         "not found",
+         "(unsigned long brk)",
          "0xc",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long brk",
+            "def": {
+               "file": "mm/mmap.c",
+               "line": 116
+            }
          },
          {
             "type": "",
@@ -497,8 +513,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         "not found",
-         ""
+         "mm/mmap.c",
+         116
       ],
       [
          13,
@@ -509,28 +525,28 @@ var syscalls_x86_64 = {
             "type": "int sig",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4654
+               "line": 4735
             }
          },
          {
             "type": "const struct compat_sigaction __user * act",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4654
+               "line": 4735
             }
          },
          {
             "type": "struct compat_sigaction __user * oact",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4654
+               "line": 4735
             }
          },
          {
             "type": "compat_size_t sigsetsize",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4654
+               "line": 4735
             }
          },
          {
@@ -542,7 +558,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/signal.c",
-         4654
+         4735
       ],
       [
          14,
@@ -553,28 +569,28 @@ var syscalls_x86_64 = {
             "type": "int how",
             "def": {
                "file": "kernel/signal.c",
-               "line": 3349
+               "line": 3430
             }
          },
          {
             "type": "compat_sigset_t __user * nset",
             "def": {
                "file": "kernel/signal.c",
-               "line": 3349
+               "line": 3430
             }
          },
          {
             "type": "compat_sigset_t __user * oset",
             "def": {
                "file": "kernel/signal.c",
-               "line": 3349
+               "line": 3430
             }
          },
          {
             "type": "compat_size_t sigsetsize",
             "def": {
                "file": "kernel/signal.c",
-               "line": 3349
+               "line": 3430
             }
          },
          {
@@ -586,7 +602,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/signal.c",
-         3349
+         3430
       ],
       [
          15,
@@ -629,21 +645,21 @@ var syscalls_x86_64 = {
             "type": "unsigned int fd",
             "def": {
                "file": "fs/ioctl.c",
-               "line": 639
+               "line": 638
             }
          },
          {
             "type": "unsigned int cmd",
             "def": {
                "file": "fs/ioctl.c",
-               "line": 639
+               "line": 638
             }
          },
          {
             "type": "compat_ulong_t arg",
             "def": {
                "file": "fs/ioctl.c",
-               "line": 639
+               "line": 638
             }
          },
          {
@@ -659,7 +675,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/ioctl.c",
-         639
+         638
       ],
       [
          17,
@@ -670,21 +686,21 @@ var syscalls_x86_64 = {
             "type": "unsigned int fd",
             "def": {
                "file": "fs/read_write.c",
-               "line": 775
+               "line": 776
             }
          },
          {
             "type": "char __user * buf",
             "def": {
                "file": "fs/read_write.c",
-               "line": 775
+               "line": 776
             }
          },
          {
             "type": "size_t count",
             "def": {
                "file": "fs/read_write.c",
-               "line": 775
+               "line": 776
             }
          },
          {
@@ -700,7 +716,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/read_write.c",
-         775
+         776
       ],
       [
          18,
@@ -711,21 +727,21 @@ var syscalls_x86_64 = {
             "type": "unsigned int fd",
             "def": {
                "file": "fs/read_write.c",
-               "line": 805
+               "line": 806
             }
          },
          {
             "type": "const char __user * buf",
             "def": {
                "file": "fs/read_write.c",
-               "line": 805
+               "line": 806
             }
          },
          {
             "type": "size_t count",
             "def": {
                "file": "fs/read_write.c",
-               "line": 805
+               "line": 806
             }
          },
          {
@@ -741,7 +757,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/read_write.c",
-         805
+         806
       ],
       [
          19,
@@ -752,21 +768,21 @@ var syscalls_x86_64 = {
             "type": "unsigned long fd",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1162
+               "line": 1163
             }
          },
          {
             "type": "const struct iovec __user * vec",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1162
+               "line": 1163
             }
          },
          {
             "type": "unsigned long vlen",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1162
+               "line": 1163
             }
          },
          {
@@ -782,7 +798,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/read_write.c",
-         1162
+         1163
       ],
       [
          20,
@@ -793,21 +809,21 @@ var syscalls_x86_64 = {
             "type": "unsigned long fd",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1168
+               "line": 1169
             }
          },
          {
             "type": "const struct iovec __user * vec",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1168
+               "line": 1169
             }
          },
          {
             "type": "unsigned long vlen",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1168
+               "line": 1169
             }
          },
          {
@@ -823,7 +839,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/read_write.c",
-         1168
+         1169
       ],
       [
          21,
@@ -834,14 +850,14 @@ var syscalls_x86_64 = {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/open.c",
-               "line": 550
+               "line": 545
             }
          },
          {
             "type": "int mode",
             "def": {
                "file": "fs/open.c",
-               "line": 550
+               "line": 545
             }
          },
          {
@@ -861,7 +877,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         550
+         545
       ],
       [
          22,
@@ -872,7 +888,7 @@ var syscalls_x86_64 = {
             "type": "int __user * fildes",
             "def": {
                "file": "fs/pipe.c",
-               "line": 1057
+               "line": 1157
             }
          },
          {
@@ -896,7 +912,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/pipe.c",
-         1057
+         1157
       ],
       [
          23,
@@ -907,35 +923,35 @@ var syscalls_x86_64 = {
             "type": "int n",
             "def": {
                "file": "fs/select.c",
-               "line": 1282
+               "line": 1279
             }
          },
          {
             "type": "compat_ulong_t __user * inp",
             "def": {
                "file": "fs/select.c",
-               "line": 1282
+               "line": 1279
             }
          },
          {
             "type": "compat_ulong_t __user * outp",
             "def": {
                "file": "fs/select.c",
-               "line": 1282
+               "line": 1279
             }
          },
          {
             "type": "compat_ulong_t __user * exp",
             "def": {
                "file": "fs/select.c",
-               "line": 1282
+               "line": 1279
             }
          },
          {
             "type": "struct old_timeval32 __user * tvp",
             "def": {
                "file": "fs/select.c",
-               "line": 1282
+               "line": 1279
             }
          },
          {
@@ -943,7 +959,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/select.c",
-         1282
+         1279
       ],
       [
          24,
@@ -975,48 +991,80 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/sched/syscalls.c",
-         1371
+         1360
       ],
       [
          25,
          "sys_mremap",
-         "(void)",
+         "(unsigned long addr, unsigned long old_len, unsigned long new_len, unsigned long flags, unsigned long new_addr)",
          "0x19",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long addr",
+            "def": {
+               "file": "mm/mremap.c",
+               "line": 2033
+            }
+         },
+         {
+            "type": "unsigned long old_len",
+            "def": {
+               "file": "mm/mremap.c",
+               "line": 2033
+            }
+         },
+         {
+            "type": "unsigned long new_len",
+            "def": {
+               "file": "mm/mremap.c",
+               "line": 2033
+            }
+         },
+         {
+            "type": "unsigned long flags",
+            "def": {
+               "file": "mm/mremap.c",
+               "line": 2033
+            }
+         },
+         {
+            "type": "unsigned long new_addr",
+            "def": {
+               "file": "mm/mremap.c",
+               "line": 2033
+            }
          },
          {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         162
+         "mm/mremap.c",
+         2033
       ],
       [
          26,
          "sys_msync",
-         "(void)",
+         "(unsigned long start, size_t len, int flags)",
          "0x1a",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long start",
+            "def": {
+               "file": "mm/msync.c",
+               "line": 32
+            }
+         },
+         {
+            "type": "size_t len",
+            "def": {
+               "file": "mm/msync.c",
+               "line": 32
+            }
+         },
+         {
+            "type": "int flags",
+            "def": {
+               "file": "mm/msync.c",
+               "line": 32
+            }
          },
          {
             "type": "",
@@ -1030,25 +1078,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         180
+         "mm/msync.c",
+         32
       ],
       [
          27,
          "sys_mincore",
-         "(void)",
+         "(unsigned long start, size_t len, unsigned char __user * vec)",
          "0x1b",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long start",
+            "def": {
+               "file": "mm/mincore.c",
+               "line": 291
+            }
+         },
+         {
+            "type": "size_t len",
+            "def": {
+               "file": "mm/mincore.c",
+               "line": 291
+            }
+         },
+         {
+            "type": "unsigned char __user * vec",
+            "def": {
+               "file": "mm/mincore.c",
+               "line": 291
+            }
          },
          {
             "type": "",
@@ -1062,25 +1119,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         185
+         "mm/mincore.c",
+         291
       ],
       [
          28,
          "sys_madvise",
-         "(void)",
+         "(unsigned long start, size_t len_in, int behavior)",
          "0x1c",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long start",
+            "def": {
+               "file": "mm/madvise.c",
+               "line": 2020
+            }
+         },
+         {
+            "type": "size_t len_in",
+            "def": {
+               "file": "mm/madvise.c",
+               "line": 2020
+            }
+         },
+         {
+            "type": "int behavior",
+            "def": {
+               "file": "mm/madvise.c",
+               "line": 2020
+            }
          },
          {
             "type": "",
@@ -1094,25 +1160,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         186
+         "mm/madvise.c",
+         2020
       ],
       [
          29,
          "sys_shmget",
-         "(void)",
+         "(key_t key, size_t size, int shmflg)",
          "0x1d",
          {
-            "type": "",
-            "def": {}
+            "type": "key_t key",
+            "def": {
+               "file": "ipc/shm.c",
+               "line": 849
+            }
+         },
+         {
+            "type": "size_t size",
+            "def": {
+               "file": "ipc/shm.c",
+               "line": 849
+            }
+         },
+         {
+            "type": "int shmflg",
+            "def": {
+               "file": "ipc/shm.c",
+               "line": 849
+            }
          },
          {
             "type": "",
@@ -1126,25 +1201,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         134
+         "ipc/shm.c",
+         849
       ],
       [
          30,
          "sys_shmat",
-         "(void)",
+         "(int shmid, compat_uptr_t shmaddr, int shmflg)",
          "0x1e",
          {
-            "type": "",
-            "def": {}
+            "type": "int shmid",
+            "def": {
+               "file": "ipc/shm.c",
+               "line": 1713
+            }
+         },
+         {
+            "type": "compat_uptr_t shmaddr",
+            "def": {
+               "file": "ipc/shm.c",
+               "line": 1713
+            }
+         },
+         {
+            "type": "int shmflg",
+            "def": {
+               "file": "ipc/shm.c",
+               "line": 1713
+            }
          },
          {
             "type": "",
@@ -1158,25 +1242,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         139
+         "ipc/shm.c",
+         1713
       ],
       [
          31,
          "sys_shmctl",
-         "(void)",
+         "(int shmid, int cmd, void __user * uptr)",
          "0x1f",
          {
-            "type": "",
-            "def": {}
+            "type": "int shmid",
+            "def": {
+               "file": "ipc/shm.c",
+               "line": 1494
+            }
+         },
+         {
+            "type": "int cmd",
+            "def": {
+               "file": "ipc/shm.c",
+               "line": 1494
+            }
+         },
+         {
+            "type": "void __user * uptr",
+            "def": {
+               "file": "ipc/shm.c",
+               "line": 1494
+            }
          },
          {
             "type": "",
@@ -1190,16 +1283,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         136
+         "ipc/shm.c",
+         1494
       ],
       [
          32,
@@ -1210,7 +1295,7 @@ var syscalls_x86_64 = {
             "type": "unsigned int fildes",
             "def": {
                "file": "fs/file.c",
-               "line": 1454
+               "line": 1481
             }
          },
          {
@@ -1234,7 +1319,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/file.c",
-         1454
+         1481
       ],
       [
          33,
@@ -1245,14 +1330,14 @@ var syscalls_x86_64 = {
             "type": "unsigned int oldfd",
             "def": {
                "file": "fs/file.c",
-               "line": 1435
+               "line": 1462
             }
          },
          {
             "type": "unsigned int newfd",
             "def": {
                "file": "fs/file.c",
-               "line": 1435
+               "line": 1462
             }
          },
          {
@@ -1272,7 +1357,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/file.c",
-         1435
+         1462
       ],
       [
          34,
@@ -1304,7 +1389,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/signal.c",
-         4822
+         4903
       ],
       [
          35,
@@ -1315,14 +1400,14 @@ var syscalls_x86_64 = {
             "type": "struct __kernel_timespec __user * rqtp",
             "def": {
                "file": "kernel/time/hrtimer.c",
-               "line": 2168
+               "line": 2475
             }
          },
          {
             "type": "struct __kernel_timespec __user * rmtp",
             "def": {
                "file": "kernel/time/hrtimer.c",
-               "line": 2168
+               "line": 2475
             }
          },
          {
@@ -1342,7 +1427,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/time/hrtimer.c",
-         2168
+         2475
       ],
       [
          36,
@@ -1391,7 +1476,7 @@ var syscalls_x86_64 = {
             "type": "unsigned int seconds",
             "def": {
                "file": "kernel/time/itimer.c",
-               "line": 326
+               "line": 325
             }
          },
          {
@@ -1415,7 +1500,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/time/itimer.c",
-         326
+         325
       ],
       [
          38,
@@ -1426,21 +1511,21 @@ var syscalls_x86_64 = {
             "type": "int which",
             "def": {
                "file": "kernel/time/itimer.c",
-               "line": 398
+               "line": 397
             }
          },
          {
             "type": "struct old_itimerval32 __user * value",
             "def": {
                "file": "kernel/time/itimer.c",
-               "line": 398
+               "line": 397
             }
          },
          {
             "type": "struct old_itimerval32 __user * ovalue",
             "def": {
                "file": "kernel/time/itimer.c",
-               "line": 398
+               "line": 397
             }
          },
          {
@@ -1456,7 +1541,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/time/itimer.c",
-         398
+         397
       ],
       [
          39,
@@ -1499,28 +1584,28 @@ var syscalls_x86_64 = {
             "type": "int out_fd",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1455
+               "line": 1456
             }
          },
          {
             "type": "int in_fd",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1455
+               "line": 1456
             }
          },
          {
             "type": "compat_loff_t __user * offset",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1455
+               "line": 1456
             }
          },
          {
             "type": "compat_size_t count",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1455
+               "line": 1456
             }
          },
          {
@@ -1532,16 +1617,26 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/read_write.c",
-         1455
+         1456
       ],
       [
          41,
          "sys_socket",
-         "(void)",
+         "(int call, u32 __user * args)",
          "0x29",
          {
-            "type": "",
-            "def": {}
+            "type": "int call",
+            "def": {
+               "file": "net/compat.c",
+               "line": 422
+            }
+         },
+         {
+            "type": "u32 __user * args",
+            "def": {
+               "file": "net/compat.c",
+               "line": 422
+            }
          },
          {
             "type": "",
@@ -1559,21 +1654,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         142
+         "net/compat.c",
+         422
       ],
       [
          42,
          "sys_connect",
-         "(void)",
+         "(int fd, struct sockaddr __user * uservaddr, int addrlen)",
          "0x2a",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2157
+            }
+         },
+         {
+            "type": "struct sockaddr __user * uservaddr",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2157
+            }
+         },
+         {
+            "type": "int addrlen",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2157
+            }
          },
          {
             "type": "",
@@ -1587,25 +1695,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         147
+         "net/socket.c",
+         2157
       ],
       [
          43,
          "sys_accept",
-         "(void)",
+         "(int fd, struct sockaddr __user * upeer_sockaddr, int __user * upeer_addrlen)",
          "0x2b",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2100
+            }
+         },
+         {
+            "type": "struct sockaddr __user * upeer_sockaddr",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2100
+            }
+         },
+         {
+            "type": "int __user * upeer_addrlen",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2100
+            }
          },
          {
             "type": "",
@@ -1619,89 +1736,134 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         146
+         "net/socket.c",
+         2100
       ],
       [
          44,
          "sys_sendto",
-         "(void)",
+         "(int fd, void __user * buff, size_t len, unsigned int flags, struct sockaddr __user * addr, int addr_len)",
          "0x2c",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2255
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "void __user * buff",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2255
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "size_t len",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2255
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned int flags",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2255
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "struct sockaddr __user * addr",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2255
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "int addr_len",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2255
+            }
          },
-         "kernel/sys_ni.c",
-         154
+         "net/socket.c",
+         2255
       ],
       [
          45,
          "sys_recvfrom",
-         "(void)",
+         "(int fd, void __user * buf, compat_size_t len, unsigned int flags, struct sockaddr __user * addr, int __user * addrlen)",
          "0x2d",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/compat.c",
+               "line": 397
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "void __user * buf",
+            "def": {
+               "file": "net/compat.c",
+               "line": 397
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "compat_size_t len",
+            "def": {
+               "file": "net/compat.c",
+               "line": 397
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned int flags",
+            "def": {
+               "file": "net/compat.c",
+               "line": 397
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "struct sockaddr __user * addr",
+            "def": {
+               "file": "net/compat.c",
+               "line": 397
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "int __user * addrlen",
+            "def": {
+               "file": "net/compat.c",
+               "line": 397
+            }
          },
-         "kernel/sys_ni.c",
-         156
+         "net/compat.c",
+         397
       ],
       [
          46,
          "sys_sendmsg",
-         "(void)",
+         "(int fd, struct compat_msghdr __user * msg, unsigned int flags)",
          "0x2e",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/compat.c",
+               "line": 349
+            }
+         },
+         {
+            "type": "struct compat_msghdr __user * msg",
+            "def": {
+               "file": "net/compat.c",
+               "line": 349
+            }
+         },
+         {
+            "type": "unsigned int flags",
+            "def": {
+               "file": "net/compat.c",
+               "line": 349
+            }
          },
          {
             "type": "",
@@ -1715,25 +1877,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         158
+         "net/compat.c",
+         349
       ],
       [
          47,
          "sys_recvmsg",
-         "(void)",
+         "(int fd, struct compat_msghdr __user * msg, unsigned int flags)",
          "0x2f",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/compat.c",
+               "line": 377
+            }
+         },
+         {
+            "type": "struct compat_msghdr __user * msg",
+            "def": {
+               "file": "net/compat.c",
+               "line": 377
+            }
+         },
+         {
+            "type": "unsigned int flags",
+            "def": {
+               "file": "net/compat.c",
+               "line": 377
+            }
          },
          {
             "type": "",
@@ -1747,25 +1918,27 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         160
+         "net/compat.c",
+         377
       ],
       [
          48,
          "sys_shutdown",
-         "(void)",
+         "(int fd, int how)",
          "0x30",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2544
+            }
+         },
+         {
+            "type": "int how",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2544
+            }
          },
          {
             "type": "",
@@ -1783,21 +1956,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         155
+         "net/socket.c",
+         2544
       ],
       [
          49,
          "sys_bind",
-         "(void)",
+         "(int fd, struct sockaddr __user * umyaddr, int addrlen)",
          "0x31",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/socket.c",
+               "line": 1954
+            }
+         },
+         {
+            "type": "struct sockaddr __user * umyaddr",
+            "def": {
+               "file": "net/socket.c",
+               "line": 1954
+            }
+         },
+         {
+            "type": "int addrlen",
+            "def": {
+               "file": "net/socket.c",
+               "line": 1954
+            }
          },
          {
             "type": "",
@@ -1811,25 +1997,27 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         144
+         "net/socket.c",
+         1954
       ],
       [
          50,
          "sys_listen",
-         "(void)",
+         "(int fd, int backlog)",
          "0x32",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/socket.c",
+               "line": 1992
+            }
+         },
+         {
+            "type": "int backlog",
+            "def": {
+               "file": "net/socket.c",
+               "line": 1992
+            }
          },
          {
             "type": "",
@@ -1847,21 +2035,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         145
+         "net/socket.c",
+         1992
       ],
       [
          51,
          "sys_getsockname",
-         "(void)",
+         "(int fd, struct sockaddr __user * usockaddr, int __user * usockaddr_len)",
          "0x33",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2200
+            }
+         },
+         {
+            "type": "struct sockaddr __user * usockaddr",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2200
+            }
+         },
+         {
+            "type": "int __user * usockaddr_len",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2200
+            }
          },
          {
             "type": "",
@@ -1875,25 +2076,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         148
+         "net/socket.c",
+         2200
       ],
       [
          52,
          "sys_getpeername",
-         "(void)",
+         "(int fd, struct sockaddr __user * usockaddr, int __user * usockaddr_len)",
          "0x34",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2206
+            }
+         },
+         {
+            "type": "struct sockaddr __user * usockaddr",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2206
+            }
+         },
+         {
+            "type": "int __user * usockaddr_len",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2206
+            }
          },
          {
             "type": "",
@@ -1907,25 +2117,41 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         149
+         "net/socket.c",
+         2206
       ],
       [
          53,
          "sys_socketpair",
-         "(void)",
+         "(int family, int type, int protocol, int __user * usockvec)",
          "0x35",
          {
-            "type": "",
-            "def": {}
+            "type": "int family",
+            "def": {
+               "file": "net/socket.c",
+               "line": 1906
+            }
+         },
+         {
+            "type": "int type",
+            "def": {
+               "file": "net/socket.c",
+               "line": 1906
+            }
+         },
+         {
+            "type": "int protocol",
+            "def": {
+               "file": "net/socket.c",
+               "line": 1906
+            }
+         },
+         {
+            "type": "int __user * usockvec",
+            "def": {
+               "file": "net/socket.c",
+               "line": 1906
+            }
          },
          {
             "type": "",
@@ -1935,84 +2161,102 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         143
+         "net/socket.c",
+         1906
       ],
       [
          54,
          "sys_setsockopt",
-         "(void)",
+         "(int fd, int level, int optname, char __user * optval, int optlen)",
          "0x36",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2396
+            }
+         },
+         {
+            "type": "int level",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2396
+            }
+         },
+         {
+            "type": "int optname",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2396
+            }
+         },
+         {
+            "type": "char __user * optval",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2396
+            }
+         },
+         {
+            "type": "int optlen",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2396
+            }
          },
          {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         150
+         "net/socket.c",
+         2396
       ],
       [
          55,
          "sys_getsockopt",
-         "(void)",
+         "(int fd, int level, int optname, char __user * optval, int __user * optlen)",
          "0x37",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2509
+            }
+         },
+         {
+            "type": "int level",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2509
+            }
+         },
+         {
+            "type": "int optname",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2509
+            }
+         },
+         {
+            "type": "char __user * optval",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2509
+            }
+         },
+         {
+            "type": "int __user * optlen",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2509
+            }
          },
          {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         152
+         "net/socket.c",
+         2509
       ],
       [
          56,
@@ -2023,14 +2267,14 @@ var syscalls_x86_64 = {
             "type": "struct clone_args __user * uargs",
             "def": {
                "file": "kernel/fork.c",
-               "line": 2888
+               "line": 3033
             }
          },
          {
             "type": "size_t size",
             "def": {
                "file": "kernel/fork.c",
-               "line": 2888
+               "line": 3033
             }
          },
          {
@@ -2050,7 +2294,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/fork.c",
-         2888
+         3033
       ],
       [
          57,
@@ -2082,7 +2326,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/fork.c",
-         2687
+         2832
       ],
       [
          58,
@@ -2114,7 +2358,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/fork.c",
-         2703
+         2848
       ],
       [
          59,
@@ -2125,21 +2369,21 @@ var syscalls_x86_64 = {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/exec.c",
-               "line": 2025
+               "line": 1994
             }
          },
          {
             "type": "const compat_uptr_t __user * argv",
             "def": {
                "file": "fs/exec.c",
-               "line": 2025
+               "line": 1994
             }
          },
          {
             "type": "const compat_uptr_t __user * envp",
             "def": {
                "file": "fs/exec.c",
-               "line": 2025
+               "line": 1994
             }
          },
          {
@@ -2155,7 +2399,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/exec.c",
-         2025
+         1994
       ],
       [
          60,
@@ -2166,7 +2410,7 @@ var syscalls_x86_64 = {
             "type": "int error_code",
             "def": {
                "file": "kernel/exit.c",
-               "line": 1067
+               "line": 1095
             }
          },
          {
@@ -2190,7 +2434,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/exit.c",
-         1067
+         1095
       ],
       [
          61,
@@ -2201,28 +2445,28 @@ var syscalls_x86_64 = {
             "type": "compat_pid_t pid",
             "def": {
                "file": "kernel/exit.c",
-               "line": 1916
+               "line": 1944
             }
          },
          {
             "type": "compat_uint_t __user * stat_addr",
             "def": {
                "file": "kernel/exit.c",
-               "line": 1916
+               "line": 1944
             }
          },
          {
             "type": "int options",
             "def": {
                "file": "kernel/exit.c",
-               "line": 1916
+               "line": 1944
             }
          },
          {
             "type": "struct compat_rusage __user * ru",
             "def": {
                "file": "kernel/exit.c",
-               "line": 1916
+               "line": 1944
             }
          },
          {
@@ -2234,7 +2478,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/exit.c",
-         1916
+         1944
       ],
       [
          62,
@@ -2245,14 +2489,14 @@ var syscalls_x86_64 = {
             "type": "pid_t pid",
             "def": {
                "file": "kernel/signal.c",
-               "line": 3949
+               "line": 4030
             }
          },
          {
             "type": "int sig",
             "def": {
                "file": "kernel/signal.c",
-               "line": 3949
+               "line": 4030
             }
          },
          {
@@ -2272,7 +2516,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/signal.c",
-         3949
+         4030
       ],
       [
          63,
@@ -2312,11 +2556,28 @@ var syscalls_x86_64 = {
       [
          64,
          "sys_semget",
-         "(void)",
+         "(key_t key, int nsems, int semflg)",
          "0x40",
          {
-            "type": "",
-            "def": {}
+            "type": "key_t key",
+            "def": {
+               "file": "ipc/sem.c",
+               "line": 624
+            }
+         },
+         {
+            "type": "int nsems",
+            "def": {
+               "file": "ipc/sem.c",
+               "line": 624
+            }
+         },
+         {
+            "type": "int semflg",
+            "def": {
+               "file": "ipc/sem.c",
+               "line": 624
+            }
          },
          {
             "type": "",
@@ -2330,25 +2591,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         126
+         "ipc/sem.c",
+         624
       ],
       [
          65,
          "sys_semop",
-         "(void)",
+         "(int semid, struct sembuf __user * tsops, unsigned int nsops)",
          "0x41",
          {
-            "type": "",
-            "def": {}
+            "type": "int semid",
+            "def": {
+               "file": "ipc/sem.c",
+               "line": 2296
+            }
+         },
+         {
+            "type": "struct sembuf __user * tsops",
+            "def": {
+               "file": "ipc/sem.c",
+               "line": 2296
+            }
+         },
+         {
+            "type": "unsigned int nsops",
+            "def": {
+               "file": "ipc/sem.c",
+               "line": 2296
+            }
          },
          {
             "type": "",
@@ -2362,25 +2632,41 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         133
+         "ipc/sem.c",
+         2296
       ],
       [
          66,
          "sys_semctl",
-         "(void)",
+         "(int semid, int semnum, int cmd, int arg)",
          "0x42",
          {
-            "type": "",
-            "def": {}
+            "type": "int semid",
+            "def": {
+               "file": "ipc/sem.c",
+               "line": 1819
+            }
+         },
+         {
+            "type": "int semnum",
+            "def": {
+               "file": "ipc/sem.c",
+               "line": 1819
+            }
+         },
+         {
+            "type": "int cmd",
+            "def": {
+               "file": "ipc/sem.c",
+               "line": 1819
+            }
+         },
+         {
+            "type": "int arg",
+            "def": {
+               "file": "ipc/sem.c",
+               "line": 1819
+            }
          },
          {
             "type": "",
@@ -2390,29 +2676,20 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         128
+         "ipc/sem.c",
+         1819
       ],
       [
          67,
          "sys_shmdt",
-         "(void)",
+         "(char __user * shmaddr)",
          "0x43",
          {
-            "type": "",
-            "def": {}
+            "type": "char __user * shmaddr",
+            "def": {
+               "file": "ipc/shm.c",
+               "line": 1836
+            }
          },
          {
             "type": "",
@@ -2434,17 +2711,27 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         "kernel/sys_ni.c",
-         141
+         "ipc/shm.c",
+         1836
       ],
       [
          68,
          "sys_msgget",
-         "(void)",
+         "(key_t key, int msgflg)",
          "0x44",
          {
-            "type": "",
-            "def": {}
+            "type": "key_t key",
+            "def": {
+               "file": "ipc/msg.c",
+               "line": 315
+            }
+         },
+         {
+            "type": "int msgflg",
+            "def": {
+               "file": "ipc/msg.c",
+               "line": 315
+            }
          },
          {
             "type": "",
@@ -2462,21 +2749,41 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         117
+         "ipc/msg.c",
+         315
       ],
       [
          69,
          "sys_msgsnd",
-         "(void)",
+         "(int msqid, compat_uptr_t msgp, compat_ssize_t msgsz, int msgflg)",
          "0x45",
          {
-            "type": "",
-            "def": {}
+            "type": "int msqid",
+            "def": {
+               "file": "ipc/msg.c",
+               "line": 995
+            }
+         },
+         {
+            "type": "compat_uptr_t msgp",
+            "def": {
+               "file": "ipc/msg.c",
+               "line": 995
+            }
+         },
+         {
+            "type": "compat_ssize_t msgsz",
+            "def": {
+               "file": "ipc/msg.c",
+               "line": 995
+            }
+         },
+         {
+            "type": "int msgflg",
+            "def": {
+               "file": "ipc/msg.c",
+               "line": 995
+            }
          },
          {
             "type": "",
@@ -2486,61 +2793,81 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         124
+         "ipc/msg.c",
+         995
       ],
       [
          70,
          "sys_msgrcv",
-         "(void)",
+         "(int msqid, compat_uptr_t msgp, compat_ssize_t msgsz, compat_long_t msgtyp, int msgflg)",
          "0x46",
          {
-            "type": "",
-            "def": {}
+            "type": "int msqid",
+            "def": {
+               "file": "ipc/msg.c",
+               "line": 1298
+            }
+         },
+         {
+            "type": "compat_uptr_t msgp",
+            "def": {
+               "file": "ipc/msg.c",
+               "line": 1298
+            }
+         },
+         {
+            "type": "compat_ssize_t msgsz",
+            "def": {
+               "file": "ipc/msg.c",
+               "line": 1298
+            }
+         },
+         {
+            "type": "compat_long_t msgtyp",
+            "def": {
+               "file": "ipc/msg.c",
+               "line": 1298
+            }
+         },
+         {
+            "type": "int msgflg",
+            "def": {
+               "file": "ipc/msg.c",
+               "line": 1298
+            }
          },
          {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         122
+         "ipc/msg.c",
+         1298
       ],
       [
          71,
          "sys_msgctl",
-         "(void)",
+         "(int msqid, int cmd, void __user * uptr)",
          "0x47",
          {
-            "type": "",
-            "def": {}
+            "type": "int msqid",
+            "def": {
+               "file": "ipc/msg.c",
+               "line": 774
+            }
+         },
+         {
+            "type": "int cmd",
+            "def": {
+               "file": "ipc/msg.c",
+               "line": 774
+            }
+         },
+         {
+            "type": "void __user * uptr",
+            "def": {
+               "file": "ipc/msg.c",
+               "line": 774
+            }
          },
          {
             "type": "",
@@ -2554,16 +2881,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         119
+         "ipc/msg.c",
+         774
       ],
       [
          72,
@@ -2574,21 +2893,21 @@ var syscalls_x86_64 = {
             "type": "unsigned int fd",
             "def": {
                "file": "fs/fcntl.c",
-               "line": 801
+               "line": 812
             }
          },
          {
             "type": "unsigned int cmd",
             "def": {
                "file": "fs/fcntl.c",
-               "line": 801
+               "line": 812
             }
          },
          {
             "type": "compat_ulong_t arg",
             "def": {
                "file": "fs/fcntl.c",
-               "line": 801
+               "line": 812
             }
          },
          {
@@ -2604,7 +2923,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/fcntl.c",
-         801
+         812
       ],
       [
          73,
@@ -2615,14 +2934,14 @@ var syscalls_x86_64 = {
             "type": "unsigned int fd",
             "def": {
                "file": "fs/locks.c",
-               "line": 2135
+               "line": 2280
             }
          },
          {
             "type": "unsigned int cmd",
             "def": {
                "file": "fs/locks.c",
-               "line": 2135
+               "line": 2280
             }
          },
          {
@@ -2642,7 +2961,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/locks.c",
-         2135
+         2280
       ],
       [
          74,
@@ -2653,6 +2972,121 @@ var syscalls_x86_64 = {
             "type": "unsigned int fd",
             "def": {
                "file": "fs/sync.c",
+               "line": 214
+            }
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         "fs/sync.c",
+         214
+      ],
+      [
+         75,
+         "sys_fdatasync",
+         "(unsigned int fd)",
+         "0x4b",
+         {
+            "type": "unsigned int fd",
+            "def": {
+               "file": "fs/sync.c",
+               "line": 219
+            }
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         "fs/sync.c",
+         219
+      ],
+      [
+         76,
+         "sys_truncate",
+         "(const char __user * path, compat_off_t length)",
+         "0x4c",
+         {
+            "type": "const char __user * path",
+            "def": {
+               "file": "fs/open.c",
+               "line": 158
+            }
+         },
+         {
+            "type": "compat_off_t length",
+            "def": {
+               "file": "fs/open.c",
+               "line": 158
+            }
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         "fs/open.c",
+         158
+      ],
+      [
+         77,
+         "sys_ftruncate",
+         "(unsigned int fd, compat_off_t length)",
+         "0x4d",
+         {
+            "type": "unsigned int fd",
+            "def": {
+               "file": "fs/open.c",
+               "line": 215
+            }
+         },
+         {
+            "type": "compat_off_t length",
+            "def": {
+               "file": "fs/open.c",
                "line": 215
             }
          },
@@ -2672,123 +3106,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         "fs/sync.c",
+         "fs/open.c",
          215
-      ],
-      [
-         75,
-         "sys_fdatasync",
-         "(unsigned int fd)",
-         "0x4b",
-         {
-            "type": "unsigned int fd",
-            "def": {
-               "file": "fs/sync.c",
-               "line": 220
-            }
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "fs/sync.c",
-         220
-      ],
-      [
-         76,
-         "sys_truncate",
-         "(const char __user * path, compat_off_t length)",
-         "0x4c",
-         {
-            "type": "const char __user * path",
-            "def": {
-               "file": "fs/open.c",
-               "line": 157
-            }
-         },
-         {
-            "type": "compat_off_t length",
-            "def": {
-               "file": "fs/open.c",
-               "line": 157
-            }
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "fs/open.c",
-         157
-      ],
-      [
-         77,
-         "sys_ftruncate",
-         "(unsigned int fd, compat_off_t length)",
-         "0x4d",
-         {
-            "type": "unsigned int fd",
-            "def": {
-               "file": "fs/open.c",
-               "line": 219
-            }
-         },
-         {
-            "type": "compat_off_t length",
-            "def": {
-               "file": "fs/open.c",
-               "line": 219
-            }
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "fs/open.c",
-         219
       ],
       [
          78,
@@ -2799,21 +3118,21 @@ var syscalls_x86_64 = {
             "type": "unsigned int fd",
             "def": {
                "file": "fs/readdir.c",
-               "line": 565
+               "line": 544
             }
          },
          {
             "type": "struct compat_linux_dirent __user * dirent",
             "def": {
                "file": "fs/readdir.c",
-               "line": 565
+               "line": 544
             }
          },
          {
             "type": "unsigned int count",
             "def": {
                "file": "fs/readdir.c",
-               "line": 565
+               "line": 544
             }
          },
          {
@@ -2829,7 +3148,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/readdir.c",
-         565
+         544
       ],
       [
          79,
@@ -2840,14 +3159,14 @@ var syscalls_x86_64 = {
             "type": "char __user * buf",
             "def": {
                "file": "fs/d_path.c",
-               "line": 412
+               "line": 413
             }
          },
          {
             "type": "unsigned long size",
             "def": {
                "file": "fs/d_path.c",
-               "line": 412
+               "line": 413
             }
          },
          {
@@ -2867,7 +3186,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/d_path.c",
-         412
+         413
       ],
       [
          80,
@@ -2878,7 +3197,7 @@ var syscalls_x86_64 = {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/open.c",
-               "line": 555
+               "line": 550
             }
          },
          {
@@ -2902,7 +3221,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         555
+         550
       ],
       [
          81,
@@ -2913,7 +3232,7 @@ var syscalls_x86_64 = {
             "type": "unsigned int fd",
             "def": {
                "file": "fs/open.c",
-               "line": 581
+               "line": 571
             }
          },
          {
@@ -2937,7 +3256,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         581
+         571
       ],
       [
          82,
@@ -2948,14 +3267,14 @@ var syscalls_x86_64 = {
             "type": "const char __user * oldname",
             "def": {
                "file": "fs/namei.c",
-               "line": 5323
+               "line": 6232
             }
          },
          {
             "type": "const char __user * newname",
             "def": {
                "file": "fs/namei.c",
-               "line": 5323
+               "line": 6232
             }
          },
          {
@@ -2975,7 +3294,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namei.c",
-         5323
+         6232
       ],
       [
          83,
@@ -2986,14 +3305,14 @@ var syscalls_x86_64 = {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/namei.c",
-               "line": 4419
+               "line": 5333
             }
          },
          {
             "type": "umode_t mode",
             "def": {
                "file": "fs/namei.c",
-               "line": 4419
+               "line": 5333
             }
          },
          {
@@ -3013,7 +3332,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namei.c",
-         4419
+         5333
       ],
       [
          84,
@@ -3024,7 +3343,7 @@ var syscalls_x86_64 = {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/namei.c",
-               "line": 4533
+               "line": 5458
             }
          },
          {
@@ -3048,7 +3367,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namei.c",
-         4533
+         5458
       ],
       [
          85,
@@ -3059,14 +3378,14 @@ var syscalls_x86_64 = {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/open.c",
-               "line": 1522
+               "line": 1446
             }
          },
          {
             "type": "umode_t mode",
             "def": {
                "file": "fs/open.c",
-               "line": 1522
+               "line": 1446
             }
          },
          {
@@ -3086,7 +3405,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         1522
+         1446
       ],
       [
          86,
@@ -3097,14 +3416,14 @@ var syscalls_x86_64 = {
             "type": "const char __user * oldname",
             "def": {
                "file": "fs/namei.c",
-               "line": 4956
+               "line": 5888
             }
          },
          {
             "type": "const char __user * newname",
             "def": {
                "file": "fs/namei.c",
-               "line": 4956
+               "line": 5888
             }
          },
          {
@@ -3124,7 +3443,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namei.c",
-         4956
+         5888
       ],
       [
          87,
@@ -3135,7 +3454,7 @@ var syscalls_x86_64 = {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/namei.c",
-               "line": 4694
+               "line": 5617
             }
          },
          {
@@ -3159,7 +3478,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namei.c",
-         4694
+         5617
       ],
       [
          88,
@@ -3170,14 +3489,14 @@ var syscalls_x86_64 = {
             "type": "const char __user * oldname",
             "def": {
                "file": "fs/namei.c",
-               "line": 4775
+               "line": 5708
             }
          },
          {
             "type": "const char __user * newname",
             "def": {
                "file": "fs/namei.c",
-               "line": 4775
+               "line": 5708
             }
          },
          {
@@ -3197,7 +3516,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namei.c",
-         4775
+         5708
       ],
       [
          89,
@@ -3208,21 +3527,21 @@ var syscalls_x86_64 = {
             "type": "const char __user * path",
             "def": {
                "file": "fs/stat.c",
-               "line": 610
+               "line": 602
             }
          },
          {
             "type": "char __user * buf",
             "def": {
                "file": "fs/stat.c",
-               "line": 610
+               "line": 602
             }
          },
          {
             "type": "int bufsiz",
             "def": {
                "file": "fs/stat.c",
-               "line": 610
+               "line": 602
             }
          },
          {
@@ -3238,7 +3557,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/stat.c",
-         610
+         602
       ],
       [
          90,
@@ -3249,14 +3568,14 @@ var syscalls_x86_64 = {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/open.c",
-               "line": 719
+               "line": 704
             }
          },
          {
             "type": "umode_t mode",
             "def": {
                "file": "fs/open.c",
-               "line": 719
+               "line": 704
             }
          },
          {
@@ -3276,7 +3595,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         719
+         704
       ],
       [
          91,
@@ -3287,14 +3606,14 @@ var syscalls_x86_64 = {
             "type": "unsigned int fd",
             "def": {
                "file": "fs/open.c",
-               "line": 670
+               "line": 657
             }
          },
          {
             "type": "umode_t mode",
             "def": {
                "file": "fs/open.c",
-               "line": 670
+               "line": 657
             }
          },
          {
@@ -3314,7 +3633,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         670
+         657
       ],
       [
          92,
@@ -3325,21 +3644,21 @@ var syscalls_x86_64 = {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/open.c",
-               "line": 840
+               "line": 822
             }
          },
          {
             "type": "uid_t user",
             "def": {
                "file": "fs/open.c",
-               "line": 840
+               "line": 822
             }
          },
          {
             "type": "gid_t group",
             "def": {
                "file": "fs/open.c",
-               "line": 840
+               "line": 822
             }
          },
          {
@@ -3355,7 +3674,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         840
+         822
       ],
       [
          93,
@@ -3366,21 +3685,21 @@ var syscalls_x86_64 = {
             "type": "unsigned int fd",
             "def": {
                "file": "fs/open.c",
-               "line": 874
+               "line": 856
             }
          },
          {
             "type": "uid_t user",
             "def": {
                "file": "fs/open.c",
-               "line": 874
+               "line": 856
             }
          },
          {
             "type": "gid_t group",
             "def": {
                "file": "fs/open.c",
-               "line": 874
+               "line": 856
             }
          },
          {
@@ -3396,7 +3715,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         874
+         856
       ],
       [
          94,
@@ -3407,21 +3726,21 @@ var syscalls_x86_64 = {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/open.c",
-               "line": 845
+               "line": 827
             }
          },
          {
             "type": "uid_t user",
             "def": {
                "file": "fs/open.c",
-               "line": 845
+               "line": 827
             }
          },
          {
             "type": "gid_t group",
             "def": {
                "file": "fs/open.c",
-               "line": 845
+               "line": 827
             }
          },
          {
@@ -3437,7 +3756,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         845
+         827
       ],
       [
          95,
@@ -3448,7 +3767,7 @@ var syscalls_x86_64 = {
             "type": "int mask",
             "def": {
                "file": "kernel/sys.c",
-               "line": 1942
+               "line": 1960
             }
          },
          {
@@ -3472,7 +3791,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/sys.c",
-         1942
+         1960
       ],
       [
          96,
@@ -3559,14 +3878,14 @@ var syscalls_x86_64 = {
             "type": "int who",
             "def": {
                "file": "kernel/sys.c",
-               "line": 1929
+               "line": 1947
             }
          },
          {
             "type": "struct compat_rusage __user * ru",
             "def": {
                "file": "kernel/sys.c",
-               "line": 1929
+               "line": 1947
             }
          },
          {
@@ -3586,7 +3905,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/sys.c",
-         1929
+         1947
       ],
       [
          99,
@@ -3597,7 +3916,7 @@ var syscalls_x86_64 = {
             "type": "struct compat_sysinfo __user * info",
             "def": {
                "file": "kernel/sys.c",
-               "line": 2926
+               "line": 3027
             }
          },
          {
@@ -3621,7 +3940,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/sys.c",
-         2926
+         3027
       ],
       [
          100,
@@ -3667,28 +3986,28 @@ var syscalls_x86_64 = {
             "type": "compat_long_t request",
             "def": {
                "file": "kernel/ptrace.c",
-               "line": 1526
+               "line": 1552
             }
          },
          {
             "type": "compat_long_t pid",
             "def": {
                "file": "kernel/ptrace.c",
-               "line": 1526
+               "line": 1552
             }
          },
          {
             "type": "compat_long_t addr",
             "def": {
                "file": "kernel/ptrace.c",
-               "line": 1526
+               "line": 1552
             }
          },
          {
             "type": "compat_long_t data",
             "def": {
                "file": "kernel/ptrace.c",
-               "line": 1526
+               "line": 1552
             }
          },
          {
@@ -3700,7 +4019,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/ptrace.c",
-         1526
+         1552
       ],
       [
          102,
@@ -3743,21 +4062,21 @@ var syscalls_x86_64 = {
             "type": "int type",
             "def": {
                "file": "kernel/printk/printk.c",
-               "line": 1875
+               "line": 1853
             }
          },
          {
             "type": "char __user * buf",
             "def": {
                "file": "kernel/printk/printk.c",
-               "line": 1875
+               "line": 1853
             }
          },
          {
             "type": "int len",
             "def": {
                "file": "kernel/printk/printk.c",
-               "line": 1875
+               "line": 1853
             }
          },
          {
@@ -3773,7 +4092,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/printk/printk.c",
-         1875
+         1853
       ],
       [
          104,
@@ -4616,14 +4935,14 @@ var syscalls_x86_64 = {
             "type": "compat_sigset_t __user * uset",
             "def": {
                "file": "kernel/signal.c",
-               "line": 3406
+               "line": 3487
             }
          },
          {
             "type": "compat_size_t sigsetsize",
             "def": {
                "file": "kernel/signal.c",
-               "line": 3406
+               "line": 3487
             }
          },
          {
@@ -4643,7 +4962,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/signal.c",
-         3406
+         3487
       ],
       [
          128,
@@ -4654,28 +4973,28 @@ var syscalls_x86_64 = {
             "type": "compat_sigset_t __user * uthese",
             "def": {
                "file": "kernel/signal.c",
-               "line": 3901
+               "line": 3982
             }
          },
          {
             "type": "struct compat_siginfo __user * uinfo",
             "def": {
                "file": "kernel/signal.c",
-               "line": 3901
+               "line": 3982
             }
          },
          {
             "type": "struct old_timespec32 __user * uts",
             "def": {
                "file": "kernel/signal.c",
-               "line": 3901
+               "line": 3982
             }
          },
          {
             "type": "compat_size_t sigsetsize",
             "def": {
                "file": "kernel/signal.c",
-               "line": 3901
+               "line": 3982
             }
          },
          {
@@ -4687,7 +5006,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/signal.c",
-         3901
+         3982
       ],
       [
          129,
@@ -4698,21 +5017,21 @@ var syscalls_x86_64 = {
             "type": "compat_pid_t pid",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4222
+               "line": 4303
             }
          },
          {
             "type": "int sig",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4222
+               "line": 4303
             }
          },
          {
             "type": "struct compat_siginfo __user * uinfo",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4222
+               "line": 4303
             }
          },
          {
@@ -4728,7 +5047,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/signal.c",
-         4222
+         4303
       ],
       [
          130,
@@ -4739,14 +5058,14 @@ var syscalls_x86_64 = {
             "type": "compat_sigset_t __user * unewset",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4866
+               "line": 4947
             }
          },
          {
             "type": "compat_size_t sigsetsize",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4866
+               "line": 4947
             }
          },
          {
@@ -4766,7 +5085,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/signal.c",
-         4866
+         4947
       ],
       [
          131,
@@ -4777,14 +5096,14 @@ var syscalls_x86_64 = {
             "type": "const compat_stack_t __user * uss_ptr",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4510
+               "line": 4591
             }
          },
          {
             "type": "compat_stack_t __user * uoss_ptr",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4510
+               "line": 4591
             }
          },
          {
@@ -4804,7 +5123,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/signal.c",
-         4510
+         4591
       ],
       [
          132,
@@ -4815,14 +5134,14 @@ var syscalls_x86_64 = {
             "type": "char __user * filename",
             "def": {
                "file": "fs/utimes.c",
-               "line": 210
+               "line": 209
             }
          },
          {
             "type": "struct utimbuf __user * times",
             "def": {
                "file": "fs/utimes.c",
-               "line": 210
+               "line": 209
             }
          },
          {
@@ -4842,7 +5161,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/utimes.c",
-         210
+         209
       ],
       [
          133,
@@ -4853,21 +5172,21 @@ var syscalls_x86_64 = {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/namei.c",
-               "line": 4316
+               "line": 5219
             }
          },
          {
             "type": "umode_t mode",
             "def": {
                "file": "fs/namei.c",
-               "line": 4316
+               "line": 5219
             }
          },
          {
             "type": "unsigned dev",
             "def": {
                "file": "fs/namei.c",
-               "line": 4316
+               "line": 5219
             }
          },
          {
@@ -4883,7 +5202,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namei.c",
-         4316
+         5219
       ],
       [
          135,
@@ -4929,14 +5248,14 @@ var syscalls_x86_64 = {
             "type": "unsigned dev",
             "def": {
                "file": "fs/statfs.c",
-               "line": 389
+               "line": 390
             }
          },
          {
             "type": "struct compat_ustat __user * u",
             "def": {
                "file": "fs/statfs.c",
-               "line": 389
+               "line": 390
             }
          },
          {
@@ -4956,7 +5275,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/statfs.c",
-         389
+         390
       ],
       [
          137,
@@ -4967,14 +5286,14 @@ var syscalls_x86_64 = {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/statfs.c",
-               "line": 303
+               "line": 304
             }
          },
          {
             "type": "struct compat_statfs __user * buf",
             "def": {
                "file": "fs/statfs.c",
-               "line": 303
+               "line": 304
             }
          },
          {
@@ -4994,7 +5313,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/statfs.c",
-         303
+         304
       ],
       [
          138,
@@ -5005,14 +5324,14 @@ var syscalls_x86_64 = {
             "type": "unsigned int fd",
             "def": {
                "file": "fs/statfs.c",
-               "line": 312
+               "line": 313
             }
          },
          {
             "type": "struct compat_statfs __user * buf",
             "def": {
                "file": "fs/statfs.c",
-               "line": 312
+               "line": 313
             }
          },
          {
@@ -5032,7 +5351,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/statfs.c",
-         312
+         313
       ],
       [
          139,
@@ -5043,21 +5362,21 @@ var syscalls_x86_64 = {
             "type": "int option",
             "def": {
                "file": "fs/filesystems.c",
-               "line": 195
+               "line": 199
             }
          },
          {
             "type": "unsigned long arg1",
             "def": {
                "file": "fs/filesystems.c",
-               "line": 195
+               "line": 199
             }
          },
          {
             "type": "unsigned long arg2",
             "def": {
                "file": "fs/filesystems.c",
-               "line": 195
+               "line": 199
             }
          },
          {
@@ -5073,7 +5392,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/filesystems.c",
-         195
+         199
       ],
       [
          140,
@@ -5163,14 +5482,14 @@ var syscalls_x86_64 = {
             "type": "pid_t pid",
             "def": {
                "file": "kernel/sched/syscalls.c",
-               "line": 966
+               "line": 949
             }
          },
          {
             "type": "struct sched_param __user * param",
             "def": {
                "file": "kernel/sched/syscalls.c",
-               "line": 966
+               "line": 949
             }
          },
          {
@@ -5190,7 +5509,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/sched/syscalls.c",
-         966
+         949
       ],
       [
          143,
@@ -5201,14 +5520,14 @@ var syscalls_x86_64 = {
             "type": "pid_t pid",
             "def": {
                "file": "kernel/sched/syscalls.c",
-               "line": 1042
+               "line": 1025
             }
          },
          {
             "type": "struct sched_param __user * param",
             "def": {
                "file": "kernel/sched/syscalls.c",
-               "line": 1042
+               "line": 1025
             }
          },
          {
@@ -5228,7 +5547,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/sched/syscalls.c",
-         1042
+         1025
       ],
       [
          144,
@@ -5239,21 +5558,21 @@ var syscalls_x86_64 = {
             "type": "pid_t pid",
             "def": {
                "file": "kernel/sched/syscalls.c",
-               "line": 951
+               "line": 934
             }
          },
          {
             "type": "int policy",
             "def": {
                "file": "kernel/sched/syscalls.c",
-               "line": 951
+               "line": 934
             }
          },
          {
             "type": "struct sched_param __user * param",
             "def": {
                "file": "kernel/sched/syscalls.c",
-               "line": 951
+               "line": 934
             }
          },
          {
@@ -5269,7 +5588,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/sched/syscalls.c",
-         951
+         934
       ],
       [
          145,
@@ -5280,7 +5599,7 @@ var syscalls_x86_64 = {
             "type": "pid_t pid",
             "def": {
                "file": "kernel/sched/syscalls.c",
-               "line": 1012
+               "line": 995
             }
          },
          {
@@ -5304,7 +5623,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/sched/syscalls.c",
-         1012
+         995
       ],
       [
          146,
@@ -5315,7 +5634,7 @@ var syscalls_x86_64 = {
             "type": "int policy",
             "def": {
                "file": "kernel/sched/syscalls.c",
-               "line": 1479
+               "line": 1469
             }
          },
          {
@@ -5339,7 +5658,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/sched/syscalls.c",
-         1479
+         1469
       ],
       [
          147,
@@ -5350,7 +5669,7 @@ var syscalls_x86_64 = {
             "type": "int policy",
             "def": {
                "file": "kernel/sched/syscalls.c",
-               "line": 1507
+               "line": 1497
             }
          },
          {
@@ -5374,7 +5693,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/sched/syscalls.c",
-         1507
+         1497
       ],
       [
          148,
@@ -5385,14 +5704,14 @@ var syscalls_x86_64 = {
             "type": "pid_t pid",
             "def": {
                "file": "kernel/sched/syscalls.c",
-               "line": 1565
+               "line": 1555
             }
          },
          {
             "type": "struct __kernel_timespec __user * interval",
             "def": {
                "file": "kernel/sched/syscalls.c",
-               "line": 1565
+               "line": 1555
             }
          },
          {
@@ -5412,16 +5731,19 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/sched/syscalls.c",
-         1565
+         1555
       ],
       [
          149,
          "sys_mlock",
-         "(void)",
+         "(int flags)",
          "0x95",
          {
-            "type": "",
-            "def": {}
+            "type": "int flags",
+            "def": {
+               "file": "mm/mlock.c",
+               "line": 751
+            }
          },
          {
             "type": "",
@@ -5443,8 +5765,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         "kernel/sys_ni.c",
-         181
+         "mm/mlock.c",
+         751
       ],
       [
          150,
@@ -5475,17 +5797,20 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         "kernel/sys_ni.c",
-         182
+         "mm/mlock.c",
+         780
       ],
       [
          151,
          "sys_mlockall",
-         "(void)",
+         "(int flags)",
          "0x97",
          {
-            "type": "",
-            "def": {}
+            "type": "int flags",
+            "def": {
+               "file": "mm/mlock.c",
+               "line": 751
+            }
          },
          {
             "type": "",
@@ -5507,8 +5832,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         "kernel/sys_ni.c",
-         183
+         "mm/mlock.c",
+         751
       ],
       [
          152,
@@ -5539,8 +5864,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         "kernel/sys_ni.c",
-         184
+         "mm/mlock.c",
+         780
       ],
       [
          153,
@@ -5572,7 +5897,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         1606
+         1530
       ],
       [
          154,
@@ -5624,14 +5949,14 @@ var syscalls_x86_64 = {
             "type": "const char __user * new_root",
             "def": {
                "file": "fs/namespace.c",
-               "line": 4661
+               "line": 4767
             }
          },
          {
             "type": "const char __user * put_old",
             "def": {
                "file": "fs/namespace.c",
-               "line": 4661
+               "line": 4767
             }
          },
          {
@@ -5651,7 +5976,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namespace.c",
-         4661
+         4767
       ],
       [
          156,
@@ -5683,7 +6008,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "arch/x86/kernel/process.c",
-         1086
+         1085
       ],
       [
          157,
@@ -5694,35 +6019,35 @@ var syscalls_x86_64 = {
             "type": "int option",
             "def": {
                "file": "kernel/sys.c",
-               "line": 2455
+               "line": 2534
             }
          },
          {
             "type": "unsigned long arg2",
             "def": {
                "file": "kernel/sys.c",
-               "line": 2455
+               "line": 2534
             }
          },
          {
             "type": "unsigned long arg3",
             "def": {
                "file": "kernel/sys.c",
-               "line": 2455
+               "line": 2534
             }
          },
          {
             "type": "unsigned long arg4",
             "def": {
                "file": "kernel/sys.c",
-               "line": 2455
+               "line": 2534
             }
          },
          {
             "type": "unsigned long arg5",
             "def": {
                "file": "kernel/sys.c",
-               "line": 2455
+               "line": 2534
             }
          },
          {
@@ -5730,7 +6055,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/sys.c",
-         2455
+         2534
       ],
       [
          158,
@@ -5741,14 +6066,14 @@ var syscalls_x86_64 = {
             "type": "int option",
             "def": {
                "file": "arch/x86/kernel/process.c",
-               "line": 1065
+               "line": 1064
             }
          },
          {
             "type": "unsigned long arg2",
             "def": {
                "file": "arch/x86/kernel/process.c",
-               "line": 1065
+               "line": 1064
             }
          },
          {
@@ -5768,7 +6093,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "arch/x86/kernel/process.c",
-         1065
+         1064
       ],
       [
          159,
@@ -5852,7 +6177,7 @@ var syscalls_x86_64 = {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/open.c",
-               "line": 598
+               "line": 588
             }
          },
          {
@@ -5876,7 +6201,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         598
+         588
       ],
       [
          162,
@@ -5887,21 +6212,21 @@ var syscalls_x86_64 = {
             "type": "int fd",
             "def": {
                "file": "fs/sync.c",
-               "line": 370
+               "line": 366
             }
          },
          {
             "type": "compat_arg_u64_dual (offset) compat_arg_u64_dual (nbytes)",
             "def": {
                "file": "fs/sync.c",
-               "line": 370
+               "line": 366
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "fs/sync.c",
-               "line": 370
+               "line": 366
             }
          },
          {
@@ -5917,7 +6242,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/sync.c",
-         370
+         366
       ],
       [
          163,
@@ -5928,7 +6253,7 @@ var syscalls_x86_64 = {
             "type": "const char __user * name",
             "def": {
                "file": "kernel/acct.c",
-               "line": 314
+               "line": 293
             }
          },
          {
@@ -5952,7 +6277,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/acct.c",
-         314
+         293
       ],
       [
          164,
@@ -6001,35 +6326,35 @@ var syscalls_x86_64 = {
             "type": "char __user * dev_name",
             "def": {
                "file": "fs/namespace.c",
-               "line": 4324
+               "line": 4367
             }
          },
          {
             "type": "char __user * dir_name",
             "def": {
                "file": "fs/namespace.c",
-               "line": 4324
+               "line": 4367
             }
          },
          {
             "type": "char __user * type",
             "def": {
                "file": "fs/namespace.c",
-               "line": 4324
+               "line": 4367
             }
          },
          {
             "type": "unsigned long flags",
             "def": {
                "file": "fs/namespace.c",
-               "line": 4324
+               "line": 4367
             }
          },
          {
             "type": "void __user * data",
             "def": {
                "file": "fs/namespace.c",
-               "line": 4324
+               "line": 4367
             }
          },
          {
@@ -6037,7 +6362,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namespace.c",
-         4324
+         4367
       ],
       [
          166,
@@ -6048,14 +6373,14 @@ var syscalls_x86_64 = {
             "type": "char __user * name",
             "def": {
                "file": "fs/namespace.c",
-               "line": 2118
+               "line": 2073
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "fs/namespace.c",
-               "line": 2118
+               "line": 2073
             }
          },
          {
@@ -6075,16 +6400,26 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namespace.c",
-         2118
+         2073
       ],
       [
          167,
          "sys_swapon",
-         "(void)",
+         "(const char __user * specialfile, int swap_flags)",
          "0xa7",
          {
-            "type": "",
-            "def": {}
+            "type": "const char __user * specialfile",
+            "def": {
+               "file": "mm/swapfile.c",
+               "line": 3601
+            }
+         },
+         {
+            "type": "int swap_flags",
+            "def": {
+               "file": "mm/swapfile.c",
+               "line": 3601
+            }
          },
          {
             "type": "",
@@ -6102,21 +6437,20 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         177
+         "mm/swapfile.c",
+         3601
       ],
       [
          168,
          "sys_swapoff",
-         "(void)",
+         "(const char __user * specialfile)",
          "0xa8",
          {
-            "type": "",
-            "def": {}
+            "type": "const char __user * specialfile",
+            "def": {
+               "file": "mm/swapfile.c",
+               "line": 3070
+            }
          },
          {
             "type": "",
@@ -6138,8 +6472,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         "kernel/sys_ni.c",
-         178
+         "mm/swapfile.c",
+         3070
       ],
       [
          169,
@@ -6150,28 +6484,28 @@ var syscalls_x86_64 = {
             "type": "int magic1",
             "def": {
                "file": "kernel/reboot.c",
-               "line": 728
+               "line": 729
             }
          },
          {
             "type": "int magic2",
             "def": {
                "file": "kernel/reboot.c",
-               "line": 728
+               "line": 729
             }
          },
          {
             "type": "unsigned int cmd",
             "def": {
                "file": "kernel/reboot.c",
-               "line": 728
+               "line": 729
             }
          },
          {
             "type": "void __user * arg",
             "def": {
                "file": "kernel/reboot.c",
-               "line": 728
+               "line": 729
             }
          },
          {
@@ -6183,7 +6517,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/reboot.c",
-         728
+         729
       ],
       [
          170,
@@ -6346,21 +6680,21 @@ var syscalls_x86_64 = {
             "type": "void __user * umod",
             "def": {
                "file": "kernel/module/main.c",
-               "line": 3569
+               "line": 3650
             }
          },
          {
             "type": "unsigned long len",
             "def": {
                "file": "kernel/module/main.c",
-               "line": 3569
+               "line": 3650
             }
          },
          {
             "type": "const char __user * uargs",
             "def": {
                "file": "kernel/module/main.c",
-               "line": 3569
+               "line": 3650
             }
          },
          {
@@ -6376,7 +6710,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/module/main.c",
-         3569
+         3650
       ],
       [
          176,
@@ -6387,14 +6721,14 @@ var syscalls_x86_64 = {
             "type": "const char __user * name_user",
             "def": {
                "file": "kernel/module/main.c",
-               "line": 776
+               "line": 804
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "kernel/module/main.c",
-               "line": 776
+               "line": 804
             }
          },
          {
@@ -6414,7 +6748,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/module/main.c",
-         776
+         804
       ],
       [
          179,
@@ -6495,11 +6829,21 @@ var syscalls_x86_64 = {
       [
          187,
          "sys_readahead",
-         "not found",
+         "(int fd, compat_arg_u64_dual (offset) size_t)",
          "0xbb",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "mm/readahead.c",
+               "line": 762
+            }
+         },
+         {
+            "type": "compat_arg_u64_dual (offset) size_t",
+            "def": {
+               "file": "mm/readahead.c",
+               "line": 762
+            }
          },
          {
             "type": "",
@@ -6517,12 +6861,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "mm/readahead.c",
+         762
       ],
       [
          188,
@@ -6533,35 +6873,35 @@ var syscalls_x86_64 = {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/xattr.c",
-               "line": 743
+               "line": 764
             }
          },
          {
             "type": "const char __user * name",
             "def": {
                "file": "fs/xattr.c",
-               "line": 743
+               "line": 764
             }
          },
          {
             "type": "const void __user * value",
             "def": {
                "file": "fs/xattr.c",
-               "line": 743
+               "line": 764
             }
          },
          {
             "type": "size_t size",
             "def": {
                "file": "fs/xattr.c",
-               "line": 743
+               "line": 764
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "fs/xattr.c",
-               "line": 743
+               "line": 764
             }
          },
          {
@@ -6569,7 +6909,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/xattr.c",
-         743
+         764
       ],
       [
          189,
@@ -6580,35 +6920,35 @@ var syscalls_x86_64 = {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/xattr.c",
-               "line": 750
+               "line": 771
             }
          },
          {
             "type": "const char __user * name",
             "def": {
                "file": "fs/xattr.c",
-               "line": 750
+               "line": 771
             }
          },
          {
             "type": "const void __user * value",
             "def": {
                "file": "fs/xattr.c",
-               "line": 750
+               "line": 771
             }
          },
          {
             "type": "size_t size",
             "def": {
                "file": "fs/xattr.c",
-               "line": 750
+               "line": 771
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "fs/xattr.c",
-               "line": 750
+               "line": 771
             }
          },
          {
@@ -6616,7 +6956,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/xattr.c",
-         750
+         771
       ],
       [
          190,
@@ -6627,35 +6967,35 @@ var syscalls_x86_64 = {
             "type": "int fd",
             "def": {
                "file": "fs/xattr.c",
-               "line": 758
+               "line": 779
             }
          },
          {
             "type": "const char __user * name",
             "def": {
                "file": "fs/xattr.c",
-               "line": 758
+               "line": 779
             }
          },
          {
             "type": "const void __user * value",
             "def": {
                "file": "fs/xattr.c",
-               "line": 758
+               "line": 779
             }
          },
          {
             "type": "size_t size",
             "def": {
                "file": "fs/xattr.c",
-               "line": 758
+               "line": 779
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "fs/xattr.c",
-               "line": 758
+               "line": 779
             }
          },
          {
@@ -6663,7 +7003,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/xattr.c",
-         758
+         779
       ],
       [
          191,
@@ -6674,28 +7014,28 @@ var syscalls_x86_64 = {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/xattr.c",
-               "line": 888
+               "line": 905
             }
          },
          {
             "type": "const char __user * name",
             "def": {
                "file": "fs/xattr.c",
-               "line": 888
+               "line": 905
             }
          },
          {
             "type": "void __user * value",
             "def": {
                "file": "fs/xattr.c",
-               "line": 888
+               "line": 905
             }
          },
          {
             "type": "size_t size",
             "def": {
                "file": "fs/xattr.c",
-               "line": 888
+               "line": 905
             }
          },
          {
@@ -6707,7 +7047,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/xattr.c",
-         888
+         905
       ],
       [
          192,
@@ -6718,28 +7058,28 @@ var syscalls_x86_64 = {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/xattr.c",
-               "line": 894
+               "line": 911
             }
          },
          {
             "type": "const char __user * name",
             "def": {
                "file": "fs/xattr.c",
-               "line": 894
+               "line": 911
             }
          },
          {
             "type": "void __user * value",
             "def": {
                "file": "fs/xattr.c",
-               "line": 894
+               "line": 911
             }
          },
          {
             "type": "size_t size",
             "def": {
                "file": "fs/xattr.c",
-               "line": 894
+               "line": 911
             }
          },
          {
@@ -6751,7 +7091,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/xattr.c",
-         894
+         911
       ],
       [
          193,
@@ -6762,28 +7102,28 @@ var syscalls_x86_64 = {
             "type": "int fd",
             "def": {
                "file": "fs/xattr.c",
-               "line": 901
+               "line": 918
             }
          },
          {
             "type": "const char __user * name",
             "def": {
                "file": "fs/xattr.c",
-               "line": 901
+               "line": 918
             }
          },
          {
             "type": "void __user * value",
             "def": {
                "file": "fs/xattr.c",
-               "line": 901
+               "line": 918
             }
          },
          {
             "type": "size_t size",
             "def": {
                "file": "fs/xattr.c",
-               "line": 901
+               "line": 918
             }
          },
          {
@@ -6795,7 +7135,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/xattr.c",
-         901
+         918
       ],
       [
          194,
@@ -6806,21 +7146,21 @@ var syscalls_x86_64 = {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/xattr.c",
-               "line": 998
+               "line": 1011
             }
          },
          {
             "type": "char __user * list",
             "def": {
                "file": "fs/xattr.c",
-               "line": 998
+               "line": 1011
             }
          },
          {
             "type": "size_t size",
             "def": {
                "file": "fs/xattr.c",
-               "line": 998
+               "line": 1011
             }
          },
          {
@@ -6836,7 +7176,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/xattr.c",
-         998
+         1011
       ],
       [
          195,
@@ -6847,21 +7187,21 @@ var syscalls_x86_64 = {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/xattr.c",
-               "line": 1004
+               "line": 1017
             }
          },
          {
             "type": "char __user * list",
             "def": {
                "file": "fs/xattr.c",
-               "line": 1004
+               "line": 1017
             }
          },
          {
             "type": "size_t size",
             "def": {
                "file": "fs/xattr.c",
-               "line": 1004
+               "line": 1017
             }
          },
          {
@@ -6877,7 +7217,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/xattr.c",
-         1004
+         1017
       ],
       [
          196,
@@ -6888,21 +7228,21 @@ var syscalls_x86_64 = {
             "type": "int fd",
             "def": {
                "file": "fs/xattr.c",
-               "line": 1010
+               "line": 1023
             }
          },
          {
             "type": "char __user * list",
             "def": {
                "file": "fs/xattr.c",
-               "line": 1010
+               "line": 1023
             }
          },
          {
             "type": "size_t size",
             "def": {
                "file": "fs/xattr.c",
-               "line": 1010
+               "line": 1023
             }
          },
          {
@@ -6918,7 +7258,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/xattr.c",
-         1010
+         1023
       ],
       [
          197,
@@ -6929,14 +7269,14 @@ var syscalls_x86_64 = {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/xattr.c",
-               "line": 1097
+               "line": 1106
             }
          },
          {
             "type": "const char __user * name",
             "def": {
                "file": "fs/xattr.c",
-               "line": 1097
+               "line": 1106
             }
          },
          {
@@ -6956,7 +7296,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/xattr.c",
-         1097
+         1106
       ],
       [
          198,
@@ -6967,14 +7307,14 @@ var syscalls_x86_64 = {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/xattr.c",
-               "line": 1103
+               "line": 1112
             }
          },
          {
             "type": "const char __user * name",
             "def": {
                "file": "fs/xattr.c",
-               "line": 1103
+               "line": 1112
             }
          },
          {
@@ -6994,7 +7334,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/xattr.c",
-         1103
+         1112
       ],
       [
          199,
@@ -7005,14 +7345,14 @@ var syscalls_x86_64 = {
             "type": "int fd",
             "def": {
                "file": "fs/xattr.c",
-               "line": 1109
+               "line": 1118
             }
          },
          {
             "type": "const char __user * name",
             "def": {
                "file": "fs/xattr.c",
-               "line": 1109
+               "line": 1118
             }
          },
          {
@@ -7032,7 +7372,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/xattr.c",
-         1109
+         1118
       ],
       [
          200,
@@ -7043,14 +7383,14 @@ var syscalls_x86_64 = {
             "type": "pid_t pid",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4183
+               "line": 4264
             }
          },
          {
             "type": "int sig",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4183
+               "line": 4264
             }
          },
          {
@@ -7070,7 +7410,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/signal.c",
-         4183
+         4264
       ],
       [
          201,
@@ -7116,28 +7456,28 @@ var syscalls_x86_64 = {
             "type": "struct futex_waitv __user * waiters",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 414
+               "line": 445
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 414
+               "line": 445
             }
          },
          {
             "type": "int nr_wake",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 414
+               "line": 445
             }
          },
          {
             "type": "int nr_requeue",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 414
+               "line": 445
             }
          },
          {
@@ -7149,7 +7489,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/futex/syscalls.c",
-         414
+         445
       ],
       [
          203,
@@ -7242,14 +7582,14 @@ var syscalls_x86_64 = {
             "type": "unsigned nr_events",
             "def": {
                "file": "fs/aio.c",
-               "line": 1413
+               "line": 1466
             }
          },
          {
             "type": "u32 __user * ctx32p",
             "def": {
                "file": "fs/aio.c",
-               "line": 1413
+               "line": 1466
             }
          },
          {
@@ -7269,7 +7609,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/aio.c",
-         1413
+         1466
       ],
       [
          207,
@@ -7280,7 +7620,7 @@ var syscalls_x86_64 = {
             "type": "aio_context_t ctx",
             "def": {
                "file": "fs/aio.c",
-               "line": 1451
+               "line": 1504
             }
          },
          {
@@ -7304,7 +7644,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/aio.c",
-         1451
+         1504
       ],
       [
          208,
@@ -7315,35 +7655,35 @@ var syscalls_x86_64 = {
             "type": "aio_context_t ctx_id",
             "def": {
                "file": "fs/aio.c",
-               "line": 2251
+               "line": 2304
             }
          },
          {
             "type": "long min_nr",
             "def": {
                "file": "fs/aio.c",
-               "line": 2251
+               "line": 2304
             }
          },
          {
             "type": "long nr",
             "def": {
                "file": "fs/aio.c",
-               "line": 2251
+               "line": 2304
             }
          },
          {
             "type": "struct io_event __user * events",
             "def": {
                "file": "fs/aio.c",
-               "line": 2251
+               "line": 2304
             }
          },
          {
             "type": "struct __kernel_timespec __user * timeout",
             "def": {
                "file": "fs/aio.c",
-               "line": 2251
+               "line": 2304
             }
          },
          {
@@ -7351,7 +7691,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/aio.c",
-         2251
+         2304
       ],
       [
          209,
@@ -7362,21 +7702,21 @@ var syscalls_x86_64 = {
             "type": "compat_aio_context_t ctx_id",
             "def": {
                "file": "fs/aio.c",
-               "line": 2124
+               "line": 2177
             }
          },
          {
             "type": "int nr",
             "def": {
                "file": "fs/aio.c",
-               "line": 2124
+               "line": 2177
             }
          },
          {
             "type": "compat_uptr_t __user * iocbpp",
             "def": {
                "file": "fs/aio.c",
-               "line": 2124
+               "line": 2177
             }
          },
          {
@@ -7392,7 +7732,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/aio.c",
-         2124
+         2177
       ],
       [
          210,
@@ -7403,21 +7743,21 @@ var syscalls_x86_64 = {
             "type": "aio_context_t ctx_id",
             "def": {
                "file": "fs/aio.c",
-               "line": 2176
+               "line": 2229
             }
          },
          {
             "type": "struct iocb __user * iocb",
             "def": {
                "file": "fs/aio.c",
-               "line": 2176
+               "line": 2229
             }
          },
          {
             "type": "struct io_event __user * result",
             "def": {
                "file": "fs/aio.c",
-               "line": 2176
+               "line": 2229
             }
          },
          {
@@ -7433,7 +7773,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/aio.c",
-         2176
+         2229
       ],
       [
          213,
@@ -7444,7 +7784,7 @@ var syscalls_x86_64 = {
             "type": "int size",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2301
+               "line": 2528
             }
          },
          {
@@ -7468,39 +7808,54 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/eventpoll.c",
-         2301
+         2528
       ],
       [
          216,
          "sys_remap_file_pages",
-         "(void)",
+         "(unsigned long start, unsigned long size, unsigned long prot, unsigned long pgoff, unsigned long flags)",
          "0xd8",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long start",
+            "def": {
+               "file": "mm/mmap.c",
+               "line": 1086
+            }
+         },
+         {
+            "type": "unsigned long size",
+            "def": {
+               "file": "mm/mmap.c",
+               "line": 1086
+            }
+         },
+         {
+            "type": "unsigned long prot",
+            "def": {
+               "file": "mm/mmap.c",
+               "line": 1086
+            }
+         },
+         {
+            "type": "unsigned long pgoff",
+            "def": {
+               "file": "mm/mmap.c",
+               "line": 1086
+            }
+         },
+         {
+            "type": "unsigned long flags",
+            "def": {
+               "file": "mm/mmap.c",
+               "line": 1086
+            }
          },
          {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         189
+         "mm/mmap.c",
+         1086
       ],
       [
          217,
@@ -7511,21 +7866,21 @@ var syscalls_x86_64 = {
             "type": "unsigned int fd",
             "def": {
                "file": "fs/readdir.c",
-               "line": 396
+               "line": 384
             }
          },
          {
             "type": "struct linux_dirent64 __user * dirent",
             "def": {
                "file": "fs/readdir.c",
-               "line": 396
+               "line": 384
             }
          },
          {
             "type": "unsigned int count",
             "def": {
                "file": "fs/readdir.c",
-               "line": 396
+               "line": 384
             }
          },
          {
@@ -7541,7 +7896,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/readdir.c",
-         396
+         384
       ],
       [
          218,
@@ -7552,7 +7907,7 @@ var syscalls_x86_64 = {
             "type": "int __user * tidptr",
             "def": {
                "file": "kernel/fork.c",
-               "line": 1733
+               "line": 1810
             }
          },
          {
@@ -7576,7 +7931,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/fork.c",
-         1733
+         1810
       ],
       [
          219,
@@ -7608,16 +7963,40 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/signal.c",
-         3175
+         3256
       ],
       [
          220,
          "sys_semtimedop",
-         "(void)",
+         "(int semid, struct sembuf __user * tsops, unsigned int nsops, const struct __kernel_timespec __user * timeout)",
          "0xdc",
          {
-            "type": "",
-            "def": {}
+            "type": "int semid",
+            "def": {
+               "file": "ipc/sem.c",
+               "line": 2268
+            }
+         },
+         {
+            "type": "struct sembuf __user * tsops",
+            "def": {
+               "file": "ipc/sem.c",
+               "line": 2268
+            }
+         },
+         {
+            "type": "unsigned int nsops",
+            "def": {
+               "file": "ipc/sem.c",
+               "line": 2268
+            }
+         },
+         {
+            "type": "const struct __kernel_timespec __user * timeout",
+            "def": {
+               "file": "ipc/sem.c",
+               "line": 2268
+            }
          },
          {
             "type": "",
@@ -7627,29 +8006,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         131
+         "ipc/sem.c",
+         2268
       ],
       [
          221,
          "sys_fadvise64",
-         "(void)",
+         "(int fd, compat_arg_u64_dual (offset) compat_arg_u64_dual (len), int advice)",
          "0xdd",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "mm/fadvise.c",
+               "line": 216
+            }
+         },
+         {
+            "type": "compat_arg_u64_dual (offset) compat_arg_u64_dual (len)",
+            "def": {
+               "file": "mm/fadvise.c",
+               "line": 216
+            }
+         },
+         {
+            "type": "int advice",
+            "def": {
+               "file": "mm/fadvise.c",
+               "line": 216
+            }
          },
          {
             "type": "",
@@ -7663,16 +8047,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         322
+         "mm/fadvise.c",
+         216
       ],
       [
          222,
@@ -7724,28 +8100,28 @@ var syscalls_x86_64 = {
             "type": "timer_t timer_id",
             "def": {
                "file": "kernel/time/posix-timers.c",
-               "line": 955
+               "line": 962
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "kernel/time/posix-timers.c",
-               "line": 955
+               "line": 962
             }
          },
          {
             "type": "const struct __kernel_itimerspec __user * new_setting",
             "def": {
                "file": "kernel/time/posix-timers.c",
-               "line": 955
+               "line": 962
             }
          },
          {
             "type": "struct __kernel_itimerspec __user * old_setting",
             "def": {
                "file": "kernel/time/posix-timers.c",
-               "line": 955
+               "line": 962
             }
          },
          {
@@ -7757,7 +8133,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/time/posix-timers.c",
-         955
+         962
       ],
       [
          224,
@@ -7841,7 +8217,7 @@ var syscalls_x86_64 = {
             "type": "timer_t timer_id",
             "def": {
                "file": "kernel/time/posix-timers.c",
-               "line": 1060
+               "line": 1067
             }
          },
          {
@@ -7865,7 +8241,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/time/posix-timers.c",
-         1060
+         1067
       ],
       [
          227,
@@ -8034,7 +8410,7 @@ var syscalls_x86_64 = {
             "type": "int error_code",
             "def": {
                "file": "kernel/exit.c",
-               "line": 1111
+               "line": 1139
             }
          },
          {
@@ -8058,7 +8434,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/exit.c",
-         1111
+         1139
       ],
       [
          232,
@@ -8069,28 +8445,28 @@ var syscalls_x86_64 = {
             "type": "int epfd",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2563
+               "line": 2830
             }
          },
          {
             "type": "struct epoll_event __user * events",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2563
+               "line": 2830
             }
          },
          {
             "type": "int maxevents",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2563
+               "line": 2830
             }
          },
          {
             "type": "int timeout",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2563
+               "line": 2830
             }
          },
          {
@@ -8102,7 +8478,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/eventpoll.c",
-         2563
+         2830
       ],
       [
          233,
@@ -8113,28 +8489,28 @@ var syscalls_x86_64 = {
             "type": "int epfd",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2481
+               "line": 2748
             }
          },
          {
             "type": "int op",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2481
+               "line": 2748
             }
          },
          {
             "type": "int fd",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2481
+               "line": 2748
             }
          },
          {
             "type": "struct epoll_event __user * event",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2481
+               "line": 2748
             }
          },
          {
@@ -8146,7 +8522,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/eventpoll.c",
-         2481
+         2748
       ],
       [
          234,
@@ -8157,21 +8533,21 @@ var syscalls_x86_64 = {
             "type": "pid_t tgid",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4167
+               "line": 4248
             }
          },
          {
             "type": "pid_t pid",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4167
+               "line": 4248
             }
          },
          {
             "type": "int sig",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4167
+               "line": 4248
             }
          },
          {
@@ -8187,7 +8563,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/signal.c",
-         4167
+         4248
       ],
       [
          235,
@@ -8198,14 +8574,14 @@ var syscalls_x86_64 = {
             "type": "char __user * filename",
             "def": {
                "file": "fs/utimes.c",
-               "line": 204
+               "line": 203
             }
          },
          {
             "type": "struct __kernel_old_timeval __user * utimes",
             "def": {
                "file": "fs/utimes.c",
-               "line": 204
+               "line": 203
             }
          },
          {
@@ -8225,48 +8601,83 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/utimes.c",
-         204
+         203
       ],
       [
          237,
          "sys_mbind",
-         "(void)",
+         "(unsigned long start, unsigned long len, unsigned long mode, const unsigned long __user * nmask, unsigned long maxnode, unsigned int flags)",
          "0xed",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long start",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1829
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long len",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1829
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long mode",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1829
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "const unsigned long __user * nmask",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1829
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long maxnode",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1829
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned int flags",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1829
+            }
          },
-         "kernel/sys_ni.c",
-         190
+         "mm/mempolicy.c",
+         1829
       ],
       [
          238,
          "sys_set_mempolicy",
-         "(void)",
+         "(int mode, const unsigned long __user * nmask, unsigned long maxnode)",
          "0xee",
          {
-            "type": "",
-            "def": {}
+            "type": "int mode",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1856
+            }
+         },
+         {
+            "type": "const unsigned long __user * nmask",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1856
+            }
+         },
+         {
+            "type": "unsigned long maxnode",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1856
+            }
          },
          {
             "type": "",
@@ -8280,57 +8691,88 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         192
+         "mm/mempolicy.c",
+         1856
       ],
       [
          239,
          "sys_get_mempolicy",
-         "(void)",
+         "(int __user * policy, unsigned long __user * nmask, unsigned long maxnode, unsigned long addr, unsigned long flags)",
          "0xef",
          {
-            "type": "",
-            "def": {}
+            "type": "int __user * policy",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1985
+            }
+         },
+         {
+            "type": "unsigned long __user * nmask",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1985
+            }
+         },
+         {
+            "type": "unsigned long maxnode",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1985
+            }
+         },
+         {
+            "type": "unsigned long addr",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1985
+            }
+         },
+         {
+            "type": "unsigned long flags",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1985
+            }
          },
          {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         191
+         "mm/mempolicy.c",
+         1985
       ],
       [
          240,
          "sys_mq_open",
-         "(void)",
+         "(const char __user * u_name, int oflag, compat_mode_t mode, struct compat_mq_attr __user * u_attr)",
          "0xf0",
          {
-            "type": "",
-            "def": {}
+            "type": "const char __user * u_name",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1493
+            }
+         },
+         {
+            "type": "int oflag",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1493
+            }
+         },
+         {
+            "type": "compat_mode_t mode",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1493
+            }
+         },
+         {
+            "type": "struct compat_mq_attr __user * u_attr",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1493
+            }
          },
          {
             "type": "",
@@ -8340,29 +8782,20 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         106
+         "ipc/mqueue.c",
+         1493
       ],
       [
          241,
          "sys_mq_unlink",
-         "(void)",
+         "(const char __user * u_name)",
          "0xf1",
          {
-            "type": "",
-            "def": {}
+            "type": "const char __user * u_name",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 940
+            }
          },
          {
             "type": "",
@@ -8384,81 +8817,121 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         "kernel/sys_ni.c",
-         108
+         "ipc/mqueue.c",
+         940
       ],
       [
          242,
          "sys_mq_timedsend",
-         "(void)",
+         "(mqd_t mqdes, const char __user * u_msg_ptr, size_t msg_len, unsigned int msg_prio, const struct __kernel_timespec __user * u_abs_timeout)",
          "0xf2",
          {
-            "type": "",
-            "def": {}
+            "type": "mqd_t mqdes",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1233
+            }
+         },
+         {
+            "type": "const char __user * u_msg_ptr",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1233
+            }
+         },
+         {
+            "type": "size_t msg_len",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1233
+            }
+         },
+         {
+            "type": "unsigned int msg_prio",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1233
+            }
+         },
+         {
+            "type": "const struct __kernel_timespec __user * u_abs_timeout",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1233
+            }
          },
          {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         109
+         "ipc/mqueue.c",
+         1233
       ],
       [
          243,
          "sys_mq_timedreceive",
-         "(void)",
+         "(mqd_t mqdes, char __user * u_msg_ptr, size_t msg_len, unsigned int __user * u_msg_prio, const struct __kernel_timespec __user * u_abs_timeout)",
          "0xf3",
          {
-            "type": "",
-            "def": {}
+            "type": "mqd_t mqdes",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1247
+            }
+         },
+         {
+            "type": "char __user * u_msg_ptr",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1247
+            }
+         },
+         {
+            "type": "size_t msg_len",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1247
+            }
+         },
+         {
+            "type": "unsigned int __user * u_msg_prio",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1247
+            }
+         },
+         {
+            "type": "const struct __kernel_timespec __user * u_abs_timeout",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1247
+            }
          },
          {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         111
+         "ipc/mqueue.c",
+         1247
       ],
       [
          244,
          "sys_mq_notify",
-         "(void)",
+         "(mqd_t mqdes, const struct compat_sigevent __user * u_notification)",
          "0xf4",
          {
-            "type": "",
-            "def": {}
+            "type": "mqd_t mqdes",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1506
+            }
+         },
+         {
+            "type": "const struct compat_sigevent __user * u_notification",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1506
+            }
          },
          {
             "type": "",
@@ -8476,21 +8949,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         113
+         "ipc/mqueue.c",
+         1506
       ],
       [
          245,
          "sys_mq_getsetattr",
-         "(void)",
+         "(mqd_t mqdes, const struct compat_mq_attr __user * u_mqstat, struct compat_mq_attr __user * u_omqstat)",
          "0xf5",
          {
-            "type": "",
-            "def": {}
+            "type": "mqd_t mqdes",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1520
+            }
+         },
+         {
+            "type": "const struct compat_mq_attr __user * u_mqstat",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1520
+            }
+         },
+         {
+            "type": "struct compat_mq_attr __user * u_omqstat",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1520
+            }
          },
          {
             "type": "",
@@ -8504,16 +8990,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         115
+         "ipc/mqueue.c",
+         1520
       ],
       [
          246,
@@ -8568,35 +9046,35 @@ var syscalls_x86_64 = {
             "type": "int which",
             "def": {
                "file": "kernel/exit.c",
-               "line": 1931
+               "line": 1959
             }
          },
          {
             "type": "compat_pid_t pid",
             "def": {
                "file": "kernel/exit.c",
-               "line": 1931
+               "line": 1959
             }
          },
          {
             "type": "struct compat_siginfo __user * infop",
             "def": {
                "file": "kernel/exit.c",
-               "line": 1931
+               "line": 1959
             }
          },
          {
             "type": "int options",
             "def": {
                "file": "kernel/exit.c",
-               "line": 1931
+               "line": 1959
             }
          },
          {
             "type": "struct compat_rusage __user * uru",
             "def": {
                "file": "kernel/exit.c",
-               "line": 1931
+               "line": 1959
             }
          },
          {
@@ -8604,7 +9082,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/exit.c",
-         1931
+         1959
       ],
       [
          248,
@@ -8796,7 +9274,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/notify/inotify/inotify_user.c",
-         724
+         712
       ],
       [
          254,
@@ -8807,21 +9285,21 @@ var syscalls_x86_64 = {
             "type": "int fd",
             "def": {
                "file": "fs/notify/inotify/inotify_user.c",
-               "line": 729
+               "line": 717
             }
          },
          {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/notify/inotify/inotify_user.c",
-               "line": 729
+               "line": 717
             }
          },
          {
             "type": "u32 mask",
             "def": {
                "file": "fs/notify/inotify/inotify_user.c",
-               "line": 729
+               "line": 717
             }
          },
          {
@@ -8837,7 +9315,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/notify/inotify/inotify_user.c",
-         729
+         717
       ],
       [
          255,
@@ -8848,14 +9326,14 @@ var syscalls_x86_64 = {
             "type": "int fd",
             "def": {
                "file": "fs/notify/inotify/inotify_user.c",
-               "line": 786
+               "line": 774
             }
          },
          {
             "type": "__s32 wd",
             "def": {
                "file": "fs/notify/inotify/inotify_user.c",
-               "line": 786
+               "line": 774
             }
          },
          {
@@ -8875,16 +9353,40 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/notify/inotify/inotify_user.c",
-         786
+         774
       ],
       [
          256,
          "sys_migrate_pages",
-         "(void)",
+         "(pid_t pid, unsigned long maxnode, const unsigned long __user * old_nodes, const unsigned long __user * new_nodes)",
          "0x100",
          {
-            "type": "",
-            "def": {}
+            "type": "pid_t pid",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1948
+            }
+         },
+         {
+            "type": "unsigned long maxnode",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1948
+            }
+         },
+         {
+            "type": "const unsigned long __user * old_nodes",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1948
+            }
+         },
+         {
+            "type": "const unsigned long __user * new_nodes",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1948
+            }
          },
          {
             "type": "",
@@ -8894,20 +9396,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         193
+         "mm/mempolicy.c",
+         1948
       ],
       [
          257,
@@ -8918,28 +9408,28 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/open.c",
-               "line": 1510
+               "line": 1434
             }
          },
          {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/open.c",
-               "line": 1510
+               "line": 1434
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "fs/open.c",
-               "line": 1510
+               "line": 1434
             }
          },
          {
             "type": "umode_t mode",
             "def": {
                "file": "fs/open.c",
-               "line": 1510
+               "line": 1434
             }
          },
          {
@@ -8951,7 +9441,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         1510
+         1434
       ],
       [
          258,
@@ -8962,21 +9452,21 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/namei.c",
-               "line": 4414
+               "line": 5327
             }
          },
          {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/namei.c",
-               "line": 4414
+               "line": 5327
             }
          },
          {
             "type": "umode_t mode",
             "def": {
                "file": "fs/namei.c",
-               "line": 4414
+               "line": 5327
             }
          },
          {
@@ -8992,7 +9482,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namei.c",
-         4414
+         5327
       ],
       [
          259,
@@ -9003,28 +9493,28 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/namei.c",
-               "line": 4310
+               "line": 5212
             }
          },
          {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/namei.c",
-               "line": 4310
+               "line": 5212
             }
          },
          {
             "type": "umode_t mode",
             "def": {
                "file": "fs/namei.c",
-               "line": 4310
+               "line": 5212
             }
          },
          {
             "type": "unsigned int dev",
             "def": {
                "file": "fs/namei.c",
-               "line": 4310
+               "line": 5212
             }
          },
          {
@@ -9036,7 +9526,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namei.c",
-         4310
+         5212
       ],
       [
          260,
@@ -9047,35 +9537,35 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/open.c",
-               "line": 834
+               "line": 816
             }
          },
          {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/open.c",
-               "line": 834
+               "line": 816
             }
          },
          {
             "type": "uid_t user",
             "def": {
                "file": "fs/open.c",
-               "line": 834
+               "line": 816
             }
          },
          {
             "type": "gid_t group",
             "def": {
                "file": "fs/open.c",
-               "line": 834
+               "line": 816
             }
          },
          {
             "type": "int flag",
             "def": {
                "file": "fs/open.c",
-               "line": 834
+               "line": 816
             }
          },
          {
@@ -9083,7 +9573,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         834
+         816
       ],
       [
          261,
@@ -9094,21 +9584,21 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/utimes.c",
-               "line": 198
+               "line": 197
             }
          },
          {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/utimes.c",
-               "line": 198
+               "line": 197
             }
          },
          {
             "type": "struct __kernel_old_timeval __user * utimes",
             "def": {
                "file": "fs/utimes.c",
-               "line": 198
+               "line": 197
             }
          },
          {
@@ -9124,7 +9614,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/utimes.c",
-         198
+         197
       ],
       [
          262,
@@ -9135,28 +9625,28 @@ var syscalls_x86_64 = {
             "type": "unsigned int dfd",
             "def": {
                "file": "fs/stat.c",
-               "line": 890
+               "line": 878
             }
          },
          {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/stat.c",
-               "line": 890
+               "line": 878
             }
          },
          {
             "type": "struct compat_stat __user * statbuf",
             "def": {
                "file": "fs/stat.c",
-               "line": 890
+               "line": 878
             }
          },
          {
             "type": "int flag",
             "def": {
                "file": "fs/stat.c",
-               "line": 890
+               "line": 878
             }
          },
          {
@@ -9168,7 +9658,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/stat.c",
-         890
+         878
       ],
       [
          263,
@@ -9179,21 +9669,21 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/namei.c",
-               "line": 4684
+               "line": 5606
             }
          },
          {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/namei.c",
-               "line": 4684
+               "line": 5606
             }
          },
          {
             "type": "int flag",
             "def": {
                "file": "fs/namei.c",
-               "line": 4684
+               "line": 5606
             }
          },
          {
@@ -9209,7 +9699,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namei.c",
-         4684
+         5606
       ],
       [
          264,
@@ -9220,28 +9710,28 @@ var syscalls_x86_64 = {
             "type": "int olddfd",
             "def": {
                "file": "fs/namei.c",
-               "line": 5316
+               "line": 6224
             }
          },
          {
             "type": "const char __user * oldname",
             "def": {
                "file": "fs/namei.c",
-               "line": 5316
+               "line": 6224
             }
          },
          {
             "type": "int newdfd",
             "def": {
                "file": "fs/namei.c",
-               "line": 5316
+               "line": 6224
             }
          },
          {
             "type": "const char __user * newname",
             "def": {
                "file": "fs/namei.c",
-               "line": 5316
+               "line": 6224
             }
          },
          {
@@ -9253,7 +9743,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namei.c",
-         5316
+         6224
       ],
       [
          265,
@@ -9264,35 +9754,35 @@ var syscalls_x86_64 = {
             "type": "int olddfd",
             "def": {
                "file": "fs/namei.c",
-               "line": 4949
+               "line": 5880
             }
          },
          {
             "type": "const char __user * oldname",
             "def": {
                "file": "fs/namei.c",
-               "line": 4949
+               "line": 5880
             }
          },
          {
             "type": "int newdfd",
             "def": {
                "file": "fs/namei.c",
-               "line": 4949
+               "line": 5880
             }
          },
          {
             "type": "const char __user * newname",
             "def": {
                "file": "fs/namei.c",
-               "line": 4949
+               "line": 5880
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "fs/namei.c",
-               "line": 4949
+               "line": 5880
             }
          },
          {
@@ -9300,7 +9790,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namei.c",
-         4949
+         5880
       ],
       [
          266,
@@ -9311,21 +9801,21 @@ var syscalls_x86_64 = {
             "type": "const char __user * oldname",
             "def": {
                "file": "fs/namei.c",
-               "line": 4769
+               "line": 5700
             }
          },
          {
             "type": "int newdfd",
             "def": {
                "file": "fs/namei.c",
-               "line": 4769
+               "line": 5700
             }
          },
          {
             "type": "const char __user * newname",
             "def": {
                "file": "fs/namei.c",
-               "line": 4769
+               "line": 5700
             }
          },
          {
@@ -9341,7 +9831,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namei.c",
-         4769
+         5700
       ],
       [
          267,
@@ -9352,28 +9842,28 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/stat.c",
-               "line": 604
+               "line": 596
             }
          },
          {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/stat.c",
-               "line": 604
+               "line": 596
             }
          },
          {
             "type": "char __user * buf",
             "def": {
                "file": "fs/stat.c",
-               "line": 604
+               "line": 596
             }
          },
          {
             "type": "int bufsiz",
             "def": {
                "file": "fs/stat.c",
-               "line": 604
+               "line": 596
             }
          },
          {
@@ -9385,7 +9875,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/stat.c",
-         604
+         596
       ],
       [
          268,
@@ -9396,21 +9886,21 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/open.c",
-               "line": 713
+               "line": 698
             }
          },
          {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/open.c",
-               "line": 713
+               "line": 698
             }
          },
          {
             "type": "umode_t mode",
             "def": {
                "file": "fs/open.c",
-               "line": 713
+               "line": 698
             }
          },
          {
@@ -9426,7 +9916,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         713
+         698
       ],
       [
          269,
@@ -9437,21 +9927,21 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/open.c",
-               "line": 539
+               "line": 534
             }
          },
          {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/open.c",
-               "line": 539
+               "line": 534
             }
          },
          {
             "type": "int mode",
             "def": {
                "file": "fs/open.c",
-               "line": 539
+               "line": 534
             }
          },
          {
@@ -9467,7 +9957,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         539
+         534
       ],
       [
          270,
@@ -9478,46 +9968,46 @@ var syscalls_x86_64 = {
             "type": "int n",
             "def": {
                "file": "fs/select.c",
-               "line": 1377
+               "line": 1372
             }
          },
          {
             "type": "compat_ulong_t __user * inp",
             "def": {
                "file": "fs/select.c",
-               "line": 1377
+               "line": 1372
             }
          },
          {
             "type": "compat_ulong_t __user * outp",
             "def": {
                "file": "fs/select.c",
-               "line": 1377
+               "line": 1372
             }
          },
          {
             "type": "compat_ulong_t __user * exp",
             "def": {
                "file": "fs/select.c",
-               "line": 1377
+               "line": 1372
             }
          },
          {
             "type": "struct old_timespec32 __user * tsp",
             "def": {
                "file": "fs/select.c",
-               "line": 1377
+               "line": 1372
             }
          },
          {
             "type": "void __user * sig",
             "def": {
                "file": "fs/select.c",
-               "line": 1377
+               "line": 1372
             }
          },
          "fs/select.c",
-         1377
+         1372
       ],
       [
          271,
@@ -9528,35 +10018,35 @@ var syscalls_x86_64 = {
             "type": "struct pollfd __user * ufds",
             "def": {
                "file": "fs/select.c",
-               "line": 1393
+               "line": 1388
             }
          },
          {
             "type": "unsigned int nfds",
             "def": {
                "file": "fs/select.c",
-               "line": 1393
+               "line": 1388
             }
          },
          {
             "type": "struct old_timespec32 __user * tsp",
             "def": {
                "file": "fs/select.c",
-               "line": 1393
+               "line": 1388
             }
          },
          {
             "type": "const compat_sigset_t __user * sigmask",
             "def": {
                "file": "fs/select.c",
-               "line": 1393
+               "line": 1388
             }
          },
          {
             "type": "compat_size_t sigsetsize",
             "def": {
                "file": "fs/select.c",
-               "line": 1393
+               "line": 1388
             }
          },
          {
@@ -9564,7 +10054,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/select.c",
-         1393
+         1388
       ],
       [
          272,
@@ -9575,7 +10065,7 @@ var syscalls_x86_64 = {
             "type": "unsigned long unshare_flags",
             "def": {
                "file": "kernel/fork.c",
-               "line": 3196
+               "line": 3345
             }
          },
          {
@@ -9599,7 +10089,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/fork.c",
-         3196
+         3345
       ],
       [
          273,
@@ -9610,14 +10100,14 @@ var syscalls_x86_64 = {
             "type": "struct compat_robust_list_head __user * head",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 442
+               "line": 481
             }
          },
          {
             "type": "compat_size_t len",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 442
+               "line": 481
             }
          },
          {
@@ -9637,7 +10127,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/futex/syscalls.c",
-         442
+         481
       ],
       [
          274,
@@ -9648,21 +10138,21 @@ var syscalls_x86_64 = {
             "type": "int pid",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 454
+               "line": 491
             }
          },
          {
             "type": "compat_uptr_t __user * head_ptr",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 454
+               "line": 491
             }
          },
          {
             "type": "compat_size_t __user * len_ptr",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 454
+               "line": 491
             }
          },
          {
@@ -9678,7 +10168,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/futex/syscalls.c",
-         454
+         491
       ],
       [
          275,
@@ -9689,46 +10179,46 @@ var syscalls_x86_64 = {
             "type": "int fd_in",
             "def": {
                "file": "fs/splice.c",
-               "line": 1618
+               "line": 1616
             }
          },
          {
             "type": "loff_t __user * off_in",
             "def": {
                "file": "fs/splice.c",
-               "line": 1618
+               "line": 1616
             }
          },
          {
             "type": "int fd_out",
             "def": {
                "file": "fs/splice.c",
-               "line": 1618
+               "line": 1616
             }
          },
          {
             "type": "loff_t __user * off_out",
             "def": {
                "file": "fs/splice.c",
-               "line": 1618
+               "line": 1616
             }
          },
          {
             "type": "size_t len",
             "def": {
                "file": "fs/splice.c",
-               "line": 1618
+               "line": 1616
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "fs/splice.c",
-               "line": 1618
+               "line": 1616
             }
          },
          "fs/splice.c",
-         1618
+         1616
       ],
       [
          276,
@@ -9739,28 +10229,28 @@ var syscalls_x86_64 = {
             "type": "int fdin",
             "def": {
                "file": "fs/splice.c",
-               "line": 1979
+               "line": 1977
             }
          },
          {
             "type": "int fdout",
             "def": {
                "file": "fs/splice.c",
-               "line": 1979
+               "line": 1977
             }
          },
          {
             "type": "size_t len",
             "def": {
                "file": "fs/splice.c",
-               "line": 1979
+               "line": 1977
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "fs/splice.c",
-               "line": 1979
+               "line": 1977
             }
          },
          {
@@ -9772,7 +10262,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/splice.c",
-         1979
+         1977
       ],
       [
          277,
@@ -9783,21 +10273,21 @@ var syscalls_x86_64 = {
             "type": "int fd",
             "def": {
                "file": "fs/sync.c",
-               "line": 370
+               "line": 366
             }
          },
          {
             "type": "compat_arg_u64_dual (offset) compat_arg_u64_dual (nbytes)",
             "def": {
                "file": "fs/sync.c",
-               "line": 370
+               "line": 366
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "fs/sync.c",
-               "line": 370
+               "line": 366
             }
          },
          {
@@ -9813,7 +10303,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/sync.c",
-         370
+         366
       ],
       [
          278,
@@ -9824,28 +10314,28 @@ var syscalls_x86_64 = {
             "type": "int fd",
             "def": {
                "file": "fs/splice.c",
-               "line": 1580
+               "line": 1578
             }
          },
          {
             "type": "const struct iovec __user * uiov",
             "def": {
                "file": "fs/splice.c",
-               "line": 1580
+               "line": 1578
             }
          },
          {
             "type": "unsigned long nr_segs",
             "def": {
                "file": "fs/splice.c",
-               "line": 1580
+               "line": 1578
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "fs/splice.c",
-               "line": 1580
+               "line": 1578
             }
          },
          {
@@ -9857,39 +10347,57 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/splice.c",
-         1580
+         1578
       ],
       [
          279,
          "sys_move_pages",
-         "(void)",
+         "(pid_t pid, unsigned long nr_pages, const void __user * __user * pages, const int __user * nodes, int __user * status, int flags)",
          "0x117",
          {
-            "type": "",
-            "def": {}
+            "type": "pid_t pid",
+            "def": {
+               "file": "mm/migrate.c",
+               "line": 2627
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long nr_pages",
+            "def": {
+               "file": "mm/migrate.c",
+               "line": 2627
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "const void __user * __user * pages",
+            "def": {
+               "file": "mm/migrate.c",
+               "line": 2627
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "const int __user * nodes",
+            "def": {
+               "file": "mm/migrate.c",
+               "line": 2627
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "int __user * status",
+            "def": {
+               "file": "mm/migrate.c",
+               "line": 2627
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "int flags",
+            "def": {
+               "file": "mm/migrate.c",
+               "line": 2627
+            }
          },
-         "kernel/sys_ni.c",
-         194
+         "mm/migrate.c",
+         2627
       ],
       [
          280,
@@ -9900,28 +10408,28 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/utimes.c",
-               "line": 143
+               "line": 142
             }
          },
          {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/utimes.c",
-               "line": 143
+               "line": 142
             }
          },
          {
             "type": "struct __kernel_timespec __user * utimes",
             "def": {
                "file": "fs/utimes.c",
-               "line": 143
+               "line": 142
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "fs/utimes.c",
-               "line": 143
+               "line": 142
             }
          },
          {
@@ -9933,7 +10441,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/utimes.c",
-         143
+         142
       ],
       [
          281,
@@ -9944,46 +10452,46 @@ var syscalls_x86_64 = {
             "type": "int epfd",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2649
+               "line": 2960
             }
          },
          {
             "type": "struct epoll_event __user * events",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2649
+               "line": 2960
             }
          },
          {
             "type": "int maxevents",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2649
+               "line": 2960
             }
          },
          {
             "type": "int timeout",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2649
+               "line": 2960
             }
          },
          {
             "type": "const compat_sigset_t __user * sigmask",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2649
+               "line": 2960
             }
          },
          {
             "type": "compat_size_t sigsetsize",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2649
+               "line": 2960
             }
          },
          "fs/eventpoll.c",
-         2649
+         2960
       ],
       [
          282,
@@ -9994,21 +10502,21 @@ var syscalls_x86_64 = {
             "type": "int ufd",
             "def": {
                "file": "fs/signalfd.c",
-               "line": 352
+               "line": 345
             }
          },
          {
             "type": "const compat_sigset_t __user * user_mask",
             "def": {
                "file": "fs/signalfd.c",
-               "line": 352
+               "line": 345
             }
          },
          {
             "type": "compat_size_t sigsetsize",
             "def": {
                "file": "fs/signalfd.c",
-               "line": 352
+               "line": 345
             }
          },
          {
@@ -10024,7 +10532,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/signalfd.c",
-         352
+         345
       ],
       [
          283,
@@ -10035,14 +10543,14 @@ var syscalls_x86_64 = {
             "type": "int clockid",
             "def": {
                "file": "fs/timerfd.c",
-               "line": 394
+               "line": 424
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "fs/timerfd.c",
-               "line": 394
+               "line": 424
             }
          },
          {
@@ -10062,7 +10570,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/timerfd.c",
-         394
+         424
       ],
       [
          284,
@@ -10073,7 +10581,7 @@ var syscalls_x86_64 = {
             "type": "unsigned int count",
             "def": {
                "file": "fs/eventfd.c",
-               "line": 428
+               "line": 419
             }
          },
          {
@@ -10097,7 +10605,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/eventfd.c",
-         428
+         419
       ],
       [
          285,
@@ -10108,21 +10616,21 @@ var syscalls_x86_64 = {
             "type": "int fd",
             "def": {
                "file": "fs/open.c",
-               "line": 375
+               "line": 371
             }
          },
          {
             "type": "int mode",
             "def": {
                "file": "fs/open.c",
-               "line": 375
+               "line": 371
             }
          },
          {
             "type": "compat_arg_u64_dual (offset) compat_arg_u64_dual (len)",
             "def": {
                "file": "fs/open.c",
-               "line": 375
+               "line": 371
             }
          },
          {
@@ -10138,7 +10646,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         375
+         371
       ],
       [
          286,
@@ -10149,28 +10657,28 @@ var syscalls_x86_64 = {
             "type": "int ufd",
             "def": {
                "file": "fs/timerfd.c",
-               "line": 559
+               "line": 567
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "fs/timerfd.c",
-               "line": 559
+               "line": 567
             }
          },
          {
             "type": "const struct __kernel_itimerspec __user * utmr",
             "def": {
                "file": "fs/timerfd.c",
-               "line": 559
+               "line": 567
             }
          },
          {
             "type": "struct __kernel_itimerspec __user * otmr",
             "def": {
                "file": "fs/timerfd.c",
-               "line": 559
+               "line": 567
             }
          },
          {
@@ -10182,7 +10690,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/timerfd.c",
-         559
+         567
       ],
       [
          287,
@@ -10193,14 +10701,14 @@ var syscalls_x86_64 = {
             "type": "int ufd",
             "def": {
                "file": "fs/timerfd.c",
-               "line": 577
+               "line": 585
             }
          },
          {
             "type": "struct __kernel_itimerspec __user * otmr",
             "def": {
                "file": "fs/timerfd.c",
-               "line": 577
+               "line": 585
             }
          },
          {
@@ -10220,16 +10728,40 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/timerfd.c",
-         577
+         585
       ],
       [
          288,
          "sys_accept4",
-         "(void)",
+         "(int fd, struct sockaddr __user * upeer_sockaddr, int __user * upeer_addrlen, int flags)",
          "0x120",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2094
+            }
+         },
+         {
+            "type": "struct sockaddr __user * upeer_sockaddr",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2094
+            }
+         },
+         {
+            "type": "int __user * upeer_addrlen",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2094
+            }
+         },
+         {
+            "type": "int flags",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2094
+            }
          },
          {
             "type": "",
@@ -10239,20 +10771,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         200
+         "net/socket.c",
+         2094
       ],
       [
          289,
@@ -10263,28 +10783,28 @@ var syscalls_x86_64 = {
             "type": "int ufd",
             "def": {
                "file": "fs/signalfd.c",
-               "line": 344
+               "line": 337
             }
          },
          {
             "type": "const compat_sigset_t __user * user_mask",
             "def": {
                "file": "fs/signalfd.c",
-               "line": 344
+               "line": 337
             }
          },
          {
             "type": "compat_size_t sigsetsize",
             "def": {
                "file": "fs/signalfd.c",
-               "line": 344
+               "line": 337
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "fs/signalfd.c",
-               "line": 344
+               "line": 337
             }
          },
          {
@@ -10296,7 +10816,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/signalfd.c",
-         344
+         337
       ],
       [
          290,
@@ -10307,14 +10827,14 @@ var syscalls_x86_64 = {
             "type": "unsigned int count",
             "def": {
                "file": "fs/eventfd.c",
-               "line": 423
+               "line": 414
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "fs/eventfd.c",
-               "line": 423
+               "line": 414
             }
          },
          {
@@ -10334,7 +10854,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/eventfd.c",
-         423
+         414
       ],
       [
          291,
@@ -10345,7 +10865,7 @@ var syscalls_x86_64 = {
             "type": "int flags",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2296
+               "line": 2523
             }
          },
          {
@@ -10369,7 +10889,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/eventpoll.c",
-         2296
+         2523
       ],
       [
          292,
@@ -10380,21 +10900,21 @@ var syscalls_x86_64 = {
             "type": "unsigned int oldfd",
             "def": {
                "file": "fs/file.c",
-               "line": 1430
+               "line": 1457
             }
          },
          {
             "type": "unsigned int newfd",
             "def": {
                "file": "fs/file.c",
-               "line": 1430
+               "line": 1457
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "fs/file.c",
-               "line": 1430
+               "line": 1457
             }
          },
          {
@@ -10410,7 +10930,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/file.c",
-         1430
+         1457
       ],
       [
          293,
@@ -10421,14 +10941,14 @@ var syscalls_x86_64 = {
             "type": "int __user * fildes",
             "def": {
                "file": "fs/pipe.c",
-               "line": 1052
+               "line": 1152
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "fs/pipe.c",
-               "line": 1052
+               "line": 1152
             }
          },
          {
@@ -10448,7 +10968,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/pipe.c",
-         1052
+         1152
       ],
       [
          294,
@@ -10459,7 +10979,7 @@ var syscalls_x86_64 = {
             "type": "int flags",
             "def": {
                "file": "fs/notify/inotify/inotify_user.c",
-               "line": 719
+               "line": 707
             }
          },
          {
@@ -10483,7 +11003,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/notify/inotify/inotify_user.c",
-         719
+         707
       ],
       [
          295,
@@ -10494,28 +11014,28 @@ var syscalls_x86_64 = {
             "type": "unsigned long fd",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1221
+               "line": 1222
             }
          },
          {
             "type": "const struct iovec __user * vec",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1221
+               "line": 1222
             }
          },
          {
             "type": "unsigned long vlen",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1221
+               "line": 1222
             }
          },
          {
             "type": "loff_t pos",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1221
+               "line": 1222
             }
          },
          {
@@ -10527,7 +11047,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/read_write.c",
-         1221
+         1222
       ],
       [
          296,
@@ -10538,28 +11058,28 @@ var syscalls_x86_64 = {
             "type": "unsigned long fd",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1262
+               "line": 1263
             }
          },
          {
             "type": "const struct iovec __user * vec",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1262
+               "line": 1263
             }
          },
          {
             "type": "unsigned long vlen",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1262
+               "line": 1263
             }
          },
          {
             "type": "loff_t pos",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1262
+               "line": 1263
             }
          },
          {
@@ -10571,7 +11091,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/read_write.c",
-         1262
+         1263
       ],
       [
          297,
@@ -10582,28 +11102,28 @@ var syscalls_x86_64 = {
             "type": "compat_pid_t tgid",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4262
+               "line": 4343
             }
          },
          {
             "type": "compat_pid_t pid",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4262
+               "line": 4343
             }
          },
          {
             "type": "int sig",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4262
+               "line": 4343
             }
          },
          {
             "type": "struct compat_siginfo __user * uinfo",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4262
+               "line": 4343
             }
          },
          {
@@ -10615,7 +11135,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/signal.c",
-         4262
+         4343
       ],
       [
          298,
@@ -10626,35 +11146,35 @@ var syscalls_x86_64 = {
             "type": "struct perf_event_attr __user * attr_uptr",
             "def": {
                "file": "kernel/events/core.c",
-               "line": 13360
+               "line": 13854
             }
          },
          {
             "type": "pid_t pid",
             "def": {
                "file": "kernel/events/core.c",
-               "line": 13360
+               "line": 13854
             }
          },
          {
             "type": "int cpu",
             "def": {
                "file": "kernel/events/core.c",
-               "line": 13360
+               "line": 13854
             }
          },
          {
             "type": "int group_fd",
             "def": {
                "file": "kernel/events/core.c",
-               "line": 13360
+               "line": 13854
             }
          },
          {
             "type": "unsigned long flags",
             "def": {
                "file": "kernel/events/core.c",
-               "line": 13360
+               "line": 13854
             }
          },
          {
@@ -10662,39 +11182,54 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/events/core.c",
-         13360
+         13854
       ],
       [
          299,
          "sys_recvmmsg",
-         "(void)",
+         "(int fd, struct compat_mmsghdr __user * mmsg, unsigned int vlen, unsigned int flags, struct old_timespec32 __user * timeout)",
          "0x12b",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/compat.c",
+               "line": 413
+            }
+         },
+         {
+            "type": "struct compat_mmsghdr __user * mmsg",
+            "def": {
+               "file": "net/compat.c",
+               "line": 413
+            }
+         },
+         {
+            "type": "unsigned int vlen",
+            "def": {
+               "file": "net/compat.c",
+               "line": 413
+            }
+         },
+         {
+            "type": "unsigned int flags",
+            "def": {
+               "file": "net/compat.c",
+               "line": 413
+            }
+         },
+         {
+            "type": "struct old_timespec32 __user * timeout",
+            "def": {
+               "file": "net/compat.c",
+               "line": 413
+            }
          },
          {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         201
+         "net/compat.c",
+         413
       ],
       [
          300,
@@ -10705,14 +11240,14 @@ var syscalls_x86_64 = {
             "type": "unsigned int flags",
             "def": {
                "file": "fs/notify/fanotify/fanotify_user.c",
-               "line": 1500
+               "line": 1589
             }
          },
          {
             "type": "unsigned int event_f_flags",
             "def": {
                "file": "fs/notify/fanotify/fanotify_user.c",
-               "line": 1500
+               "line": 1589
             }
          },
          {
@@ -10732,7 +11267,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/notify/fanotify/fanotify_user.c",
-         1500
+         1589
       ],
       [
          301,
@@ -10743,35 +11278,35 @@ var syscalls_x86_64 = {
             "type": "int fanotify_fd",
             "def": {
                "file": "fs/notify/fanotify/fanotify_user.c",
-               "line": 2069
+               "line": 2139
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "fs/notify/fanotify/fanotify_user.c",
-               "line": 2069
+               "line": 2139
             }
          },
          {
             "type": "__u64 mask",
             "def": {
                "file": "fs/notify/fanotify/fanotify_user.c",
-               "line": 2069
+               "line": 2139
             }
          },
          {
             "type": "int dfd",
             "def": {
                "file": "fs/notify/fanotify/fanotify_user.c",
-               "line": 2069
+               "line": 2139
             }
          },
          {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/notify/fanotify/fanotify_user.c",
-               "line": 2069
+               "line": 2139
             }
          },
          {
@@ -10779,7 +11314,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/notify/fanotify/fanotify_user.c",
-         2069
+         2139
       ],
       [
          302,
@@ -10881,21 +11416,21 @@ var syscalls_x86_64 = {
             "type": "int mountdirfd",
             "def": {
                "file": "fs/fhandle.c",
-               "line": 458
+               "line": 469
             }
          },
          {
             "type": "struct file_handle __user * handle",
             "def": {
                "file": "fs/fhandle.c",
-               "line": 458
+               "line": 469
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "fs/fhandle.c",
-               "line": 458
+               "line": 469
             }
          },
          {
@@ -10911,7 +11446,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/fhandle.c",
-         458
+         469
       ],
       [
          305,
@@ -10922,14 +11457,14 @@ var syscalls_x86_64 = {
             "type": "const clockid_t which_clock",
             "def": {
                "file": "kernel/time/posix-timers.c",
-               "line": 1165
+               "line": 1172
             }
          },
          {
             "type": "struct __kernel_timex __user * utx",
             "def": {
                "file": "kernel/time/posix-timers.c",
-               "line": 1165
+               "line": 1172
             }
          },
          {
@@ -10949,7 +11484,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/time/posix-timers.c",
-         1165
+         1172
       ],
       [
          306,
@@ -10960,7 +11495,7 @@ var syscalls_x86_64 = {
             "type": "int fd",
             "def": {
                "file": "fs/sync.c",
-               "line": 149
+               "line": 148
             }
          },
          {
@@ -10984,16 +11519,40 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/sync.c",
-         149
+         148
       ],
       [
          307,
          "sys_sendmmsg",
-         "(void)",
+         "(int fd, struct compat_mmsghdr __user * mmsg, unsigned int vlen, unsigned int flags)",
          "0x133",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/compat.c",
+               "line": 363
+            }
+         },
+         {
+            "type": "struct compat_mmsghdr __user * mmsg",
+            "def": {
+               "file": "net/compat.c",
+               "line": 363
+            }
+         },
+         {
+            "type": "unsigned int vlen",
+            "def": {
+               "file": "net/compat.c",
+               "line": 363
+            }
+         },
+         {
+            "type": "unsigned int flags",
+            "def": {
+               "file": "net/compat.c",
+               "line": 363
+            }
          },
          {
             "type": "",
@@ -11003,20 +11562,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         233
+         "net/compat.c",
+         363
       ],
       [
          308,
@@ -11027,14 +11574,14 @@ var syscalls_x86_64 = {
             "type": "int fd",
             "def": {
                "file": "kernel/nsproxy.c",
-               "line": 536
+               "line": 569
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "kernel/nsproxy.c",
-               "line": 536
+               "line": 569
             }
          },
          {
@@ -11054,32 +11601,32 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/nsproxy.c",
-         536
+         569
       ],
       [
          309,
          "sys_getcpu",
-         "(unsigned __user * cpup, unsigned __user * nodep, struct getcpu_cache __user * unused)",
+         "(unsigned __user * cpup, unsigned __user * nodep, void __user * unused)",
          "0x135",
          {
             "type": "unsigned __user * cpup",
             "def": {
                "file": "kernel/sys.c",
-               "line": 2816
+               "line": 2918
             }
          },
          {
             "type": "unsigned __user * nodep",
             "def": {
                "file": "kernel/sys.c",
-               "line": 2816
+               "line": 2918
             }
          },
          {
-            "type": "struct getcpu_cache __user * unused",
+            "type": "void __user * unused",
             "def": {
                "file": "kernel/sys.c",
-               "line": 2816
+               "line": 2918
             }
          },
          {
@@ -11095,71 +11642,107 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/sys.c",
-         2816
+         2918
       ],
       [
          310,
          "sys_process_vm_readv",
-         "(void)",
+         "(pid_t pid, const struct iovec __user * lvec, unsigned long liovcnt, const struct iovec __user * rvec, unsigned long riovcnt, unsigned long flags)",
          "0x136",
          {
-            "type": "",
-            "def": {}
+            "type": "pid_t pid",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 292
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "const struct iovec __user * lvec",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 292
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long liovcnt",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 292
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "const struct iovec __user * rvec",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 292
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long riovcnt",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 292
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long flags",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 292
+            }
          },
-         "kernel/sys_ni.c",
-         235
+         "mm/process_vm_access.c",
+         292
       ],
       [
          311,
          "sys_process_vm_writev",
-         "(void)",
+         "(pid_t pid, const struct iovec __user * lvec, unsigned long liovcnt, const struct iovec __user * rvec, unsigned long riovcnt, unsigned long flags)",
          "0x137",
          {
-            "type": "",
-            "def": {}
+            "type": "pid_t pid",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 299
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "const struct iovec __user * lvec",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 299
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long liovcnt",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 299
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "const struct iovec __user * rvec",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 299
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long riovcnt",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 299
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long flags",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 299
+            }
          },
-         "kernel/sys_ni.c",
-         237
+         "mm/process_vm_access.c",
+         299
       ],
       [
          312,
@@ -11217,21 +11800,21 @@ var syscalls_x86_64 = {
             "type": "int fd",
             "def": {
                "file": "kernel/module/main.c",
-               "line": 3723
+               "line": 3815
             }
          },
          {
             "type": "const char __user * uargs",
             "def": {
                "file": "kernel/module/main.c",
-               "line": 3723
+               "line": 3815
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "kernel/module/main.c",
-               "line": 3723
+               "line": 3815
             }
          },
          {
@@ -11247,7 +11830,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/module/main.c",
-         3723
+         3815
       ],
       [
          314,
@@ -11258,21 +11841,21 @@ var syscalls_x86_64 = {
             "type": "pid_t pid",
             "def": {
                "file": "kernel/sched/syscalls.c",
-               "line": 977
+               "line": 960
             }
          },
          {
             "type": "struct sched_attr __user * uattr",
             "def": {
                "file": "kernel/sched/syscalls.c",
-               "line": 977
+               "line": 960
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "kernel/sched/syscalls.c",
-               "line": 977
+               "line": 960
             }
          },
          {
@@ -11288,7 +11871,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/sched/syscalls.c",
-         977
+         960
       ],
       [
          315,
@@ -11299,28 +11882,28 @@ var syscalls_x86_64 = {
             "type": "pid_t pid",
             "def": {
                "file": "kernel/sched/syscalls.c",
-               "line": 1077
+               "line": 1060
             }
          },
          {
             "type": "struct sched_attr __user * uattr",
             "def": {
                "file": "kernel/sched/syscalls.c",
-               "line": 1077
+               "line": 1060
             }
          },
          {
             "type": "unsigned int usize",
             "def": {
                "file": "kernel/sched/syscalls.c",
-               "line": 1077
+               "line": 1060
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "kernel/sched/syscalls.c",
-               "line": 1077
+               "line": 1060
             }
          },
          {
@@ -11332,7 +11915,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/sched/syscalls.c",
-         1077
+         1060
       ],
       [
          316,
@@ -11343,35 +11926,35 @@ var syscalls_x86_64 = {
             "type": "int olddfd",
             "def": {
                "file": "fs/namei.c",
-               "line": 5309
+               "line": 6216
             }
          },
          {
             "type": "const char __user * oldname",
             "def": {
                "file": "fs/namei.c",
-               "line": 5309
+               "line": 6216
             }
          },
          {
             "type": "int newdfd",
             "def": {
                "file": "fs/namei.c",
-               "line": 5309
+               "line": 6216
             }
          },
          {
             "type": "const char __user * newname",
             "def": {
                "file": "fs/namei.c",
-               "line": 5309
+               "line": 6216
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "fs/namei.c",
-               "line": 5309
+               "line": 6216
             }
          },
          {
@@ -11379,7 +11962,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namei.c",
-         5309
+         6216
       ],
       [
          317,
@@ -11390,21 +11973,21 @@ var syscalls_x86_64 = {
             "type": "unsigned int op",
             "def": {
                "file": "kernel/seccomp.c",
-               "line": 2108
+               "line": 2126
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "kernel/seccomp.c",
-               "line": 2108
+               "line": 2126
             }
          },
          {
             "type": "void __user * uargs",
             "def": {
                "file": "kernel/seccomp.c",
-               "line": 2108
+               "line": 2126
             }
          },
          {
@@ -11420,16 +12003,33 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/seccomp.c",
-         2108
+         2126
       ],
       [
          318,
          "sys_getrandom",
-         "not found",
+         "(char __user * ubuf, size_t len, unsigned int flags)",
          "0x13e",
          {
-            "type": "",
-            "def": {}
+            "type": "char __user * ubuf",
+            "def": {
+               "file": "drivers/char/random.c",
+               "line": 1380
+            }
+         },
+         {
+            "type": "size_t len",
+            "def": {
+               "file": "drivers/char/random.c",
+               "line": 1380
+            }
+         },
+         {
+            "type": "unsigned int flags",
+            "def": {
+               "file": "drivers/char/random.c",
+               "line": 1380
+            }
          },
          {
             "type": "",
@@ -11443,25 +12043,27 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "drivers/char/random.c",
+         1380
       ],
       [
          319,
          "sys_memfd_create",
-         "(void)",
+         "(const char __user * uname, unsigned int flags)",
          "0x13f",
          {
-            "type": "",
-            "def": {}
+            "type": "const char __user * uname",
+            "def": {
+               "file": "mm/memfd.c",
+               "line": 505
+            }
+         },
+         {
+            "type": "unsigned int flags",
+            "def": {
+               "file": "mm/memfd.c",
+               "line": 505
+            }
          },
          {
             "type": "",
@@ -11479,12 +12081,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         248
+         "mm/memfd.c",
+         505
       ],
       [
          320,
@@ -11495,35 +12093,35 @@ var syscalls_x86_64 = {
             "type": "int kernel_fd",
             "def": {
                "file": "kernel/kexec_file.c",
-               "line": 363
+               "line": 364
             }
          },
          {
             "type": "int initrd_fd",
             "def": {
                "file": "kernel/kexec_file.c",
-               "line": 363
+               "line": 364
             }
          },
          {
             "type": "unsigned long cmdline_len",
             "def": {
                "file": "kernel/kexec_file.c",
-               "line": 363
+               "line": 364
             }
          },
          {
             "type": "const char __user * cmdline_ptr",
             "def": {
                "file": "kernel/kexec_file.c",
-               "line": 363
+               "line": 364
             }
          },
          {
             "type": "unsigned long flags",
             "def": {
                "file": "kernel/kexec_file.c",
-               "line": 363
+               "line": 364
             }
          },
          {
@@ -11531,48 +12129,54 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/kexec_file.c",
-         363
+         364
       ],
       [
          321,
          "sys_bpf",
-         "(int cmd, union bpf_attr __user * uattr, unsigned int size)",
+         "(int cmd, union bpf_attr __user * uattr, unsigned int size, struct bpf_common_attr __user * uattr_common, unsigned int size_common)",
          "0x141",
          {
             "type": "int cmd",
             "def": {
                "file": "kernel/bpf/syscall.c",
-               "line": 6137
+               "line": 6567
             }
          },
          {
             "type": "union bpf_attr __user * uattr",
             "def": {
                "file": "kernel/bpf/syscall.c",
-               "line": 6137
+               "line": 6567
             }
          },
          {
             "type": "unsigned int size",
             "def": {
                "file": "kernel/bpf/syscall.c",
-               "line": 6137
+               "line": 6567
+            }
+         },
+         {
+            "type": "struct bpf_common_attr __user * uattr_common",
+            "def": {
+               "file": "kernel/bpf/syscall.c",
+               "line": 6567
+            }
+         },
+         {
+            "type": "unsigned int size_common",
+            "def": {
+               "file": "kernel/bpf/syscall.c",
+               "line": 6567
             }
          },
          {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
          "kernel/bpf/syscall.c",
-         6137
+         6567
       ],
       [
          322,
@@ -11583,35 +12187,35 @@ var syscalls_x86_64 = {
             "type": "int fd",
             "def": {
                "file": "fs/exec.c",
-               "line": 2032
+               "line": 2003
             }
          },
          {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/exec.c",
-               "line": 2032
+               "line": 2003
             }
          },
          {
             "type": "const compat_uptr_t __user * argv",
             "def": {
                "file": "fs/exec.c",
-               "line": 2032
+               "line": 2003
             }
          },
          {
             "type": "const compat_uptr_t __user * envp",
             "def": {
                "file": "fs/exec.c",
-               "line": 2032
+               "line": 2003
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "fs/exec.c",
-               "line": 2032
+               "line": 2003
             }
          },
          {
@@ -11619,7 +12223,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/exec.c",
-         2032
+         2003
       ],
       [
          323,
@@ -11629,8 +12233,8 @@ var syscalls_x86_64 = {
          {
             "type": "int flags",
             "def": {
-               "file": "fs/userfaultfd.c",
-               "line": 2177
+               "file": "mm/userfaultfd.c",
+               "line": 4500
             }
          },
          {
@@ -11653,8 +12257,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         "fs/userfaultfd.c",
-         2177
+         "mm/userfaultfd.c",
+         4500
       ],
       [
          324,
@@ -11665,21 +12269,21 @@ var syscalls_x86_64 = {
             "type": "int cmd",
             "def": {
                "file": "kernel/sched/membarrier.c",
-               "line": 627
+               "line": 634
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "kernel/sched/membarrier.c",
-               "line": 627
+               "line": 634
             }
          },
          {
             "type": "int cpu_id",
             "def": {
                "file": "kernel/sched/membarrier.c",
-               "line": 627
+               "line": 634
             }
          },
          {
@@ -11695,16 +12299,33 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/sched/membarrier.c",
-         627
+         634
       ],
       [
          325,
          "sys_mlock2",
-         "(void)",
+         "(unsigned long start, size_t len, int flags)",
          "0x145",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long start",
+            "def": {
+               "file": "mm/mlock.c",
+               "line": 670
+            }
+         },
+         {
+            "type": "size_t len",
+            "def": {
+               "file": "mm/mlock.c",
+               "line": 670
+            }
+         },
+         {
+            "type": "int flags",
+            "def": {
+               "file": "mm/mlock.c",
+               "line": 670
+            }
          },
          {
             "type": "",
@@ -11718,16 +12339,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         261
+         "mm/mlock.c",
+         670
       ],
       [
          326,
@@ -11738,46 +12351,46 @@ var syscalls_x86_64 = {
             "type": "int fd_in",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1644
+               "line": 1649
             }
          },
          {
             "type": "loff_t __user * off_in",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1644
+               "line": 1649
             }
          },
          {
             "type": "int fd_out",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1644
+               "line": 1649
             }
          },
          {
             "type": "loff_t __user * off_out",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1644
+               "line": 1649
             }
          },
          {
             "type": "size_t len",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1644
+               "line": 1649
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1644
+               "line": 1649
             }
          },
          "fs/read_write.c",
-         1644
+         1649
       ],
       [
          327,
@@ -11788,46 +12401,46 @@ var syscalls_x86_64 = {
             "type": "compat_ulong_t fd",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1249
+               "line": 1250
             }
          },
          {
             "type": "const struct iovec __user * vec",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1249
+               "line": 1250
             }
          },
          {
             "type": "compat_ulong_t vlen",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1249
+               "line": 1250
             }
          },
          {
             "type": "u32 pos_low",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1249
+               "line": 1250
             }
          },
          {
             "type": "u32 pos_high",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1249
+               "line": 1250
             }
          },
          {
             "type": "rwf_t flags",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1249
+               "line": 1250
             }
          },
          "fs/read_write.c",
-         1249
+         1250
       ],
       [
          328,
@@ -11838,55 +12451,79 @@ var syscalls_x86_64 = {
             "type": "compat_ulong_t fd",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1290
+               "line": 1291
             }
          },
          {
             "type": "const struct iovec __user * vec",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1290
+               "line": 1291
             }
          },
          {
             "type": "compat_ulong_t vlen",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1290
+               "line": 1291
             }
          },
          {
             "type": "u32 pos_low",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1290
+               "line": 1291
             }
          },
          {
             "type": "u32 pos_high",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1290
+               "line": 1291
             }
          },
          {
             "type": "rwf_t flags",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1290
+               "line": 1291
             }
          },
          "fs/read_write.c",
-         1290
+         1291
       ],
       [
          329,
          "sys_pkey_mprotect",
-         "(void)",
+         "(unsigned long start, size_t len, unsigned long prot, int pkey)",
          "0x149",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long start",
+            "def": {
+               "file": "mm/mprotect.c",
+               "line": 993
+            }
+         },
+         {
+            "type": "size_t len",
+            "def": {
+               "file": "mm/mprotect.c",
+               "line": 993
+            }
+         },
+         {
+            "type": "unsigned long prot",
+            "def": {
+               "file": "mm/mprotect.c",
+               "line": 993
+            }
+         },
+         {
+            "type": "int pkey",
+            "def": {
+               "file": "mm/mprotect.c",
+               "line": 993
+            }
          },
          {
             "type": "",
@@ -11896,29 +12533,27 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         266
+         "mm/mprotect.c",
+         993
       ],
       [
          330,
          "sys_pkey_alloc",
-         "(void)",
+         "(unsigned long flags, unsigned long init_val)",
          "0x14a",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long flags",
+            "def": {
+               "file": "mm/mprotect.c",
+               "line": 999
+            }
+         },
+         {
+            "type": "unsigned long init_val",
+            "def": {
+               "file": "mm/mprotect.c",
+               "line": 999
+            }
          },
          {
             "type": "",
@@ -11936,21 +12571,20 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         267
+         "mm/mprotect.c",
+         999
       ],
       [
          331,
          "sys_pkey_free",
-         "(void)",
+         "(int pkey)",
          "0x14b",
          {
-            "type": "",
-            "def": {}
+            "type": "int pkey",
+            "def": {
+               "file": "mm/mprotect.c",
+               "line": 1029
+            }
          },
          {
             "type": "",
@@ -11972,8 +12606,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         "kernel/sys_ni.c",
-         268
+         "mm/mprotect.c",
+         1029
       ],
       [
          332,
@@ -11984,35 +12618,35 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/stat.c",
-               "line": 812
+               "line": 804
             }
          },
          {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/stat.c",
-               "line": 812
+               "line": 804
             }
          },
          {
             "type": "unsigned flags",
             "def": {
                "file": "fs/stat.c",
-               "line": 812
+               "line": 804
             }
          },
          {
             "type": "unsigned int mask",
             "def": {
                "file": "fs/stat.c",
-               "line": 812
+               "line": 804
             }
          },
          {
             "type": "struct statx __user * buffer",
             "def": {
                "file": "fs/stat.c",
-               "line": 812
+               "line": 804
             }
          },
          {
@@ -12020,7 +12654,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/stat.c",
-         812
+         804
       ],
       [
          333,
@@ -12031,79 +12665,67 @@ var syscalls_x86_64 = {
             "type": "compat_aio_context_t ctx_id",
             "def": {
                "file": "fs/aio.c",
-               "line": 2378
+               "line": 2431
             }
          },
          {
             "type": "compat_long_t min_nr",
             "def": {
                "file": "fs/aio.c",
-               "line": 2378
+               "line": 2431
             }
          },
          {
             "type": "compat_long_t nr",
             "def": {
                "file": "fs/aio.c",
-               "line": 2378
+               "line": 2431
             }
          },
          {
             "type": "struct io_event __user * events",
             "def": {
                "file": "fs/aio.c",
-               "line": 2378
+               "line": 2431
             }
          },
          {
             "type": "struct old_timespec32 __user * timeout",
             "def": {
                "file": "fs/aio.c",
-               "line": 2378
+               "line": 2431
             }
          },
          {
             "type": "const struct __compat_aio_sigset __user * usig",
             "def": {
                "file": "fs/aio.c",
-               "line": 2378
+               "line": 2431
             }
          },
          "fs/aio.c",
-         2378
+         2431
       ],
       [
          334,
          "sys_rseq",
-         "(struct rseq __user * rseq, u32 rseq_len, int flags, u32 sig)",
+         "(void)",
          "0x14e",
          {
-            "type": "struct rseq __user * rseq",
-            "def": {
-               "file": "kernel/rseq.c",
-               "line": 474
-            }
+            "type": "",
+            "def": {}
          },
          {
-            "type": "u32 rseq_len",
-            "def": {
-               "file": "kernel/rseq.c",
-               "line": 474
-            }
+            "type": "",
+            "def": {}
          },
          {
-            "type": "int flags",
-            "def": {
-               "file": "kernel/rseq.c",
-               "line": 474
-            }
+            "type": "",
+            "def": {}
          },
          {
-            "type": "u32 sig",
-            "def": {
-               "file": "kernel/rseq.c",
-               "line": 474
-            }
+            "type": "",
+            "def": {}
          },
          {
             "type": "",
@@ -12114,7 +12736,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/rseq.c",
-         474
+         812
       ],
       [
          335,
@@ -12146,7 +12768,39 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "arch/x86/kernel/uprobes.c",
-         365
+         367
+      ],
+      [
+         336,
+         "sys_uprobe",
+         "(void)",
+         "0x150",
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         "arch/x86/kernel/uprobes.c",
+         762
       ],
       [
          424,
@@ -12157,28 +12811,28 @@ var syscalls_x86_64 = {
             "type": "int pidfd",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4065
+               "line": 4146
             }
          },
          {
             "type": "int sig",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4065
+               "line": 4146
             }
          },
          {
             "type": "siginfo_t __user * info",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4065
+               "line": 4146
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "kernel/signal.c",
-               "line": 4065
+               "line": 4146
             }
          },
          {
@@ -12190,7 +12844,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/signal.c",
-         4065
+         4146
       ],
       [
          425,
@@ -12297,21 +12951,21 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/namespace.c",
-               "line": 3150
+               "line": 3245
             }
          },
          {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/namespace.c",
-               "line": 3150
+               "line": 3245
             }
          },
          {
             "type": "unsigned flags",
             "def": {
                "file": "fs/namespace.c",
-               "line": 3150
+               "line": 3245
             }
          },
          {
@@ -12327,7 +12981,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namespace.c",
-         3150
+         3245
       ],
       [
          429,
@@ -12338,35 +12992,35 @@ var syscalls_x86_64 = {
             "type": "int from_dfd",
             "def": {
                "file": "fs/namespace.c",
-               "line": 4531
+               "line": 4577
             }
          },
          {
             "type": "const char __user * from_pathname",
             "def": {
                "file": "fs/namespace.c",
-               "line": 4531
+               "line": 4577
             }
          },
          {
             "type": "int to_dfd",
             "def": {
                "file": "fs/namespace.c",
-               "line": 4531
+               "line": 4577
             }
          },
          {
             "type": "const char __user * to_pathname",
             "def": {
                "file": "fs/namespace.c",
-               "line": 4531
+               "line": 4577
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "fs/namespace.c",
-               "line": 4531
+               "line": 4577
             }
          },
          {
@@ -12374,7 +13028,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namespace.c",
-         4531
+         4577
       ],
       [
          430,
@@ -12385,14 +13039,14 @@ var syscalls_x86_64 = {
             "type": "const char __user * _fs_name",
             "def": {
                "file": "fs/fsopen.c",
-               "line": 114
+               "line": 120
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "fs/fsopen.c",
-               "line": 114
+               "line": 120
             }
          },
          {
@@ -12412,7 +13066,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/fsopen.c",
-         114
+         120
       ],
       [
          431,
@@ -12423,35 +13077,35 @@ var syscalls_x86_64 = {
             "type": "int fd",
             "def": {
                "file": "fs/fsopen.c",
-               "line": 344
+               "line": 350
             }
          },
          {
             "type": "unsigned int cmd",
             "def": {
                "file": "fs/fsopen.c",
-               "line": 344
+               "line": 350
             }
          },
          {
             "type": "const char __user * _key",
             "def": {
                "file": "fs/fsopen.c",
-               "line": 344
+               "line": 350
             }
          },
          {
             "type": "const void __user * _value",
             "def": {
                "file": "fs/fsopen.c",
-               "line": 344
+               "line": 350
             }
          },
          {
             "type": "int aux",
             "def": {
                "file": "fs/fsopen.c",
-               "line": 344
+               "line": 350
             }
          },
          {
@@ -12459,7 +13113,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/fsopen.c",
-         344
+         350
       ],
       [
          432,
@@ -12470,21 +13124,21 @@ var syscalls_x86_64 = {
             "type": "int fs_fd",
             "def": {
                "file": "fs/namespace.c",
-               "line": 4392
+               "line": 4435
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "fs/namespace.c",
-               "line": 4392
+               "line": 4435
             }
          },
          {
             "type": "unsigned int attr_flags",
             "def": {
                "file": "fs/namespace.c",
-               "line": 4392
+               "line": 4435
             }
          },
          {
@@ -12500,7 +13154,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namespace.c",
-         4392
+         4435
       ],
       [
          433,
@@ -12511,21 +13165,21 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/fsopen.c",
-               "line": 157
+               "line": 163
             }
          },
          {
             "type": "const char __user * path",
             "def": {
                "file": "fs/fsopen.c",
-               "line": 157
+               "line": 163
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "fs/fsopen.c",
-               "line": 157
+               "line": 163
             }
          },
          {
@@ -12541,7 +13195,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/fsopen.c",
-         157
+         163
       ],
       [
          434,
@@ -12552,14 +13206,14 @@ var syscalls_x86_64 = {
             "type": "pid_t pid",
             "def": {
                "file": "kernel/pid.c",
-               "line": 644
+               "line": 697
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "kernel/pid.c",
-               "line": 644
+               "line": 697
             }
          },
          {
@@ -12579,7 +13233,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/pid.c",
-         644
+         697
       ],
       [
          435,
@@ -12590,14 +13244,14 @@ var syscalls_x86_64 = {
             "type": "struct clone_args __user * uargs",
             "def": {
                "file": "kernel/fork.c",
-               "line": 2888
+               "line": 3033
             }
          },
          {
             "type": "size_t size",
             "def": {
                "file": "kernel/fork.c",
-               "line": 2888
+               "line": 3033
             }
          },
          {
@@ -12617,7 +13271,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/fork.c",
-         2888
+         3033
       ],
       [
          436,
@@ -12628,21 +13282,21 @@ var syscalls_x86_64 = {
             "type": "unsigned int fd",
             "def": {
                "file": "fs/file.c",
-               "line": 790
+               "line": 818
             }
          },
          {
             "type": "unsigned int max_fd",
             "def": {
                "file": "fs/file.c",
-               "line": 790
+               "line": 818
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "fs/file.c",
-               "line": 790
+               "line": 818
             }
          },
          {
@@ -12658,7 +13312,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/file.c",
-         790
+         818
       ],
       [
          437,
@@ -12669,28 +13323,28 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/open.c",
-               "line": 1469
+               "line": 1393
             }
          },
          {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/open.c",
-               "line": 1469
+               "line": 1393
             }
          },
          {
             "type": "struct open_how __user * how",
             "def": {
                "file": "fs/open.c",
-               "line": 1469
+               "line": 1393
             }
          },
          {
             "type": "size_t usize",
             "def": {
                "file": "fs/open.c",
-               "line": 1469
+               "line": 1393
             }
          },
          {
@@ -12702,7 +13356,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         1469
+         1393
       ],
       [
          438,
@@ -12713,21 +13367,21 @@ var syscalls_x86_64 = {
             "type": "int pidfd",
             "def": {
                "file": "kernel/pid.c",
-               "line": 903
+               "line": 927
             }
          },
          {
             "type": "int fd",
             "def": {
                "file": "kernel/pid.c",
-               "line": 903
+               "line": 927
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "kernel/pid.c",
-               "line": 903
+               "line": 927
             }
          },
          {
@@ -12743,7 +13397,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/pid.c",
-         903
+         927
       ],
       [
          439,
@@ -12754,28 +13408,28 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/open.c",
-               "line": 544
+               "line": 539
             }
          },
          {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/open.c",
-               "line": 544
+               "line": 539
             }
          },
          {
             "type": "int mode",
             "def": {
                "file": "fs/open.c",
-               "line": 544
+               "line": 539
             }
          },
          {
             "type": "int flags",
             "def": {
                "file": "fs/open.c",
-               "line": 544
+               "line": 539
             }
          },
          {
@@ -12787,39 +13441,54 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         544
+         539
       ],
       [
          440,
          "sys_process_madvise",
-         "(void)",
+         "(int pidfd, const struct iovec __user * vec, size_t vlen, int behavior, unsigned int flags)",
          "0x1b8",
          {
-            "type": "",
-            "def": {}
+            "type": "int pidfd",
+            "def": {
+               "file": "mm/madvise.c",
+               "line": 2093
+            }
+         },
+         {
+            "type": "const struct iovec __user * vec",
+            "def": {
+               "file": "mm/madvise.c",
+               "line": 2093
+            }
+         },
+         {
+            "type": "size_t vlen",
+            "def": {
+               "file": "mm/madvise.c",
+               "line": 2093
+            }
+         },
+         {
+            "type": "int behavior",
+            "def": {
+               "file": "mm/madvise.c",
+               "line": 2093
+            }
+         },
+         {
+            "type": "unsigned int flags",
+            "def": {
+               "file": "mm/madvise.c",
+               "line": 2093
+            }
          },
          {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         187
+         "mm/madvise.c",
+         2093
       ],
       [
          441,
@@ -12830,46 +13499,46 @@ var syscalls_x86_64 = {
             "type": "int epfd",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2662
+               "line": 2973
             }
          },
          {
             "type": "struct epoll_event __user * events",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2662
+               "line": 2973
             }
          },
          {
             "type": "int maxevents",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2662
+               "line": 2973
             }
          },
          {
             "type": "const struct __kernel_timespec __user * timeout",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2662
+               "line": 2973
             }
          },
          {
             "type": "const compat_sigset_t __user * sigmask",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2662
+               "line": 2973
             }
          },
          {
             "type": "compat_size_t sigsetsize",
             "def": {
                "file": "fs/eventpoll.c",
-               "line": 2662
+               "line": 2973
             }
          },
          "fs/eventpoll.c",
-         2662
+         2973
       ],
       [
          442,
@@ -12880,35 +13549,35 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/namespace.c",
-               "line": 5130
+               "line": 5145
             }
          },
          {
             "type": "const char __user * path",
             "def": {
                "file": "fs/namespace.c",
-               "line": 5130
+               "line": 5145
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "fs/namespace.c",
-               "line": 5130
+               "line": 5145
             }
          },
          {
             "type": "struct mount_attr __user * uattr",
             "def": {
                "file": "fs/namespace.c",
-               "line": 5130
+               "line": 5145
             }
          },
          {
             "type": "size_t usize",
             "def": {
                "file": "fs/namespace.c",
-               "line": 5130
+               "line": 5145
             }
          },
          {
@@ -12916,7 +13585,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namespace.c",
-         5130
+         5145
       ],
       [
          443,
@@ -13061,11 +13730,14 @@ var syscalls_x86_64 = {
       [
          447,
          "sys_memfd_secret",
-         "(void)",
+         "(unsigned int flags)",
          "0x1bf",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned int flags",
+            "def": {
+               "file": "mm/secretmem.c",
+               "line": 322
+            }
          },
          {
             "type": "",
@@ -13087,17 +13759,27 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         "kernel/sys_ni.c",
-         271
+         "mm/secretmem.c",
+         322
       ],
       [
          448,
          "sys_process_mrelease",
-         "(void)",
+         "(int pidfd, unsigned int flags)",
          "0x1c0",
          {
-            "type": "",
-            "def": {}
+            "type": "int pidfd",
+            "def": {
+               "file": "mm/oom_kill.c",
+               "line": 1195
+            }
+         },
+         {
+            "type": "unsigned int flags",
+            "def": {
+               "file": "mm/oom_kill.c",
+               "line": 1195
+            }
          },
          {
             "type": "",
@@ -13115,12 +13797,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         188
+         "mm/oom_kill.c",
+         1195
       ],
       [
          449,
@@ -13131,35 +13809,35 @@ var syscalls_x86_64 = {
             "type": "struct futex_waitv __user * waiters",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 290
+               "line": 321
             }
          },
          {
             "type": "unsigned int nr_futexes",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 290
+               "line": 321
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 290
+               "line": 321
             }
          },
          {
             "type": "struct __kernel_timespec __user * timeout",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 290
+               "line": 321
             }
          },
          {
             "type": "clockid_t clockid",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 290
+               "line": 321
             }
          },
          {
@@ -13167,16 +13845,40 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/futex/syscalls.c",
-         290
+         321
       ],
       [
          450,
          "sys_set_mempolicy_home_node",
-         "(void)",
+         "(unsigned long start, unsigned long len, unsigned long home_node, unsigned long flags)",
          "0x1c2",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long start",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1762
+            }
+         },
+         {
+            "type": "unsigned long len",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1762
+            }
+         },
+         {
+            "type": "unsigned long home_node",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1762
+            }
+         },
+         {
+            "type": "unsigned long flags",
+            "def": {
+               "file": "mm/mempolicy.c",
+               "line": 1762
+            }
          },
          {
             "type": "",
@@ -13186,29 +13888,41 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         195
+         "mm/mempolicy.c",
+         1762
       ],
       [
          451,
          "sys_cachestat",
-         "(void)",
+         "(unsigned int fd, struct cachestat_range __user * cstat_range, struct cachestat __user * cstat, unsigned int flags)",
          "0x1c3",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned int fd",
+            "def": {
+               "file": "mm/filemap.c",
+               "line": 4752
+            }
+         },
+         {
+            "type": "struct cachestat_range __user * cstat_range",
+            "def": {
+               "file": "mm/filemap.c",
+               "line": 4752
+            }
+         },
+         {
+            "type": "struct cachestat __user * cstat",
+            "def": {
+               "file": "mm/filemap.c",
+               "line": 4752
+            }
+         },
+         {
+            "type": "unsigned int flags",
+            "def": {
+               "file": "mm/filemap.c",
+               "line": 4752
+            }
          },
          {
             "type": "",
@@ -13218,20 +13932,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         196
+         "mm/filemap.c",
+         4752
       ],
       [
          452,
@@ -13242,28 +13944,28 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/open.c",
-               "line": 707
+               "line": 692
             }
          },
          {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/open.c",
-               "line": 707
+               "line": 692
             }
          },
          {
             "type": "umode_t mode",
             "def": {
                "file": "fs/open.c",
-               "line": 707
+               "line": 692
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "fs/open.c",
-               "line": 707
+               "line": 692
             }
          },
          {
@@ -13275,7 +13977,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/open.c",
-         707
+         692
       ],
       [
          453,
@@ -13286,21 +13988,21 @@ var syscalls_x86_64 = {
             "type": "unsigned long addr",
             "def": {
                "file": "arch/x86/kernel/shstk.c",
-               "line": 505
+               "line": 542
             }
          },
          {
             "type": "unsigned long size",
             "def": {
                "file": "arch/x86/kernel/shstk.c",
-               "line": 505
+               "line": 542
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "arch/x86/kernel/shstk.c",
-               "line": 505
+               "line": 542
             }
          },
          {
@@ -13316,7 +14018,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "arch/x86/kernel/shstk.c",
-         505
+         542
       ],
       [
          454,
@@ -13327,28 +14029,28 @@ var syscalls_x86_64 = {
             "type": "void __user * uaddr",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 338
+               "line": 369
             }
          },
          {
             "type": "unsigned long mask",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 338
+               "line": 369
             }
          },
          {
             "type": "int nr",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 338
+               "line": 369
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 338
+               "line": 369
             }
          },
          {
@@ -13360,7 +14062,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/futex/syscalls.c",
-         338
+         369
       ],
       [
          455,
@@ -13371,35 +14073,35 @@ var syscalls_x86_64 = {
             "type": "struct futex_waitv __user * waiters",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 290
+               "line": 321
             }
          },
          {
             "type": "unsigned int nr_futexes",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 290
+               "line": 321
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 290
+               "line": 321
             }
          },
          {
             "type": "struct __kernel_timespec __user * timeout",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 290
+               "line": 321
             }
          },
          {
             "type": "clockid_t clockid",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 290
+               "line": 321
             }
          },
          {
@@ -13407,7 +14109,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/futex/syscalls.c",
-         290
+         321
       ],
       [
          456,
@@ -13418,28 +14120,28 @@ var syscalls_x86_64 = {
             "type": "struct futex_waitv __user * waiters",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 414
+               "line": 445
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 414
+               "line": 445
             }
          },
          {
             "type": "int nr_wake",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 414
+               "line": 445
             }
          },
          {
             "type": "int nr_requeue",
             "def": {
                "file": "kernel/futex/syscalls.c",
-               "line": 414
+               "line": 445
             }
          },
          {
@@ -13451,7 +14153,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "kernel/futex/syscalls.c",
-         414
+         445
       ],
       [
          457,
@@ -13462,28 +14164,28 @@ var syscalls_x86_64 = {
             "type": "const struct mnt_id_req __user * req",
             "def": {
                "file": "fs/namespace.c",
-               "line": 5925
+               "line": 5961
             }
          },
          {
             "type": "struct statmount __user * buf",
             "def": {
                "file": "fs/namespace.c",
-               "line": 5925
+               "line": 5961
             }
          },
          {
             "type": "size_t bufsize",
             "def": {
                "file": "fs/namespace.c",
-               "line": 5925
+               "line": 5961
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "fs/namespace.c",
-               "line": 5925
+               "line": 5961
             }
          },
          {
@@ -13495,7 +14197,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namespace.c",
-         5925
+         5961
       ],
       [
          458,
@@ -13506,28 +14208,28 @@ var syscalls_x86_64 = {
             "type": "const struct mnt_id_req __user * req",
             "def": {
                "file": "fs/namespace.c",
-               "line": 6032
+               "line": 6123
             }
          },
          {
             "type": "u64 __user * mnt_ids",
             "def": {
                "file": "fs/namespace.c",
-               "line": 6032
+               "line": 6123
             }
          },
          {
             "type": "size_t nr_mnt_ids",
             "def": {
                "file": "fs/namespace.c",
-               "line": 6032
+               "line": 6123
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "fs/namespace.c",
-               "line": 6032
+               "line": 6123
             }
          },
          {
@@ -13539,7 +14241,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namespace.c",
-         6032
+         6123
       ],
       [
          459,
@@ -13640,11 +14342,28 @@ var syscalls_x86_64 = {
       [
          462,
          "sys_mseal",
-         "(void)",
+         "(unsigned long start, size_t len, unsigned long flags)",
          "0x1ce",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long start",
+            "def": {
+               "file": "mm/mseal.c",
+               "line": 191
+            }
+         },
+         {
+            "type": "size_t len",
+            "def": {
+               "file": "mm/mseal.c",
+               "line": 191
+            }
+         },
+         {
+            "type": "unsigned long flags",
+            "def": {
+               "file": "mm/mseal.c",
+               "line": 191
+            }
          },
          {
             "type": "",
@@ -13658,16 +14377,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         197
+         "mm/mseal.c",
+         191
       ],
       [
          463,
@@ -13678,46 +14389,46 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/xattr.c",
-               "line": 719
+               "line": 740
             }
          },
          {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/xattr.c",
-               "line": 719
+               "line": 740
             }
          },
          {
             "type": "unsigned int at_flags",
             "def": {
                "file": "fs/xattr.c",
-               "line": 719
+               "line": 740
             }
          },
          {
             "type": "const char __user * name",
             "def": {
                "file": "fs/xattr.c",
-               "line": 719
+               "line": 740
             }
          },
          {
             "type": "const struct xattr_args __user * uargs",
             "def": {
                "file": "fs/xattr.c",
-               "line": 719
+               "line": 740
             }
          },
          {
             "type": "size_t usize",
             "def": {
                "file": "fs/xattr.c",
-               "line": 719
+               "line": 740
             }
          },
          "fs/xattr.c",
-         719
+         740
       ],
       [
          464,
@@ -13728,46 +14439,46 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/xattr.c",
-               "line": 863
+               "line": 880
             }
          },
          {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/xattr.c",
-               "line": 863
+               "line": 880
             }
          },
          {
             "type": "unsigned int at_flags",
             "def": {
                "file": "fs/xattr.c",
-               "line": 863
+               "line": 880
             }
          },
          {
             "type": "const char __user * name",
             "def": {
                "file": "fs/xattr.c",
-               "line": 863
+               "line": 880
             }
          },
          {
             "type": "struct xattr_args __user * uargs",
             "def": {
                "file": "fs/xattr.c",
-               "line": 863
+               "line": 880
             }
          },
          {
             "type": "size_t usize",
             "def": {
                "file": "fs/xattr.c",
-               "line": 863
+               "line": 880
             }
          },
          "fs/xattr.c",
-         863
+         880
       ],
       [
          465,
@@ -13778,35 +14489,35 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/xattr.c",
-               "line": 991
+               "line": 1004
             }
          },
          {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/xattr.c",
-               "line": 991
+               "line": 1004
             }
          },
          {
             "type": "unsigned int at_flags",
             "def": {
                "file": "fs/xattr.c",
-               "line": 991
+               "line": 1004
             }
          },
          {
             "type": "char __user * list",
             "def": {
                "file": "fs/xattr.c",
-               "line": 991
+               "line": 1004
             }
          },
          {
             "type": "size_t size",
             "def": {
                "file": "fs/xattr.c",
-               "line": 991
+               "line": 1004
             }
          },
          {
@@ -13814,7 +14525,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/xattr.c",
-         991
+         1004
       ],
       [
          466,
@@ -13825,28 +14536,28 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/xattr.c",
-               "line": 1091
+               "line": 1100
             }
          },
          {
             "type": "const char __user * pathname",
             "def": {
                "file": "fs/xattr.c",
-               "line": 1091
+               "line": 1100
             }
          },
          {
             "type": "unsigned int at_flags",
             "def": {
                "file": "fs/xattr.c",
-               "line": 1091
+               "line": 1100
             }
          },
          {
             "type": "const char __user * name",
             "def": {
                "file": "fs/xattr.c",
-               "line": 1091
+               "line": 1100
             }
          },
          {
@@ -13858,7 +14569,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/xattr.c",
-         1091
+         1100
       ],
       [
          467,
@@ -13869,35 +14580,35 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/namespace.c",
-               "line": 5172
+               "line": 5186
             }
          },
          {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/namespace.c",
-               "line": 5172
+               "line": 5186
             }
          },
          {
             "type": "unsigned flags",
             "def": {
                "file": "fs/namespace.c",
-               "line": 5172
+               "line": 5186
             }
          },
          {
             "type": "struct mount_attr __user * uattr",
             "def": {
                "file": "fs/namespace.c",
-               "line": 5172
+               "line": 5186
             }
          },
          {
             "type": "size_t usize",
             "def": {
                "file": "fs/namespace.c",
-               "line": 5172
+               "line": 5186
             }
          },
          {
@@ -13905,7 +14616,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/namespace.c",
-         5172
+         5186
       ],
       [
          468,
@@ -13916,35 +14627,35 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/file_attr.c",
-               "line": 382
+               "line": 374
             }
          },
          {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/file_attr.c",
-               "line": 382
+               "line": 374
             }
          },
          {
             "type": "struct file_attr __user * ufattr",
             "def": {
                "file": "fs/file_attr.c",
-               "line": 382
+               "line": 374
             }
          },
          {
             "type": "size_t usize",
             "def": {
                "file": "fs/file_attr.c",
-               "line": 382
+               "line": 374
             }
          },
          {
             "type": "unsigned int at_flags",
             "def": {
                "file": "fs/file_attr.c",
-               "line": 382
+               "line": 374
             }
          },
          {
@@ -13952,7 +14663,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/file_attr.c",
-         382
+         374
       ],
       [
          469,
@@ -13963,35 +14674,35 @@ var syscalls_x86_64 = {
             "type": "int dfd",
             "def": {
                "file": "fs/file_attr.c",
-               "line": 437
+               "line": 427
             }
          },
          {
             "type": "const char __user * filename",
             "def": {
                "file": "fs/file_attr.c",
-               "line": 437
+               "line": 427
             }
          },
          {
             "type": "struct file_attr __user * ufattr",
             "def": {
                "file": "fs/file_attr.c",
-               "line": 437
+               "line": 427
             }
          },
          {
             "type": "size_t usize",
             "def": {
                "file": "fs/file_attr.c",
-               "line": 437
+               "line": 427
             }
          },
          {
             "type": "unsigned int at_flags",
             "def": {
                "file": "fs/file_attr.c",
-               "line": 437
+               "line": 427
             }
          },
          {
@@ -13999,16 +14710,116 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/file_attr.c",
-         437
+         427
+      ],
+      [
+         470,
+         "sys_listns",
+         "(const struct ns_id_req __user * req, u64 __user * ns_ids, size_t nr_ns_ids, unsigned int flags)",
+         "0x1d6",
+         {
+            "type": "const struct ns_id_req __user * req",
+            "def": {
+               "file": "kernel/nstree.c",
+               "line": 757
+            }
+         },
+         {
+            "type": "u64 __user * ns_ids",
+            "def": {
+               "file": "kernel/nstree.c",
+               "line": 757
+            }
+         },
+         {
+            "type": "size_t nr_ns_ids",
+            "def": {
+               "file": "kernel/nstree.c",
+               "line": 757
+            }
+         },
+         {
+            "type": "unsigned int flags",
+            "def": {
+               "file": "kernel/nstree.c",
+               "line": 757
+            }
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         "kernel/nstree.c",
+         757
+      ],
+      [
+         471,
+         "sys_rseq_slice_yield",
+         "(void)",
+         "0x1d7",
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         {
+            "type": "",
+            "def": {}
+         },
+         "kernel/rseq.c",
+         812
       ],
       [
          512,
          "compat_sys_rt_sigaction",
-         "not found",
+         "(int sig, const struct compat_sigaction __user * act, struct compat_sigaction __user * oact, compat_size_t sigsetsize)",
          "0x200",
          {
-            "type": "",
-            "def": {}
+            "type": "int sig",
+            "def": {
+               "file": "kernel/signal.c",
+               "line": 4735
+            }
+         },
+         {
+            "type": "const struct compat_sigaction __user * act",
+            "def": {
+               "file": "kernel/signal.c",
+               "line": 4735
+            }
+         },
+         {
+            "type": "struct compat_sigaction __user * oact",
+            "def": {
+               "file": "kernel/signal.c",
+               "line": 4735
+            }
+         },
+         {
+            "type": "compat_size_t sigsetsize",
+            "def": {
+               "file": "kernel/signal.c",
+               "line": 4735
+            }
          },
          {
             "type": "",
@@ -14018,25 +14829,13 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "kernel/signal.c",
+         4735
       ],
       [
          513,
          "compat_sys_x32_rt_sigreturn",
-         "not found",
+         "(void)",
          "0x201",
          {
             "type": "",
@@ -14062,17 +14861,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         "not found",
-         ""
+         "arch/x86/kernel/signal_64.c",
+         364
       ],
       [
          514,
          "compat_sys_ioctl",
-         "not found",
+         "(unsigned int fd, unsigned int cmd, compat_ulong_t arg)",
          "0x202",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned int fd",
+            "def": {
+               "file": "fs/ioctl.c",
+               "line": 638
+            }
+         },
+         {
+            "type": "unsigned int cmd",
+            "def": {
+               "file": "fs/ioctl.c",
+               "line": 638
+            }
+         },
+         {
+            "type": "compat_ulong_t arg",
+            "def": {
+               "file": "fs/ioctl.c",
+               "line": 638
+            }
          },
          {
             "type": "",
@@ -14086,16 +14902,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "fs/ioctl.c",
+         638
       ],
       [
          515,
@@ -14106,21 +14914,21 @@ var syscalls_x86_64 = {
             "type": "unsigned long fd",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1162
+               "line": 1163
             }
          },
          {
             "type": "const struct iovec __user * vec",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1162
+               "line": 1163
             }
          },
          {
             "type": "unsigned long vlen",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1162
+               "line": 1163
             }
          },
          {
@@ -14136,7 +14944,7 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/read_write.c",
-         1162
+         1163
       ],
       [
          516,
@@ -14147,21 +14955,21 @@ var syscalls_x86_64 = {
             "type": "unsigned long fd",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1168
+               "line": 1169
             }
          },
          {
             "type": "const struct iovec __user * vec",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1168
+               "line": 1169
             }
          },
          {
             "type": "unsigned long vlen",
             "def": {
                "file": "fs/read_write.c",
-               "line": 1168
+               "line": 1169
             }
          },
          {
@@ -14177,48 +14985,83 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/read_write.c",
-         1168
+         1169
       ],
       [
          517,
          "compat_sys_recvfrom",
-         "not found",
+         "(int fd, void __user * buf, compat_size_t len, unsigned int flags, struct sockaddr __user * addr, int __user * addrlen)",
          "0x205",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/compat.c",
+               "line": 397
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "void __user * buf",
+            "def": {
+               "file": "net/compat.c",
+               "line": 397
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "compat_size_t len",
+            "def": {
+               "file": "net/compat.c",
+               "line": 397
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned int flags",
+            "def": {
+               "file": "net/compat.c",
+               "line": 397
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "struct sockaddr __user * addr",
+            "def": {
+               "file": "net/compat.c",
+               "line": 397
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "int __user * addrlen",
+            "def": {
+               "file": "net/compat.c",
+               "line": 397
+            }
          },
-         "not found",
-         ""
+         "net/compat.c",
+         397
       ],
       [
          518,
          "compat_sys_sendmsg",
-         "not found",
+         "(int fd, struct compat_msghdr __user * msg, unsigned int flags)",
          "0x206",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/compat.c",
+               "line": 349
+            }
+         },
+         {
+            "type": "struct compat_msghdr __user * msg",
+            "def": {
+               "file": "net/compat.c",
+               "line": 349
+            }
+         },
+         {
+            "type": "unsigned int flags",
+            "def": {
+               "file": "net/compat.c",
+               "line": 349
+            }
          },
          {
             "type": "",
@@ -14232,25 +15075,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "net/compat.c",
+         349
       ],
       [
          519,
          "compat_sys_recvmsg",
-         "not found",
+         "(int fd, struct compat_msghdr __user * msg, unsigned int flags)",
          "0x207",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/compat.c",
+               "line": 377
+            }
+         },
+         {
+            "type": "struct compat_msghdr __user * msg",
+            "def": {
+               "file": "net/compat.c",
+               "line": 377
+            }
+         },
+         {
+            "type": "unsigned int flags",
+            "def": {
+               "file": "net/compat.c",
+               "line": 377
+            }
          },
          {
             "type": "",
@@ -14264,25 +15116,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "net/compat.c",
+         377
       ],
       [
          520,
          "compat_sys_execve",
-         "not found",
+         "(const char __user * filename, const compat_uptr_t __user * argv, const compat_uptr_t __user * envp)",
          "0x208",
          {
-            "type": "",
-            "def": {}
+            "type": "const char __user * filename",
+            "def": {
+               "file": "fs/exec.c",
+               "line": 1994
+            }
+         },
+         {
+            "type": "const compat_uptr_t __user * argv",
+            "def": {
+               "file": "fs/exec.c",
+               "line": 1994
+            }
+         },
+         {
+            "type": "const compat_uptr_t __user * envp",
+            "def": {
+               "file": "fs/exec.c",
+               "line": 1994
+            }
          },
          {
             "type": "",
@@ -14296,25 +15157,41 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "fs/exec.c",
+         1994
       ],
       [
          521,
          "compat_sys_ptrace",
-         "not found",
+         "(compat_long_t request, compat_long_t pid, compat_long_t addr, compat_long_t data)",
          "0x209",
          {
-            "type": "",
-            "def": {}
+            "type": "compat_long_t request",
+            "def": {
+               "file": "kernel/ptrace.c",
+               "line": 1552
+            }
+         },
+         {
+            "type": "compat_long_t pid",
+            "def": {
+               "file": "kernel/ptrace.c",
+               "line": 1552
+            }
+         },
+         {
+            "type": "compat_long_t addr",
+            "def": {
+               "file": "kernel/ptrace.c",
+               "line": 1552
+            }
+         },
+         {
+            "type": "compat_long_t data",
+            "def": {
+               "file": "kernel/ptrace.c",
+               "line": 1552
+            }
          },
          {
             "type": "",
@@ -14324,29 +15201,27 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "kernel/ptrace.c",
+         1552
       ],
       [
          522,
          "compat_sys_rt_sigpending",
-         "not found",
+         "(compat_sigset_t __user * uset, compat_size_t sigsetsize)",
          "0x20a",
          {
-            "type": "",
-            "def": {}
+            "type": "compat_sigset_t __user * uset",
+            "def": {
+               "file": "kernel/signal.c",
+               "line": 3487
+            }
+         },
+         {
+            "type": "compat_size_t sigsetsize",
+            "def": {
+               "file": "kernel/signal.c",
+               "line": 3487
+            }
          },
          {
             "type": "",
@@ -14364,21 +15239,41 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "kernel/signal.c",
+         3487
       ],
       [
          523,
          "compat_sys_rt_sigtimedwait_time64",
-         "not found",
+         "(compat_sigset_t __user * uthese, struct compat_siginfo __user * uinfo, struct __kernel_timespec __user * uts, compat_size_t sigsetsize)",
          "0x20b",
          {
-            "type": "",
-            "def": {}
+            "type": "compat_sigset_t __user * uthese",
+            "def": {
+               "file": "kernel/signal.c",
+               "line": 3951
+            }
+         },
+         {
+            "type": "struct compat_siginfo __user * uinfo",
+            "def": {
+               "file": "kernel/signal.c",
+               "line": 3951
+            }
+         },
+         {
+            "type": "struct __kernel_timespec __user * uts",
+            "def": {
+               "file": "kernel/signal.c",
+               "line": 3951
+            }
+         },
+         {
+            "type": "compat_size_t sigsetsize",
+            "def": {
+               "file": "kernel/signal.c",
+               "line": 3951
+            }
          },
          {
             "type": "",
@@ -14388,29 +15283,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "kernel/signal.c",
+         3951
       ],
       [
          524,
          "compat_sys_rt_sigqueueinfo",
-         "not found",
+         "(compat_pid_t pid, int sig, struct compat_siginfo __user * uinfo)",
          "0x20c",
          {
-            "type": "",
-            "def": {}
+            "type": "compat_pid_t pid",
+            "def": {
+               "file": "kernel/signal.c",
+               "line": 4303
+            }
+         },
+         {
+            "type": "int sig",
+            "def": {
+               "file": "kernel/signal.c",
+               "line": 4303
+            }
+         },
+         {
+            "type": "struct compat_siginfo __user * uinfo",
+            "def": {
+               "file": "kernel/signal.c",
+               "line": 4303
+            }
          },
          {
             "type": "",
@@ -14424,25 +15324,27 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "kernel/signal.c",
+         4303
       ],
       [
          525,
          "compat_sys_sigaltstack",
-         "not found",
+         "(const compat_stack_t __user * uss_ptr, compat_stack_t __user * uoss_ptr)",
          "0x20d",
          {
-            "type": "",
-            "def": {}
+            "type": "const compat_stack_t __user * uss_ptr",
+            "def": {
+               "file": "kernel/signal.c",
+               "line": 4591
+            }
+         },
+         {
+            "type": "compat_stack_t __user * uoss_ptr",
+            "def": {
+               "file": "kernel/signal.c",
+               "line": 4591
+            }
          },
          {
             "type": "",
@@ -14460,21 +15362,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "kernel/signal.c",
+         4591
       ],
       [
          526,
          "compat_sys_timer_create",
-         "not found",
+         "(clockid_t which_clock, struct compat_sigevent __user * timer_event_spec, timer_t __user * created_timer_id)",
          "0x20e",
          {
-            "type": "",
-            "def": {}
+            "type": "clockid_t which_clock",
+            "def": {
+               "file": "kernel/time/posix-timers.c",
+               "line": 589
+            }
+         },
+         {
+            "type": "struct compat_sigevent __user * timer_event_spec",
+            "def": {
+               "file": "kernel/time/posix-timers.c",
+               "line": 589
+            }
+         },
+         {
+            "type": "timer_t __user * created_timer_id",
+            "def": {
+               "file": "kernel/time/posix-timers.c",
+               "line": 589
+            }
          },
          {
             "type": "",
@@ -14488,25 +15403,27 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "kernel/time/posix-timers.c",
+         589
       ],
       [
          527,
          "compat_sys_mq_notify",
-         "not found",
+         "(mqd_t mqdes, const struct compat_sigevent __user * u_notification)",
          "0x20f",
          {
-            "type": "",
-            "def": {}
+            "type": "mqd_t mqdes",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1506
+            }
+         },
+         {
+            "type": "const struct compat_sigevent __user * u_notification",
+            "def": {
+               "file": "ipc/mqueue.c",
+               "line": 1506
+            }
          },
          {
             "type": "",
@@ -14524,21 +15441,41 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "ipc/mqueue.c",
+         1506
       ],
       [
          528,
          "compat_sys_kexec_load",
-         "not found",
+         "(compat_ulong_t entry, compat_ulong_t nr_segments, struct compat_kexec_segment __user * segments, compat_ulong_t flags)",
          "0x210",
          {
-            "type": "",
-            "def": {}
+            "type": "compat_ulong_t entry",
+            "def": {
+               "file": "kernel/kexec.c",
+               "line": 268
+            }
+         },
+         {
+            "type": "compat_ulong_t nr_segments",
+            "def": {
+               "file": "kernel/kexec.c",
+               "line": 268
+            }
+         },
+         {
+            "type": "struct compat_kexec_segment __user * segments",
+            "def": {
+               "file": "kernel/kexec.c",
+               "line": 268
+            }
+         },
+         {
+            "type": "compat_ulong_t flags",
+            "def": {
+               "file": "kernel/kexec.c",
+               "line": 268
+            }
          },
          {
             "type": "",
@@ -14548,61 +15485,74 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "kernel/kexec.c",
+         268
       ],
       [
          529,
          "compat_sys_waitid",
-         "not found",
+         "(int which, compat_pid_t pid, struct compat_siginfo __user * infop, int options, struct compat_rusage __user * uru)",
          "0x211",
          {
-            "type": "",
-            "def": {}
+            "type": "int which",
+            "def": {
+               "file": "kernel/exit.c",
+               "line": 1959
+            }
+         },
+         {
+            "type": "compat_pid_t pid",
+            "def": {
+               "file": "kernel/exit.c",
+               "line": 1959
+            }
+         },
+         {
+            "type": "struct compat_siginfo __user * infop",
+            "def": {
+               "file": "kernel/exit.c",
+               "line": 1959
+            }
+         },
+         {
+            "type": "int options",
+            "def": {
+               "file": "kernel/exit.c",
+               "line": 1959
+            }
+         },
+         {
+            "type": "struct compat_rusage __user * uru",
+            "def": {
+               "file": "kernel/exit.c",
+               "line": 1959
+            }
          },
          {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "kernel/exit.c",
+         1959
       ],
       [
          530,
          "compat_sys_set_robust_list",
-         "not found",
+         "(struct compat_robust_list_head __user * head, compat_size_t len)",
          "0x212",
          {
-            "type": "",
-            "def": {}
+            "type": "struct compat_robust_list_head __user * head",
+            "def": {
+               "file": "kernel/futex/syscalls.c",
+               "line": 481
+            }
+         },
+         {
+            "type": "compat_size_t len",
+            "def": {
+               "file": "kernel/futex/syscalls.c",
+               "line": 481
+            }
          },
          {
             "type": "",
@@ -14620,21 +15570,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "kernel/futex/syscalls.c",
+         481
       ],
       [
          531,
          "compat_sys_get_robust_list",
-         "not found",
+         "(int pid, compat_uptr_t __user * head_ptr, compat_size_t __user * len_ptr)",
          "0x213",
          {
-            "type": "",
-            "def": {}
+            "type": "int pid",
+            "def": {
+               "file": "kernel/futex/syscalls.c",
+               "line": 491
+            }
+         },
+         {
+            "type": "compat_uptr_t __user * head_ptr",
+            "def": {
+               "file": "kernel/futex/syscalls.c",
+               "line": 491
+            }
+         },
+         {
+            "type": "compat_size_t __user * len_ptr",
+            "def": {
+               "file": "kernel/futex/syscalls.c",
+               "line": 491
+            }
          },
          {
             "type": "",
@@ -14648,16 +15611,8 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "kernel/futex/syscalls.c",
+         491
       ],
       [
          532,
@@ -14668,28 +15623,28 @@ var syscalls_x86_64 = {
             "type": "int fd",
             "def": {
                "file": "fs/splice.c",
-               "line": 1580
+               "line": 1578
             }
          },
          {
             "type": "const struct iovec __user * uiov",
             "def": {
                "file": "fs/splice.c",
-               "line": 1580
+               "line": 1578
             }
          },
          {
             "type": "unsigned long nr_segs",
             "def": {
                "file": "fs/splice.c",
-               "line": 1580
+               "line": 1578
             }
          },
          {
             "type": "unsigned int flags",
             "def": {
                "file": "fs/splice.c",
-               "line": 1580
+               "line": 1578
             }
          },
          {
@@ -14701,48 +15656,90 @@ var syscalls_x86_64 = {
             "def": {}
          },
          "fs/splice.c",
-         1580
+         1578
       ],
       [
          533,
          "sys_move_pages",
-         "(void)",
+         "(pid_t pid, unsigned long nr_pages, const void __user * __user * pages, const int __user * nodes, int __user * status, int flags)",
          "0x215",
          {
-            "type": "",
-            "def": {}
+            "type": "pid_t pid",
+            "def": {
+               "file": "mm/migrate.c",
+               "line": 2627
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long nr_pages",
+            "def": {
+               "file": "mm/migrate.c",
+               "line": 2627
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "const void __user * __user * pages",
+            "def": {
+               "file": "mm/migrate.c",
+               "line": 2627
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "const int __user * nodes",
+            "def": {
+               "file": "mm/migrate.c",
+               "line": 2627
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "int __user * status",
+            "def": {
+               "file": "mm/migrate.c",
+               "line": 2627
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "int flags",
+            "def": {
+               "file": "mm/migrate.c",
+               "line": 2627
+            }
          },
-         "kernel/sys_ni.c",
-         194
+         "mm/migrate.c",
+         2627
       ],
       [
          534,
          "compat_sys_preadv64",
-         "not found",
+         "(unsigned long fd, const struct iovec __user * vec, unsigned long vlen, loff_t pos)",
          "0x216",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long fd",
+            "def": {
+               "file": "fs/read_write.c",
+               "line": 1222
+            }
+         },
+         {
+            "type": "const struct iovec __user * vec",
+            "def": {
+               "file": "fs/read_write.c",
+               "line": 1222
+            }
+         },
+         {
+            "type": "unsigned long vlen",
+            "def": {
+               "file": "fs/read_write.c",
+               "line": 1222
+            }
+         },
+         {
+            "type": "loff_t pos",
+            "def": {
+               "file": "fs/read_write.c",
+               "line": 1222
+            }
          },
          {
             "type": "",
@@ -14752,29 +15749,41 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "fs/read_write.c",
+         1222
       ],
       [
          535,
          "compat_sys_pwritev64",
-         "not found",
+         "(unsigned long fd, const struct iovec __user * vec, unsigned long vlen, loff_t pos)",
          "0x217",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long fd",
+            "def": {
+               "file": "fs/read_write.c",
+               "line": 1263
+            }
+         },
+         {
+            "type": "const struct iovec __user * vec",
+            "def": {
+               "file": "fs/read_write.c",
+               "line": 1263
+            }
+         },
+         {
+            "type": "unsigned long vlen",
+            "def": {
+               "file": "fs/read_write.c",
+               "line": 1263
+            }
+         },
+         {
+            "type": "loff_t pos",
+            "def": {
+               "file": "fs/read_write.c",
+               "line": 1263
+            }
          },
          {
             "type": "",
@@ -14784,29 +15793,41 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "fs/read_write.c",
+         1263
       ],
       [
          536,
          "compat_sys_rt_tgsigqueueinfo",
-         "not found",
+         "(compat_pid_t tgid, compat_pid_t pid, int sig, struct compat_siginfo __user * uinfo)",
          "0x218",
          {
-            "type": "",
-            "def": {}
+            "type": "compat_pid_t tgid",
+            "def": {
+               "file": "kernel/signal.c",
+               "line": 4343
+            }
+         },
+         {
+            "type": "compat_pid_t pid",
+            "def": {
+               "file": "kernel/signal.c",
+               "line": 4343
+            }
+         },
+         {
+            "type": "int sig",
+            "def": {
+               "file": "kernel/signal.c",
+               "line": 4343
+            }
+         },
+         {
+            "type": "struct compat_siginfo __user * uinfo",
+            "def": {
+               "file": "kernel/signal.c",
+               "line": 4343
+            }
          },
          {
             "type": "",
@@ -14816,61 +15837,88 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "kernel/signal.c",
+         4343
       ],
       [
          537,
          "compat_sys_recvmmsg_time64",
-         "not found",
+         "(int fd, struct compat_mmsghdr __user * mmsg, unsigned int vlen, unsigned int flags, struct __kernel_timespec __user * timeout)",
          "0x219",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/compat.c",
+               "line": 404
+            }
+         },
+         {
+            "type": "struct compat_mmsghdr __user * mmsg",
+            "def": {
+               "file": "net/compat.c",
+               "line": 404
+            }
+         },
+         {
+            "type": "unsigned int vlen",
+            "def": {
+               "file": "net/compat.c",
+               "line": 404
+            }
+         },
+         {
+            "type": "unsigned int flags",
+            "def": {
+               "file": "net/compat.c",
+               "line": 404
+            }
+         },
+         {
+            "type": "struct __kernel_timespec __user * timeout",
+            "def": {
+               "file": "net/compat.c",
+               "line": 404
+            }
          },
          {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "net/compat.c",
+         404
       ],
       [
          538,
          "compat_sys_sendmmsg",
-         "not found",
+         "(int fd, struct compat_mmsghdr __user * mmsg, unsigned int vlen, unsigned int flags)",
          "0x21a",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/compat.c",
+               "line": 363
+            }
+         },
+         {
+            "type": "struct compat_mmsghdr __user * mmsg",
+            "def": {
+               "file": "net/compat.c",
+               "line": 363
+            }
+         },
+         {
+            "type": "unsigned int vlen",
+            "def": {
+               "file": "net/compat.c",
+               "line": 363
+            }
+         },
+         {
+            "type": "unsigned int flags",
+            "def": {
+               "file": "net/compat.c",
+               "line": 363
+            }
          },
          {
             "type": "",
@@ -14880,157 +15928,221 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "net/compat.c",
+         363
       ],
       [
          539,
          "sys_process_vm_readv",
-         "(void)",
+         "(pid_t pid, const struct iovec __user * lvec, unsigned long liovcnt, const struct iovec __user * rvec, unsigned long riovcnt, unsigned long flags)",
          "0x21b",
          {
-            "type": "",
-            "def": {}
+            "type": "pid_t pid",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 292
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "const struct iovec __user * lvec",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 292
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long liovcnt",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 292
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "const struct iovec __user * rvec",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 292
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long riovcnt",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 292
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long flags",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 292
+            }
          },
-         "kernel/sys_ni.c",
-         235
+         "mm/process_vm_access.c",
+         292
       ],
       [
          540,
          "sys_process_vm_writev",
-         "(void)",
+         "(pid_t pid, const struct iovec __user * lvec, unsigned long liovcnt, const struct iovec __user * rvec, unsigned long riovcnt, unsigned long flags)",
          "0x21c",
          {
-            "type": "",
-            "def": {}
+            "type": "pid_t pid",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 299
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "const struct iovec __user * lvec",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 299
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long liovcnt",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 299
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "const struct iovec __user * rvec",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 299
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long riovcnt",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 299
+            }
          },
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long flags",
+            "def": {
+               "file": "mm/process_vm_access.c",
+               "line": 299
+            }
          },
-         "kernel/sys_ni.c",
-         237
+         "mm/process_vm_access.c",
+         299
       ],
       [
          541,
          "sys_setsockopt",
-         "(void)",
+         "(int fd, int level, int optname, char __user * optval, int optlen)",
          "0x21d",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2396
+            }
+         },
+         {
+            "type": "int level",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2396
+            }
+         },
+         {
+            "type": "int optname",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2396
+            }
+         },
+         {
+            "type": "char __user * optval",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2396
+            }
+         },
+         {
+            "type": "int optlen",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2396
+            }
          },
          {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         150
+         "net/socket.c",
+         2396
       ],
       [
          542,
          "sys_getsockopt",
-         "(void)",
+         "(int fd, int level, int optname, char __user * optval, int __user * optlen)",
          "0x21e",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2509
+            }
+         },
+         {
+            "type": "int level",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2509
+            }
+         },
+         {
+            "type": "int optname",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2509
+            }
+         },
+         {
+            "type": "char __user * optval",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2509
+            }
+         },
+         {
+            "type": "int __user * optlen",
+            "def": {
+               "file": "net/socket.c",
+               "line": 2509
+            }
          },
          {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "kernel/sys_ni.c",
-         152
+         "net/socket.c",
+         2509
       ],
       [
          543,
          "compat_sys_io_setup",
-         "not found",
+         "(unsigned nr_events, u32 __user * ctx32p)",
          "0x21f",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned nr_events",
+            "def": {
+               "file": "fs/aio.c",
+               "line": 1466
+            }
+         },
+         {
+            "type": "u32 __user * ctx32p",
+            "def": {
+               "file": "fs/aio.c",
+               "line": 1466
+            }
          },
          {
             "type": "",
@@ -15048,21 +16160,34 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "fs/aio.c",
+         1466
       ],
       [
          544,
          "compat_sys_io_submit",
-         "not found",
+         "(compat_aio_context_t ctx_id, int nr, compat_uptr_t __user * iocbpp)",
          "0x220",
          {
-            "type": "",
-            "def": {}
+            "type": "compat_aio_context_t ctx_id",
+            "def": {
+               "file": "fs/aio.c",
+               "line": 2177
+            }
+         },
+         {
+            "type": "int nr",
+            "def": {
+               "file": "fs/aio.c",
+               "line": 2177
+            }
+         },
+         {
+            "type": "compat_uptr_t __user * iocbpp",
+            "def": {
+               "file": "fs/aio.c",
+               "line": 2177
+            }
          },
          {
             "type": "",
@@ -15076,112 +16201,149 @@ var syscalls_x86_64 = {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "fs/aio.c",
+         2177
       ],
       [
          545,
          "compat_sys_execveat",
-         "not found",
+         "(int fd, const char __user * filename, const compat_uptr_t __user * argv, const compat_uptr_t __user * envp, int flags)",
          "0x221",
          {
-            "type": "",
-            "def": {}
+            "type": "int fd",
+            "def": {
+               "file": "fs/exec.c",
+               "line": 2003
+            }
+         },
+         {
+            "type": "const char __user * filename",
+            "def": {
+               "file": "fs/exec.c",
+               "line": 2003
+            }
+         },
+         {
+            "type": "const compat_uptr_t __user * argv",
+            "def": {
+               "file": "fs/exec.c",
+               "line": 2003
+            }
+         },
+         {
+            "type": "const compat_uptr_t __user * envp",
+            "def": {
+               "file": "fs/exec.c",
+               "line": 2003
+            }
+         },
+         {
+            "type": "int flags",
+            "def": {
+               "file": "fs/exec.c",
+               "line": 2003
+            }
          },
          {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "fs/exec.c",
+         2003
       ],
       [
          546,
          "compat_sys_preadv64v2",
-         "not found",
+         "(unsigned long fd, const struct iovec __user * vec, unsigned long vlen, loff_t pos, rwf_t flags)",
          "0x222",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long fd",
+            "def": {
+               "file": "fs/read_write.c",
+               "line": 1240
+            }
+         },
+         {
+            "type": "const struct iovec __user * vec",
+            "def": {
+               "file": "fs/read_write.c",
+               "line": 1240
+            }
+         },
+         {
+            "type": "unsigned long vlen",
+            "def": {
+               "file": "fs/read_write.c",
+               "line": 1240
+            }
+         },
+         {
+            "type": "loff_t pos",
+            "def": {
+               "file": "fs/read_write.c",
+               "line": 1240
+            }
+         },
+         {
+            "type": "rwf_t flags",
+            "def": {
+               "file": "fs/read_write.c",
+               "line": 1240
+            }
          },
          {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "fs/read_write.c",
+         1240
       ],
       [
          547,
          "compat_sys_pwritev64v2",
-         "not found",
+         "(unsigned long fd, const struct iovec __user * vec, unsigned long vlen, loff_t pos, rwf_t flags)",
          "0x223",
          {
-            "type": "",
-            "def": {}
+            "type": "unsigned long fd",
+            "def": {
+               "file": "fs/read_write.c",
+               "line": 1281
+            }
+         },
+         {
+            "type": "const struct iovec __user * vec",
+            "def": {
+               "file": "fs/read_write.c",
+               "line": 1281
+            }
+         },
+         {
+            "type": "unsigned long vlen",
+            "def": {
+               "file": "fs/read_write.c",
+               "line": 1281
+            }
+         },
+         {
+            "type": "loff_t pos",
+            "def": {
+               "file": "fs/read_write.c",
+               "line": 1281
+            }
+         },
+         {
+            "type": "rwf_t flags",
+            "def": {
+               "file": "fs/read_write.c",
+               "line": 1281
+            }
          },
          {
             "type": "",
             "def": {}
          },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         {
-            "type": "",
-            "def": {}
-         },
-         "not found",
-         ""
+         "fs/read_write.c",
+         1281
       ]
    ]
 };

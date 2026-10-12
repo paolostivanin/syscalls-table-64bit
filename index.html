@@ -2,440 +2,359 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Linux Syscall Reference (64 bit)</title>
-
-<!-- ── DataTables 2.3.4 ─────────────────────────────────────────────── -->
-<link href="https://cdn.datatables.net/v/dt/dt-2.3.4/datatables.min.css"
-      rel="stylesheet"
-      integrity="sha384-pmGS6IIcXhAVIhcnh9X/mxffzZNHbuxboycGuQQoP3pAbb0SwlSUUHn2v22bOenI"
-      crossorigin="anonymous">
-
-<!-- ── Fonts (Cufon legacy) ─────────────────────────────────────────── -->
-<script src="js/cufon-yui.js"></script>
-<script src="js/ChunkFive_400.font.js"></script>
-
-<!-- ── jQuery + DataTables JS ───────────────────────────────────────── -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.datatables.net/v/dt/dt-2.3.4/datatables.min.js"
-        integrity="sha384-X2pTSfom8FUa+vGQ+DgTCSyBZYkC1RliOduHa0X96D060s7Q//fnOh3LcazRNHyo"
-        crossorigin="anonymous"></script>
-
-<!-- ── Syscall JSON file ────────────────────────────────────────────── -->
-<script src="syscalls-x86_64.js"></script>
-
-<style>
-/* ──────────────────────────────────────────────────────────────────── */
-/* Reset & Base Styles */
-/* ──────────────────────────────────────────────────────────────────── */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-  font-family: 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
-  color: #333;
-  background: #fff;
-}
-
-body {
-  line-height: 1.6;
-}
-
-a {
-  color: #660000;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* ──────────────────────────────────────────────────────────────────── */
-/* Header Section */
-/* ──────────────────────────────────────────────────────────────────── */
-#header {
-  background: #222;
-  padding: 40px 0;
-  width: 100%;
-}
-
-.site {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-#headline h2 {
-  font-size: 3em;
-  color: #fff;
-  font-weight: normal;
-  letter-spacing: 0.02em;
-  margin: 0;
-}
-
-/* ──────────────────────────────────────────────────────────────────── */
-/* Main Content Container */
-/* ──────────────────────────────────────────────────────────────────── */
-#container2 {
-  padding: 40px 0;
-  background: #f5f5f5;
-}
-
-#container2 .site {
-  background: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-/* ──────────────────────────────────────────────────────────────────── */
-/* DataTables Wrapper Styling */
-/* ──────────────────────────────────────────────────────────────────── */
-.dataTables_wrapper {
-  font-size: 0.9em;
-}
-
-.dataTables_length,
-.dataTables_filter,
-.dataTables_info,
-.dataTables_paginate {
-  margin: 15px 0;
-}
-
-.dataTables_length label,
-.dataTables_filter label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 600;
-  color: #333;
-}
-
-.dataTables_length select,
-.dataTables_filter input {
-  padding: 6px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 0.95em;
-  background: #fff;
-}
-
-.dataTables_filter input {
-  min-width: 250px;
-}
-
-.dataTables_info {
-  color: #666;
-  font-size: 0.9em;
-}
-
-/* ──────────────────────────────────────────────────────────────────── */
-/* Syscall Table */
-/* ──────────────────────────────────────────────────────────────────── */
-#syscall_table {
-  width: 100% !important;
-  border-collapse: collapse;
-  margin: 20px 0;
-  background: #fff;
-  font-size: 0.85em;
-}
-
-/* Table Headers */
-#syscall_table thead th {
-  background: linear-gradient(180deg, #34495e 0%, #2c3e50 100%) !important;
-  color: #fff !important;
-  font-weight: 600 !important;
-  padding: 14px 10px !important;
-  border: 1px solid #1a252f !important;
-  text-align: center !important;
-  vertical-align: middle !important;
-  white-space: nowrap;
-  text-transform: uppercase;
-  font-size: 0.85em;
-  letter-spacing: 0.5px;
-}
-
-#syscall_table thead th.register-header {
-  background: linear-gradient(180deg, #5a6c7d 0%, #4a5d6e 100%) !important;
-  font-size: 0.8em !important;
-}
-
-/* Table Body */
-#syscall_table tbody tr {
-  background: #fff;
-  transition: background-color 0.2s ease;
-}
-
-#syscall_table tbody tr:nth-child(even) {
-  background: #f9f9f9;
-}
-
-#syscall_table tbody tr:hover {
-  background: #e8f4f8 !important;
-}
-
-#syscall_table tbody td {
-  padding: 10px 12px !important;
-  border: 1px solid #ddd !important;
-  color: #333 !important;
-  vertical-align: middle;
-}
-
-/* Column-specific styling */
-#syscall_table tbody td:first-child {
-  text-align: center;
-  font-weight: 600;
-  color: #2c3e50;
-  font-family: 'Courier New', monospace;
-}
-
-#syscall_table tbody td:nth-child(2) {
-  font-weight: 600;
-  font-family: 'Courier New', monospace;
-  color: #c7254e;
-}
-
-#syscall_table tbody td:nth-child(4) {
-  text-align: center;
-  font-family: 'Courier New', monospace;
-  color: #666;
-  font-size: 0.9em;
-}
-
-/* Register columns */
-#syscall_table tbody td:nth-child(5),
-#syscall_table tbody td:nth-child(6),
-#syscall_table tbody td:nth-child(7),
-#syscall_table tbody td:nth-child(8),
-#syscall_table tbody td:nth-child(9),
-#syscall_table tbody td:nth-child(10) {
-  text-align: center;
-  font-size: 0.85em;
-  color: #555;
-}
-
-/* Definition column */
-#syscall_table tbody td:nth-child(11) {
-  font-size: 0.8em;
-  max-width: 300px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Links in table */
-#syscall_table a {
-  color: #0066cc !important;
-  font-weight: normal;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-#syscall_table a:hover {
-  color: #004080 !important;
-  text-decoration: underline;
-}
-
-/* "not found" styling */
-#syscall_table td:contains("not found") {
-  color: #999 !important;
-  font-style: italic;
-}
-
-/* ──────────────────────────────────────────────────────────────────── */
-/* Footer */
-/* ──────────────────────────────────────────────────────────────────── */
-#footer {
-  background: #222;
-  padding: 30px 0;
-  margin-top: 40px;
-}
-
-#footer h4 {
-  color: #fff;
-  text-align: center;
-  font-size: 1.1em;
-  font-weight: normal;
-  line-height: 1.8em;
-}
-
-#footer a {
-  color: #66b3ff;
-  font-weight: 600;
-}
-
-#footer a:hover {
-  color: #99ccff;
-}
-
-/* ──────────────────────────────────────────────────────────────────── */
-/* Responsive Design */
-/* ──────────────────────────────────────────────────────────────────── */
-@media (max-width: 768px) {
-  #headline h2 {
-    font-size: 2em;
-  }
-
-  .site {
-    padding: 0 10px;
-  }
-
-  #container2 .site {
-    padding: 15px;
-  }
-
-  .dataTables_filter input {
-    min-width: 150px;
-  }
-}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Linux Syscall Reference (x86-64)</title>
+<meta name="description" content="Searchable Linux x86-64 system call table with registers, signatures and source links, generated from the kernel source.">
 
 <script>
-/* ──────────────────────────────────────────────────────────────────── */
-/* Helper for register rendering */
-/* ──────────────────────────────────────────────────────────────────── */
-function renderReg(data) {
-  if (!data || !data.type) return "-";
-  if (data.def && data.def.file)
-    return `<a target="_blank" href="https://elixir.bootlin.com/linux/v6.17.3/source/${data.def.file}#L${data.def.line}">${data.type}</a>`;
-  return data.type;
+/* Apply saved theme before first paint to avoid a flash */
+(function () {
+  var t = localStorage.getItem('theme');
+  if (t) document.documentElement.dataset.theme = t;
+})();
+</script>
+
+<style>
+:root {
+  --bg: #f6f7f9;
+  --panel: #ffffff;
+  --text: #1f2430;
+  --muted: #6b7280;
+  --border: #e3e6eb;
+  --head: #eef0f4;
+  --hover: #eef5ff;
+  --accent: #2563eb;
+  --name: #c2255c;
+  --chip: #eef2ff;
+  --chip-text: #3730a3;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1116; --panel: #161b22; --text: #e6e8ec; --muted: #8b949e;
+    --border: #272e38; --head: #1c232d; --hover: #1a2536; --accent: #6ea8ff;
+    --name: #ff7ba5; --chip: #1e2a44; --chip-text: #aac4ff;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1116; --panel: #161b22; --text: #e6e8ec; --muted: #8b949e;
+  --border: #272e38; --head: #1c232d; --hover: #1a2536; --accent: #6ea8ff;
+  --name: #ff7ba5; --chip: #1e2a44; --chip-text: #aac4ff;
 }
 
-/* ──────────────────────────────────────────────────────────────────── */
-/* Table initialization */
-/* ──────────────────────────────────────────────────────────────────── */
-$(function() {
-  Cufon('.chunk')('.chunk a', {hover:true});
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: var(--bg); }
+body {
+  font-family: var(--sans);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-  new DataTable('#syscall_table', {
-    data: syscalls_x86_64.aaData,
-    pageLength: 25,
-    language: {
-      lengthMenu: 'Show _MENU_ syscalls per page',
-      search: 'Search:',
-      info: 'Showing _START_ to _END_ of _TOTAL_ syscalls',
-      infoEmpty: 'No syscalls found',
-      infoFiltered: '(filtered from _MAX_ total)',
-      paginate: {
-        first: '«',
-        previous: '‹',
-        next: '›',
-        last: '»'
-      }
-    },
-    columns: [
-      {
-        title: '#',
-        className: "center"
-      },
-      {
-        title: 'Name',
-        className: "bold",
-        render: (data) => {
-          if (!data || data === 'not implemented') return data;
-          const m = data.match(/^sys_(.+)/);
-          if (m)
-            return `<a target="_blank" href="https://man7.org/linux/man-pages/man2/${m[1]}.2.html">${data}</a>`;
-          return data;
-        }
-      },
-      {
-        title: 'Signature',
-        visible: false,
-        searchable: false
-      },
-      {
-        title: 'rax',
-        searchable: true
-      },
-      { title: 'rdi', render: renderReg, searchable: false },
-      { title: 'rsi', render: renderReg, searchable: false },
-      { title: 'rdx', render: renderReg, searchable: false },
-      { title: 'r10', render: renderReg, searchable: false },
-      { title: 'r8', render: renderReg, searchable: false },
-      { title: 'r9', render: renderReg, searchable: false },
-      {
-        title: 'Definition',
-        render: (data, type, row) => {
-          const file = row[10];
-          const line = row[11];
-          if (file && file !== "not found" && line)
-            return `<a target="_blank" href="https://elixir.bootlin.com/linux/v6.17.3/source/${file}#L${line}">${file}:${line}</a>`;
-          return file || "-";
-        },
-        searchable: false
-      },
-      {
-        title: 'Line',
-        visible: false,
-        searchable: false
-      }
-    ],
-    scrollX: true,
-    order: [[0, 'asc']],
-    layout: {
-      topStart: 'info',
-      topEnd: 'search',
-      bottomStart: 'pageLength',
-      bottomEnd: 'paging'
-    }
-  });
+header {
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+.wrap { max-width: 1500px; margin: 0 auto; padding: 0 20px; }
+.top {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 22px 0 8px; flex-wrap: wrap;
+}
+h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.01em; }
+h1 small { font-weight: 500; color: var(--muted); font-size: 0.55em; margin-left: 8px; }
+.badge {
+  font-family: var(--mono); font-size: 0.8rem;
+  background: var(--chip); color: var(--chip-text);
+  padding: 2px 8px; border-radius: 999px;
+}
+.sub { color: var(--muted); font-size: 0.9rem; padding-bottom: 16px; }
 
-  Cufon.now();
-});
-</script>
+.tools {
+  display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+  padding: 14px 0;
+}
+.search { position: relative; flex: 1 1 320px; max-width: 560px; }
+.search input {
+  width: 100%; padding: 10px 40px 10px 14px;
+  font: inherit; color: var(--text);
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 8px; outline: none;
+}
+.search input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent); }
+.search kbd {
+  position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+  font-family: var(--mono); font-size: 0.75rem; color: var(--muted);
+  border: 1px solid var(--border); border-radius: 4px; padding: 0 6px;
+  pointer-events: none;
+}
+.toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.9rem; color: var(--muted); cursor: pointer; user-select: none;
+}
+button {
+  font: inherit; color: var(--text); background: var(--panel);
+  border: 1px solid var(--border); border-radius: 8px;
+  padding: 8px 12px; cursor: pointer;
+}
+button:hover { border-color: var(--accent); }
+#count { margin-left: auto; color: var(--muted); font-size: 0.9rem; }
+
+main { flex: 1; padding-bottom: 32px; }
+.table-box {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 10px; overflow: auto;
+  max-height: calc(100vh - 210px); min-height: 300px;
+}
+table { border-collapse: separate; border-spacing: 0; width: 100%; font-size: 0.85rem; }
+thead th {
+  position: sticky; top: 0; z-index: 2;
+  background: var(--head); color: var(--muted);
+  text-align: left; font-weight: 600; font-size: 0.75rem;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  padding: 10px 12px; border-bottom: 1px solid var(--border);
+  white-space: nowrap; cursor: pointer; user-select: none;
+}
+thead th:hover { color: var(--text); }
+thead th[aria-sort="ascending"]::after { content: " ▲"; }
+thead th[aria-sort="descending"]::after { content: " ▼"; }
+thead th.reg { font-family: var(--mono); text-transform: none; }
+tbody td {
+  padding: 7px 12px; border-bottom: 1px solid var(--border);
+  white-space: nowrap; vertical-align: middle;
+}
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:hover td { background: var(--hover); }
+td.num, td.hex { font-family: var(--mono); color: var(--muted); }
+td.num { text-align: right; color: var(--text); font-weight: 600; }
+td.name { font-family: var(--mono); font-weight: 600; }
+td.name a { color: var(--name); }
+td.arg { font-family: var(--mono); font-size: 0.8rem; }
+td.arg a { color: var(--text); }
+td.arg a:hover { color: var(--accent); }
+td.arg .t { color: var(--muted); }
+td.arg.empty { color: var(--border); text-align: center; }
+td.def { font-family: var(--mono); font-size: 0.8rem; }
+td.def.missing { color: var(--muted); font-style: italic; }
+td.empty-row { text-align: center; color: var(--muted); padding: 40px; }
+/* keep the number + name visible when scrolling sideways */
+th:nth-child(1), td:nth-child(1) { position: sticky; left: 0; z-index: 1; background: var(--panel); }
+th:nth-child(2), td:nth-child(2) { position: sticky; left: 56px; z-index: 1; background: var(--panel); }
+thead th:nth-child(1), thead th:nth-child(2) { z-index: 3; background: var(--head); }
+tbody tr:hover td:nth-child(1), tbody tr:hover td:nth-child(2) { background: var(--hover); }
+th:nth-child(1), td:nth-child(1) { min-width: 56px; }
+mark { background: color-mix(in srgb, #facc15 55%, transparent); color: inherit; border-radius: 2px; }
+
+footer {
+  border-top: 1px solid var(--border); background: var(--panel);
+  padding: 18px 0; color: var(--muted); font-size: 0.85rem; text-align: center;
+}
+
+@media (max-width: 700px) {
+  h1 { font-size: 1.25rem; }
+  .table-box { max-height: calc(100vh - 260px); }
+}
+</style>
 </head>
 
 <body>
-  <div id="header">
-    <div class="site">
-      <div id="headline">
-        <h2 class="chunk">Linux Syscall Reference (64 bit)</h2>
-      </div>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <h1>Linux Syscall Reference <small>x86-64</small></h1>
+      <span class="badge" id="kver"></span>
     </div>
+    <p class="sub">
+      Arguments are passed in <code>rdi, rsi, rdx, r10, r8, r9</code>; the syscall number goes in <code>rax</code>.
+      Names link to man pages, arguments and definitions to the kernel source.
+    </p>
   </div>
+</header>
 
-  <div id="container2">
-    <div class="site">
-      <table id="syscall_table" class="display cell-border compact stripe hover order-column">
+<main>
+  <div class="wrap">
+    <div class="tools">
+      <div class="search">
+        <input id="q" type="search" placeholder="Search by name, number (e.g. 59 or 0x3b) or type…" autocomplete="off" spellcheck="false" aria-label="Search syscalls">
+        <kbd>/</kbd>
+      </div>
+      <label class="toggle"><input type="checkbox" id="noargs"> hide not-found / compat</label>
+      <button id="theme" type="button" aria-label="Toggle theme">◐ Theme</button>
+      <span id="count" aria-live="polite"></span>
+    </div>
+
+    <div class="table-box">
+      <table id="tbl">
         <thead>
           <tr>
-            <th rowspan="2">#</th>
-            <th rowspan="2">Name</th>
-            <th rowspan="2">Signature</th>
-            <th colspan="7">Registers</th>
-            <th rowspan="2">Definition</th>
-            <th rowspan="2">Line</th>
-          </tr>
-          <tr>
-            <th class="register-header">rax</th>
-            <th class="register-header">rdi</th>
-            <th class="register-header">rsi</th>
-            <th class="register-header">rdx</th>
-            <th class="register-header">r10</th>
-            <th class="register-header">r8</th>
-            <th class="register-header">r9</th>
+            <th data-k="0">#</th>
+            <th data-k="1">Name</th>
+            <th data-k="3">Hex (rax)</th>
+            <th class="reg" data-k="4">rdi</th>
+            <th class="reg" data-k="5">rsi</th>
+            <th class="reg" data-k="6">rdx</th>
+            <th class="reg" data-k="7">r10</th>
+            <th class="reg" data-k="8">r8</th>
+            <th class="reg" data-k="9">r9</th>
+            <th data-k="10">Definition</th>
           </tr>
         </thead>
         <tbody></tbody>
       </table>
     </div>
   </div>
+</main>
 
-  <div id="footer">
-    <div class="site">
-      <h4 class="chunk">
-        Generated from Linux kernel 6.17.3 using
-        <a target="_blank" href="https://www.python.org/">Python</a>,
-        <a target="_blank" href="https://ctags.io/">Universal Ctags</a>, and
-        <a target="_blank" href="https://datatables.net/">DataTables</a>
-        <br>
-        Project on <a href="https://github.com/paolostivanin/syscalls-table-64bit">GitHub</a> ·
-        Hosted on <a href="https://pages.github.com/">GitHub Pages</a>
-      </h4>
-    </div>
+<footer>
+  <div class="wrap">
+    Generated from Linux kernel <span id="kver2"></span> with
+    <a href="https://www.python.org/" target="_blank" rel="noopener">Python</a> and
+    <a href="https://ctags.io/" target="_blank" rel="noopener">Universal Ctags</a> ·
+    <a href="https://github.com/paolostivanin/syscalls-table-64bit">GitHub</a>
   </div>
+</footer>
+
+<script src="syscalls-x86_64.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var KV = typeof kernel_version !== 'undefined' ? kernel_version : 'unknown';
+  var ELIXIR = 'https://elixir.bootlin.com/linux/v' + KV + '/source/';
+  var rows = syscalls_x86_64.aaData;
+  var tbody = document.querySelector('#tbl tbody');
+  var input = document.getElementById('q');
+  var hide = document.getElementById('noargs');
+  var countEl = document.getElementById('count');
+  var sortKey = 0, sortDir = 1;
+
+  document.getElementById('kver').textContent = 'Linux ' + KV;
+  document.getElementById('kver2').textContent = KV;
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function isMissing(r) { return r[2] === 'not found'; }
+
+  function matches(r, terms) {
+    if (hide.checked && (isMissing(r) || r[1].indexOf('compat_') === 0)) return false;
+    if (!terms.length) return true;
+    var hay = (r[0] + ' ' + r[1] + ' ' + r[3] + ' ' + r[2]).toLowerCase();
+    return terms.every(function (t) { return hay.indexOf(t) !== -1; });
+  }
+
+  function sortVal(r, k) {
+    var v = r[k];
+    if (k === 0) return v;
+    if (k === 3) return r[0];
+    if (k >= 4 && k <= 9) return (v && v.type || '￿').toLowerCase();
+    return String(v || '￿').toLowerCase();
+  }
+
+  function hl(text, terms) {
+    var s = esc(text);
+    terms.forEach(function (t) {
+      if (!t) return;
+      var re = new RegExp('(' + esc(t).replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      s = s.replace(re, '<mark>$1</mark>');
+    });
+    return s;
+  }
+
+  function nameCell(n, terms) {
+    var m = /^sys_(.+)/.exec(n);
+    var label = hl(n, terms);
+    return m ? '<a target="_blank" rel="noopener" href="https://man7.org/linux/man-pages/man2/' +
+      encodeURIComponent(m[1]) + '.2.html">' + label + '</a>' : label;
+  }
+
+  function argCell(d) {
+    if (!d || !d.type) return '<td class="arg empty">–</td>';
+    var parts = d.type.split(' ');
+    var name = parts.pop();
+    var type = esc(parts.join(' '));
+    var inner = '<span class="t">' + type + '</span> ' + esc(name);
+    if (d.def && d.def.file)
+      inner = '<a target="_blank" rel="noopener" href="' + ELIXIR + d.def.file + '#L' + d.def.line + '">' + inner + '</a>';
+    return '<td class="arg">' + inner + '</td>';
+  }
+
+  function render() {
+    var terms = input.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    var list = rows.filter(function (r) { return matches(r, terms); });
+    list.sort(function (a, b) {
+      var x = sortVal(a, sortKey), y = sortVal(b, sortKey);
+      return (x < y ? -1 : x > y ? 1 : 0) * sortDir;
+    });
+
+    var html = list.map(function (r) {
+      var file = r[10], line = r[11], def;
+      if (file && file !== 'not found' && line)
+        def = '<td class="def"><a target="_blank" rel="noopener" href="' + ELIXIR + file + '#L' + line + '">' +
+              esc(file) + ':' + line + '</a></td>';
+      else
+        def = '<td class="def missing">not found</td>';
+      return '<tr><td class="num">' + r[0] + '</td>' +
+        '<td class="name">' + nameCell(r[1], terms) + '</td>' +
+        '<td class="hex">' + hl(r[3], terms) + '</td>' +
+        argCell(r[4]) + argCell(r[5]) + argCell(r[6]) +
+        argCell(r[7]) + argCell(r[8]) + argCell(r[9]) + def + '</tr>';
+    }).join('');
+
+    tbody.innerHTML = html || '<tr><td class="empty-row" colspan="10">No syscalls match your search.</td></tr>';
+    countEl.textContent = list.length + ' of ' + rows.length + ' syscalls';
+  }
+
+  /* Sorting */
+  document.querySelectorAll('thead th').forEach(function (th) {
+    th.addEventListener('click', function () {
+      var k = +th.dataset.k;
+      sortDir = (sortKey === k) ? -sortDir : 1;
+      sortKey = k;
+      document.querySelectorAll('thead th').forEach(function (o) { o.removeAttribute('aria-sort'); });
+      th.setAttribute('aria-sort', sortDir === 1 ? 'ascending' : 'descending');
+      render();
+    });
+  });
+  document.querySelector('thead th[data-k="0"]').setAttribute('aria-sort', 'ascending');
+
+  /* Search, filter, deep-link via #query */
+  var timer;
+  input.addEventListener('input', function () {
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      history.replaceState(null, '', input.value ? '#' + encodeURIComponent(input.value) : location.pathname);
+      render();
+    }, 80);
+  });
+  hide.addEventListener('change', render);
+  if (location.hash.length > 1) input.value = decodeURIComponent(location.hash.slice(1));
+
+  document.addEventListener('keydown', function (e) {
+    var tag = (e.target.tagName || '').toLowerCase();
+    if (e.key === '/' && tag !== 'input') { e.preventDefault(); input.focus(); input.select(); }
+    else if (e.key === 'Escape' && e.target === input) { input.value = ''; input.dispatchEvent(new Event('input')); input.blur(); }
+  });
+
+  /* Theme toggle */
+  document.getElementById('theme').addEventListener('click', function () {
+    var cur = document.documentElement.dataset.theme ||
+      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    var next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem('theme', next);
+  });
+
+  render();
+})();
+</script>
 </body>
 </html>
