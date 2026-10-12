@@ -45,5 +45,9 @@ sed -i 's/__x64_//g; s/__x32_compat_//g' syscall_64.tbl
 echo "[+] Running gen_syscalls.py..."
 KERNEL_VERSION=$KERNEL_VERSION ./gen_syscalls.py > www/syscalls-x86_64.js
 
+# Cache-bust the data file (GitHub Pages serves it with a 4h max-age)
+HASH=$(md5sum www/syscalls-x86_64.js | cut -c1-8)
+sed -i -E "s#syscalls-x86_64\.js(\?v=[0-9a-f]+)?\"#syscalls-x86_64.js?v=${HASH}\"#" www/index.html
+
 #rm -rf "$WORKDIR" "${WORKDIR}.tar.xz" syscall_64.tbl
 echo "[+] Done!"
