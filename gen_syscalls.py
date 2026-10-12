@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import json, re, os, sys
 
-KERNEL_VERSION = os.getenv("KERNEL_VERSION", "6.17.3")
+KERNEL_VERSION = os.getenv("KERNEL_VERSION", "7.2.10")
 TAGS_PATH = f"/tmp/linux-{KERNEL_VERSION}/tags.json"
 SCT_PATH = "syscall_64.tbl"
 
@@ -34,7 +34,7 @@ def find_symbol(name, kind=None):
 
 def find_syscall_define(name):
     """Find the SYSCALL_DEFINE* macro for a given syscall name (x86-only)."""
-    base = name.replace("sys_", "")
+    base = re.sub(r"^(compat_)?sys_", "", name)
     patterns = [
         rf"SYSCALL_DEFINE\d*\({re.escape(base)}",
         rf"COMPAT_SYSCALL_DEFINE\d*\({re.escape(base)}",
@@ -179,6 +179,7 @@ with open(SCT_PATH, "r", encoding="utf-8", errors="ignore") as sct_file:
             sys_calls.append(details)
 
 output = json.dumps({"aaData": sys_calls}, indent=3, ensure_ascii=False)
+sys.stdout.write(f'var kernel_version = "{KERNEL_VERSION}";\n')
 sys.stdout.write("var syscalls_x86_64 = ")
 sys.stdout.write(output)
 sys.stdout.write(";\n")

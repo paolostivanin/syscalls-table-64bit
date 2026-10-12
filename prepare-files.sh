@@ -1,8 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
-KERNEL_VERSION="6.17.3"
-LINK="https://www.kernel.org/pub/linux/kernel/v6.x/linux-${KERNEL_VERSION}.tar.xz"
+KERNEL_VERSION="${1:-7.2.10}"
+MAJOR="${KERNEL_VERSION%%.*}"
+LINK="https://www.kernel.org/pub/linux/kernel/v${MAJOR}.x/linux-${KERNEL_VERSION}.tar.xz"
 WORKDIR="/tmp/linux-${KERNEL_VERSION}"
 
 if [ ! -d "$WORKDIR" ]; then
@@ -32,6 +33,10 @@ ctags -R \
   ${WORKDIR}/include \
   ${WORKDIR}/kernel \
   ${WORKDIR}/fs \
+  ${WORKDIR}/mm \
+  ${WORKDIR}/net \
+  ${WORKDIR}/ipc \
+  ${WORKDIR}/drivers/char \
   > ${WORKDIR}/tags.json
 
 cp "$TBL_64" syscall_64.tbl
